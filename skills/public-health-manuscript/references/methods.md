@@ -86,9 +86,11 @@ sensitivity analysis.
 * Original approvals (ICF Institutional Review Board and national ethics
   committee for DHS; national bodies for MICS), informed consent, and your
   institution's decision for secondary analysis.
-* Data availability: publicly available on registration from the DHS
-  Program or UNICEF MICS website; analysis code available on request or in a
-  repository (state which).
+* Close the Methods with a separate **Data availability** statement, even if
+  ethics already mentions access. Top journals check for it, and test runs
+  of this skill tended to leave it out. Say the data are publicly available
+  on registration from the DHS Program or UNICEF MICS website, and say where
+  the analysis code is (repository or on request).
 
 ## Sentence frames
 
@@ -139,4 +141,4 @@ table or figure shows. Fill brackets only with facts the user supplied.
 * [ ] Covariates from a framework, with levels and reference categories
 * [ ] Wealth index described; circularity considered
 * [ ] Ethics: original approvals, consent, own institution's decision
-* [ ] Data availability and journal-specific statements
+* [ ] Separate data availability statement (data source and code); journal-specific statements (funder role, patient involvement)

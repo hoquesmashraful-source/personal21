@@ -32,6 +32,13 @@ These protect the author's science. They matter more than any style advice.
   associations. Avoid causal verbs (cause, lead to, effect of, impact of,
   determine) unless the design supports them, and flag existing ones.
 * **Keep existing citations** unless the user asks to remove them.
+* **Revise in place.** When the user asks for a revision, keep their content,
+  scope and length roughly as they are. Fix problems where they sit (causal
+  wording, overstated claims, missing direction of bias, style). Put
+  suggested additions, such as a new paragraph, a new claim that needs a
+  citation, or an analysis they have not reported, in the notes after the
+  text rather than in the text itself. Write a fuller rewrite only when the
+  user asks for one.
 
 ## House style
 

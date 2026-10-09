@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "public-health-manuscript", "runs": [{"id": "eval-methods-ipv-stunting-with_skill-run-1", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "response.md", "type": "text", "content": "## Methods\n\n### Data source\n\nWe used data from the 2022 Nepal Demographic and Health Survey (NDHS), a nationally representative household survey. [Implementing agency] implemented the survey with technical assistance from ICF through the DHS Program [ref: NDHS 2022 final report].\n\nThe NDHS used a two-stage stratified cluster sample. In the first stage, [n] enumeration areas (clusters) were selected from the [sampling frame] with probability proportional to size. Selection was stratified by [province and urban or rural residence]. In the second stage, [n] households were selected systematically in each cluster. Fieldwork took place between [start date] and [end date]. Response rates were [x]% for households and [y]% for eligible women [ref: final report, table [x]].\n\nThe survey included a domestic violence module. In each household [in the subsample selected for the module], one woman aged 15 to 49 years was randomly selected to answer it. The module has its own sampling weight, which accounts for the selection of one woman per household [ref]. Of [n] women selected for the module, [n] ([x]%) completed it.\n\n### Study design and sample\n\nWe did a cross-sectional analysis with the child as the unit of analysis. We used the children's recode (KR) file, which holds one record for each child born to an interviewed woman in the five years before the survey. We merged each child's record with the mother's responses to the domestic violence module.\n\nChildren were eligible if they were alive, aged 0 to 59 months at interview, and their mother had been selected for and completed the domestic violence module. Of [N] eligible children, we excluded [n] without a valid length or height measurement, [n] with biologically implausible height-for-age values and [n] with missing data on any covariate. The analytic sample was 2,104 children of [n] mothers in [n] clusters (appendix p [x]).\n\n### Variables\n\n**Outcome.** The outcome was stunting, defined as a height-for-age z-score (HAZ) below -2 SD of the WHO 2006 Child Growth Standards median [ref: WHO 2006; Guide to DHS Statistics]. HAZ was calculated from the child's measured length or height, age and sex. Following WHO flagging rules, we treated HAZ values below -6 or above +6 as biologically implausible and excluded them [ref]. We coded children as stunted or not stunted.\n\n**Exposure.** The exposure was any intimate partner violence (IPV) against the mother in the 12 months before the survey. Women who had [ever been married or lived with a partner] were asked about specific acts of violence by their current or most recent husband or partner. The items, adapted from the Conflict Tactics Scale, cover physical, sexual and emotional violence (appendix p [x]) [ref: final report].\n\nFor each act a woman reported, she was asked whether it happened often, sometimes or not at all in the past 12 months. Following the Guide to DHS Statistics, we classified a mother as exposed if she reported any physical, sexual or emotional act often or sometimes in that period [ref]. The reference group was mothers who reported no such act in the past 12 months. This group includes mothers who reported IPV only before that period. We used the 12-month window, the standard DHS indicator of current IPV, to reflect the conditions in which the child was living.\n\n**Covariates.** We chose potential confounders a priori, guided by [framework, such as the UNICEF conceptual framework of undernutrition] and previous studies of IPV and child growth [refs]. Child-level covariates were age in months ([categories]), sex and birth order ([categories]). Maternal covariates were highest level of education ([categories]) and height ([categories] cm).\n\nHousehold wealth was measured with the NDHS wealth index. This is a principal component score of household assets and housing characteristics, grouped into quintiles [ref]. Area-level covariates were place of residence (urban or rural) and province. We did not adjust for factors that may lie on the pathway between IPV and stunting, such as [breastfeeding, maternal nutritional status or use of health services]. The coding and reference category of each covariate are in the appendix (p [x]).\n\n### Statistical analysis\n\nWe described the sample with weighted percentages and unweighted counts. Descriptive estimates accounted for the complex survey design, using the domestic violence module weight, clusters as primary sampling units and the survey strata. Standard errors were estimated by Taylor series linearisation. We estimated the weighted prevalence of IPV and of stunting, with 95% CIs, overall and by IPV status and covariate category.\n\nWe estimated the association between IPV and stunting with two-level mixed-effects logistic regression. Children (level 1) were nested in clusters (level 2), with a random intercept for each cluster. This accounts for the similarity of children in the same cluster and lets us quantify variation in stunting between clusters.\n\nWe fitted three models in sequence. Model 0 was an empty model with no covariates. Model 1 included IPV only, giving the unadjusted association. Model 2 added all covariates. We report unadjusted odds ratios (ORs) and adjusted ORs (aORs) with 95% CIs.\n\nWe summarised between-cluster variation with the cluster-level variance, the intraclass correlation coefficient (ICC) and the median odds ratio (MOR). We also report the proportional change in cluster-level variance (PCV) relative to the empty model. The ICC was calculated with the latent variable method (appendix p [x]). We compared model fit with Akaike's information criterion (AIC).\n\nDHS does not provide weights for each level of a multilevel model. [State your approach. For example: we fitted unweighted multilevel models adjusted for residence and province, which define the sampling strata. We repeated the final model with scaled weights at both levels.]\n\nWe used a complete-case analysis. Data on [variables] were missing for [n] children ([x]%). [Describe any check, such as a comparison of included and excluded children.] [Sensitivity analyses: describe each and its purpose, or delete.]\n\nBecause exposure and outcome were measured at the same time, we interpret the estimates as associations. Analyses were done in Stata 17 (StataCorp, College Station, TX, USA). We report estimates with 95% CIs and exact two-sided p values. The study is reported following the STROBE guideline for cross-sectional studies (appendix p [x]).\n\n### Ethics\n\nThe NDHS 2022 protocol was approved by [national ethics committee] and the ICF Institutional Review Board [ref: final report]. Respondents gave informed consent before interview. Following WHO ethical and safety recommendations for research on violence against women, the domestic violence module was given to one woman per household and only in private [ref].\n\nWe analysed anonymised, publicly available data obtained from the DHS Program with permission. [Institution or committee] [exempted this secondary analysis from further ethical review].\n\n---\n\n**Placeholders and assumptions**\n\n* Items in square brackets are facts I did not have. Take the survey details (agency, sampling frame, strata, clusters, households, fieldwork dates, response rates, module completion, ethics committee) from the NDHS 2022 final report.\n* Sample flow: I assumed the exclusions were missing or invalid height, WHO-flagged HAZ (below -6 or above +6) and missing covariates. Replace with your actual steps and counts, and add the number of mothers and clusters.\n* I assumed the IPV questions were asked of ever-married or partnered women. I also assumed descriptive estimates used the domestic violence weight (d005, divided by 1,000,000) and that the analysis was complete case. Please confirm.\n* The model sequence (empty, unadjusted, adjusted), ICC, MOR, PCV and AIC are the usual multilevel reporting set for Lancet journals. Delete any you did not run.\n* The framework, covariate categories, reference groups, pathway variables and the rationale for the 12-month window are my suggestions. Edit them to match your reasoning.\n\n**Points a reviewer is likely to raise**\n\n* Siblings share the same mother and exposure. Consider a three-level model (children in mothers in clusters) or a sensitivity analysis with one child per mother.\n* If stunting prevalence in your sample is above about 10%, aORs will overstate relative risk. Adjusted predicted probabilities and a risk difference (margins after melogit) would help readers.\n* The reference group includes mothers with IPV only before the past 12 months. Comparing exposed mothers with never-exposed mothers, or modelling each IPV type, would test this.\n* Lancet Global Health also needs a \"Role of the funding source\" paragraph at the end of Methods and a data sharing statement.\n"}, {"name": "scratch_methods_only.md", "type": "text", "content": "## Methods\n\n### Data source\n\nWe used data from the 2022 Nepal Demographic and Health Survey (NDHS), a nationally representative household survey. [Implementing agency] implemented the survey with technical assistance from ICF through the DHS Program [ref: NDHS 2022 final report].\n\nThe NDHS used a two-stage stratified cluster sample. In the first stage, [n] enumeration areas (clusters) were selected from the [sampling frame] with probability proportional to size. Selection was stratified by [province and urban or rural residence]. In the second stage, [n] households were selected systematically in each cluster. Fieldwork took place between [start date] and [end date]. Response rates were [x]% for households and [y]% for eligible women [ref: final report, table [x]].\n\nThe survey included a domestic violence module. In each household [in the subsample selected for the module], one woman aged 15 to 49 years was randomly selected to answer it. The module has its own sampling weight, which accounts for the selection of one woman per household [ref]. Of [n] women selected for the module, [n] ([x]%) completed it.\n\n### Study design and sample\n\nWe did a cross-sectional analysis with the child as the unit of analysis. We used the children's recode (KR) file, which holds one record for each child born to an interviewed woman in the five years before the survey. We merged each child's record with the mother's responses to the domestic violence module.\n\nChildren were eligible if they were alive, aged 0 to 59 months at interview, and their mother had been selected for and completed the domestic violence module. Of [N] eligible children, we excluded [n] without a valid length or height measurement, [n] with biologically implausible height-for-age values and [n] with missing data on any covariate. The analytic sample was 2,104 children of [n] mothers in [n] clusters (appendix p [x]).\n\n### Variables\n\n**Outcome.** The outcome was stunting, defined as a height-for-age z-score (HAZ) below -2 SD of the WHO 2006 Child Growth Standards median [ref: WHO 2006; Guide to DHS Statistics]. HAZ was calculated from the child's measured length or height, age and sex. Following WHO flagging rules, we treated HAZ values below -6 or above +6 as biologically implausible and excluded them [ref]. We coded children as stunted or not stunted.\n\n**Exposure.** The exposure was any intimate partner violence (IPV) against the mother in the 12 months before the survey. Women who had [ever been married or lived with a partner] were asked about specific acts of violence by their current or most recent husband or partner. The items, adapted from the Conflict Tactics Scale, cover physical, sexual and emotional violence (appendix p [x]) [ref: final report].\n\nFor each act a woman reported, she was asked whether it happened often, sometimes or not at all in the past 12 months. Following the Guide to DHS Statistics, we classified a mother as exposed if she reported any physical, sexual or emotional act often or sometimes in that period [ref]. The reference group was mothers who reported no such act in the past 12 months. This group includes mothers who reported IPV only before that period. We used the 12-month window, the standard DHS indicator of current IPV, to reflect the conditions in which the child was living.\n\n**Covariates.** We chose potential confounders a priori, guided by [framework, such as the UNICEF conceptual framework of undernutrition] and previous studies of IPV and child growth [refs]. Child-level covariates were age in months ([categories]), sex and birth order ([categories]). Maternal covariates were highest level of education ([categories]) and height ([categories] cm).\n\nHousehold wealth was measured with the NDHS wealth index. This is a principal component score of household assets and housing characteristics, grouped into quintiles [ref]. Area-level covariates were place of residence (urban or rural) and province. We did not adjust for factors that may lie on the pathway between IPV and stunting, such as [breastfeeding, maternal nutritional status or use of health services]. The coding and reference category of each covariate are in the appendix (p [x]).\n\n### Statistical analysis\n\nWe described the sample with weighted percentages and unweighted counts. Descriptive estimates accounted for the complex survey design, using the domestic violence module weight, clusters as primary sampling units and the survey strata. Standard errors were estimated by Taylor series linearisation. We estimated the weighted prevalence of IPV and of stunting, with 95% CIs, overall and by IPV status and covariate category.\n\nWe estimated the association between IPV and stunting with two-level mixed-effects logistic regression. Children (level 1) were nested in clusters (level 2), with a random intercept for each cluster. This accounts for the similarity of children in the same cluster and lets us quantify variation in stunting between clusters.\n\nWe fitted three models in sequence. Model 0 was an empty model with no covariates. Model 1 included IPV only, giving the unadjusted association. Model 2 added all covariates. We report unadjusted odds ratios (ORs) and adjusted ORs (aORs) with 95% CIs.\n\nWe summarised between-cluster variation with the cluster-level variance, the intraclass correlation coefficient (ICC) and the median odds ratio (MOR). We also report the proportional change in cluster-level variance (PCV) relative to the empty model. The ICC was calculated with the latent variable method (appendix p [x]). We compared model fit with Akaike's information criterion (AIC).\n\nDHS does not provide weights for each level of a multilevel model. [State your approach. For example: we fitted unweighted multilevel models adjusted for residence and province, which define the sampling strata. We repeated the final model with scaled weights at both levels.]\n\nWe used a complete-case analysis. Data on [variables] were missing for [n] children ([x]%). [Describe any check, such as a comparison of included and excluded children.] [Sensitivity analyses: describe each and its purpose, or delete.]\n\nBecause exposure and outcome were measured at the same time, we interpret the estimates as associations. Analyses were done in Stata 17 (StataCorp, College Station, TX, USA). We report estimates with 95% CIs and exact two-sided p values. The study is reported following the STROBE guideline for cross-sectional studies (appendix p [x]).\n\n### Ethics\n\nThe NDHS 2022 protocol was approved by [national ethics committee] and the ICF Institutional Review Board [ref: final report]. Respondents gave informed consent before interview. Following WHO ethical and safety recommendations for research on violence against women, the domestic violence module was given to one woman per household and only in private [ref].\n\nWe analysed anonymised, publicly available data obtained from the DHS Program with permission. [Institution or committee] [exempted this secondary analysis from further ethical review].\n\n"}], "grading": {"expectations": [{"text": "No em dashes, en dashes or double hyphens in the response", "passed": true, "evidence": "em/en dashes or double hyphens found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "Keeps n=2,104 exactly", "passed": true, "evidence": "looked for 2,104"}, {"text": "Describes the two-stage stratified cluster sampling design", "passed": true, "evidence": "two-stage/multistage and stratified"}, {"text": "Uses the domestic violence module weight (d005 or equivalent) and accounts for clustering", "passed": true, "evidence": "DV weight and clustering"}, {"text": "Reports multilevel variance measures (ICC and MOR or PCV)", "passed": true, "evidence": "ICC and MOR/PCV"}, {"text": "States a rationale for confounder selection (a priori, framework or DAG) rather than p-value screening", "passed": true, "evidence": "confounder rationale"}, {"text": "States how missing data were handled", "passed": true, "evidence": "missing data handling"}, {"text": "Addresses sensitivity analysis without presenting unperformed analyses as done", "passed": true, "evidence": "Sensitivity analysis addressed by placeholder or suggestion, none claimed as done"}, {"text": "Mentions WHO flags for implausible height-for-age z-scores", "passed": true, "evidence": "WHO flags"}, {"text": "Cites STROBE", "passed": true, "evidence": "STROBE"}, {"text": "Ethics statement names original approvals (ICF IRB and/or Nepal ethics body) and consent", "passed": true, "evidence": "ICF IRB and consent"}, {"text": "Does not invent response rates or exclusion counts (uses placeholders)", "passed": true, "evidence": "Response rates and exclusion counts not invented"}, {"text": "Includes a data availability statement", "passed": false, "evidence": "dedicated data availability statement in the Methods text"}], "summary": {"passed": 13, "failed": 1, "total": 14, "pass_rate": 0.929}}}, {"id": "eval-methods-ipv-stunting-without_skill-run-1", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "response.md", "type": "text", "content": "## Methods\n\n### Data source\n\nWe used data from the 2022 Nepal Demographic and Health Survey (NDHS 2022), a nationally representative household survey [ref]. New ERA implemented the survey under the Ministry of Health and Population, with technical assistance from ICF through the DHS Program. Fieldwork took place between [month] and [month] 2022.\n\nThe survey used a stratified multistage cluster sample, with strata formed by province and urban or rural residence. Clusters were selected with probability proportional to size within each stratum. Households were then selected systematically within each selected cluster.\n\nWe used the children's recode (KR) file. It contains one record for each child born to an interviewed woman in the five years before the survey. We linked each child to the mother's responses in the domestic violence module. One woman aged 15-49 years per household was randomly selected for this module [ref].\n\n### Study design and sample\n\nWe did a cross-sectional analysis of NDHS 2022 data to examine the association between maternal intimate partner violence (IPV) and child stunting. We included children aged 0-59 months whose mothers were selected for the domestic violence module (n=[N]).\n\nWe excluded children who had died (n=[ ]) or did not live with their mother (n=[ ]). We also excluded children with a missing or implausible height-for-age z-score (n=[ ]). Children with missing data on IPV or any covariate were excluded (n=[ ]). The final analytic sample included 2,104 children in [n] clusters.\n\nBecause IPV and stunting were measured at the same time, the design can show associations but cannot establish causal effects. We report the study in line with the STROBE guideline for cross-sectional studies [ref].\n\n### Variables\n\n**Outcome.** The outcome was stunting. Trained field staff measured each child's length or height with a standard measuring board. Children younger than 24 months were measured lying down, and older children standing. Height-for-age z-scores (HAZ) were calculated against the WHO 2006 Child Growth Standards [ref]. We classified children with HAZ < -2 SD as stunted. We treated HAZ values below -6 or above +6 as implausible, following WHO recommendations [ref].\n\n**Exposure.** The exposure was any physical, sexual or emotional IPV against the mother in the 12 months before the survey. The module used a modified version of the Conflict Tactics Scale [ref]. Questions were asked of ever-married women and referred to the current or most recent husband.\n\nPhysical violence included acts such as pushing, slapping, punching, kicking, choking or burning, and threats or attacks with a weapon. Sexual violence included being physically forced, or forced with threats or in any other way, into sexual intercourse or other sexual acts she did not want. Emotional violence included being humiliated in front of others, threatened with harm to her or someone close to her, or insulted or made to feel bad.\n\nFor each act, women reported whether it happened often, sometimes or not at all in the past 12 months. Children were coded as exposed if their mother reported at least one act of any type in the past 12 months. Children whose mothers reported IPV only before the past 12 months were coded as unexposed.\n\n**Covariates.** We selected covariates a priori, based on prior studies, as potential confounders or strong predictors of stunting. Child characteristics were age in months (0-11, 12-23, 24-35, 36-47 or 48-59), sex (male or female) and birth order (first, second or third, or fourth or higher). Maternal characteristics were highest education level (none, primary, secondary or higher) and measured height (under 145 cm, 145 to 149.9 cm, or 150 cm and above). Household characteristics were wealth quintile, place of residence (urban or rural) and province (seven categories).\n\nThe DHS wealth index ranks households by their assets and housing characteristics, using principal components analysis [ref]. We used national wealth quintiles, from poorest to richest. Residence followed the survey's urban and rural classification.\n\n### Statistical analysis\n\nWe described the sample using unweighted counts and weighted percentages. We estimated weighted stunting prevalence overall, by IPV status and by each covariate. Descriptive estimates used the domestic violence sample weight and accounted for clustering and stratification with Stata's svy commands. We compared proportions using design-based chi-square tests with the Rao-Scott correction.\n\nWe used two-level mixed-effects logistic regression (melogit) to examine the association between IPV and stunting. Children (level 1) were nested within survey clusters (level 2), with a random intercept for each cluster. This accounts for the correlation of outcomes among children in the same cluster.\n\nWe fitted three models. Model 0 had no predictors and measured variation in stunting between clusters. Model 1 included IPV only. Model 2 added all covariates. We report crude odds ratios (ORs) from model 1 and adjusted ORs (aORs) from model 2, with 95% CIs.\n\nWe summarised between-cluster variation using the cluster-level variance, the intraclass correlation coefficient (ICC) and the median odds ratio (MOR) [ref]. The ICC used the latent variable method, which assumes a child-level variance of \u03c0\u00b2/3. We compared model fit with the Akaike information criterion. A likelihood ratio test compared each mixed model with a standard logistic model. We checked multicollinearity using variance inflation factors from equivalent single-level models.\n\nRegression models were [unweighted / weighted using scaled child-level and cluster-level weights]. Province and residence, which defined the sampling strata, were included in model 2. All models used the same complete-case sample of 2,104 children. Tests were two-sided, with significance set at 0.05. We interpret aORs as measures of association, not causal effects. We used Stata version 17 (StataCorp, College Station, TX, USA).\n\n### Ethics\n\nThe NDHS 2022 protocol was approved by the Nepal Health Research Council and the ICF Institutional Review Board [ref]. Interviewers obtained informed consent from each respondent before the interview. Parents or guardians gave consent before children were measured.\n\nThe domestic violence module followed WHO ethical and safety recommendations for research on violence against women [ref]. Only one woman per household answered the module, which limits the chance that others learn what was asked. Interviewers received specific training and asked the questions only when privacy could be ensured.\n\nWe obtained the anonymised datasets from the DHS Program after registering and receiving permission. As this was a secondary analysis of anonymised data, [no further ethical approval was required / state your institution's decision].\n\n### Notes\n\n1. Square brackets mark details I could not know: exclusion counts, number of clusters, fieldwork months, the weighting approach, your ethics decision and references.\n2. Please check three survey details in the NDHS 2022 final report. These are the sampling stages, whether the module ran in all households or a subsample, and which women were asked the IPV questions.\n3. Some coding choices are my assumptions: age bands, birth order groups, maternal height cut points, and coding IPV before the past 12 months as unexposed. Replace any that differ from your analysis.\n4. Delete any step you did not run, such as the chi-square tests, MOR, Akaike information criterion, likelihood ratio tests or variance inflation factors.\n5. Some mothers probably contribute more than one child, and a two-level model does not capture this. A three-level model or a youngest-child sensitivity analysis would answer a likely reviewer question.\n6. Lancet Global Health expects a \"Role of the funding source\" paragraph at the end of Methods. I left it out because I do not know your funding.\n7. Sources to cite at [ref] include the NDHS 2022 final report, the WHO Child Growth Standards and the WHO ethical and safety recommendations for violence research. Also cite the DHS wealth index report, STROBE and a methods paper on the ICC and MOR.\n"}], "grading": {"expectations": [{"text": "No em dashes, en dashes or double hyphens in the response", "passed": true, "evidence": "em/en dashes or double hyphens found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": false, "evidence": "1 long sentences; e.g. 'Child characteristics were age in months (0-11, 12-23, 24-35, 36-47 or 48-59), sex (male ...'"}, {"text": "Keeps n=2,104 exactly", "passed": true, "evidence": "looked for 2,104"}, {"text": "Describes the two-stage stratified cluster sampling design", "passed": true, "evidence": "two-stage/multistage and stratified"}, {"text": "Uses the domestic violence module weight (d005 or equivalent) and accounts for clustering", "passed": true, "evidence": "DV weight and clustering"}, {"text": "Reports multilevel variance measures (ICC and MOR or PCV)", "passed": true, "evidence": "ICC and MOR/PCV"}, {"text": "States a rationale for confounder selection (a priori, framework or DAG) rather than p-value screening", "passed": true, "evidence": "confounder rationale"}, {"text": "States how missing data were handled", "passed": true, "evidence": "missing data handling"}, {"text": "Addresses sensitivity analysis without presenting unperformed analyses as done", "passed": true, "evidence": "Sensitivity analysis addressed by placeholder or suggestion, none claimed as done"}, {"text": "Mentions WHO flags for implausible height-for-age z-scores", "passed": true, "evidence": "WHO flags"}, {"text": "Cites STROBE", "passed": true, "evidence": "STROBE"}, {"text": "Ethics statement names original approvals (ICF IRB and/or Nepal ethics body) and consent", "passed": true, "evidence": "ICF IRB and consent"}, {"text": "Does not invent response rates or exclusion counts (uses placeholders)", "passed": true, "evidence": "Response rates and exclusion counts not invented"}, {"text": "Includes a data availability statement", "passed": false, "evidence": "dedicated data availability statement in the Methods text"}], "summary": {"passed": 12, "failed": 2, "total": 14, "pass_rate": 0.857}}}, {"id": "eval-results-from-stata-with_skill-run-1", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "response.md", "type": "text", "content": "Here are the Results section and Table 2, built only from your output. Anything the output does not contain is in square brackets and listed at the end.\n\n## Results\n\n### Study sample\n\nOf [N] women aged 15 to 49 years interviewed in the BDHS 2017-18, [n] had a live birth in the three years before the survey. After [exclusions and reasons, if any], the analytical sample comprised 5,012 women ([figure 1]). [One or two sentences on sample characteristics from table 1.] The adjusted model included 4,958 women with complete data on all covariates. Percentages are weighted and counts are unweighted.\n\n### Coverage of four or more antenatal care visits\n\nOverall, 47.4% (95% CI 45.3 to 49.5) of women had four or more antenatal care visits (ANC4). Coverage was higher in each successive wealth quintile, from 31.1% in the poorest to 69.2% in the richest (p<0.001; table 2). It was also higher at each level of education, from 27.6% among women with no education to 73.7% among those with higher education (p<0.001). [Coverage by age group, residence, parity, media exposure and division, if you report it.]\n\n### Factors associated with ANC4\n\nAfter adjustment for all variables in the model, education, household wealth, parity and mass media exposure were associated with ANC4 (table 2). Women at every level of education had higher odds of ANC4 than women with no education. The adjusted odds ratio (aOR) was 1.32 (95% CI 1.02 to 1.70) for primary education. It was 1.89 (95% CI 1.47 to 2.43) for secondary and 3.12 (2.25 to 4.33) for higher education.\n\nOdds of ANC4 were higher from the middle wealth quintile upwards than in the poorest quintile. The aOR was 1.38 (95% CI 1.10 to 1.73) for the middle and 1.71 (1.34 to 2.18) for the richer quintile. In the richest quintile, it was 2.64 (95% CI 2.01 to 3.48). Women in the poorer quintile did not differ clearly from those in the poorest (aOR 1.14, 95% CI 0.91 to 1.43).\n\nWomen with any mass media exposure had higher odds of ANC4 than women with none (aOR 1.41, 95% CI 1.18 to 1.69). Compared with women with one live birth, odds of ANC4 were lower among women with two or three births (aOR 0.79, 95% CI 0.66 to 0.94). The aOR was 0.58 (95% CI 0.43 to 0.79) for women with four or more births.\n\nOdds of ANC4 did not differ clearly between women aged 15 to 19 years and older women. The aOR was 1.18 (95% CI 0.998 to 1.39) for women aged 20 to 34 years. For women aged 35 to 49 years, it was 1.05 (95% CI 0.78 to 1.42). Rural women did not differ clearly from urban women (aOR 0.87, 95% CI 0.73 to 1.04). [Division: aOR (95% CI) for each division against [reference division]; not in the supplied output.]\n\n## Table 2\n\n**Table 2: Weighted coverage of four or more antenatal care visits (ANC4) and crude and adjusted odds ratios by maternal characteristics, women with a live birth in the three years before the survey, Bangladesh Demographic and Health Survey 2017-18**\n\n| Characteristic | Women with ANC4, weighted % (95% CI)* | Crude OR (95% CI) | Adjusted OR (95% CI)\u2020 |\n| --- | --- | --- | --- |\n| **All women** | 47.4 (45.3 to 49.5) | | |\n| **Age group, years** | | | |\n| 15 to 19 | [ ] | 1 (ref) | 1 (ref) |\n| 20 to 34 | [ ] | [ ] | 1.18 (0.998 to 1.39) |\n| 35 to 49 | [ ] | [ ] | 1.05 (0.78 to 1.42) |\n| **Education**\u2021 | | | |\n| None | 27.6 ([ ]) | 1 (ref) | 1 (ref) |\n| Primary | 38.2 ([ ]) | [ ] | 1.32 (1.02 to 1.70) |\n| Secondary | 51.0 ([ ]) | [ ] | 1.89 (1.47 to 2.43) |\n| Higher | 73.7 ([ ]) | [ ] | 3.12 (2.25 to 4.33) |\n| **Wealth quintile**\u2021 | | | |\n| Poorest | 31.1 ([ ]) | 1 (ref) | 1 (ref) |\n| Poorer | 38.8 ([ ]) | [ ] | 1.14 (0.91 to 1.43) |\n| Middle | 45.3 ([ ]) | [ ] | 1.38 (1.10 to 1.73) |\n| Richer | 55.0 ([ ]) | [ ] | 1.71 (1.34 to 2.18) |\n| Richest | 69.2 ([ ]) | [ ] | 2.64 (2.01 to 3.48) |\n| **Place of residence** | | | |\n| Urban | [ ] | 1 (ref) | 1 (ref) |\n| Rural | [ ] | [ ] | 0.87 (0.73 to 1.04) |\n| **Parity (live births)** | | | |\n| 1 | [ ] | 1 (ref) | 1 (ref) |\n| 2 or 3 | [ ] | [ ] | 0.79 (0.66 to 0.94) |\n| 4 or more | [ ] | [ ] | 0.58 (0.43 to 0.79) |\n| **Mass media exposure**\u00a7 | | | |\n| None | [ ] | 1 (ref) | 1 (ref) |\n| Any | [ ] | [ ] | 1.41 (1.18 to 1.69) |\n| **Division** | | | |\n| [Reference division] | [ ] | 1 (ref) | 1 (ref) |\n| [One row per other division] | [ ] | [ ] | [ ] |\n| **Unweighted n** | 5,012 | [ ] | 4,958 |\n\n\\*Percentages are weighted; n are unweighted. All estimates account for sampling weights, clustering (672 primary sampling units) and stratification (20 strata), with linearised standard errors.\n\n\u2020From one survey logistic regression model that includes all variables in the table.\n\n\u2021Weighted % differed across categories (design-based F test, p<0.001).\n\n\u00a7[Definition of mass media exposure.]\n\nANC4 is four or more antenatal care visits [for the most recent live birth; state whether with any provider or a medically trained provider]. [ ] marks values not in the supplied output.\n\nCI=confidence interval; OR=odds ratio; ref=reference category.\n\n## Placeholders and assumptions\n\n- **Sample flow.** [N], [n] and any exclusions before the 5,012 women are not in the output. A flow chart (figure 1) would show them.\n- **Reference groups.** Stata hides base levels, so I took the lowest-coded category in each variable: 15 to 19 years, no education, poorest, urban, one live birth, no media exposure. Please confirm the age and parity labels.\n- **Model sample.** 54 women (5,012 minus 4,958) were not in the adjusted model. I assumed missing covariate data; name the variables in Methods.\n- **Division needs a check.** The model test is F(19, 634), so the model has 19 terms. The other variables use 13, which leaves 6 division terms, meaning 7 divisions. The BDHS 2017-18 has 8 divisions. If you merged two, say so in Methods; if not, check the coding.\n- **Blank cells.** Crude ORs, subgroup 95% CIs and weighted % for age, residence, parity, media and division are not in the output. The code below fills them. Running crude models on the model sample keeps crude and adjusted columns comparable.\n- **Number format.** I kept the lower limit 0.998 at three decimals, since 1.00 would hide that the interval includes 1. The 95% CIs carry inference for the aORs, so I left out their p values. The exact values (for example, p=0.052 at 20 to 34 years) can go in a supplement.\n- **Wealth pattern.** I described the aOR in each quintile but did not call it a trend, because no trend test was run. If you want to report a gradient, add a test for trend.\n- **Effect measure.** ANC4 is common (47.4%), so ORs sit further from 1 than prevalence ratios. Top-journal reviewers often ask for adjusted prevalence ratios (modified Poisson) or predicted probabilities, at least as a sensitivity analysis. The text says \"higher odds\", never \"more likely\".\n- **Figure.** A plot of the aORs on a log scale, with a line at 1, would carry the main finding; top-journal papers almost always include one.\n\n```stata\n* run straight after the adjusted model\ngen insample = e(sample)\nforeach v in agegrp educ wealth residence parity media division {\n    svy: tab `v' anc4, row percent ci\n    svy, subpop(insample): logistic anc4 i.`v'\n}\n```\n"}], "grading": {"expectations": [{"text": "No em dashes, en dashes or double hyphens in the response", "passed": true, "evidence": "em/en dashes or double hyphens found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "Every odds ratio written in the Results text has a 95% CI", "passed": true, "evidence": "estimates without CI: []"}, {"text": "Uses p<0.001 and never reports p=0.000", "passed": true, "evidence": "checked for p=0.000"}, {"text": "States that percentages are weighted and sample sizes unweighted", "passed": true, "evidence": "with_skill: text and footnote state weighted % and unweighted n"}, {"text": "Table 2 shows reference categories for each variable", "passed": true, "evidence": "Reference rows shown for every variable"}, {"text": "Table 2 odds ratios and CIs match the Stata output exactly", "passed": true, "evidence": "22 estimate triples checked against Stata; mismatches: []"}, {"text": "Table 2 has a footnote listing the adjustment set (including division) and abbreviations", "passed": true, "evidence": "Footnote states model includes all variables incl. division; abbreviations defined"}, {"text": "Describes associations as odds, with no 'times more likely' and no causal verbs", "passed": true, "evidence": "causal or 'times more likely' wording: none"}, {"text": "Does not invent numbers absent from the output; uses placeholders or notes for missing items (e.g. exclusions, division estimates)", "passed": true, "evidence": "No numbers outside the output; missing items marked or noted"}], "summary": {"passed": 10, "failed": 0, "total": 10, "pass_rate": 1.0}}}, {"id": "eval-results-from-stata-without_skill-run-1", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "response.md", "type": "text", "content": "## Results\n\n### Prevalence of four or more ANC visits\n\nThe analysis included 5,012 women with a live birth in the 3 years before the survey. Overall, 47.4% (95% CI 45.3 to 49.5) had four or more antenatal care (ANC) visits.\n\n### Differences by wealth and education\n\nThe proportion with four or more ANC visits rose with each wealth quintile (design-based F(3.9, 2541.7)=37.12, p<0.001). It was 31.1% in the poorest, 38.8% in the poorer, 45.3% in the middle, 55.0% in the richer and 69.2% in the richest quintile.\n\nA similar gradient was seen by education (design-based F(2.9, 1890.2)=41.88, p<0.001). The proportion was 27.6% among women with no education, 38.2% with primary, 51.0% with secondary and 73.7% with higher education.\n\n### Factors associated with four or more ANC visits\n\nThe multivariable model included 4,958 women; 54 women with missing covariate data were excluded. Table 2 shows the adjusted odds ratios (aORs) from this model.\n\nEducation and wealth remained associated with four or more ANC visits after adjustment. The odds increased with each level of education. Compared with no education, the aOR was 1.32 (95% CI 1.02 to 1.70) for primary education. It was 1.89 (95% CI 1.47 to 2.43) for secondary and 3.12 (95% CI 2.25 to 4.33) for higher education.\n\nThe odds were also higher in wealthier households. Compared with the poorest quintile, the aOR was 1.38 (95% CI 1.10 to 1.73) for the middle quintile. It was 1.71 (95% CI 1.34 to 2.18) for the richer and 2.64 (95% CI 2.01 to 3.48) for the richest quintile. There was little evidence of a difference between the poorer and poorest quintiles (aOR 1.14, 95% CI 0.91 to 1.43).\n\nWomen with any exposure to mass media had higher odds of four or more visits than women with no exposure (aOR 1.41, 95% CI 1.18 to 1.69).\n\nHigher parity was associated with lower odds. Compared with women with one birth, the aOR was 0.79 (95% CI 0.66 to 0.94) for two to three births. It was 0.58 (95% CI 0.43 to 0.79) for four or more births.\n\nAge and place of residence showed no clear association after adjustment. Women aged 20-34 years had higher odds than those aged 15-19 years, but the evidence was weak (aOR 1.18, 95% CI 0.998 to 1.39, p=0.052). The aOR for women aged 35-49 years was 1.05 (95% CI 0.78 to 1.42). For rural compared with urban residence, the aOR was 0.87 (95% CI 0.73 to 1.04).\n\nThe model also adjusted for administrative division (supplementary table [SX]).\n\n**Table 2** Factors associated with four or more antenatal care visits among women with a live birth in the 3 years before the survey, BDHS 2017-18 (n=4,958)\n\n| Characteristic | aOR (95% CI) | p value |\n|:-|:-:|:-:|\n| **Maternal age (years)** | | |\n| 15-19 | 1.00 (reference) | |\n| 20-34 | 1.18 (0.998 to 1.39) | 0.052 |\n| 35-49 | 1.05 (0.78 to 1.42) | 0.744 |\n| **Education** | | |\n| No education | 1.00 (reference) | |\n| Primary | 1.32 (1.02 to 1.70) | 0.032 |\n| Secondary | 1.89 (1.47 to 2.43) | <0.001 |\n| Higher | 3.12 (2.25 to 4.33) | <0.001 |\n| **Wealth quintile** | | |\n| Poorest | 1.00 (reference) | |\n| Poorer | 1.14 (0.91 to 1.43) | 0.250 |\n| Middle | 1.38 (1.10 to 1.73) | 0.006 |\n| Richer | 1.71 (1.34 to 2.18) | <0.001 |\n| Richest | 2.64 (2.01 to 3.48) | <0.001 |\n| **Place of residence** | | |\n| Urban | 1.00 (reference) | |\n| Rural | 0.87 (0.73 to 1.04) | 0.131 |\n| **Parity** | | |\n| 1 | 1.00 (reference) | |\n| 2-3 | 0.79 (0.66 to 0.94) | 0.008 |\n| 4 or more | 0.58 (0.43 to 0.79) | <0.001 |\n| **Exposure to mass media** | | |\n| None | 1.00 (reference) | |\n| Any | 1.41 (1.18 to 1.69) | <0.001 |\n| **Administrative division** | See supplementary table [SX] | |\n\naOR, adjusted odds ratio; BDHS, Bangladesh Demographic and Health Survey.\n\nEstimates come from a single survey-weighted logistic regression model. The model included all variables shown and administrative division.\n\nCIs and p values use linearised standard errors. These account for sampling weights, clustering by primary sampling unit and stratification.\n\nUnweighted n=4,958; weighted N=4,981.6.\n\n**Notes**\n\n1. **Reference groups.** Stata does not print them. I inferred them from the omitted levels: age 15-19, no education, poorest, urban, parity 1 and no media exposure. Please confirm.\n2. **0.998.** I kept this lower limit at three decimals. Rounding to 1.00 would make the interval look as if it touches 1.\n3. **p values.** Stata's \"0.000\" is shown as p<0.001.\n4. **Division estimates.** The output omits them, so I could not report them. Add a supplementary table, or report a joint test (`testparm i.division` after the model).\n5. **Check the division coding.** The model F test has 19 numerator degrees of freedom. The other covariates use 13, leaving 6 for division. That implies 7 groups, but BDHS 2017-18 covers 8 divisions.\n6. **Model sample.** The model has 54 fewer women than the descriptive analysis (4,958 vs 5,012). I assumed this reflects missing covariate data. Please confirm and state it in Methods.\n7. **Odds, not risk.** The outcome is common (47.4%), so odds ratios will overstate prevalence ratios. I wrote \"odds\" throughout and avoided \"more likely\". Reviewers may ask for adjusted prevalence ratios, for example from `svy: glm anc4 ..., family(poisson) link(log) eform`.\n8. **Not in the output.** There are no sample characteristics, crude odds ratios or category counts. Add a Table 1 paragraph at the start of the Results. Consider showing crude odds ratios beside the adjusted ones.\n9. **Source file.** Its first line says it is synthetic example output, not real results. I used the numbers as given. Please check them against your final log before submission.\n"}], "grading": {"expectations": [{"text": "No em dashes, en dashes or double hyphens in the response", "passed": true, "evidence": "em/en dashes or double hyphens found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "Every odds ratio written in the Results text has a 95% CI", "passed": true, "evidence": "estimates without CI: []"}, {"text": "Uses p<0.001 and never reports p=0.000", "passed": true, "evidence": "checked for p=0.000"}, {"text": "States that percentages are weighted and sample sizes unweighted", "passed": false, "evidence": "without_skill: footnote gives unweighted n for the model, but percentages in the text are never labelled as weighted"}, {"text": "Table 2 shows reference categories for each variable", "passed": true, "evidence": "Reference rows shown for every variable"}, {"text": "Table 2 odds ratios and CIs match the Stata output exactly", "passed": true, "evidence": "23 estimate triples checked against Stata; mismatches: []"}, {"text": "Table 2 has a footnote listing the adjustment set (including division) and abbreviations", "passed": true, "evidence": "Footnote states model includes all variables incl. division; abbreviations defined"}, {"text": "Describes associations as odds, with no 'times more likely' and no causal verbs", "passed": true, "evidence": "causal or 'times more likely' wording: none"}, {"text": "Does not invent numbers absent from the output; uses placeholders or notes for missing items (e.g. exclusions, division estimates)", "passed": true, "evidence": "No numbers outside the output; missing items marked or noted"}], "summary": {"passed": 9, "failed": 1, "total": 10, "pass_rate": 0.9}}}, {"id": "eval-revise-ecdi-discussion-with_skill-run-1", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "response.md", "type": "text", "content": "# Discussion\n\nIn eight sub-Saharan African countries, 61.3% (95% CI 59.8 to 62.7) of children aged 36 to 59 months were developmentally on track. Sustainable Development Goal target 4.2 aims for all children to be ready for primary education by 2030 [ref], so a large gap remains. Children whose mothers had secondary or higher education, and those who attended early childhood education, had higher odds of being on track. Children exposed to violent discipline had lower odds. After adjustment, we found no clear evidence of an association with household wealth. Because the data are cross-sectional, these estimates describe associations and cannot show that any factor improves development. Our analysis adds comparable estimates for eight countries surveyed with the same MICS6 questionnaire.\n\nOur pooled estimate is [similar to, higher than or lower than] earlier ECDI estimates for sub-Saharan Africa [ref: UNICEF or multi-country ECDI analyses]. Differences between studies may reflect survey years, the countries included and whether countries were weighted equally or by population.\n\nThe association with maternal secondary or higher education (aOR 1.84, 95% CI 1.52 to 2.23) is consistent with previous studies [12,13]. Several pathways are plausible. Mothers with more schooling may offer more learning activities at home and more responsive care [ref]. Maternal education may also capture socioeconomic advantage that a relative wealth index measures poorly. Reporting could differ as well, since mothers with more schooling may judge the literacy and numeracy items differently. Our data cannot separate these explanations, so the estimate does not show what additional schooling for mothers would achieve.\n\nChildren who attended an early childhood education programme had higher odds of being on track (aOR 2.10, 95% CI 1.71 to 2.58). Trials and cohort studies of preschool programmes in low-income and middle-income countries [ref] are better placed than our data to show whether attendance improves development. Three explanations, which are not exclusive, may account for part of our estimate. Families who enrol their children may differ in ways we did not measure, such as their aspirations or distance to services. The ECDI literacy and numeracy items ask whether children can name letters, read simple words and recognise numbers, which programmes may teach directly [ref: MICS6 ECDI definition]. Children who are already developing well may also be more likely to be enrolled. MICS6 records attendance but not programme quality, duration or content, so we could not examine these features.\n\nExposure to violent discipline was associated with lower odds of being on track (aOR 0.81, 95% CI 0.70 to 0.94). This agrees with earlier work linking violent discipline with poorer child development [14]. The association may also run the other way, as caregivers may use harsher discipline with children who have developmental delays or difficult behaviour [ref]. Our data add to this evidence but cannot by themselves establish harm.\n\nAfter adjustment, household wealth showed no clear association with being on track (aOR for richest versus poorest quintile 1.09, 95% CI 0.88 to 1.35). The interval does not rule out a small inverse association or a moderate positive one. This differs from other studies [15,16], and two features of our analysis may explain the difference. The wealth index is relative to each survey, so the richest quintile in one country may be poorer in absolute terms than the middle quintile in another [ref]. Our model also adjusted for maternal education and early childhood education attendance, which may lie on the pathway from wealth to development. Adjusting for such variables would weaken the overall wealth association, and studies without this adjustment would be expected to show steeper gradients. In a model without these two variables, the aOR for the richest versus poorest quintile was [aOR (95% CI)] (Supplementary Table [x]).\n\nOur analysis used nationally representative surveys and a standardised MICS6 questionnaire, which supports comparison across the eight countries. The pooled sample of [n] children gave precise estimates. Survey years ranged from [year] to [year], however, and ECDI items may not work identically across languages and cultures [ref].\n\nThe study has four main limitations. First, exposures and outcome were measured at the same time, so we cannot establish temporal order. Reverse pathways are plausible for early childhood education and violent discipline, and these would probably exaggerate both associations. Second, mothers reported the ECDI items. Some mothers may over-report their child's skills, which would overestimate the proportion on track. If reporting differs by maternal education, the education association could be biased in either direction. The same respondent also reported violent discipline. Shared reporting styles could inflate that association, whereas under-reporting of violent discipline would tend to weaken it [ref].\n\nThird, the ECDI has only ten yes or no items, and its literacy and numeracy domain overlaps with what preschool programmes teach [ref]. Random measurement error would tend to weaken associations, but this overlap may overstate the association with early childhood education. Fourth, we could not adjust for [variables not available in MICS6, for example programme quality or caregiver mental health]. If these are linked to both advantage and development, the associations with maternal education and early childhood education may be overstated. Finally, being on track was common, so odds ratios overstate the corresponding prevalence ratios and should not be read as relative risks.\n\nThese findings have three practical implications. First, countries could report the ECDI by maternal education and early learning attendance, so that gaps among disadvantaged children are visible in national monitoring. Second, if trials and longitudinal studies in these settings confirm a benefit, our findings would support wider access to early childhood education [ref]. Children whose mothers have little schooling could be a priority group. Third, evaluations of parenting programmes that aim to reduce violent discipline [ref] could include child development outcomes. Future analyses could use the ECDI2030, a broader measure for children aged 24 to 59 months [ref], to test whether these patterns hold. Cohort studies that measure development repeatedly from infancy would help establish the temporal order of these associations.\n\n# Conclusion\n\nIn eight sub-Saharan African countries, many children aged 36 to 59 months were not developmentally on track. Being on track was associated with maternal secondary or higher education and with attendance at early childhood education, and inversely with violent discipline. Household wealth showed no clear association after adjustment. Because the data are cross-sectional, these findings identify groups to prioritise rather than proven levers for change. Monitoring and programmes could focus on children whose mothers have little schooling and children without access to early learning. Longitudinal studies and trials are needed to test whether expanding early childhood education and reducing violent discipline improve development in the region.\n\n**Placeholders and assumptions**\n\n* `[ref]` marks claims that need a citation from you. I added no references. They cover SDG target 4.2, earlier regional ECDI estimates, caregiving pathways, and preschool trials and cohorts. They also cover the MICS6 ECDI and its validity, reverse pathways for discipline, the wealth index, parenting programmes and the ECDI2030.\n* Fill `[similar to, higher than or lower than]`, `[n]`, `[year] to [year]` and the unavailable variables from your Methods and Results.\n* The sentence giving the wealth aOR from a model without maternal education and early childhood education tests your own explanation for the null. Keep it only if you ran that model. If you have not, it is worth running.\n* I linked [12,13] to the maternal education finding, because the draft cited them straight after it. Move them if they support the prevalence estimate instead.\n* I removed the \"first study\" claim. PLOS Medicine reviewers expect a documented search behind any novelty claim.\n* \"Causes\", \"strong impact\" and \"proves\" now read as associations. I also recast \"governments should immediately expand\" and \"policymakers must invest\", because cross-sectional data cannot support them. A firmer policy line could rest on trial evidence that you cite.\n* The Conclusion no longer repeats statistics. Every number is still in the Discussion, unchanged.\n* I assumed that 61.3% is a pooled estimate. I also assumed that the wealth model adjusted for maternal education and early childhood education, as your draft implies. The text says one respondent reported both discipline and the ECDI, as in the MICS6 under-5 questionnaire. Please check all three.\n* Being on track is common, so reviewers may ask for adjusted prevalence ratios alongside the odds ratios. PLOS Medicine also wants the main limitations in the abstract's \"Methods and findings\".\n"}, {"name": "scratch_revised_text.md", "type": "text", "content": "# Discussion\n\nIn eight sub-Saharan African countries, 61.3% (95% CI 59.8 to 62.7) of children aged 36 to 59 months were developmentally on track. Sustainable Development Goal target 4.2 aims for all children to be ready for primary education by 2030 [ref], so a large gap remains. Children whose mothers had secondary or higher education, and those who attended early childhood education, had higher odds of being on track. Children exposed to violent discipline had lower odds. After adjustment, we found no clear evidence of an association with household wealth. Because the data are cross-sectional, these estimates describe associations and cannot show that any factor improves development. Our analysis adds comparable estimates for eight countries surveyed with the same MICS6 questionnaire.\n\nOur pooled estimate is [similar to, higher than or lower than] earlier ECDI estimates for sub-Saharan Africa [ref: UNICEF or multi-country ECDI analyses]. Differences between studies may reflect survey years, the countries included and whether countries were weighted equally or by population.\n\nThe association with maternal secondary or higher education (aOR 1.84, 95% CI 1.52 to 2.23) is consistent with previous studies [12,13]. Several pathways are plausible. Mothers with more schooling may offer more learning activities at home and more responsive care [ref]. Maternal education may also capture socioeconomic advantage that a relative wealth index measures poorly. Reporting could differ as well, since mothers with more schooling may judge the literacy and numeracy items differently. Our data cannot separate these explanations, so the estimate does not show what additional schooling for mothers would achieve.\n\nChildren who attended an early childhood education programme had higher odds of being on track (aOR 2.10, 95% CI 1.71 to 2.58). Trials and cohort studies of preschool programmes in low-income and middle-income countries [ref] are better placed than our data to show whether attendance improves development. Three explanations, which are not exclusive, may account for part of our estimate. Families who enrol their children may differ in ways we did not measure, such as their aspirations or distance to services. The ECDI literacy and numeracy items ask whether children can name letters, read simple words and recognise numbers, which programmes may teach directly [ref: MICS6 ECDI definition]. Children who are already developing well may also be more likely to be enrolled. MICS6 records attendance but not programme quality, duration or content, so we could not examine these features.\n\nExposure to violent discipline was associated with lower odds of being on track (aOR 0.81, 95% CI 0.70 to 0.94). This agrees with earlier work linking violent discipline with poorer child development [14]. The association may also run the other way, as caregivers may use harsher discipline with children who have developmental delays or difficult behaviour [ref]. Our data add to this evidence but cannot by themselves establish harm.\n\nAfter adjustment, household wealth showed no clear association with being on track (aOR for richest versus poorest quintile 1.09, 95% CI 0.88 to 1.35). The interval does not rule out a small inverse association or a moderate positive one. This differs from other studies [15,16], and two features of our analysis may explain the difference. The wealth index is relative to each survey, so the richest quintile in one country may be poorer in absolute terms than the middle quintile in another [ref]. Our model also adjusted for maternal education and early childhood education attendance, which may lie on the pathway from wealth to development. Adjusting for such variables would weaken the overall wealth association, and studies without this adjustment would be expected to show steeper gradients. In a model without these two variables, the aOR for the richest versus poorest quintile was [aOR (95% CI)] (Supplementary Table [x]).\n\nOur analysis used nationally representative surveys and a standardised MICS6 questionnaire, which supports comparison across the eight countries. The pooled sample of [n] children gave precise estimates. Survey years ranged from [year] to [year], however, and ECDI items may not work identically across languages and cultures [ref].\n\nThe study has four main limitations. First, exposures and outcome were measured at the same time, so we cannot establish temporal order. Reverse pathways are plausible for early childhood education and violent discipline, and these would probably exaggerate both associations. Second, mothers reported the ECDI items. Some mothers may over-report their child's skills, which would overestimate the proportion on track. If reporting differs by maternal education, the education association could be biased in either direction. The same respondent also reported violent discipline. Shared reporting styles could inflate that association, whereas under-reporting of violent discipline would tend to weaken it [ref].\n\nThird, the ECDI has only ten yes or no items, and its literacy and numeracy domain overlaps with what preschool programmes teach [ref]. Random measurement error would tend to weaken associations, but this overlap may overstate the association with early childhood education. Fourth, we could not adjust for [variables not available in MICS6, for example programme quality or caregiver mental health]. If these are linked to both advantage and development, the associations with maternal education and early childhood education may be overstated. Finally, being on track was common, so odds ratios overstate the corresponding prevalence ratios and should not be read as relative risks.\n\nThese findings have three practical implications. First, countries could report the ECDI by maternal education and early learning attendance, so that gaps among disadvantaged children are visible in national monitoring. Second, if trials and longitudinal studies in these settings confirm a benefit, our findings would support wider access to early childhood education [ref]. Children whose mothers have little schooling could be a priority group. Third, evaluations of parenting programmes that aim to reduce violent discipline [ref] could include child development outcomes. Future analyses could use the ECDI2030, a broader measure for children aged 24 to 59 months [ref], to test whether these patterns hold. Cohort studies that measure development repeatedly from infancy would help establish the temporal order of these associations.\n\n# Conclusion\n\nIn eight sub-Saharan African countries, many children aged 36 to 59 months were not developmentally on track. Being on track was associated with maternal secondary or higher education and with attendance at early childhood education, and inversely with violent discipline. Household wealth showed no clear association after adjustment. Because the data are cross-sectional, these findings identify groups to prioritise rather than proven levers for change. Monitoring and programmes could focus on children whose mothers have little schooling and children without access to early learning. Longitudinal studies and trials are needed to test whether expanding early childhood education and reducing violent discipline improve development in the region.\n"}], "grading": {"expectations": [{"text": "No em dashes, en dashes or double hyphens in the revised text", "passed": true, "evidence": "em/en dashes or double hyphens found: 0"}, {"text": "No prose sentence of 30 or more words in the revised text", "passed": true, "evidence": "0 long sentences"}, {"text": "No 'Furthermore', 'Moreover' or 'Additionally'", "passed": true, "evidence": "stock transitions"}, {"text": "All 15 original numbers are preserved", "passed": true, "evidence": "missing numbers: []"}, {"text": "All original citations [12] to [16] are preserved", "passed": true, "evidence": "citations [12,13], [14], [15,16]"}, {"text": "No new numbered citations are invented", "passed": true, "evidence": "new numbered citations: []"}, {"text": "Causal claims ('causes', 'proves', 'impact', 'harms') recast as associations", "passed": true, "evidence": "Causal claims recast as associations (negated 'causes' only)"}, {"text": "Unverified 'first study' claim removed or qualified", "passed": true, "evidence": "first-study claim"}, {"text": "At least one limitation states the likely direction of bias", "passed": true, "evidence": "direction-of-bias wording in revised text"}, {"text": "Conclusion contains no numerical results", "passed": true, "evidence": "numbers in Conclusion"}, {"text": "Conclusion recommendations are matched to a cross-sectional design (no 'must' or 'immediately' mandates)", "passed": true, "evidence": "mandate words in Conclusion"}], "summary": {"passed": 11, "failed": 0, "total": 11, "pass_rate": 1.0}}}, {"id": "eval-revise-ecdi-discussion-without_skill-run-1", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "response.md", "type": "text", "content": "Here is the revised Discussion and Conclusion, followed by brief notes.\n\n# Discussion\n\nIn this analysis of MICS6 data from eight sub-Saharan African countries, 61.3% (95% CI 59.8 to 62.7) of children aged 36 to 59 months were developmentally on track. Close to two in five children were therefore not on track. Maternal secondary or higher education and attendance at early childhood education were associated with higher odds of being on track. Exposure to violent discipline was associated with lower odds. Household wealth was not clearly associated with development after adjustment.\n\nChildren whose mothers had secondary or higher education had higher odds of being on track (aOR 1.84, 95% CI 1.52 to 2.23). This is consistent with previous studies [12,13]. More educated mothers may offer more stimulation and learning at home, make greater use of health services, or have more resources. However, our cross-sectional data cannot show that maternal education causes better development. Maternal education is also linked to other household and community advantages, and some residual confounding is likely.\n\nAttendance at an early childhood education programme was associated with higher odds of being on track (aOR 2.10, 95% CI 1.71 to 2.58). This association needs careful interpretation. Families who enrol children in these programmes may differ from other families in ways our models did not fully capture. Some ECDI literacy-numeracy items, such as naming letters and recognising numbers, also reflect skills that many programmes teach directly. Part of the association may therefore reflect overlap between programme content and the outcome measure. We also could not assess programme quality or duration. Longitudinal studies and trials in these settings are needed to show whether wider access improves child development.\n\nChildren exposed to violent discipline had lower odds of being on track (aOR 0.81, 95% CI 0.70 to 0.94). This is consistent with evidence linking violent discipline to poorer child development [14]. In cross-sectional data, however, the direction of this association is uncertain. Caregivers may use harsher discipline with children who already show developmental difficulties. Both measures were also based on caregiver report, so shared reporting bias could affect the observed association.\n\nWe found no clear association between household wealth and being on track after adjustment (aOR for richest versus poorest 1.09, 95% CI 0.88 to 1.35). The confidence interval is wide, however, and does not exclude a modest positive association. This differs from the findings of previous studies [15,16]. One explanation is that our model adjusted for factors that may lie on the pathway from wealth to child development. Access to early childhood education is one example, and maternal education is closely tied to household wealth. If so, our adjusted estimate shows the association of wealth beyond these factors, not its total association.\n\nThis study has several strengths. We used nationally representative MICS6 surveys from eight countries, which use standardised questionnaires, including the ECDI. The large pooled sample gave precise estimates of the proportion of children on track.\n\nThe study also has limitations. First, the cross-sectional design does not allow us to establish temporal order, so reverse causation cannot be excluded. Second, the ECDI is reported by mothers. Their reports may be affected by recall, social desirability and differences in how items are understood. If reporting differs by maternal education, the education estimate could be biased in either direction. The ECDI is also a short screening tool with a binary on-track definition, so it may miss finer differences in development. Third, some potentially relevant variables, such as [specify], were not available in MICS6, so residual confounding is likely. Fourth, survey years and contexts differed across countries, and pooled estimates may hide variation between them. Finally, our findings apply to these eight countries and may not generalise to all of sub-Saharan Africa.\n\n# Conclusion\n\nIn these eight sub-Saharan African countries, 61.3% of children aged 36 to 59 months were developmentally on track. Maternal secondary or higher education (aOR 1.84) and early childhood education attendance (aOR 2.10) were associated with higher odds of being on track. Violent discipline was associated with lower odds. Because the data are cross-sectional, these associations do not establish cause. These factors are promising targets for policy, but longitudinal studies and programme evaluations are needed to confirm their effects on child development in the region.\n\n# Notes\n\n1. **Causal language.** I replaced \"causes\", \"proves\", \"strong impact\" and \"main determinants\" with association language. All aORs come from one mutually adjusted model, so each answers a different question. Presenting them side by side as \"determinants\" invites the \"Table 2 fallacy\" critique from reviewers.\n2. **Odds, not likelihood.** I changed \"more likely\" to \"higher odds\". With 61.3% on track, odds ratios overstate relative risk. Consider adding prevalence ratios or marginal effects.\n3. **\"First study\" claim removed.** Priority claims are hard to defend. Reinstate it only after a literature search, with \"to our knowledge\" and a narrow scope.\n4. **Citations.** All citations are kept and none were added. I attached [12,13] to the maternal education finding because it followed that sentence in your draft. Please confirm this matches what those studies report. For [15,16], consider stating what they found and whether their estimates were adjusted. The suggested pathways in paragraphs 2 to 4 have no references, so add supporting citations if you have them.\n5. **Please check or fill in.** Replace [specify] with the missing variables. Confirm that your data record attendance only, not programme quality or duration. Confirm that discipline and the ECDI came from the same caregiver. MICS6 under-five questionnaires can be answered by mothers or primary caretakers, so say \"mothers or caregivers\" if both are in your sample.\n6. **Wealth.** If possible, add a model that adjusts wealth only for confounders, not likely mediators. That would test the pathway explanation rather than leave it as speculation.\n7. **New material.** The fourth limitation, the instrument limitation and the generalisability sentence are new. They help cover STROBE items 19 to 21, which PLOS Medicine reviewers will check against your checklist.\n8. **Style.** The age range now reads \"36 to 59 months\", and all dashes are gone. The vague \"Despite these limitations\" sentence is replaced by a separate strengths paragraph.\n"}], "grading": {"expectations": [{"text": "No em dashes, en dashes or double hyphens in the revised text", "passed": true, "evidence": "em/en dashes or double hyphens found: 0"}, {"text": "No prose sentence of 30 or more words in the revised text", "passed": true, "evidence": "0 long sentences"}, {"text": "No 'Furthermore', 'Moreover' or 'Additionally'", "passed": true, "evidence": "stock transitions"}, {"text": "All 15 original numbers are preserved", "passed": true, "evidence": "missing numbers: []"}, {"text": "All original citations [12] to [16] are preserved", "passed": true, "evidence": "citations [12,13], [14], [15,16]"}, {"text": "No new numbered citations are invented", "passed": true, "evidence": "new numbered citations: []"}, {"text": "Causal claims ('causes', 'proves', 'impact', 'harms') recast as associations", "passed": true, "evidence": "Causal claims recast as associations (negated 'causes' only)"}, {"text": "Unverified 'first study' claim removed or qualified", "passed": true, "evidence": "first-study claim"}, {"text": "At least one limitation states the likely direction of bias", "passed": false, "evidence": "direction-of-bias wording in revised text"}, {"text": "Conclusion contains no numerical results", "passed": false, "evidence": "numbers in Conclusion"}, {"text": "Conclusion recommendations are matched to a cross-sectional design (no 'must' or 'immediately' mandates)", "passed": true, "evidence": "mandate words in Conclusion"}], "summary": {"passed": 9, "failed": 2, "total": 11, "pass_rate": 0.818}}}], "previous_feedback": {}, "previous_outputs": {}, "benchmark": {"metadata": {"skill_name": "public-health-manuscript", "skill_path": "<path/to/skill>", "executor_model": "<model-name>", "analyzer_model": "<model-name>", "timestamp": "2026-10-09T16:24:52Z", "evals_run": [1, 2, 3], "runs_per_configuration": 3}, "runs": [{"eval_id": 2, "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 0.929, "passed": 13, "failed": 1, "total": 14, "time_seconds": 289.0, "tokens": 117111, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "No em dashes, en dashes or double hyphens in the response", "passed": true, "evidence": "em/en dashes or double hyphens found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "Keeps n=2,104 exactly", "passed": true, "evidence": "looked for 2,104"}, {"text": "Describes the two-stage stratified cluster sampling design", "passed": true, "evidence": "two-stage/multistage and stratified"}, {"text": "Uses the domestic violence module weight (d005 or equivalent) and accounts for clustering", "passed": true, "evidence": "DV weight and clustering"}, {"text": "Reports multilevel variance measures (ICC and MOR or PCV)", "passed": true, "evidence": "ICC and MOR/PCV"}, {"text": "States a rationale for confounder selection (a priori, framework or DAG) rather than p-value screening", "passed": true, "evidence": "confounder rationale"}, {"text": "States how missing data were handled", "passed": true, "evidence": "missing data handling"}, {"text": "Addresses sensitivity analysis without presenting unperformed analyses as done", "passed": true, "evidence": "Sensitivity analysis addressed by placeholder or suggestion, none claimed as done"}, {"text": "Mentions WHO flags for implausible height-for-age z-scores", "passed": true, "evidence": "WHO flags"}, {"text": "Cites STROBE", "passed": true, "evidence": "STROBE"}, {"text": "Ethics statement names original approvals (ICF IRB and/or Nepal ethics body) and consent", "passed": true, "evidence": "ICF IRB and consent"}, {"text": "Does not invent response rates or exclusion counts (uses placeholders)", "passed": true, "evidence": "Response rates and exclusion counts not invented"}, {"text": "Includes a data availability statement", "passed": false, "evidence": "dedicated data availability statement in the Methods text"}], "notes": []}, {"eval_id": 1, "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 10, "failed": 0, "total": 10, "time_seconds": 360.1, "tokens": 127145, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "No em dashes, en dashes or double hyphens in the response", "passed": true, "evidence": "em/en dashes or double hyphens found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "Every odds ratio written in the Results text has a 95% CI", "passed": true, "evidence": "estimates without CI: []"}, {"text": "Uses p<0.001 and never reports p=0.000", "passed": true, "evidence": "checked for p=0.000"}, {"text": "States that percentages are weighted and sample sizes unweighted", "passed": true, "evidence": "with_skill: text and footnote state weighted % and unweighted n"}, {"text": "Table 2 shows reference categories for each variable", "passed": true, "evidence": "Reference rows shown for every variable"}, {"text": "Table 2 odds ratios and CIs match the Stata output exactly", "passed": true, "evidence": "22 estimate triples checked against Stata; mismatches: []"}, {"text": "Table 2 has a footnote listing the adjustment set (including division) and abbreviations", "passed": true, "evidence": "Footnote states model includes all variables incl. division; abbreviations defined"}, {"text": "Describes associations as odds, with no 'times more likely' and no causal verbs", "passed": true, "evidence": "causal or 'times more likely' wording: none"}, {"text": "Does not invent numbers absent from the output; uses placeholders or notes for missing items (e.g. exclusions, division estimates)", "passed": true, "evidence": "No numbers outside the output; missing items marked or noted"}], "notes": []}, {"eval_id": 3, "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 11, "failed": 0, "total": 11, "time_seconds": 281.2, "tokens": 110471, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "No em dashes, en dashes or double hyphens in the revised text", "passed": true, "evidence": "em/en dashes or double hyphens found: 0"}, {"text": "No prose sentence of 30 or more words in the revised text", "passed": true, "evidence": "0 long sentences"}, {"text": "No 'Furthermore', 'Moreover' or 'Additionally'", "passed": true, "evidence": "stock transitions"}, {"text": "All 15 original numbers are preserved", "passed": true, "evidence": "missing numbers: []"}, {"text": "All original citations [12] to [16] are preserved", "passed": true, "evidence": "citations [12,13], [14], [15,16]"}, {"text": "No new numbered citations are invented", "passed": true, "evidence": "new numbered citations: []"}, {"text": "Causal claims ('causes', 'proves', 'impact', 'harms') recast as associations", "passed": true, "evidence": "Causal claims recast as associations (negated 'causes' only)"}, {"text": "Unverified 'first study' claim removed or qualified", "passed": true, "evidence": "first-study claim"}, {"text": "At least one limitation states the likely direction of bias", "passed": true, "evidence": "direction-of-bias wording in revised text"}, {"text": "Conclusion contains no numerical results", "passed": true, "evidence": "numbers in Conclusion"}, {"text": "Conclusion recommendations are matched to a cross-sectional design (no 'must' or 'immediately' mandates)", "passed": true, "evidence": "mandate words in Conclusion"}], "notes": []}, {"eval_id": 2, "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 0.857, "passed": 12, "failed": 2, "total": 14, "time_seconds": 265.4, "tokens": 91755, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "No em dashes, en dashes or double hyphens in the response", "passed": true, "evidence": "em/en dashes or double hyphens found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": false, "evidence": "1 long sentences; e.g. 'Child characteristics were age in months (0-11, 12-23, 24-35, 36-47 or 48-59), sex (male ...'"}, {"text": "Keeps n=2,104 exactly", "passed": true, "evidence": "looked for 2,104"}, {"text": "Describes the two-stage stratified cluster sampling design", "passed": true, "evidence": "two-stage/multistage and stratified"}, {"text": "Uses the domestic violence module weight (d005 or equivalent) and accounts for clustering", "passed": true, "evidence": "DV weight and clustering"}, {"text": "Reports multilevel variance measures (ICC and MOR or PCV)", "passed": true, "evidence": "ICC and MOR/PCV"}, {"text": "States a rationale for confounder selection (a priori, framework or DAG) rather than p-value screening", "passed": true, "evidence": "confounder rationale"}, {"text": "States how missing data were handled", "passed": true, "evidence": "missing data handling"}, {"text": "Addresses sensitivity analysis without presenting unperformed analyses as done", "passed": true, "evidence": "Sensitivity analysis addressed by placeholder or suggestion, none claimed as done"}, {"text": "Mentions WHO flags for implausible height-for-age z-scores", "passed": true, "evidence": "WHO flags"}, {"text": "Cites STROBE", "passed": true, "evidence": "STROBE"}, {"text": "Ethics statement names original approvals (ICF IRB and/or Nepal ethics body) and consent", "passed": true, "evidence": "ICF IRB and consent"}, {"text": "Does not invent response rates or exclusion counts (uses placeholders)", "passed": true, "evidence": "Response rates and exclusion counts not invented"}, {"text": "Includes a data availability statement", "passed": false, "evidence": "dedicated data availability statement in the Methods text"}], "notes": []}, {"eval_id": 1, "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 0.9, "passed": 9, "failed": 1, "total": 10, "time_seconds": 213.8, "tokens": 87990, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "No em dashes, en dashes or double hyphens in the response", "passed": true, "evidence": "em/en dashes or double hyphens found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "Every odds ratio written in the Results text has a 95% CI", "passed": true, "evidence": "estimates without CI: []"}, {"text": "Uses p<0.001 and never reports p=0.000", "passed": true, "evidence": "checked for p=0.000"}, {"text": "States that percentages are weighted and sample sizes unweighted", "passed": false, "evidence": "without_skill: footnote gives unweighted n for the model, but percentages in the text are never labelled as weighted"}, {"text": "Table 2 shows reference categories for each variable", "passed": true, "evidence": "Reference rows shown for every variable"}, {"text": "Table 2 odds ratios and CIs match the Stata output exactly", "passed": true, "evidence": "23 estimate triples checked against Stata; mismatches: []"}, {"text": "Table 2 has a footnote listing the adjustment set (including division) and abbreviations", "passed": true, "evidence": "Footnote states model includes all variables incl. division; abbreviations defined"}, {"text": "Describes associations as odds, with no 'times more likely' and no causal verbs", "passed": true, "evidence": "causal or 'times more likely' wording: none"}, {"text": "Does not invent numbers absent from the output; uses placeholders or notes for missing items (e.g. exclusions, division estimates)", "passed": true, "evidence": "No numbers outside the output; missing items marked or noted"}], "notes": []}, {"eval_id": 3, "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 0.818, "passed": 9, "failed": 2, "total": 11, "time_seconds": 176.5, "tokens": 82324, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "No em dashes, en dashes or double hyphens in the revised text", "passed": true, "evidence": "em/en dashes or double hyphens found: 0"}, {"text": "No prose sentence of 30 or more words in the revised text", "passed": true, "evidence": "0 long sentences"}, {"text": "No 'Furthermore', 'Moreover' or 'Additionally'", "passed": true, "evidence": "stock transitions"}, {"text": "All 15 original numbers are preserved", "passed": true, "evidence": "missing numbers: []"}, {"text": "All original citations [12] to [16] are preserved", "passed": true, "evidence": "citations [12,13], [14], [15,16]"}, {"text": "No new numbered citations are invented", "passed": true, "evidence": "new numbered citations: []"}, {"text": "Causal claims ('causes', 'proves', 'impact', 'harms') recast as associations", "passed": true, "evidence": "Causal claims recast as associations (negated 'causes' only)"}, {"text": "Unverified 'first study' claim removed or qualified", "passed": true, "evidence": "first-study claim"}, {"text": "At least one limitation states the likely direction of bias", "passed": false, "evidence": "direction-of-bias wording in revised text"}, {"text": "Conclusion contains no numerical results", "passed": false, "evidence": "numbers in Conclusion"}, {"text": "Conclusion recommendations are matched to a cross-sectional design (no 'must' or 'immediately' mandates)", "passed": true, "evidence": "mandate words in Conclusion"}], "notes": []}], "run_summary": {"with_skill": {"pass_rate": {"mean": 0.9763, "stddev": 0.041, "min": 0.929, "max": 1.0}, "time_seconds": {"mean": 310.1, "stddev": 43.4765, "min": 281.2, "max": 360.1}, "tokens": {"mean": 118242.3333, "stddev": 8394.3734, "min": 110471, "max": 127145}}, "without_skill": {"pass_rate": {"mean": 0.8583, "stddev": 0.041, "min": 0.818, "max": 0.9}, "time_seconds": {"mean": 218.5667, "stddev": 44.6413, "min": 176.5, "max": 265.4}, "tokens": {"mean": 87356.3333, "stddev": 4747.3245, "min": 82324, "max": 91755}}, "delta": {"pass_rate": "+0.12", "time_seconds": "+91.5", "tokens": "+30886"}}, "notes": ["Both configurations wrote competent text; the user's style preferences (given to both) already prevent most dash and transition problems. The skill's gains are in reporting substance, not surface style.", "Discriminating checks: weighted/unweighted labelling (eval 1), direction of bias in limitations and a number-free Conclusion (eval 3). Baselines failed these; with-skill runs passed.", "Non-discriminating checks: dashes, p<0.001, estimate-to-Stata matching, WHO flags, STROBE, ICC/MOR passed in both. Keep them as regression guards, but they do not show skill value.", "Both Methods runs omitted a dedicated data availability statement, although the skill's methods.md lists it. Candidate fix: make it a required closing paragraph.", "With-skill revision (eval 3) added new claims with [ref] placeholders (SDG 4.2, ECDI2030, a comparison paragraph) and grew the text by about 36%. For a revision request this may go beyond what the user wants; consider telling the skill to propose additions in notes rather than insert them.", "Cost: the skill adds about 90 s and 31k tokens per task (reading references and running the checker). Single run per configuration, so variance estimates are not meaningful yet."]}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + (summary.passed || 0) + ' passed, ' + (summary.failed || 0) + ' failed of ' + (summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += metadata.timestamp + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + metadata.evals_run.join(", ") + " &mdash; ";
+      html += (metadata.runs_per_configuration || "?") + " runs per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th><th>" + escapeHtml(labelB) + "</th><th>Delta</th></tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += "<td>" + fmtStat(b.pass_rate, true) + "</td>";
+      html += '<td class="' + deltaClass(delta.pass_rate) + '">' + (delta.pass_rate || "—") + "</td></tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += "<td>" + fmtStat(b.time_seconds, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.time_seconds) + '">' + (delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td></tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += "<td>" + fmtStat(b.tokens, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.tokens) + '">' + (delta.tokens || "—") + "</td></tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) => a - b);
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + run.run_number + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + (r.passed || 0) + "/" + (r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + (r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + run.run_number + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

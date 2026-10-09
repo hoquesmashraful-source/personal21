@@ -65,6 +65,7 @@ METHODS_ITEMS = [
     ("Software and version", r"\bStata\b|\bR\b|\bSAS\b|\bSPSS\b"),
     ("Ethics approval or exemption", r"ethic|institutional review|\bIRB\b|consent"),
     ("Reporting guideline (STROBE or other)", r"STROBE|RECORD|GATHER|TRIPOD|CONSORT|PRISMA"),
+    ("Data availability statement", r"data (availability|sharing)|publicly available|available (on|upon) (registration|request)"),
 ]
 
 BIAS_DIRECTION = r"underestimat|overestimat|bias(ed)? (towards|toward|away)|toward(s)? the null|away from the null|attenuat|inflat|conservative"
@@ -148,7 +149,8 @@ def sentences(text):
 
 
 def words(text):
-    return len(re.findall(r"\b[\w'-]+\b", text))
+    # Numbers such as 61.3, 4,958 or 95% count as one word.
+    return len(re.findall(r"\d+(?:[.,]\d+)*%?|[^\W\d_][\w'-]*", text))
 
 
 def excerpt(s, n=14):

@@ -106,3 +106,28 @@ Limits of this list:
 * Journal articles that use DHS or MICS data are listed separately (see above).
 * Survey datasets need a separate registration with the DHS Program and are
   not part of this repository.
+
+## Citation counts and corpus of highly cited papers
+
+* `scripts/add_citations.py` adds NIH iCite citation counts (`citations`,
+  `rcr`) to `literature/pubmed_dhs_mics_papers.csv`. 1,046 papers have more
+  than 50 citations; 595 of them are open access.
+* `scripts/build_corpus.py` downloads and parses the full texts of those 595
+  papers into `literature/corpus/` (not committed; rebuild locally).
+* `scripts/analyze_corpus.py` writes `literature/corpus_analysis.md`, a
+  section-by-section profile of how these papers are written.
+
+## Manuscript-writing skill
+
+`skills/public-health-manuscript/` is a Claude skill for writing, revising
+and reviewing public health manuscripts, built from the corpus above. It
+covers the title, abstract, introduction, methods, statistical analysis,
+results, tables, figures, discussion, limitations and conclusion, and
+includes `scripts/check_manuscript.py`, a draft checker:
+
+```bash
+python3 skills/public-health-manuscript/scripts/check_manuscript.py my_draft.docx
+```
+
+The packaged skill is `skills/dist/public-health-manuscript.skill`. The test
+results are in `skills/public-health-manuscript-review-iteration-1.html`.
