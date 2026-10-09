@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "high-impact-public-health-writing", "runs": [{"id": "eval-citability-advice-hypertension-with_skill-run-1", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "response.md", "type": "text", "content": "# Designing a citable hypertension care cascade paper\n\n## The honest short answer\n\nMost highly cited public health papers are cited as infrastructure. Other authors need them for a number, a method, a standard or a comparison. Of the 100 most cited public health papers from 2000 to 2024, 70 were reused mainly for a number in other papers' Introductions. Good writing helps a strong contribution travel. It does not create one.\n\nThe figures below compare those 100 papers with 163 papers drawn at random from the same journals and years. They show association, not cause. Topic, team and funding still differ between the two groups. Treat each pattern as worth considering, never as a guarantee.\n\n**The reuse question for your paper.** Others will cite it for a number. That number is a recent, comparable estimate of the share of adults with hypertension who are aware, treated and controlled in each country. The second reusable fact is where along the cascade most people are lost. Every choice below serves those two outputs.\n\n**If you do only five things:**\n\n1. Find a gap that the large 2019 and 2021 multi-country papers leave open.\n2. Report comparable, age-standardised cascade estimates with 95% CIs, plus counts of people.\n3. Show place and time: a map, and trends if you have repeated survey rounds.\n4. Release your code and a full table of estimates.\n5. Write a plain title and a number-dense abstract that opens with the headline estimate.\n\n## 1. What separates highly cited papers\n\n| Feature | Top 100 | Matched papers |\n| :- | :- | :- |\n| Contribution goes beyond a single-setting finding | 75% | 36% |\n| Title names global, world or many countries | 43% | 12% |\n| Title states a time span or trend | 30% | 7% |\n| Abstract names 10 or more countries | 25% | 10% |\n| Abstract offers something reusable (estimates, tool, data) | 41% | 21% |\n| Numbers per 100 abstract words | 9.5 | 6.3 |\n| Hedges per 1,000 abstract words | 1.8 | 3.1 |\n| Uncertainty intervals or bootstrap in the full text | 70% | 20% |\n| Figures (median) | 5 | 3 |\n| Papers with maps; papers with trend figures | 55%; 69% | 32%; 30% |\n| Code or data shared | 42% | 28% |\n| Limitations discussed | 79% | 62% |\n| Methods words (median) | 2,112 | 1,154 |\n\nSentence length did not differ: about 27 words per abstract sentence in both groups. Long sentences are not the secret.\n\nSix patterns matter most for your study:\n\n1. **A reusable output.** A one-author paper on modified Poisson regression ranks 8th (PMID 15033648). It solved a routine problem every analyst meets.\n2. **Scale and completeness.** A complete, consistent set of countries becomes the default reference. \"Global burden of hypertension\" (PMID 15652604) has 5,242 citations. It was coded as reused mainly for its burden number.\n3. **Quotable numbers with intervals.** The best headline numbers can be lifted in one sentence, with definition, place, year and interval.\n4. **Place and time in figures.** Maps and trend charts are far more common in top papers.\n5. **Series and updates.** Five NHANES obesity updates drew 3,931 to 6,196 citations each. Each update replaced the last as the reference.\n6. **Plain, confident reporting.** Top abstracts carry more numbers and fewer hedges, and 77% are structured (versus 60%).\n\n**What you cannot copy.** You cannot copy journal prestige, consortium scale or topic size. Nor can you copy the head start of papers already treated as the default reference. Of the top 100, 76 appeared in the Lancet, JAMA or NEJM. Yet random papers from those same journals and years had a median of 171 citations. A realistic aim is to become the standard reference on hypertension care in your region. No design choice can promise a place among the most cited papers ever.\n\n## 2. Know your competition first\n\nBased on a quick PubMed search (not a systematic one), two large papers already cover part of your ground.\n\n* **Geldsetzer and colleagues (Lancet, 2019)** pooled data on 1.1 million adults in 44 low-income and middle-income countries. They looked first for STEPS surveys from 2005 onward. They reported cascades by country, age, sex, education and wealth. Bangladesh was one of their countries. [DOI](https://doi.org/10.1016/S0140-6736(19)30955-9)\n* **NCD Risk Factor Collaboration (Lancet, 2021)** modelled detection, treatment and control in 200 countries from 1990 to 2019, for ages 30 to 79. It named Nepal and Indonesia among countries with very low treatment rates. [DOI](https://doi.org/10.1016/S0140-6736(21)01330-1)\n* **Single-country STEPS papers** also exist, such as an analysis of Nepal's 2013 and 2019 surveys. [DOI](https://doi.org/10.1080/16549716.2021.2000092)\n\nSo \"the first hypertension cascade for South and Southeast Asia\" is not a safe claim. You need a gap that is specific and true. Choose from these, and keep only the ones your data support.\n\n| Gap type | What you must be able to show |\n| :- | :- |\n| Out of date | Most of your surveys were done after the data in the 2019 and 2021 papers. |\n| Change over time | Two or more comparable STEPS rounds in several countries. |\n| Direct versus modelled | Design-based survey estimates set beside modelled NCD-RisC estimates. |\n| Counts | Numbers of adults untreated and uncontrolled, not only percentages. |\n| Inequality | Gaps by sex, age, education, residence and wealth, where measured. |\n| Why now | A dated regional or global target that needs these numbers now. |\n\nFor \"why now\", use a dated trigger such as the 2025 global NCD targets, SDG target 3.4 for 2030, or a national HEARTS rollout [verify and cite]. Do a systematic search before writing \"to our knowledge\". Check which of your 12 countries Geldsetzer and colleagues already covered.\n\n## 3. Design choices\n\n### Define the estimand so others can reuse it\n\n* Use the definitions the field already uses. Hypertension: systolic pressure of 140 mm Hg or more, diastolic of 90 mm Hg or more, or taking blood pressure medicine. Both earlier papers used this definition, so readers can set your numbers beside theirs.\n* Report each step among everyone with hypertension: aware, treated, and controlled below 140/90 mm Hg. This is the population cascade.\n* Then report the conditional steps: treated among the aware, controlled among the treated. These show where people are lost.\n* NCD-RisC says \"detection\" where most papers say \"awareness\". Pick one term and map it to theirs in the Methods.\n* Use 130/80 mm Hg only as a sensitivity analysis.\n\n### Harmonise before you pool\n\n* STEPS instruments, age ranges and survey years differ. The Nepal surveys, for example, covered ages 15 to 69. Restrict comparisons across countries to the age band all 12 surveys share.\n* STEPS usually takes three readings, and most analysts average the second and third. Confirm the protocol for each survey and state your rule.\n* Map the awareness and medicine questions to one definition. Put a recode table for each country in the appendix.\n* Exclude pregnant women, and report how many you excluded.\n* Define your region. South and Southeast Asia can span three WHO regions. Do not call it the \"WHO South-East Asia Region\" unless all 12 countries belong to it.\n\n### Count your data\n\n* Table 1 should list each country's survey year, age range, sample size, response rate and share missing blood pressure.\n* Report the pooled sample exactly. Do not round it up to sound larger.\n* Top papers state their data volume precisely. NCD-RisC, for example, reported 2416 studies with 128.9 million participants (PMID 29029897). Your reader should be able to count your surveys and people.\n\n### Estimate with design-based uncertainty\n\n* Apply survey weights, strata and primary sampling units to every estimate. Top papers carried intervals far more often (70% versus 20%).\n* Give a 95% CI for every number, including derived ones such as counts and gaps.\n* Age-standardise to a named standard, such as the WHO world standard population. Show crude estimates beside them.\n* Weight countries by population size, not sample size, for any pooled figure. Name the population source.\n* Call your intervals \"95% CI\". Keep \"uncertainty interval\" for intervals that combine several sources by simulation.\n\n### Turn percentages into counts\n\n* Multiply each step's prevalence by the adult population for the survey year. This gives the number of adults with uncontrolled hypertension in each country.\n* Ministries and later authors quote counts. \"[n] million adults with uncontrolled hypertension\" travels further than a percentage alone.\n* If survey years differ, give each count's reference year. Do not add counts from different years without saying so.\n* STEPS has an upper age limit, so present your counts as lower bounds.\n* If you carry population uncertainty into the counts, use Monte Carlo simulation and say so.\n\n### Show change only where the data allow\n\n* With repeated rounds, report percentage-point change with its 95% CI. Give annual change when the gap between rounds differs by country.\n* Never read a trend from different countries surveyed in different years.\n* Trend figures appeared in 69% of top papers versus 30%. A real trend is worth the extra harmonisation work.\n\n### Analyse inequality without causal claims\n\n* Report absolute gaps (percentage points) and relative gaps (ratios) by sex, age, education, residence and wealth.\n* For adjusted comparisons, estimate prevalence ratios with modified Poisson regression (PMID 15033648). Odds ratios drift further from 1 than prevalence ratios when an outcome is common.\n* Choose covariates in advance with a simple causal diagram.\n* Write \"was associated with\", never \"improved\" or \"led to\". Cross-sectional data cannot show why one group fares worse.\n\n### Aim each sensitivity analysis at a named bias\n\n* **Single-day measurement.** Readings from one visit probably overstate hypertension. That would understate the shares aware, treated and controlled. Rerun with a stricter threshold and check whether country rankings hold.\n* **Self-reported treatment.** Say which way misreporting would push each step.\n* **Different age ranges.** Compare the common age band with each survey's full range.\n* **Survey quality and timing.** Rerun without surveys with low response or much missing blood pressure. Flag surveys done during the COVID-19 pandemic.\n\nReport every sensitivity result with numbers, not just words.\n\n### Compare with earlier estimates on purpose\n\n* Set your country estimates beside NCD-RisC's for matching countries, ages and years.\n* Explain each gap by type: survey year, age band, definition, or direct versus modelled estimation.\n* A reasoned comparison is itself citable. Two top-100 papers disagreed in print about deaths from physical inactivity, and each explained its method (PMIDs 22818936 and 23245609).\n\n### Build a resource, not only a paper\n\n* Release your harmonisation and analysis code with a permanent DOI, for example GitHub archived on Zenodo.\n* Publish a downloadable table of every estimate by country, sex, age group and survey round.\n* Check each country's data licence. You may not be allowed to share STEPS microdata. Share code and estimates, and point readers to the WHO NCD Microdata Repository.\n* Keep definitions and code stable so you can update the estimates when new STEPS rounds appear. Updates kept the NHANES obesity series as the default reference.\n\n### Collaborate for coverage\n\n* Invite each country's STEPS lead or ministry focal person as a co-author. They know survey quirks, can speed data access and can carry results into policy.\n* A named collaboration is optional. Group authors were more common in top papers (35% versus 17%), yet 65% of top papers had none.\n* Write one strong 12-country paper. Do not slice the data into thin single-country papers.\n\n## 4. Writing choices, section by section\n\n### Title\n\nName the measure, place, scale and period, then the design after a colon. Never ask a question.\n\n* With repeated rounds: \"Hypertension awareness, treatment and control in 12 South and Southeast Asian countries, [first year] to [last year]: a pooled analysis of [n] WHO STEPS surveys\"\n* With one round per country: \"Hypertension awareness, treatment and control among [n] adults in 12 South and Southeast Asian countries: a pooled analysis of national STEPS surveys\"\n\nUse a time span only if you analyse change. Avoid \"global\", \"Asia\" on its own, and metaphors such as \"silent killer\".\n\n### Abstract\n\nUse your target journal's headings. Lancet journals use Background, Methods, Findings, Interpretation and Funding.\n\n* **Background, two sentences:** the burden, then the gap and aim.\n* **Methods, data and scale first:** \"We pooled [n] nationally representative WHO STEPS surveys from 12 countries, done in [years], covering [n] adults aged [x] to [y] years.\"\n* **Findings:** open with the headline number. Then give the range across countries, the largest loss step and the widest inequality. A first sentence might read: \"Across the 12 countries, an estimated [n] million (95% CI [x] to [y]) adults had uncontrolled hypertension at their latest survey.\"\n* **Interpretation:** a present-tense claim, then an action with a named actor.\n* List all 12 countries in the abstract. Abstracts naming 10 or more countries were more than twice as common among top papers (25% versus 10%).\n* Aim for about 9 to 10 numbers per 100 words. Add one plain anchor, such as \"about one in [N] adults with hypertension had it under control\".\n\nGrade the action verb by the evidence. Use \"should\" only where trials show an action works. A community health worker programme lowered blood pressure in a cluster-randomised trial in rural Bangladesh, Pakistan and Sri Lanka (COBRA-BPS). [DOI](https://doi.org/10.1056/NEJMoa1911965) Where no such evidence exists, write \"could\" or \"needs evaluation\".\n\n### Introduction: three paragraphs, about 450 words\n\n1. **Burden and stakes:** one number and one dated policy target [ref].\n2. **What is known:** name Geldsetzer 2019 and NCD-RisC 2021 with their scope and years. Credit them, then state their limits for your question.\n3. **Gap, why now and aim:** end with a first-person aim that names the measure, ages, places, period and subgroups. For example: \"In this study, we estimated hypertension awareness, treatment and control among adults aged [x] to [y] years in 12 South and Southeast Asian countries, [years].\"\n\nUse \"to our knowledge\" once at most, and only after a real search. Scope any \"first\" claim tightly.\n\n### Methods\n\nUse this order: overview and reporting guideline (STROBE), countries and surveys, definitions, harmonisation, statistical analysis, sensitivity analyses, software and code. Point each step to an exact appendix section. Top Methods sections had a median of 2,112 words, against 1,154. The extra words bought reproducibility, so use the appendix freely.\n\n### Results\n\n* Run from the whole to the parts: pooled cascade, then countries, then sex, age and other groups, then change over time.\n* Open with the headline estimate and its interval.\n* Give counts beside age-standardised percentages.\n* Name both extremes with values: \"from [x]% in [country] to [y]% in [country]\".\n* Say when intervals overlap before you rank countries.\n* Point every paragraph to a figure or table. Let figures carry the detail.\n\n### Figures: aim for about five\n\n| Figure | Message | Design |\n| :- | :- | :- |\n| 1 | Where people are lost | Cascade by country, ranked by control, with 95% CI bars; pooled bar in grey at the top |\n| 2 | Where control is lowest | Map of age-standardised control; one sequential palette; five to eight classes; grey for countries outside the study |\n| 3 | What changed | Paired points or lines between rounds, with intervals (only with repeated rounds) |\n| 4 | Who is left behind | Small multiples by sex, age, education and residence, on shared axes |\n| 5 | How your numbers compare | Your estimates against NCD-RisC estimates, with an identity line |\n\nPut a data-coverage tile chart and the sample flow chart in the appendix. Figure 1 should show one contrast at a glance. Order countries by value, not by alphabet.\n\nKeep captions to 25 to 50 words. Open with measure, unit, population, place and years. For example: \"Percentage of adults aged [x] to [y] years with hypertension who were aware, treated and controlled, by country, [years]. Bars show age-standardised estimates; lines show 95% CIs. Grey bar: population-weighted pooled estimate.\"\n\n### Discussion\n\n1. Main finding first, with a number and its interval.\n2. Each finding with possible explanations, labelled by strength of evidence.\n3. Comparison with named earlier estimates, like for like, with reasons for any gap.\n4. Strengths, briefly.\n5. Limitations, each with its direction, likely size and what you did about it. Top papers discussed limitations more often (79% versus 62%).\n6. A closing paragraph with one take-home claim and one action for a named actor.\n\nName the step where each country loses most people, and who owns that step. Low awareness points to screening. A large treated but uncontrolled group points to treatment protocols, drug supply and follow-up. Present these as targets for action, not as proven explanations. End on the take-home message, not a limitation. Keep the Conclusion to about 85 to 150 words.\n\n### Language\n\n* Put one number family per sentence. This keeps sentences short without losing density.\n* Hedge once, at the point of doubt. Do not hedge measured results.\n* Use \"we\" for what you did, and the past tense for methods and results.\n* For regression results, write \"associated with\".\n\nExample: \"Women were more likely than men to be aware of their hypertension (prevalence ratio [x], 95% CI [x] to [y]).\" Not: \"Being a woman increased awareness.\"\n\n## 5. Publishing and what to avoid\n\n* **Journal.** The journal is a gate and an amplifier, not a guarantee. Field journals reached the top 100 almost only through reusable products: 13 of 14 such papers were methods, standards, frameworks or data resources.\n* **Access.** Open access was more common among top papers (32% versus 17%), but mostly among Global Burden of Disease papers. Treat it as a modest help, and deposit the accepted manuscript where allowed.\n* **Lancet journals** want a \"Research in context\" panel. Report the search behind your gap claim there.\n* **Avoid** self-citation schemes, padded reference lists, \"global\" or \"first\" claims your data cannot support, bare percentages without definition, year and interval, and causal language about education or wealth.\n\n## Placeholders and assumptions\n\n* I do not know your 12 countries, survey years, age ranges or sample sizes. Every bracketed item is a placeholder.\n* I assumed some countries may have more than one STEPS round. If not, drop the trend aim and the time span in the title.\n* The targets and programmes listed under \"why now\" need checking and citing before you use them.\n* My PubMed search was quick, not systematic. Check overlap with the Geldsetzer countries yourself.\n* All top-paper rates come from one comparison of 100 papers with 163 matched papers. They describe association, not cause.\n\n**Sources retrieved from PubMed**\n\n* Geldsetzer et al., Lancet 2019. [DOI](https://doi.org/10.1016/S0140-6736(19)30955-9)\n* NCD Risk Factor Collaboration, Lancet 2021. [DOI](https://doi.org/10.1016/S0140-6736(21)01330-1)\n* Dhungana et al., Global Health Action 2022. [DOI](https://doi.org/10.1080/16549716.2021.2000092)\n* Jafar et al. (COBRA-BPS), NEJM 2020. [DOI](https://doi.org/10.1056/NEJMoa1911965)\n\nThe other PMIDs come from the top-100 comparison behind this advice.\n\nIf you send your country list and survey years, I can draft the title, abstract skeleton and gap paragraph next.\n"}], "grading": {"expectations": [{"text": "No em dashes, en dashes or double hyphens", "passed": true, "evidence": "dashes found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "Explains that most highly cited papers supply reusable outputs (estimates, methods, standards, frameworks)", "passed": true, "evidence": "Section 1 and short answer: infrastructure, reusable estimates"}, {"text": "Gives study-specific design advice (cascade estimates with intervals by country, sex or age; standard definitions)", "passed": true, "evidence": "Estimand, harmonisation, age-standardised cascade with CIs, counts, inequality"}, {"text": "Recommends sharing estimates, code or data", "passed": true, "evidence": "'Build a resource': release estimates and code"}, {"text": "Advises a title stating scope, scale and period", "passed": true, "evidence": "Title advice: scope, scale, period"}, {"text": "Advises a quotable headline number with its uncertainty", "passed": true, "evidence": "Findings open with headline count and 95% CI"}, {"text": "Recommends specific figure types (map, trends, cascade chart)", "passed": true, "evidence": "Figure table: cascade by country, map, trends"}, {"text": "States honest caveats (journal, consortium or timing cannot be copied; association not cause)", "passed": true, "evidence": "States association not cause; consortium and journal limits"}, {"text": "Warns against citation gaming or overclaiming", "passed": true, "evidence": "Section 5: what to avoid, no citation gaming"}, {"text": "Makes no unsupported quantitative claims about citation effects", "passed": true, "evidence": "All rates from the skill's evidence base"}], "summary": {"passed": 11, "failed": 0, "total": 11, "pass_rate": 1.0}}}, {"id": "eval-citability-advice-hypertension-without_skill-run-1", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "response.md", "type": "text", "content": "# Making a 12-country hypertension cascade paper worth citing\n\n## The short answer\n\nPublic health papers get cited when other authors need them. In practice, a paper gets cited for one of three reasons:\n\n1. **It supplies a number** that later papers quote in their introduction.\n2. **It sets a benchmark** that later papers compare their own results against.\n3. **It provides a method, dataset or code** that others reuse.\n\nDesign your paper to serve all three uses. Good prose helps a paper get accepted and understood. It rarely rescues a weak or redundant question.\n\n## 1. What drives citations, and how sure we are\n\nBibliometric studies often find that some features go with higher citation counts:\n\n- the journal's visibility\n- a timely topic\n- large, international author teams\n- benchmark or review-type content\n- clear, searchable titles\n\nTreat these as associations, not causes. A prominent journal may simply attract stronger papers. Large teams may have better data. In neither case does the feature itself produce the citations.\n\nOpen access shows why this distinction matters. Observational studies often report an open access citation advantage. Two randomised trials by Davis and colleagues tested it directly:\n\n- Open access articles got more downloads.\n- They were not cited more at one year (BMJ, 2008).\n- They were not cited more or sooner within three years (FASEB Journal, 2011).\n\nSo open access widens readership, but on this evidence it may not raise citations by itself. For you, readership still matters, because ministries and WHO country offices are part of your audience.\n\nSome things you cannot control, such as your existing network and luck with timing. The parts you can control are the question, the data quality, how reusable the outputs are, and how clear the paper is.\n\n## 2. Your competition (a quick check, not a systematic search)\n\nI searched PubMed today. You cannot claim to be \"first\". Reviewers will ask what you add beyond these papers:\n\n- **Geldsetzer and colleagues, Lancet 2019.** A cascade analysis of individual-level data from 44 low-income and middle-income countries and 1\u00b71 million adults. Many of its surveys were STEPS surveys, so it likely includes some of your countries.\n- **NCD-RisC, Lancet 2021.** Modelled trends in hypertension prevalence, treatment and control from 1990 to 2019 for countries worldwide.\n- **Regional STEPS-based analogues already exist.** Nambiema and colleagues (JACC, 2025) covered 37 African countries using STEPS and DHS surveys from 2003 to 2022. Maximova and colleagues (Public Health Nutrition, 2023) studied educational inequalities in nine Eastern European and Central Asian countries.\n- **Single-country cascade papers from your region.** Examples include Nepal (Dhungana and colleagues, 2022, pooled STEPS 2013 and 2019) and Cambodia (Chham and colleagues, 2022).\n- **A recent South Asia review.** Ranasinghe and colleagues (J Hum Hypertens, 2026) pooled hypertension prevalence and trends. Going by the abstract, it does not report the full cascade.\n\nBefore you claim novelty, run a proper systematic search of PubMed, Embase and Scopus, and also search WHO and regional grey literature. You will need it anyway for the \"Evidence before this study\" panel that Lancet journals require.\n\n## 3. Pick a sharper question than \"what is the cascade?\"\n\nA plain cascade for 12 countries is useful, but it is not new. Choose one primary angle that the existing papers do not cover well. Here are five candidates:\n\n1. **Where people are lost, and for whom.**\n   - Split everyone with uncontrolled hypertension into three groups: undiagnosed, diagnosed but untreated, and treated but uncontrolled.\n   - Each group needs a different response: screening, linkage to care, or treatment intensification.\n   - This is my top recommendation, because readers can act on it.\n2. **The most recent picture.**\n   - Use the latest survey round for each country, especially rounds after 2019.\n   - This updates the Geldsetzer estimates, and it covers the COVID-19 period.\n3. **Change within countries.**\n   - Where a country has two or more STEPS rounds, estimate the change in each cascade step.\n   - Present this as a description. Cross-sectional rounds cannot show why change happened.\n4. **Inequality.**\n   - Report absolute and relative gaps by sex, age, urban or rural residence and education.\n   - Education is more consistently measured than income in STEPS.\n   - Use summary measures such as the slope index of inequality.\n5. **Counterfactual numbers.**\n   - Estimate how many more adults would have controlled blood pressure if each country matched the best performer in your sample.\n   - Use UN population estimates to turn percentages into absolute counts.\n   - Label these clearly as hypothetical scenarios, not predicted effects of a policy.\n\nAbsolute numbers (\"about N million adults\") get quoted far more than odds ratios. Framing control as the effective coverage of hypertension care also links your paper to universal health coverage monitoring, which brings in a second group of readers.\n\n## 4. Design choices that make it the paper others trust\n\n**Be clear about which countries you cover.**\n\n- \"South and Southeast Asia\" makes readers think of India, Pakistan, Bangladesh and Indonesia.\n- If any of these are missing from your 12, say so in the abstract.\n- Report what share of the region's adult population your sample covers.\n- Your countries also span three WHO regions: South-East Asia, Western Pacific and Eastern Mediterranean. WHO readers will notice this, so state it.\n\n**Harmonise the surveys carefully.**\n\n- **Age range.** STEPS age ranges differ; the Nepal surveys covered ages 15 to 69, for example. Restrict to the range all surveys share, and state it.\n- **Blood pressure.** Use the mean of the second and third readings. Exclude pregnant women.\n- **Hypertension.** Define it as systolic 140 or higher, diastolic 90 or higher, or self-reported medication use. Add a sensitivity analysis at 130/80.\n- **Cascade steps.** Use the standard STEPS questions:\n  - screened: ever had blood pressure measured by a health worker\n  - aware: ever told they have raised blood pressure\n  - treated: took prescribed medication in the past two weeks\n  - controlled: below 140/90 while treated\n- **Comparability.** Match the Geldsetzer 2019 definitions where you can. Then you can compare your results with theirs directly.\n- **Two kinds of percentage.** Report results among everyone with hypertension, and also step-to-step. Explain both in one plain sentence each.\n- **A survey table.** List each survey's year, age range, sample size, response rate and device. Missing response rates are a common reviewer complaint.\n\n**Handle the survey design properly.**\n\n- Use the strata, primary sampling units and weights in every estimate.\n- Age-standardise to the WHO standard population before comparing countries.\n- For a pooled regional figure, state whether countries are weighted by population or equally. Show both if they differ.\n- Give a 95% confidence interval for every estimate.\n\n**Model associations honestly.**\n\n- Cascade outcomes are common, so odds ratios will exaggerate them. Use modified Poisson regression to estimate prevalence ratios.\n- Fit country-specific models, or include country fixed effects.\n- Write \"associated with\" throughout.\n- Choose covariates with a simple causal diagram, and do not interpret every coefficient as an effect.\n- Do not claim that a programme such as WHO HEARTS caused differences between countries. Survey timing, health system factors and measurement all differ at once.\n\n**Be candid about measurement.**\n\n- **Single-visit readings.** STEPS measures blood pressure on one occasion. This probably overestimates prevalence and underestimates control compared with a clinical diagnosis.\n- **Self-reported medication.** It may be misreported, and STEPS does not capture adherence.\n- **Survey timing.** Survey years differ, so differences between countries mix place and time. Put the survey year next to every country estimate.\n- **Missing data.** Report how many people lack blood pressure or medication data, and run a sensitivity analysis.\n\n**Pre-register and report to standards.**\n\n- Post an analysis plan on OSF before you run the models. This protects you from accusations of fishing.\n- Follow STROBE. Because you are producing population estimates, also follow the GATHER statement.\n\n## 5. How to write it\n\n**Title.**\n\n- Front-load the words people search for: hypertension, diagnosis, treatment, control, the region, the number of countries and WHO STEPS.\n- Keep it declarative but not causal. Skip puns.\n- Example: \"Where adults with hypertension are lost from care in 12 South and Southeast Asian countries: a cross-sectional analysis of WHO STEPS surveys.\"\n\n**Abstract.**\n\n- Give the number of countries, participants and survey years in the methods line.\n- Put your single most quotable result in the findings, with its confidence interval.\n- Write it as a sentence another author could copy. One template (fill it only with your real results): \"Of the estimated N million adults with hypertension in these 12 countries, X% (95% CI) had controlled blood pressure.\"\n- End with one concrete, proportionate implication.\n\n**Research in context panel.** Describe your systematic search in \"Evidence before this study\". Then name what is new in \"Added value\". Be specific: newer rounds, the breakdown of losses, inequality or absolute numbers.\n\n**Figures.** Two or three strong figures do more than ten weak ones. Make each one readable on its own as a slide.\n\n- **Figure 1.** Small multiples showing the cascade for each country, with survey year and confidence intervals.\n- **Figure 2.** A stacked bar showing where people with uncontrolled hypertension are lost: undiagnosed, untreated, or treated but uncontrolled.\n- **Figure 3.** Inequality gaps by sex, residence and education.\n\n**Discussion.**\n\n- Open with the main findings in plain language.\n- Compare your results directly with Geldsetzer 2019 and NCD-RisC 2021, and explain any differences.\n- Then give implications for each cascade step.\n- Keep limitations specific, and say which way each one probably biases the results.\n\n**Language.** Use short sentences and plain words. Report numbers with intervals. Keep a firm line between \"associated with\" and \"caused\". Reviewers in this field reward restraint.\n\n## 6. Where and how to publish\n\n**Journals.**\n\n- If the new angle is strong, start with The Lancet Global Health or PLOS Medicine.\n- BMJ Global Health, The Lancet Regional Health (Southeast Asia) and EClinicalMedicine are good open access options. So are JAMA Network Open and the Bulletin of the World Health Organization.\n- Hypertension and the Journal of Hypertension reach clinicians.\n- Check each journal's scope and its open access fees before you submit.\n\n**Authorship.**\n\n- Invite co-authors from each country, ideally people who ran the STEPS surveys or who work in national NCD programmes.\n- They will catch harmonisation errors and improve interpretation. They also help national uptake.\n- This is fairer, and some journals now ask for an author reflexivity statement.\n\n**Reusable outputs.** These earn citations from people who reuse your work, not just read it.\n\n- Share a spreadsheet of every estimate by country, sex, age group and residence. Include denominators and confidence intervals.\n- Share your harmonisation code on GitHub, archived with a Zenodo DOI.\n- STEPS data access terms may forbid sharing the raw microdata. Share code and aggregate estimates instead.\n\n**Dissemination.**\n\n- Post a preprint on medRxiv if your target journal allows it.\n- After publication, write a two-page brief for each country with its own figures. Offer a webinar through WHO country offices.\n- Make a visual abstract. The evidence that social media raises citations is mixed, but it does raise awareness among practitioners.\n\n## 7. What to avoid\n\n- Claiming \"first\" or \"largest\" without a documented search.\n- Ranking countries without confidence intervals and survey years.\n- Causal language about policies or programmes, drawn from cross-sectional data.\n- Splitting the work into 12 single-country papers. Reviewers and editors see that as salami slicing.\n- Padding your reference list or trading citations. Both damage your reputation and can trigger editorial action.\n\n## 8. A practical sequence\n\n1. Run a systematic search, and write one paragraph on what is new.\n2. Confirm data access and survey details for all 12 countries on the WHO NCD Microdata Repository.\n3. Invite country co-authors.\n4. Pre-register the analysis plan.\n5. Harmonise the variables, and publish the codebook.\n6. Produce estimates, figures and the reusable data file.\n7. Draft the title, abstract and research in context panel first. Then write the paper around them.\n8. Submit, post the preprint, and prepare the country briefs.\n\nI can help with any step next, for example a search strategy, a harmonisation codebook or draft titles and abstracts.\n\n## References I checked on PubMed today\n\n- Geldsetzer P, et al. The state of hypertension care in 44 low-income and middle-income countries: a cross-sectional study of nationally representative individual-level data from 1\u00b71 million adults. Lancet. 2019. [doi:10.1016/S0140-6736(19)30955-9](https://doi.org/10.1016/S0140-6736(19)30955-9)\n- NCD Risk Factor Collaboration. Worldwide trends in hypertension prevalence and progress in treatment and control from 1990 to 2019. Lancet. 2021. [doi:10.1016/S0140-6736(21)01330-1](https://doi.org/10.1016/S0140-6736(21)01330-1)\n- Nambiema A, et al. Prevalence, awareness, and treatment of hypertension in 37 African countries: trends from 2003 to 2022. J Am Coll Cardiol. 2025. [doi:10.1016/j.jacc.2025.09.1600](https://doi.org/10.1016/j.jacc.2025.09.1600)\n- Maximova K, et al. Exploring educational inequalities in hypertension control, salt knowledge and awareness, and patient advice: insights from the WHO STEPS surveys of adults from nine Eastern European and Central Asian countries. Public Health Nutr. 2023. [doi:10.1017/S1368980023000356](https://doi.org/10.1017/S1368980023000356)\n- Dhungana RR, et al. Hypertension screening, awareness, treatment, and control: a study of their prevalence and associated factors in a nationally representative sample from Nepal. Glob Health Action. 2022. [doi:10.1080/16549716.2021.2000092](https://doi.org/10.1080/16549716.2021.2000092)\n- Chham S, et al. The cascade of hypertension care in Cambodia: evidence from a cross-sectional population-based survey. BMC Health Serv Res. 2022. [doi:10.1186/s12913-022-08232-7](https://doi.org/10.1186/s12913-022-08232-7)\n- Ranasinghe P, et al. Prevalence and trends of hypertension among South Asian adults: a systematic review and meta-analysis. J Hum Hypertens. 2026. [doi:10.1038/s41371-026-01178-x](https://doi.org/10.1038/s41371-026-01178-x)\n- Davis PM, et al. Open access publishing, article downloads, and citations: randomised controlled trial. BMJ. 2008. [doi:10.1136/bmj.a568](https://doi.org/10.1136/bmj.a568)\n- Davis PM. Open access, readership, citations: a randomized controlled trial of scientific journal publishing. FASEB J. 2011. [doi:10.1096/fj.11-183988](https://doi.org/10.1096/fj.11-183988)\n\nI named STROBE, GATHER, WHO HEARTS and the WHO NCD Microdata Repository from general knowledge. Check their current versions before you cite them.\n"}], "grading": {"expectations": [{"text": "No em dashes, en dashes or double hyphens", "passed": true, "evidence": "dashes found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "Explains that most highly cited papers supply reusable outputs (estimates, methods, standards, frameworks)", "passed": true, "evidence": "Short answer: cited when other authors need them (numbers, methods, data)"}, {"text": "Gives study-specific design advice (cascade estimates with intervals by country, sex or age; standard definitions)", "passed": true, "evidence": "Design section: definitions, weights, CIs, sharper question"}, {"text": "Recommends sharing estimates, code or data", "passed": true, "evidence": "Recommends sharing code and estimates"}, {"text": "Advises a title stating scope, scale and period", "passed": true, "evidence": "Title advice includes countries and design"}, {"text": "Advises a quotable headline number with its uncertainty", "passed": true, "evidence": "Quotable sentence template with 95% CI"}, {"text": "Recommends specific figure types (map, trends, cascade chart)", "passed": true, "evidence": "Recommends cascade figure and country chart"}, {"text": "States honest caveats (journal, consortium or timing cannot be copied; association not cause)", "passed": true, "evidence": "Section 1: how sure we are; open access evidence mixed"}, {"text": "Warns against citation gaming or overclaiming", "passed": true, "evidence": "Section 7: what to avoid"}, {"text": "Makes no unsupported quantitative claims about citation effects", "passed": true, "evidence": "Cites two checked trials of open access; no invented effect sizes"}], "summary": {"passed": 11, "failed": 0, "total": 11, "pass_rate": 1.0}}}, {"id": "eval-citable-title-abstract-with_skill-run-1", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "response.md", "type": "text", "content": "**Title**\n\nHypertension prevalence, awareness, treatment and control in seven Asian countries, 2014 to 2021: a pooled analysis of WHO STEPS surveys\n\n*Alternative with the sample size:* Hypertension prevalence, awareness, treatment and control in seven Asian countries: a pooled analysis of 38,412 adults in WHO STEPS surveys, 2014 to 2021\n\n**Summary**\n\n**Background**\nHypertension is a major public health problem, and its prevalence is rising in many low-income and middle-income countries, where many people do not know their blood pressure. Comparable estimates of hypertension care across Asian countries are scarce. We aimed to estimate the prevalence, awareness, treatment and control of hypertension in seven Asian countries, and factors associated with uncontrolled hypertension.\n\n**Methods**\nWe analysed WHO STEPS survey data from 38,412 adults aged 18 to 69 years in seven countries. The surveys were done in Bangladesh (2018), Bhutan (2019), Mongolia (2019), Myanmar (2014), Nepal (2019), Sri Lanka (2021) and Timor-Leste (2014). We defined hypertension as systolic blood pressure of 140 mm Hg or higher, diastolic blood pressure of 90 mm Hg or higher, or taking blood pressure medication. Among people with hypertension, we estimated awareness, treatment and control ([definitions]). We age-standardised estimates to the [standard population], pooled countries by [pooling method] and used [survey weights and design variables]. We used logistic regression, adjusted for [covariates], to identify factors associated with uncontrolled hypertension.\n\n**Findings**\nOverall, the pooled age-standardised prevalence of hypertension was 27.4% (95% CI 26.6 to 28.2), more than one in four adults. Prevalence was highest in Mongolia (33.9%, 95% CI 32.1 to 35.7) and lowest in Timor-Leste (17.8%, 95% CI 16.2 to 19.5). Among people with hypertension, 41.2% ([95% CI]) were aware of their condition and 26.5% ([95% CI]) were treated. Only 9.8% ([95% CI]) had controlled blood pressure, fewer than one in ten. Men had higher odds of uncontrolled hypertension than women (adjusted odds ratio [aOR] 1.62, 95% CI 1.41 to 1.86). Older age ([aOR, 95% CI]) and obesity ([aOR, 95% CI]) were also associated with uncontrolled hypertension.\n\n**Interpretation**\nHypertension is common and rarely controlled in these seven Asian countries. Most people with hypertension were unaware of it, so detection is the largest gap in care. Governments in these countries should prioritise finding people with undiagnosed hypertension and helping those on treatment reach control, with attention to men.\n\n**Funding**\n[Funder, or \"None\".]\n\n**Placeholders and assumptions**\n\n* **To fill in:** the 95% CIs for awareness, treatment and control, and the aORs with 95% CIs for older age and obesity. Also add the definitions, standard population, pooling method, survey design handling, covariates and funding.\n* **Regression:** I assumed you modelled uncontrolled hypertension among people with hypertension, with women as the reference group. Correct this if not.\n* **Older age and obesity:** your draft said only \"significant\", with no estimate or direction. I wrote \"associated with\" and left placeholders. Add the direction when you add the numbers.\n* **Cascade figures:** say whether 41.2%, 26.5% and 9.8% are age-standardised, as the prevalence is.\n* **Title years:** \"2014 to 2021\" is the span of survey years, not a trend. The Methods list each survey year, so readers will not mistake it for one.\n* **Gap sentence:** I made \"few studies\" specific (\"comparable estimates ... are scarce\"). Check it against your literature search, and show that search in the Research in context panel.\n* **Action:** I replaced \"urgent action\" with actions that follow from your own results (low awareness, low control, higher odds in men). Change it if your Discussion recommends something else.\n* **Length:** about 330 words with placeholders. Lancet journals usually cap the summary at 300 words, so check the current guidance and trim if needed.\n\n**Notes on getting noticed**\n\n* **What others will cite:** a number, namely comparable prevalence and care cascade estimates for seven Asian countries. Make that easy to reuse: give all seven countries, by sex and age group, with 95% CIs in a table or figure, and share your code. If you do, say so in the abstract.\n* **Scope:** I kept \"seven Asian countries\". Mongolia is in the WHO Western Pacific Region and the other six are in the South-East Asia Region, so no single regional label fits all seven. If each survey is nationally representative, say so in the Methods; it is a real strength.\n* **Odds ratios:** uncontrolled hypertension is very common in your sample. With a common outcome, an aOR of 1.62 means a much smaller difference in risk. Do not describe it as \"62% higher risk\". Consider reporting prevalence ratios (for example, modified Poisson regression) alongside.\n* **Honest caveat:** top-cited papers use titles like this (scope, period, design after a colon) more often than typical papers, but that is an association. Clear, reusable estimates are what earn citations; the wording helps them get found.\n"}, {"name": "scratch_draft.md", "type": "text", "content": "# Hypertension prevalence, awareness, treatment and control in seven Asian countries, 2014 to 2021: a pooled analysis of WHO STEPS surveys\n\n## Abstract\n\nBackground: Hypertension is a major public health problem, and its prevalence is rising in many low-income and middle-income countries. In these countries, health systems are often weak and many people do not know their blood pressure. Comparable estimates of hypertension care across Asian countries are scarce. We aimed to estimate the prevalence, awareness, treatment and control of hypertension in seven Asian countries, and factors associated with uncontrolled hypertension.\n\nMethods: We analysed WHO STEPS survey data from 38,412 adults aged 18 to 69 years in seven countries. The surveys were done in Bangladesh (2018), Bhutan (2019), Mongolia (2019), Myanmar (2014), Nepal (2019), Sri Lanka (2021) and Timor-Leste (2014). We defined hypertension as systolic blood pressure of 140 mm Hg or higher, diastolic blood pressure of 90 mm Hg or higher, or taking blood pressure medication. Among people with hypertension, we estimated awareness, treatment and control ([definitions]). We age-standardised estimates to the [standard population], pooled countries by [pooling method] and used [survey weights and design variables]. We used logistic regression, adjusted for [covariates], to identify factors associated with uncontrolled hypertension.\n\nFindings: Overall, the pooled age-standardised prevalence of hypertension was 27.4% (95% CI 26.6 to 28.2), more than one in four adults. Prevalence was highest in Mongolia (33.9%, 95% CI 32.1 to 35.7) and lowest in Timor-Leste (17.8%, 95% CI 16.2 to 19.5). Among people with hypertension, 41.2% ([95% CI]) were aware of their condition and 26.5% ([95% CI]) were treated. Only 9.8% ([95% CI]) had controlled blood pressure, fewer than one in ten. Men had higher odds of uncontrolled hypertension than women (adjusted odds ratio [aOR] 1.62, 95% CI 1.41 to 1.86). Older age ([aOR, 95% CI]) and obesity ([aOR, 95% CI]) were also associated with uncontrolled hypertension.\n\nInterpretation: Hypertension is common and rarely controlled in these seven Asian countries. Most people with hypertension were unaware of it, so detection is the largest gap in care. Governments in these countries should prioritise finding people with undiagnosed hypertension and helping those on treatment reach control, with attention to men.\n\nFunding: [Funder, or \"None\".]\n"}], "grading": {"expectations": [{"text": "No em dashes, en dashes or double hyphens", "passed": true, "evidence": "dashes found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "All numbers from the draft are preserved exactly", "passed": true, "evidence": "missing: []"}, {"text": "No new numbers are introduced that are not in the draft", "passed": true, "evidence": "numbers not in draft: []"}, {"text": "Title names the countries or region, the scale (7 countries or 38,412 adults) and the period", "passed": true, "evidence": "main title: Hypertension prevalence, awareness, treatment and control in seven Asian countries, 2014 to 2021: a pooled analysis of WHO STEPS surveys"}, {"text": "Title does not inflate scope (no 'global' or 'worldwide')", "passed": true, "evidence": "scope words in title"}, {"text": "Uses Lancet headings: Background, Methods, Findings, Interpretation, Funding", "passed": true, "evidence": "Lancet headings"}, {"text": "Findings open with the headline estimate and its 95% CI (27.4%, 26.6 to 28.2)", "passed": true, "evidence": "first Findings sentence"}, {"text": "Interpretation drops the 'governments must take urgent action' mandate and names an action the data support", "passed": true, "evidence": "no mandate in Interpretation"}, {"text": "Vague gap ('few studies') replaced with a specific gap or placeholder", "passed": true, "evidence": "'few studies' wording"}, {"text": "Funding left as a placeholder rather than invented", "passed": true, "evidence": "funding placeholder"}], "summary": {"passed": 11, "failed": 0, "total": 11, "pass_rate": 1.0}}}, {"id": "eval-citable-title-abstract-without_skill-run-1", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "response.md", "type": "text", "content": "Here is your title and abstract rewritten in the Lancet Global Health structured format. Anything in square brackets is a detail your draft does not give. Please fill it in or delete it.\n\n## Title\n\n**Prevalence, awareness, treatment, and control of hypertension in seven Asian countries: a pooled cross-sectional analysis of WHO STEPS surveys**\n\nAlternative: *The hypertension care cascade among 38,412 adults in South, Southeast, and East Asia: a pooled analysis of WHO STEPS surveys*\n\n## Abstract\n\n**Background**\nHypertension is a major and growing public health problem, especially in low-income and middle-income countries, where many people do not know their blood pressure. Few studies have compared hypertension and its care across Asian countries using standardised survey data. We aimed to estimate hypertension prevalence, awareness, treatment, and control in seven Asian countries, and to identify factors associated with uncontrolled hypertension.\n\n**Methods**\nWe pooled data from WHO STEPwise approach to surveillance (STEPS) surveys in Bangladesh (2018), Bhutan (2019), Mongolia (2019), Myanmar (2014), Nepal (2019), Sri Lanka (2021), and Timor-Leste (2014). The pooled sample included 38,412 adults aged 18 to 69 years. Hypertension was defined as systolic blood pressure of 140 mm Hg or higher, diastolic blood pressure of 90 mm Hg or higher, or use of antihypertensive medication. We estimated age-standardised prevalence [state standard population], awareness, treatment, and control [define control]. We used multivariable logistic regression to examine factors associated with uncontrolled hypertension [list covariates; state how survey weights and design were handled].\n\n**Findings**\nThe pooled age-standardised prevalence of hypertension was 27.4% (95% CI 26.6 to 28.2). Prevalence was highest in Mongolia (33.9%, 95% CI 32.1 to 35.7) and lowest in Timor-Leste (17.8%, 95% CI 16.2 to 19.5). Among people with hypertension, 41.2% were aware, 26.5% were treated, and 9.8% had controlled blood pressure [add 95% CIs]. Men had higher odds of uncontrolled hypertension than women (adjusted odds ratio [aOR] 1.62, 95% CI 1.41 to 1.86). Older age and obesity were also associated with uncontrolled hypertension [add aORs with 95% CIs].\n\n**Interpretation**\nMore than one in four adults had hypertension, and fewer than one in ten with hypertension had it controlled. Most people with hypertension were unaware of it, so the care gap starts at diagnosis. These findings support stronger blood pressure screening, treatment, and follow-up in primary care. Because the data are cross-sectional, the factors linked to uncontrolled hypertension show association, not cause.\n\n**Funding**\n[Funding source, or None.]\n\n## Brief notes\n\n1. **Title.** Lancet Global Health titles usually name the topic, the population, and the design after a colon. They rarely state results. The new title carries the terms people search for: hypertension, prevalence, awareness, treatment, control, and STEPS.\n2. **Headline.** The Interpretation now opens with plain figures, such as \"fewer than one in ten\" (from your 9.8%). Simple, clear figures like these are what other authors tend to quote.\n3. **Tone.** I removed \"very important\", \"day by day\" and \"governments must take urgent action\". The new wording claims only what your data show.\n4. **Please confirm.** Does \"older age and obesity were also significant\" refer to uncontrolled hypertension, and did both raise the odds? Is uncontrolled hypertension measured among all people with hypertension, or only those treated? Are the country estimates also age-standardised?\n5. **Reviewers will ask.** Surveys span 2014 to 2021, so say how you handled pooling across years. Make the \"few studies\" claim specific and check it against existing pooled analyses. I added no citations.\n6. **Length and format.** The abstract is about 290 words before you add the bracketed items. Lancet journals cap the summary at about 300 words, so check the current author guidelines. I kept your numbers exactly as written; the journal applies its own number style at copyediting.\n\nWording helps a paper get found and read. Citations depend more on the question, the data, and how useful the findings are to others.\n"}], "grading": {"expectations": [{"text": "No em dashes, en dashes or double hyphens", "passed": true, "evidence": "dashes found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "All numbers from the draft are preserved exactly", "passed": true, "evidence": "missing: []"}, {"text": "No new numbers are introduced that are not in the draft", "passed": true, "evidence": "numbers not in draft: []"}, {"text": "Title names the countries or region, the scale (7 countries or 38,412 adults) and the period", "passed": false, "evidence": "main title: Prevalence, awareness, treatment, and control of hypertension in seven Asian countries: a pooled cross-sectional analysis of WHO STEPS surveys"}, {"text": "Title does not inflate scope (no 'global' or 'worldwide')", "passed": true, "evidence": "scope words in title"}, {"text": "Uses Lancet headings: Background, Methods, Findings, Interpretation, Funding", "passed": true, "evidence": "Lancet headings"}, {"text": "Findings open with the headline estimate and its 95% CI (27.4%, 26.6 to 28.2)", "passed": true, "evidence": "first Findings sentence"}, {"text": "Interpretation drops the 'governments must take urgent action' mandate and names an action the data support", "passed": true, "evidence": "no mandate in Interpretation"}, {"text": "Vague gap ('few studies') replaced with a specific gap or placeholder", "passed": false, "evidence": "'few studies' wording"}, {"text": "Funding left as a placeholder rather than invented", "passed": true, "evidence": "funding placeholder"}], "summary": {"passed": 9, "failed": 2, "total": 11, "pass_rate": 0.818}}}, {"id": "eval-figure-plan-stunting-with_skill-run-1", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "response.md", "type": "text", "content": "# Figure plan: stunting trends by household wealth, 30 sub-Saharan African countries\n\nI read this as a request for a main-text figure set, with captions and starter R code, for a Lancet Global Health Article.\n\n**What others will reuse.** Others will cite this paper for country-level rates of decline in child stunting and for the size of the wealth gap in 30 countries. They will use those numbers in their Introductions and as benchmarks in their Discussions. So the figures should carry country numbers that readers can lift, and the appendix should hold the full estimates as a downloadable file.\n\n## Points to settle before you draw\n\n1. **Zambia.** Your notes first say Zambia increased, then correct this to a decline of -0.9 percentage points per year (95% CI -1.1 to -0.7). I used the decline. Please confirm it against your Stata output. Your summary names no country where stunting rose; figure 3 will show whether any did.\n2. **Name the gap once.** The slope index of inequality (SII) is not the difference between the poorest and richest quintiles. It is a regression-based gap across the whole wealth ranking. Use \"slope index of inequality\" in text, axes and captions. Keep \"poorest\" and \"richest\" for quintile estimates.\n3. **The pooled gap.** The SII was 21.4 percentage points (95% CI 19.8 to 23.0) in 2000 to 2004 and 19.9 (18.7 to 21.1) in 2017 to 2021. The intervals overlap, but overlap is not a test of change. Estimate the change in SII with its own 95% CI before you write \"narrowed\" or \"persisted\". Figure 1 works with either answer.\n4. **The relative gap.** Prevalence fell much more than the SII did, so the relative gap may have widened. A relative index of inequality would test this. I have not estimated it.\n5. **Definitions behind the counts.** State the rule behind \"narrowed\" (11 countries), \"widened\" (6) and \"no clear change\" (13). An example is whether the 95% CI of the change excluded zero.\n6. **Pooling.** State how you pooled countries in each period. If different countries were surveyed in each period, the pooled trend mixes real change with a change in country mix.\n\nTwo wording points. Madagascar's 0.0 (95% CI -0.3 to 0.3) is \"no clear change\", not \"no change\". Call your intervals 95% CIs, not uncertainty intervals, because they are design-based survey intervals.\n\nThese figures describe trends by wealth. They do not show why stunting fell or why gaps changed. Keep captions descriptive. Do not add policy or programme callouts to the maps unless you cite evidence for them.\n\n## The figure set\n\nTop-cited public health papers carry their findings in figures: a median of 5 figures against 3 in matched papers from the same journals and years. Maps appear in 55% of top papers against 32%, and trends over time in 69% against 30%. Your data support both. These are patterns linked with citation, not guarantees. Each caption below opens with measure, population, place and years, in 25 to 50 words (top-paper median 43).\n\n| Figure | Message | Form | Model from top papers |\n|:-|:-|:-|:-|\n| 1 | Stunting fell overall; the absolute wealth gap moved much less | Two panels: pooled prevalence by quintile; SII by period | PMID 33069326 fig 1 (one contrast); PMID 34998485 fig 2 (paired panels) |\n| 2 | Where stunting fell, and where the gap narrowed or widened | Two maps of Africa | PMID 27115820 fig 2 (paired maps) |\n| 3 | How fast each country declined, with uncertainty | Ranked dot chart, 95% CIs, values printed | PMID 35065702 fig 2; PMID 38642570 fig 1 |\n| 4 | How large each country's gap was at the start and end | Dot chart of SII at first and latest survey, in three groups | PMID 35065702 fig 2 (interval lines) |\n| 5 | The pattern country by country | 30 small multiples on shared axes | PMID 29029897 fig 1; PMID 28408086 fig 1 |\n| Appendix 1 | Which surveys the estimates rest on | Dot matrix of 87 surveys by country and year | PMID 30496104 fig 1 |\n\nLancet journals limit display items in an Article. Check the current limit in the Lancet Global Health author guidelines. If space is short, move figure 5 to the appendix first. Then move figure 3, and give its intervals in an appendix table.\n\n## Figure by figure\n\n### Figure 1. The headline contrast\n\n* **Shows:** pooled stunting prevalence for all children (black) and each wealth quintile (panel A), and the pooled SII (panel B), for each period. Both panels share the period axis.\n* **Why first:** in 22 of 33 top papers reviewed, figure 1 plotted one clear contrast. GBD 2019 showed flat burden beside falling rates (PMID 33069326 fig 1). Your contrast is prevalence falling from 41.6% (95% CI 40.9 to 42.3) to 32.1% (31.6 to 32.6), beside an SII that moved from 21.4 to 19.9 points.\n* **Data still needed:** pooled quintile estimates and any middle periods, made the same way as your overall estimate. With only two periods, the code draws two points per group.\n* **Design:** two panels, not a second y axis. One colour per quintile, darkest for the poorest, kept the same in every figure.\n\n**Caption**\n\n> **Figure 1: Stunting prevalence by wealth quintile (A) and slope index of inequality (B), children younger than 5 years, 30 sub-Saharan African countries, 2000 to 2021**\n>\n> Black shows all children; vertical lines show 95% CIs. The slope index is the absolute gap between the poorest and richest ends of the wealth ranking.\n\n### Figure 2. Where stunting fell and where gaps changed\n\n* **Shows:** panel A maps each country's annual absolute change in prevalence in six bins, with a white bin around zero. Panel B maps whether the SII narrowed, showed no clear change or widened, with country counts in the legend.\n* **Colour:** blue to red, because zero change is a true midpoint. Blue means improvement in both panels. Grey marks countries not in the study.\n* **Uncertainty:** none of the 16 maps reviewed from top papers drew it. Figures 3 and 4 carry the intervals.\n* **Bins:** the breaks in the code are a start. Set round breaks once you see the range of your 30 estimates. Add insets if small island states are included.\n\n**Caption**\n\n> **Figure 2: Annual absolute change in stunting prevalence (A) and change in slope index of inequality (B), children younger than 5 years, 30 sub-Saharan African countries, 2000 to 2021**\n>\n> A shows point estimates; figure 3 gives 95% CIs. In B, narrowed and widened mean [rule]. Grey shows countries not included.\n\n### Figure 3. Ranked annual change\n\n* **Shows:** each country's annual absolute change with its 95% CI, largest fall at the top, and a line at zero. Values print beside each row, so Ethiopia's -1.3 (-1.5 to -1.1) sits at the top.\n* **Why:** readers can lift any country's number directly. Printed values let the figure double as a reference table, as in PMID 38642570 fig 1.\n* **Order:** by value, never alphabetical.\n\n**Caption**\n\n> **Figure 3: Annual absolute change in stunting prevalence (percentage points per year) among children younger than 5 years, 30 sub-Saharan African countries, 2000 to 2021**\n>\n> Points show estimates from [model] across each country's DHS surveys; lines show 95% CIs. Negative values show a fall. DHS=Demographic and Health Surveys.\n\n### Figure 4. The wealth gap in each country\n\n* **Shows:** the SII at each country's first survey (grey) and latest survey (black), with 95% CIs. Countries sit in three groups: narrowed (11), no clear change (13) and widened (6). Within groups, the largest narrowing is at the top.\n* **Why:** it shows the size of each gap, not only its direction. Readers can see where large gaps remain.\n* **Alternative:** if you estimated the change in SII with a CI, plot that change instead, in the layout of figure 3.\n\n**Caption**\n\n> **Figure 4: Slope index of inequality in stunting (percentage points) at the first and latest DHS survey, children younger than 5 years, 30 sub-Saharan African countries, 2000 to 2021**\n>\n> Groups follow [rule]; within groups, countries are ordered by size of change. Lines show 95% CIs. DHS=Demographic and Health Surveys.\n\n### Figure 5. Country by country\n\n* **Shows:** prevalence in the poorest and richest quintiles at each survey, one panel per country. All 30 panels share axes, so the space between the lines is the gap.\n* **Order:** by region, then by latest prevalence among the poorest.\n* **Why:** 17 of 95 figures reviewed from top papers were small multiples with four or more matched panels. Shared axes let the eye compare shapes (PMID 28408086 fig 1 keeps one axis across nine panels).\n* **Appendix version:** all five quintiles in the same layout.\n\n**Caption**\n\n> **Figure 5: Stunting prevalence (%) in the poorest and richest wealth quintiles by survey year, children younger than 5 years, 30 sub-Saharan African countries, 2000 to 2021**\n>\n> Vertical lines show 95% CIs; panels share axes. Countries are grouped by region, then ordered by latest prevalence among the poorest.\n\n### Appendix figure 1. Data coverage\n\n**Caption**\n\n> **Appendix figure 1: DHS surveys used, by country and year of fieldwork, 30 sub-Saharan African countries, 2000 to 2021**\n>\n> Each dot is one of 87 surveys; dot area shows the number of children younger than 5 years analysed (612,408 in total). DHS=Demographic and Health Surveys.\n\n### Make the estimates reusable\n\nRelease the country by survey by quintile estimates, the annual changes and the SII values as an appendix data file, with your code. Top papers share code or data more often (42% against 28%) and attach supplements more often (38% against 21%).\n\n## R code\n\nThe code uses ggplot2 (3.4 or later), dplyr, readr and patchwork, plus sf and rnaturalearth for the maps. I ran every block on dummy data with the column layout below, to check that it works. Check each figure against your own estimates. Sizes are in mm; check the journal's artwork guidance for widths and file types.\n\n| File | One row per | Columns |\n|:-|:-|:-|\n| pooled_prev.csv | period and group | period (\"2000 to 2004\"), group (\"All children\", \"Poorest\", ..., \"Richest\"), est, lo, hi (%) |\n| pooled_sii.csv | period | period, est, lo, hi (percentage points) |\n| country_change.csv | country | iso3, country, change, lo, hi (percentage points per year) |\n| country_sii.csv | country and survey | iso3, country, survey (\"First\" or \"Latest\"), year, est, lo, hi, sii_class |\n| country_quintile.csv | country, survey and quintile | country, region, year, quintile, est, lo, hi (%) |\n| surveys.csv | survey | country, region, year, n |\n\n### Setup\n\n```r\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(readr)\nlibrary(patchwork)\n\ntheme_pub <- theme_classic(base_size = 9) +\n  theme(strip.background = element_blank(),\n        strip.text = element_text(face = \"bold\", hjust = 0),\n        legend.key.size = unit(3, \"mm\"),\n        plot.tag = element_text(face = \"bold\"))\n\n# One colour per wealth quintile in every figure: darkest = poorest\nquint <- c(\"Poorest\", \"Poorer\", \"Middle\", \"Richer\", \"Richest\")\npal_q <- c(\"All children\" = \"black\",\n           setNames(viridisLite::viridis(5, end = 0.85), quint))\n\nf1 <- function(x) sprintf(\"%.1f\", round(x, 1) + 0)   # one decimal; 0.0 not -0.0\nwrap_period <- function(x) sub(\" to \", \" to\\n\", x)\n```\n\n### Figure 1\n\n```r\nprev <- read_csv(\"pooled_prev.csv\")    # period, group, est, lo, hi\nsii  <- read_csv(\"pooled_sii.csv\")     # period, est, lo, hi\nper  <- unique(prev$period)            # rows must be in time order\nprev <- mutate(prev, period = factor(period, per),\n               group = factor(group, c(\"All children\", quint)))\nsii  <- mutate(sii, period = factor(period, per))\n\ndodge <- position_dodge(width = 0.5)\np1a <- ggplot(prev, aes(period, est, colour = group, group = group)) +\n  geom_line(aes(linewidth = group == \"All children\"), position = dodge) +\n  geom_linerange(aes(ymin = lo, ymax = hi), position = dodge) +\n  geom_point(size = 1.4, position = dodge) +\n  scale_colour_manual(values = pal_q, name = NULL) +\n  scale_linewidth_manual(values = c(0.4, 0.9), guide = \"none\") +\n  scale_x_discrete(labels = wrap_period) +\n  scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +\n  labs(x = NULL, y = \"Stunting prevalence (%)\") +\n  theme_pub\n\np1b <- ggplot(sii, aes(period, est)) +\n  geom_linerange(aes(ymin = lo, ymax = hi)) +\n  geom_point(size = 1.6) +\n  scale_x_discrete(labels = wrap_period) +\n  scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +\n  labs(x = NULL, y = \"Slope index of inequality\\n(percentage points)\") +\n  theme_pub\n\nfig1 <- p1a + p1b + plot_layout(widths = c(2, 1), guides = \"collect\") +\n  plot_annotation(tag_levels = \"A\")\nggsave(\"figure1.pdf\", fig1, width = 170, height = 80, units = \"mm\")\n```\n\n### Figure 2\n\n```r\nlibrary(sf)\nafrica <- rnaturalearth::ne_countries(continent = \"Africa\", returnclass = \"sf\")\n# without rnaturalearth: sf::st_as_sf(rnaturalearthdata::countries110), then keep continent == \"Africa\"\nchg  <- read_csv(\"country_change.csv\")\ncsii <- read_csv(\"country_sii.csv\")\nstopifnot(all(chg$iso3 %in% africa$iso_a3))   # every study country must join\n\n# Panel A: binned annual change, white bin centred on zero\nlab_a <- c(\"Fall of 1.25 or more\", \"Fall of 0.75 to 1.25\",\n           \"Fall of 0.25 to 0.75\", \"Within 0.25 of zero\",\n           \"Rise of 0.25 to 0.75\", \"Rise of 0.75 or more\", \"Not included\")\npal_a <- c(\"#2166AC\", \"#67A9CF\", \"#D1E5F0\", \"#F7F7F7\",\n           \"#FDDBC7\", \"#EF8A62\", \"grey80\")\nchg <- mutate(chg, cls = cut(change, c(-Inf, -1.25, -0.75, -0.25, 0.25, 0.75, Inf),\n                             labels = lab_a[1:6]))\nma <- left_join(africa, select(chg, iso3, cls), by = c(\"iso_a3\" = \"iso3\")) |>\n  mutate(cls = factor(ifelse(is.na(cls), \"Not included\", as.character(cls)), lab_a))\n\n# Panel B: direction of change in the SII, with country counts\ngrp <- c(\"Narrowed\", \"No clear change\", \"Widened\")\ncls_b <- distinct(csii, iso3, sii_class)\nn_b <- table(factor(cls_b$sii_class, grp))\nlab_b <- c(paste0(grp, \" (\", n_b, \")\"), \"Not included\")\nmb <- left_join(africa, cls_b, by = c(\"iso_a3\" = \"iso3\")) |>\n  mutate(cls = factor(ifelse(is.na(sii_class), \"Not included\", sii_class),\n                      c(grp, \"Not included\"), labels = lab_b))\npal_b <- c(\"#2166AC\", \"#F7F7F7\", \"#B2182B\", \"grey80\")\n\nmap_panel <- function(d, pal, title) {\n  ggplot(d) +\n    geom_sf(aes(fill = cls), colour = \"grey40\", linewidth = 0.1) +\n    scale_fill_manual(values = pal, drop = FALSE, name = title) +\n    coord_sf(crs = \"+proj=aea +lat_1=20 +lat_2=-23 +lat_0=0 +lon_0=25\") +\n    guides(fill = guide_legend(ncol = 2, title.position = \"top\")) +\n    theme_void(base_size = 9) +\n    theme(legend.position = \"bottom\", plot.tag = element_text(face = \"bold\"))\n}\nfig2 <- map_panel(ma, pal_a, \"Annual change in prevalence (percentage points)\") +\n  map_panel(mb, pal_b, \"Change in slope index of inequality\") +\n  plot_annotation(tag_levels = \"A\")\nggsave(\"figure2.pdf\", fig2, width = 170, height = 120, units = \"mm\")\n```\n\n### Figure 3\n\n```r\nchg <- read_csv(\"country_change.csv\") |>\n  mutate(country = reorder(country, -change),   # largest fall at top\n         lab = paste0(f1(change), \" (\", f1(lo), \" to \", f1(hi), \")\"))\nxr <- range(c(chg$lo, chg$hi, 0))\n\nfig3 <- ggplot(chg, aes(change, country)) +\n  geom_vline(xintercept = 0, colour = \"grey60\") +\n  geom_linerange(aes(xmin = lo, xmax = hi)) +\n  geom_point(size = 1.5) +\n  geom_text(aes(x = xr[2] + 0.1, label = lab), hjust = 0, size = 2.3) +\n  coord_cartesian(xlim = xr, clip = \"off\") +\n  labs(x = \"Annual absolute change in stunting prevalence\\n(percentage points per year)\",\n       y = NULL) +\n  theme_pub + theme(plot.margin = margin(5, 75, 5, 5))\nggsave(\"figure3.pdf\", fig3, width = 120, height = 150, units = \"mm\")\n```\n\n### Figure 4\n\n```r\ncsii <- read_csv(\"country_sii.csv\")\ngrp <- c(\"Narrowed\", \"No clear change\", \"Widened\")\nn_grp <- table(factor(distinct(csii, country, sii_class)$sii_class, grp))\ncsii <- csii |>\n  group_by(country) |>\n  mutate(d = est[survey == \"Latest\"] - est[survey == \"First\"]) |>\n  ungroup() |>\n  mutate(country = reorder(country, -d),   # largest narrowing at top\n         sii_class = factor(sii_class, grp, labels = paste0(grp, \" (\", n_grp, \")\")))\nfirst  <- filter(csii, survey == \"First\")\nlatest <- filter(csii, survey == \"Latest\")\nup   <- position_nudge(y = 0.17)\ndown <- position_nudge(y = -0.17)\n\nfig4 <- ggplot(mapping = aes(est, country, colour = survey)) +\n  geom_vline(xintercept = 0, colour = \"grey80\") +\n  geom_linerange(data = first, aes(xmin = lo, xmax = hi), position = up) +\n  geom_point(data = first, size = 1.3, position = up) +\n  geom_linerange(data = latest, aes(xmin = lo, xmax = hi), position = down) +\n  geom_point(data = latest, size = 1.3, position = down) +\n  facet_grid(sii_class ~ ., scales = \"free_y\", space = \"free_y\") +\n  scale_colour_manual(values = c(First = \"grey60\", Latest = \"black\"),\n                      labels = c(\"First survey\", \"Latest survey\"), name = NULL) +\n  expand_limits(x = 0) +\n  labs(x = \"Slope index of inequality (percentage points)\", y = NULL) +\n  theme_pub +\n  theme(legend.position = \"top\", strip.text.y = element_text(angle = 0))\nggsave(\"figure4.pdf\", fig4, width = 140, height = 160, units = \"mm\")\n```\n\n### Figure 5\n\n```r\ncq <- read_csv(\"country_quintile.csv\") |>\n  filter(quintile %in% c(\"Poorest\", \"Richest\"))   # remove this filter for the appendix version\nord <- cq |>\n  filter(quintile == \"Poorest\") |>\n  group_by(region, country) |>\n  summarise(latest = est[which.max(year)], .groups = \"drop\") |>\n  arrange(region, desc(latest))\ncq$country <- factor(cq$country, levels = ord$country)\n\nfig5 <- ggplot(cq, aes(year, est, colour = quintile)) +\n  geom_linerange(aes(ymin = lo, ymax = hi), linewidth = 0.3) +\n  geom_line(linewidth = 0.5) +\n  geom_point(size = 0.8) +\n  facet_wrap(~ country, ncol = 6) +             # one shared scale for all panels\n  scale_colour_manual(values = pal_q, breaks = quint, name = NULL) +\n  scale_x_continuous(breaks = c(2000, 2010, 2020), limits = c(1999, 2022)) +\n  scale_y_continuous(limits = c(0, NA)) +\n  labs(x = \"Survey year\", y = \"Stunting prevalence (%)\") +\n  theme_pub + theme(legend.position = \"top\")\nggsave(\"figure5.pdf\", fig5, width = 170, height = 200, units = \"mm\")\n```\n\n### Appendix figure 1\n\n```r\nsv <- read_csv(\"surveys.csv\")\nstopifnot(nrow(sv) == 87, sum(sv$n) == 612408)   # matches your reported totals\n\nfigA1 <- ggplot(sv, aes(year, reorder(country, year, length))) +\n  geom_point(aes(size = n), colour = \"grey30\") +\n  facet_grid(region ~ ., scales = \"free_y\", space = \"free_y\") +\n  scale_size_area(max_size = 3.5, name = \"Children\\nanalysed\") +\n  scale_x_continuous(breaks = seq(2000, 2020, 5)) +\n  labs(x = \"Year of survey fieldwork\", y = NULL) +\n  theme_pub + theme(strip.text.y = element_text(angle = 0))\nggsave(\"figureA1.pdf\", figA1, width = 140, height = 150, units = \"mm\")\n```\n\n## Placeholders and assumptions\n\n* **[rule]:** your definition of narrowed, widened and no clear change in the SII.\n* **[model]:** how you estimated each country's annual absolute change.\n* **Figure 1 data:** pooled quintile estimates and middle periods are not in your summary. I did not invent them; the code reads them from your file.\n* **Region:** figure 5 and appendix figure 1 need a region column, for example UN subregions.\n* **Zambia:** assumed to have declined (-0.9, 95% CI -1.1 to -0.7), as your corrected note says.\n* **Periods:** assumed 2000 to 2004 and 2017 to 2021 are your first and last pooled periods.\n* **Intervals and weights:** assumed to be weighted, design-based 95% CIs that allow for DHS sampling weights and clustering.\n* **Map bins:** placeholders until you see the range of your 30 country estimates.\n* **Display items:** I did not state Lancet Global Health's current limit; check the author guidelines.\n"}], "grading": {"expectations": [{"text": "No em dashes, en dashes or double hyphens", "passed": true, "evidence": "dashes found: 0"}, {"text": "No prose sentence of 30 or more words (outside code)", "passed": true, "evidence": "0 long sentences"}, {"text": "Figure 1 shows the headline finding (pooled stunting decline 41.6% to 32.1%)", "passed": true, "evidence": "Figure 1: pooled prevalence by quintile plus SII, states 41.6% to 32.1% contrast"}, {"text": "Includes a trend figure with uncertainty shown", "passed": true, "evidence": "Figure 1 and 5 draw 95% CI lines"}, {"text": "Includes a country-level figure of annual change (ranked chart or map)", "passed": true, "evidence": "Ranked dot chart of annual change with CIs (fig 3) plus maps (fig 2)"}, {"text": "Includes a wealth inequality figure (quintiles, equiplot or slope index)", "passed": true, "evidence": "SII panels and first/latest SII dot chart"}, {"text": "Captions state measure, population, place, years and what intervals show", "passed": true, "evidence": "Captions open with measure, population, place, years and state 95% CIs"}, {"text": "Provides R ggplot2 code", "passed": true, "evidence": "ggplot2 code for all figures, run on dummy data"}, {"text": "Uses only the user's numbers (no invented country values)", "passed": true, "evidence": "Only user numbers; missing pooled quintile values left to user files"}, {"text": "Handles the ambiguous Zambia note consistently (decline of -0.9) or flags it", "passed": true, "evidence": "Uses -0.9 decline and asks to confirm"}], "summary": {"passed": 10, "failed": 0, "total": 10, "pass_rate": 1.0}}}, {"id": "eval-figure-plan-stunting-without_skill-run-1", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "response.md", "type": "text", "content": "# Figure plan for your stunting and wealth paper (Lancet Global Health)\n\nYour results tell three stories. Stunting fell overall. Progress differed a lot between countries. The absolute wealth gap stayed large and changed in different directions by country. I suggest four main figures, one per story plus a country-level view of the gap, and a small set of appendix figures.\n\n## Before you plot: five things to fix or confirm\n\n1. **Zambia.** Your notes read \"increase in Zambia? no, Zambia declined (-0.9, -1.1 to -0.7)\". I have treated Zambia as a decline. Please confirm against your Stata output and delete the query from your notes.\n2. **What the SII measures.** Your notes call the SII the \"gap between poorest and richest quintile\". The SII is the modelled absolute difference between the bottom and top of the whole wealth distribution, using all five quintiles. It is not simply poorest minus richest. Captions should say this, and state the sign (positive means more stunting among poorer children).\n3. **The pooled SII change.** The pooled SII was 21.4 (95% CI 19.8 to 23.0) in 2000-04 and 19.9 (18.7 to 21.1) in 2017-21. The intervals overlap, and you have not reported a test of the difference. Estimate the change with its own 95% CI before calling it a narrowing. Until then, \"changed little\" is the safer wording.\n4. **The country categories.** Captions must state the rule behind \"narrowed in 11 countries, widened in 6, no clear change in 13\". For example, say whether the 95% CI for the change in SII had to exclude zero.\n5. **Pooled estimates.** Not every country has a survey in every period (87 surveys across 30 countries). State which countries contribute to each period and how you pooled them (for example, population weighted). Composition changes alone can shift a pooled trend.\n\nTwo smaller wording points. Madagascar's estimate, 0.0 (-0.3 to 0.3), means no evidence of change, not proof of no change. And keep all captions descriptive. The figures show trends and associations with household wealth, not the effects of any policy or programme.\n\n## Practical points for the journal\n\n- Lancet journals limit the combined number of tables and figures in the main paper. Check the current Information for Authors for the exact cap. Four figures plus one table (survey characteristics) is a sensible plan; everything else goes in the appendix.\n- Lancet journals usually redraw figures in house style. Clarity and editable vector files (PDF or SVG) matter more than polish. The code below saves a vector PDF and a 600 dpi PNG.\n- Write intervals with \"to\" (for example, -1.5 to -1.1). This avoids confusion with minus signs.\n- Use one ordered palette for wealth quintiles in every figure, with the poorest always darkest. The code uses viridis, which is safe for colour-blind readers.\n\n## Main figures\n\n### Figure 1: Pooled trends by wealth quintile, with the pooled SII\n\n**What it shows.** Panel A plots pooled stunting prevalence for each wealth quintile and for all children, by survey period, with 95% CIs. Panel B plots the pooled SII by period. Together they show whether every wealth group improved and whether the absolute gap moved.\n\n**Why it leads.** It carries your headline numbers in one view: 41.6% to 32.1% overall, and an SII of 21.4 then 19.9 percentage points.\n\n**Caption.**\n\n> **Figure 1: Stunting prevalence by household wealth quintile in 30 sub-Saharan African countries, 2000-04 to 2017-21**\n> (A) Pooled prevalence of stunting among children younger than 5 years, by wealth quintile and survey period. The dashed line shows all children. (B) Pooled SII by survey period. The SII is the modelled absolute difference in stunting prevalence between the poorest and richest ends of the wealth distribution. Positive values mean higher prevalence among poorer children. Estimates are pooled across [countries with a survey in each period] using [pooling method and weights]. Vertical lines show 95% CIs. Data are from 87 DHS surveys (n=612,408 children). DHS=Demographic and Health Surveys. SII=slope index of inequality.\n\n### Figure 2: Annual change in stunting by country\n\n**What it shows.** A forest plot of the annual absolute change in stunting prevalence for each of the 30 countries, with 95% CIs. Countries are ranked from the largest decline (Ethiopia, -1.3 percentage points per year) to the smallest change. A reference line marks zero. A text column gives each estimate and CI.\n\n**Why a forest plot and not a map.** A map is attractive but hides uncertainty and small countries. If you want a map, put it in the appendix.\n\n**Caption.**\n\n> **Figure 2: Annual absolute change in stunting prevalence among children younger than 5 years, by country**\n> Points show the estimated annual change in percentage points, and horizontal lines show 95% CIs. Negative values indicate a decline. Countries are ordered from the largest decline to the smallest. Estimates come from [model, for example a linear model of prevalence on survey year] fitted to [number] surveys per country, 2000 to 2021.\n\n### Figure 3: Equiplot of stunting by wealth quintile in each country\n\n**What it shows.** For each country, five dots show stunting prevalence in each wealth quintile, joined by a grey line. The left panel shows the first survey and the right panel the latest survey. The length of the grey line shows the spread between groups. Countries are ordered by their latest SII. Survey years appear next to each country name.\n\n**Why it matters.** Equiplots are widely used for wealth inequalities in child health. Readers can see at a glance whether the poorest are left behind or whether all groups moved together. Put the 95% CIs in an appendix table, as error bars make this figure unreadable.\n\n**Caption.**\n\n> **Figure 3: Stunting prevalence by household wealth quintile in the first and latest survey in each country**\n> Each dot shows stunting prevalence among children younger than 5 years in one wealth quintile. The grey line spans the lowest to the highest quintile estimate. Years of the first and latest surveys are shown in brackets. Countries are ordered by the SII in the latest survey, with the largest at the top. 95% CIs are in appendix table [X]. SII=slope index of inequality.\n\n### Figure 4: Change in the SII by country\n\n**What it shows.** For each country, the SII in the first survey (open circle) and the latest survey (filled circle), each with a 95% CI. Countries are grouped into three panels: narrowed (n=11), no clear change (n=13) and widened (n=6). The code counts these from your data, so the labels will flag any mismatch.\n\n**Why it matters.** It shows your country-level inequality result with its uncertainty. If you hit the display item cap, this is the figure to move to the appendix, since Figure 3 shows a similar pattern.\n\n**Caption.**\n\n> **Figure 4: Absolute wealth-related inequality in stunting in the first and latest survey in each country**\n> Circles show the SII in the first (open) and latest (filled) survey, with 95% CIs. Positive values mean higher stunting prevalence among poorer children. Countries are grouped by the change in SII between surveys. We classed a change as narrowing or widening when [your criterion, for example the 95% CI for the change excluded zero]. SII=slope index of inequality.\n\n## Appendix figures\n\n- **Survey coverage.** One dot per survey, by country and year (87 surveys, 30 countries). It shows reviewers where the data are thin. Code included below.\n- **Country trends by quintile.** Small multiples, one panel per country, with all surveys and 95% CIs. You already have these estimates.\n- **Relative inequality.** Consider adding a relative measure, such as the relative index of inequality, by period. When overall prevalence falls, a similar absolute gap can mean a larger relative gap. Reviewers often ask for both. This needs a new estimate, so I have not drawn conclusions about it.\n- **Poorest versus richest change (optional).** A scatter of annual change in the poorest quintile against the richest, one point per country, with a line of equality. This also needs new estimates.\n\n## R code to start from\n\nThe code reads five CSV files. Export them from Stata with `export delimited`. The expected columns are listed at the top of the script. Rename your variables to match, or edit the script.\n\nThe script first checks your files against the reported results. It expects 87 surveys and 30 countries. It also expects overall prevalence of 41.6 and 32.1, pooled SII of 21.4 and 19.9, and category counts of 11, 6 and 13. It then draws Figures 1 to 4 and the survey coverage figure. I tested it on placeholder files with the same structure, using ggplot2 3.4.4. It contains no real or invented estimates.\n\nPackages needed: readr, dplyr, ggplot2, patchwork (and scales, which installs with ggplot2).\n\n```r\n## 0. Setup ####\n\nlibrary(readr)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(patchwork)\n\n# Wealth quintile labels and an ordered, colour-blind-safe palette (dark = poorest)\nquintile_labels <- c(\"Q1 (poorest)\", \"Q2\", \"Q3\", \"Q4\", \"Q5 (richest)\")\nquintile_cols <- setNames(scales::viridis_pal(option = \"D\", end = 0.85)(5), quintile_labels)\n\ntheme_set(\n  theme_minimal(base_size = 9) +\n    theme(panel.grid.minor = element_blank(),\n          axis.title = element_text(size = 8),\n          legend.position = \"bottom\",\n          strip.text = element_text(face = \"bold\", hjust = 0))\n)\n\n# \"est (lci to uci)\" with one decimal place; prints -0.0 as 0.0\nfmt_ci <- function(est, lci, uci, digits = 1) {\n  f <- function(x) sub(\"^-(0\\\\.0+)$\", \"\\\\1\", formatC(x, format = \"f\", digits = digits))\n  paste0(f(est), \" (\", f(lci), \" to \", f(uci), \")\")\n}\n\n# Save a vector PDF (editable) and a high-resolution PNG (for co-authors)\nsave_fig <- function(plot, name, width_mm, height_mm) {\n  ggsave(paste0(name, \".pdf\"), plot, width = width_mm, height = height_mm, units = \"mm\")\n  ggsave(paste0(name, \".png\"), plot, width = width_mm, height = height_mm, units = \"mm\",\n         dpi = 600, bg = \"white\")\n}\n\n# First and latest survey in each country\nfirst_latest <- function(df) {\n  df |>\n    group_by(country) |>\n    filter(survey_year %in% range(survey_year)) |>\n    mutate(wave = if_else(survey_year == min(survey_year), \"First survey\", \"Latest survey\"),\n           years = paste0(min(survey_year), \", \", max(survey_year))) |>\n    ungroup()\n}\n\n## Inputs (export each from Stata with: export delimited using \"name.csv\", replace) ####\n# pooled_prevalence_by_period.csv : period, group (All, Q1 to Q5), prev, lci, uci\n# pooled_sii_by_period.csv        : period, sii, lci, uci\n# country_annual_change.csv       : country, change, lci, uci (percentage points per year)\n# country_quintile_estimates.csv  : country, survey_year, quintile (1 = poorest to 5 = richest), prev, lci, uci\n# country_sii_estimates.csv       : country, survey_year, sii, lci, uci, sii_change\n#                                   (sii_change = \"Narrowed\", \"Widened\" or \"No clear change\")\n\npooled_prev <- read_csv(\"pooled_prevalence_by_period.csv\", show_col_types = FALSE)\npooled_sii  <- read_csv(\"pooled_sii_by_period.csv\", show_col_types = FALSE)\ntrend       <- read_csv(\"country_annual_change.csv\", show_col_types = FALSE)\ncq          <- read_csv(\"country_quintile_estimates.csv\", show_col_types = FALSE)\ncsii        <- read_csv(\"country_sii_estimates.csv\", show_col_types = FALSE)\n\n## Checks against your reported results ####\ncoverage <- distinct(cq, country, survey_year)\ncat(\"Surveys:\", nrow(coverage), \"(expect 87); countries:\", n_distinct(coverage$country), \"(expect 30)\\n\")\nprint(filter(pooled_prev, group == \"All\", period %in% c(\"2000-04\", \"2017-21\")))  # expect 41.6 and 32.1\nprint(filter(pooled_sii, period %in% c(\"2000-04\", \"2017-21\")))                 # expect 21.4 and 19.9\nprint(count(distinct(csii, country, sii_change), sii_change))                   # expect 11, 6, 13\nstopifnot(all(count(coverage, country)$n >= 2))  # every country needs at least two surveys\n\n## Figure 1: pooled prevalence by quintile (A) and pooled SII (B) ####\n\nperiod_levels <- sort(unique(pooled_prev$period))\ngroup_cols <- c(quintile_cols, \"All children\" = \"grey15\")\ngroup_lty  <- c(setNames(rep(\"solid\", 5), quintile_labels), \"All children\" = \"22\")\ndodge <- position_dodge(width = 0.45)\n\nfig1a <- pooled_prev |>\n  mutate(period = factor(period, levels = period_levels),\n         group = factor(group, levels = c(paste0(\"Q\", 1:5), \"All\"),\n                        labels = c(quintile_labels, \"All children\"))) |>\n  ggplot(aes(period, prev, colour = group, linetype = group, group = group)) +\n  geom_line(position = dodge, linewidth = 0.6) +\n  geom_linerange(aes(ymin = lci, ymax = uci), position = dodge, linetype = \"solid\") +\n  geom_point(position = dodge, size = 1.8) +\n  scale_colour_manual(values = group_cols, name = NULL) +\n  scale_linetype_manual(values = group_lty, name = NULL) +\n  scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +\n  labs(x = \"Survey period\", y = \"Stunting prevalence (%)\")\n\nfig1b <- pooled_sii |>\n  mutate(period = factor(period, levels = period_levels)) |>\n  ggplot(aes(period, sii, group = 1)) +\n  geom_line(colour = \"grey50\", linewidth = 0.6) +\n  geom_linerange(aes(ymin = lci, ymax = uci), colour = \"grey15\") +\n  geom_point(size = 1.8, colour = \"grey15\") +\n  scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +\n  labs(x = \"Survey period\", y = \"Slope index of inequality (percentage points)\")\n\nfig1 <- fig1a + fig1b +\n  plot_layout(widths = c(2, 1), guides = \"collect\") +\n  plot_annotation(tag_levels = \"A\") &\n  theme(legend.position = \"bottom\")\n\nsave_fig(fig1, \"figure1_pooled_trends\", 180, 95)\n\n## Figure 2: annual absolute change by country (forest plot) ####\n\nfig2_data <- trend |>\n  mutate(country = reorder(country, -change),   # largest decline at the top\n         label = fmt_ci(change, lci, uci))\n\nfig2_forest <- ggplot(fig2_data, aes(change, country)) +\n  geom_vline(xintercept = 0, colour = \"grey50\", linewidth = 0.4) +\n  geom_linerange(aes(xmin = lci, xmax = uci), colour = \"grey30\") +\n  geom_point(shape = 15, size = 1.8) +\n  labs(x = \"Annual absolute change in stunting prevalence\\n(percentage points per year)\", y = NULL) +\n  theme(panel.grid.major.y = element_blank())\n\nfig2_text <- ggplot(fig2_data, aes(0, country, label = label)) +\n  geom_text(hjust = 0, size = 2.6) +\n  scale_x_continuous(limits = c(0, 1), expand = c(0, 0)) +\n  labs(title = \"Change (95% CI)\") +\n  theme_void(base_size = 9) +\n  theme(plot.title = element_text(size = 8, face = \"bold\"))\n\nfig2 <- fig2_forest + fig2_text + plot_layout(widths = c(3, 1.3))\n\nsave_fig(fig2, \"figure2_country_change\", 180, 150)\n\n## Figure 3: equiplot, prevalence by quintile, first and latest survey ####\n\nlatest_sii <- csii |>\n  group_by(country) |>\n  filter(survey_year == max(survey_year)) |>\n  ungroup() |>\n  select(country, latest_sii = sii)\n\nfig3_data <- first_latest(cq) |>\n  left_join(latest_sii, by = \"country\") |>\n  mutate(country_lab = reorder(paste0(country, \" (\", years, \")\"), latest_sii),  # widest gap at top\n         quintile = factor(quintile, levels = 1:5, labels = quintile_labels))\n\nfig3_range <- fig3_data |>\n  group_by(country_lab, wave) |>\n  summarise(lo = min(prev), hi = max(prev), .groups = \"drop\")\n\nfig3 <- ggplot(fig3_data, aes(prev, country_lab)) +\n  geom_segment(data = fig3_range, aes(x = lo, xend = hi, y = country_lab, yend = country_lab),\n               inherit.aes = FALSE, colour = \"grey80\", linewidth = 1) +\n  geom_point(aes(colour = quintile), size = 2) +\n  facet_wrap(~ wave, nrow = 1) +\n  scale_colour_manual(values = quintile_cols, name = \"Wealth quintile\") +\n  scale_x_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +\n  labs(x = \"Stunting prevalence (%)\", y = NULL) +\n  theme(panel.grid.major.y = element_blank())\n\nsave_fig(fig3, \"figure3_equiplot\", 180, 210)\n\n## Figure 4: SII in first and latest survey, grouped by direction of change ####\n\ncat_levels <- c(\"Narrowed\", \"No clear change\", \"Widened\")\ncat_n <- count(distinct(csii, country, sii_change), sii_change)\ncat_lab <- setNames(paste0(cat_n$sii_change, \" (n=\", cat_n$n, \")\"), cat_n$sii_change)\n\nfig4_data <- first_latest(csii) |>\n  left_join(latest_sii, by = \"country\") |>\n  mutate(country = reorder(country, latest_sii),\n         sii_change = factor(sii_change, levels = cat_levels),\n         nudge = if_else(wave == \"First survey\", 0.17, -0.17))\n\nfig4 <- ggplot(fig4_data, aes(sii, country, colour = wave, shape = wave)) +\n  geom_vline(xintercept = 0, colour = \"grey50\", linewidth = 0.4) +\n  geom_linerange(aes(xmin = lci, xmax = uci), position = position_nudge(y = fig4_data$nudge)) +\n  geom_point(size = 1.8, fill = \"white\", position = position_nudge(y = fig4_data$nudge)) +\n  facet_grid(sii_change ~ ., scales = \"free_y\", space = \"free_y\",\n             labeller = as_labeller(cat_lab)) +\n  scale_colour_manual(values = c(\"First survey\" = \"grey55\", \"Latest survey\" = \"black\"), name = NULL) +\n  scale_shape_manual(values = c(\"First survey\" = 21, \"Latest survey\" = 16), name = NULL) +\n  labs(x = \"Slope index of inequality (percentage points)\", y = NULL) +\n  theme(panel.grid.major.y = element_blank(),\n        strip.text.y = element_text(angle = 0, hjust = 0))\n\nsave_fig(fig4, \"figure4_sii_change\", 180, 200)\n\n## Appendix figure: survey coverage (87 surveys, 30 countries) ####\n\nfigS1 <- coverage |>\n  mutate(country = reorder(country, -survey_year, FUN = min)) |>\n  ggplot(aes(survey_year, country)) +\n  geom_line(aes(group = country), colour = \"grey80\") +\n  geom_point(size = 1.8) +\n  labs(x = \"Survey year\", y = NULL)\n\nsave_fig(figS1, \"figureS1_survey_coverage\", 160, 170)\n```\n\n## Things to adjust once you see your real data\n\n- **Figure 1.** If you have only two periods, the lines become simple before and after slopes. That still works. The y axis starts at zero so the gap is shown at true scale.\n- **Figure 2.** If several countries share an estimate, consider ordering ties by the width of the CI.\n- **Figure 3.** If survey years are fieldwork ranges such as 2013 to 2014, store a label column and use it in place of `years`.\n- **Figure 4.** If you have a pooled SII for each country's change, add it as a text column, as in Figure 2.\n- **Sizes.** I used 180 mm wide. Check the journal's figure size guidance and change the width and height in `save_fig()`.\n\nIf you send me the exported CSV files, I can check that the figures match your reported numbers and draft the matching Results paragraphs.\n"}], "grading": {"expectations": [{"text": "No em dashes, en dashes or double hyphens", "passed": true, "evidence": "dashes found: 0"}, {"text": "No prose sentence of 30 or more words (outside code)", "passed": true, "evidence": "0 long sentences"}, {"text": "Figure 1 shows the headline finding (pooled stunting decline 41.6% to 32.1%)", "passed": true, "evidence": "Figure 1: pooled trends by quintile plus SII, headline 41.6% to 32.1%"}, {"text": "Includes a trend figure with uncertainty shown", "passed": true, "evidence": "Figure 1 vertical 95% CI lines"}, {"text": "Includes a country-level figure of annual change (ranked chart or map)", "passed": true, "evidence": "Ranked forest plot of annual change (fig 2)"}, {"text": "Includes a wealth inequality figure (quintiles, equiplot or slope index)", "passed": true, "evidence": "Equiplot by quintile and SII change figure"}, {"text": "Captions state measure, population, place, years and what intervals show", "passed": false, "evidence": "Figures 2 to 4 captions omit place and years in the title line (e.g. 'Annual absolute change ... by country')"}, {"text": "Provides R ggplot2 code", "passed": true, "evidence": "ggplot2 script, run on placeholder data"}, {"text": "Uses only the user's numbers (no invented country values)", "passed": true, "evidence": "Only user numbers; script checks against reported results"}, {"text": "Handles the ambiguous Zambia note consistently (decline of -0.9) or flags it", "passed": true, "evidence": "Uses decline and asks to confirm"}], "summary": {"passed": 9, "failed": 1, "total": 10, "pass_rate": 0.9}}}], "previous_feedback": {}, "previous_outputs": {}, "benchmark": {"metadata": {"skill_name": "high-impact-public-health-writing", "skill_path": "<path/to/skill>", "executor_model": "<model-name>", "analyzer_model": "<model-name>", "timestamp": "2026-10-09T18:29:27Z", "evals_run": [1, 2, 3], "runs_per_configuration": 3}, "runs": [{"eval_id": 3, "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 11, "failed": 0, "total": 11, "time_seconds": 396.0, "tokens": 206929, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "No em dashes, en dashes or double hyphens", "passed": true, "evidence": "dashes found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "Explains that most highly cited papers supply reusable outputs (estimates, methods, standards, frameworks)", "passed": true, "evidence": "Section 1 and short answer: infrastructure, reusable estimates"}, {"text": "Gives study-specific design advice (cascade estimates with intervals by country, sex or age; standard definitions)", "passed": true, "evidence": "Estimand, harmonisation, age-standardised cascade with CIs, counts, inequality"}, {"text": "Recommends sharing estimates, code or data", "passed": true, "evidence": "'Build a resource': release estimates and code"}, {"text": "Advises a title stating scope, scale and period", "passed": true, "evidence": "Title advice: scope, scale, period"}, {"text": "Advises a quotable headline number with its uncertainty", "passed": true, "evidence": "Findings open with headline count and 95% CI"}, {"text": "Recommends specific figure types (map, trends, cascade chart)", "passed": true, "evidence": "Figure table: cascade by country, map, trends"}, {"text": "States honest caveats (journal, consortium or timing cannot be copied; association not cause)", "passed": true, "evidence": "States association not cause; consortium and journal limits"}, {"text": "Warns against citation gaming or overclaiming", "passed": true, "evidence": "Section 5: what to avoid, no citation gaming"}, {"text": "Makes no unsupported quantitative claims about citation effects", "passed": true, "evidence": "All rates from the skill's evidence base"}], "notes": []}, {"eval_id": 1, "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 11, "failed": 0, "total": 11, "time_seconds": 281.0, "tokens": 114776, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "No em dashes, en dashes or double hyphens", "passed": true, "evidence": "dashes found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "All numbers from the draft are preserved exactly", "passed": true, "evidence": "missing: []"}, {"text": "No new numbers are introduced that are not in the draft", "passed": true, "evidence": "numbers not in draft: []"}, {"text": "Title names the countries or region, the scale (7 countries or 38,412 adults) and the period", "passed": true, "evidence": "main title: Hypertension prevalence, awareness, treatment and control in seven Asian countries, 2014 to 2021: a pooled analysis of WHO STEPS surveys"}, {"text": "Title does not inflate scope (no 'global' or 'worldwide')", "passed": true, "evidence": "scope words in title"}, {"text": "Uses Lancet headings: Background, Methods, Findings, Interpretation, Funding", "passed": true, "evidence": "Lancet headings"}, {"text": "Findings open with the headline estimate and its 95% CI (27.4%, 26.6 to 28.2)", "passed": true, "evidence": "first Findings sentence"}, {"text": "Interpretation drops the 'governments must take urgent action' mandate and names an action the data support", "passed": true, "evidence": "no mandate in Interpretation"}, {"text": "Vague gap ('few studies') replaced with a specific gap or placeholder", "passed": true, "evidence": "'few studies' wording"}, {"text": "Funding left as a placeholder rather than invented", "passed": true, "evidence": "funding placeholder"}], "notes": []}, {"eval_id": 2, "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 10, "failed": 0, "total": 10, "time_seconds": 765.1, "tokens": 181212, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "No em dashes, en dashes or double hyphens", "passed": true, "evidence": "dashes found: 0"}, {"text": "No prose sentence of 30 or more words (outside code)", "passed": true, "evidence": "0 long sentences"}, {"text": "Figure 1 shows the headline finding (pooled stunting decline 41.6% to 32.1%)", "passed": true, "evidence": "Figure 1: pooled prevalence by quintile plus SII, states 41.6% to 32.1% contrast"}, {"text": "Includes a trend figure with uncertainty shown", "passed": true, "evidence": "Figure 1 and 5 draw 95% CI lines"}, {"text": "Includes a country-level figure of annual change (ranked chart or map)", "passed": true, "evidence": "Ranked dot chart of annual change with CIs (fig 3) plus maps (fig 2)"}, {"text": "Includes a wealth inequality figure (quintiles, equiplot or slope index)", "passed": true, "evidence": "SII panels and first/latest SII dot chart"}, {"text": "Captions state measure, population, place, years and what intervals show", "passed": true, "evidence": "Captions open with measure, population, place, years and state 95% CIs"}, {"text": "Provides R ggplot2 code", "passed": true, "evidence": "ggplot2 code for all figures, run on dummy data"}, {"text": "Uses only the user's numbers (no invented country values)", "passed": true, "evidence": "Only user numbers; missing pooled quintile values left to user files"}, {"text": "Handles the ambiguous Zambia note consistently (decline of -0.9) or flags it", "passed": true, "evidence": "Uses -0.9 decline and asks to confirm"}], "notes": []}, {"eval_id": 3, "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 11, "failed": 0, "total": 11, "time_seconds": 231.3, "tokens": 119972, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "No em dashes, en dashes or double hyphens", "passed": true, "evidence": "dashes found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "Explains that most highly cited papers supply reusable outputs (estimates, methods, standards, frameworks)", "passed": true, "evidence": "Short answer: cited when other authors need them (numbers, methods, data)"}, {"text": "Gives study-specific design advice (cascade estimates with intervals by country, sex or age; standard definitions)", "passed": true, "evidence": "Design section: definitions, weights, CIs, sharper question"}, {"text": "Recommends sharing estimates, code or data", "passed": true, "evidence": "Recommends sharing code and estimates"}, {"text": "Advises a title stating scope, scale and period", "passed": true, "evidence": "Title advice includes countries and design"}, {"text": "Advises a quotable headline number with its uncertainty", "passed": true, "evidence": "Quotable sentence template with 95% CI"}, {"text": "Recommends specific figure types (map, trends, cascade chart)", "passed": true, "evidence": "Recommends cascade figure and country chart"}, {"text": "States honest caveats (journal, consortium or timing cannot be copied; association not cause)", "passed": true, "evidence": "Section 1: how sure we are; open access evidence mixed"}, {"text": "Warns against citation gaming or overclaiming", "passed": true, "evidence": "Section 7: what to avoid"}, {"text": "Makes no unsupported quantitative claims about citation effects", "passed": true, "evidence": "Cites two checked trials of open access; no invented effect sizes"}], "notes": []}, {"eval_id": 1, "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 0.818, "passed": 9, "failed": 2, "total": 11, "time_seconds": 165.4, "tokens": 83171, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "No em dashes, en dashes or double hyphens", "passed": true, "evidence": "dashes found: 0"}, {"text": "No prose sentence of 30 or more words", "passed": true, "evidence": "0 long sentences"}, {"text": "All numbers from the draft are preserved exactly", "passed": true, "evidence": "missing: []"}, {"text": "No new numbers are introduced that are not in the draft", "passed": true, "evidence": "numbers not in draft: []"}, {"text": "Title names the countries or region, the scale (7 countries or 38,412 adults) and the period", "passed": false, "evidence": "main title: Prevalence, awareness, treatment, and control of hypertension in seven Asian countries: a pooled cross-sectional analysis of WHO STEPS surveys"}, {"text": "Title does not inflate scope (no 'global' or 'worldwide')", "passed": true, "evidence": "scope words in title"}, {"text": "Uses Lancet headings: Background, Methods, Findings, Interpretation, Funding", "passed": true, "evidence": "Lancet headings"}, {"text": "Findings open with the headline estimate and its 95% CI (27.4%, 26.6 to 28.2)", "passed": true, "evidence": "first Findings sentence"}, {"text": "Interpretation drops the 'governments must take urgent action' mandate and names an action the data support", "passed": true, "evidence": "no mandate in Interpretation"}, {"text": "Vague gap ('few studies') replaced with a specific gap or placeholder", "passed": false, "evidence": "'few studies' wording"}, {"text": "Funding left as a placeholder rather than invented", "passed": true, "evidence": "funding placeholder"}], "notes": []}, {"eval_id": 2, "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 0.9, "passed": 9, "failed": 1, "total": 10, "time_seconds": 324.0, "tokens": 111172, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "No em dashes, en dashes or double hyphens", "passed": true, "evidence": "dashes found: 0"}, {"text": "No prose sentence of 30 or more words (outside code)", "passed": true, "evidence": "0 long sentences"}, {"text": "Figure 1 shows the headline finding (pooled stunting decline 41.6% to 32.1%)", "passed": true, "evidence": "Figure 1: pooled trends by quintile plus SII, headline 41.6% to 32.1%"}, {"text": "Includes a trend figure with uncertainty shown", "passed": true, "evidence": "Figure 1 vertical 95% CI lines"}, {"text": "Includes a country-level figure of annual change (ranked chart or map)", "passed": true, "evidence": "Ranked forest plot of annual change (fig 2)"}, {"text": "Includes a wealth inequality figure (quintiles, equiplot or slope index)", "passed": true, "evidence": "Equiplot by quintile and SII change figure"}, {"text": "Captions state measure, population, place, years and what intervals show", "passed": false, "evidence": "Figures 2 to 4 captions omit place and years in the title line (e.g. 'Annual absolute change ... by country')"}, {"text": "Provides R ggplot2 code", "passed": true, "evidence": "ggplot2 script, run on placeholder data"}, {"text": "Uses only the user's numbers (no invented country values)", "passed": true, "evidence": "Only user numbers; script checks against reported results"}, {"text": "Handles the ambiguous Zambia note consistently (decline of -0.9) or flags it", "passed": true, "evidence": "Uses decline and asks to confirm"}], "notes": []}], "run_summary": {"with_skill": {"pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0}, "time_seconds": {"mean": 480.7, "stddev": 252.9205, "min": 281.0, "max": 765.1}, "tokens": {"mean": 167639.0, "stddev": 47552.2197, "min": 114776, "max": 206929}}, "without_skill": {"pass_rate": {"mean": 0.906, "stddev": 0.0911, "min": 0.818, "max": 1.0}, "time_seconds": {"mean": 240.2333, "stddev": 79.6765, "min": 165.4, "max": 324.0}, "tokens": {"mean": 104771.6667, "stddev": 19217.2215, "min": 83171, "max": 119972}}, "delta": {"pass_rate": "+0.09", "time_seconds": "+240.5", "tokens": "+62867"}}, "notes": ["Both configurations were strong: the user's writing rules (given to both) prevent most style problems, and the baseline model already knows Lancet conventions well.", "Discriminating checks: a title that states period as well as scope (eval 1), replacing the vague 'few studies' gap (eval 1), and captions that open with measure, population, place and years (eval 2). Baselines failed these; with-skill runs passed.", "With-skill advice (eval 3) grounded every claim in the top-100 versus matched-control rates and named the 'reuse' question first; the baseline gave sound general advice and cited two real open access studies it checked. Assertions did not discriminate here; the difference is in grounding and specificity, best judged by reading.", "Non-discriminating checks: numbers preserved, no invented values, ggplot2 code, Zambia handled, honest caveats. Keep as regression guards.", "Cost: the skill added about 240 s and 63k tokens per task on average (reading references; the figure run also tested R code for 13 minutes). Single run per configuration, so variance is not estimated.", "Checker fix found during grading: caption title lines and blockquotes were merged into one long 'sentence'. Fixed in both skills' check_manuscript.py."]}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + (summary.passed || 0) + ' passed, ' + (summary.failed || 0) + ' failed of ' + (summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += metadata.timestamp + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + metadata.evals_run.join(", ") + " &mdash; ";
+      html += (metadata.runs_per_configuration || "?") + " runs per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th><th>" + escapeHtml(labelB) + "</th><th>Delta</th></tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += "<td>" + fmtStat(b.pass_rate, true) + "</td>";
+      html += '<td class="' + deltaClass(delta.pass_rate) + '">' + (delta.pass_rate || "—") + "</td></tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += "<td>" + fmtStat(b.time_seconds, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.time_seconds) + '">' + (delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td></tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += "<td>" + fmtStat(b.tokens, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.tokens) + '">' + (delta.tokens || "—") + "</td></tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) => a - b);
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + run.run_number + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + (r.passed || 0) + "/" + (r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + (r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + run.run_number + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

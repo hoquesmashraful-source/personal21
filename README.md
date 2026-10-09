@@ -131,3 +131,24 @@ python3 skills/public-health-manuscript/scripts/check_manuscript.py my_draft.doc
 
 The packaged skill is `skills/dist/public-health-manuscript.skill`. The test
 results are in `skills/public-health-manuscript-review-iteration-1.html`.
+
+## The 100 most cited public health articles
+
+* `scripts/build_top_cited.py` ranks public health articles (2000 to 2024) by
+  NIH iCite citations. Sources are 22 core public health and epidemiology
+  journals, plus public-health-indexed articles in six general medical
+  journals. Clinical-care papers are screened out (`exclusions.csv`), and
+  three matched controls are drawn per article from the same journal and year.
+* `scripts/analyze_top_cited.py` compares the top 100 with the controls that
+  have an abstract (`literature/top_cited/analysis.md`).
+* `literature/top_cited/top100_classification.tsv` codes each paper by
+  contribution type and by what citing authors reuse.
+
+## High-impact writing skill
+
+`skills/high-impact-public-health-writing/` is a second skill, built from the
+top-100 analysis. It covers why papers are cited, data analysis style, figure
+style with R recipes, and each section of a paper. It includes
+`scripts/citability_check.py`, which scores a draft against top-100 and
+typical rates. Packaged: `skills/dist/high-impact-public-health-writing.skill`.
+Test results: `skills/high-impact-public-health-writing-review-iteration-1.html`.

@@ -120,6 +120,10 @@ def units(text):
         lines = lines[end + 1:]
     for line in lines:
         s = line.strip()
+        # Blockquote markers ("> ") wrap captions and quotes; judge the text inside.
+        while s.startswith(">"):
+            s = s[1:].strip()
+        line = s
         if s.startswith("```"):
             fence = not fence
             continue
@@ -127,6 +131,13 @@ def units(text):
             if buf:
                 out.append(" ".join(buf))
                 buf = []
+            continue
+        # A line that is entirely bold (a caption or table title) stands alone.
+        if s.startswith("**") and s.endswith("**") and len(s) > 4:
+            if buf:
+                out.append(" ".join(buf))
+                buf = []
+            out.append(s.strip("*"))
             continue
         if LIST_ITEM.match(line) and buf:
             out.append(" ".join(buf))
