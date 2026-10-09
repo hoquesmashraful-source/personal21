@@ -1,0 +1,963 @@
+source,series,code,title,country,year,survey_id,url,filename,size_bytes
+DHS,Final Report,FR348,Albania DHS 2017-18,AL,2017,AL2017DHS,https://www.dhsprogram.com/pubs/pdf/FR348/FR348.pdf,AL2017DHS_FR348.pdf,7519602
+DHS,Final Report,FR230,Albania Demographic and Health Survey 2008-09,AL,2008,AL2008DHS,https://www.dhsprogram.com/pubs/pdf/FR230/FR230.pdf,AL2008DHS_FR230.pdf,3106286
+DHS,Final Report,FR239,Republike e Shqipërisë Studimi Demografik dhe Shëndetësor në Shqipëri 2008-09,AL,2008,AL2008DHS,https://www.dhsprogram.com/pubs/pdf/FR239/FR239.pdf,AL2008DHS_FR239.pdf,6489164
+DHS,Albania DHS 2008-09 Fact Sheet,GF16,Albania DHS 2008-09 Fact Sheet,AL,2008,AL2008DHS,https://www.dhsprogram.com/pubs/pdf/GF16/GF16.pdf,AL2008DHS_GF16.pdf,1905957
+DHS,Key Findings,SR240,Armenia DHS 2015-16 - Key Findings,AM,2016,AM2016DHS,https://www.dhsprogram.com/pubs/pdf/SR240/SR240.pdf,AM2016DHS_SR240.pdf,2417495
+DHS,Final Report,FR325,Armenia DHS 2015-16 - Final Report,AM,2016,AM2016DHS,https://www.dhsprogram.com/pubs/pdf/FR325/FR325.pdf,AM2016DHS_FR325.pdf,7144484
+DHS,Final Report,FR252,Armenia Demographic and Health Survey 2010,AM,2010,AM2010DHS,https://www.dhsprogram.com/pubs/pdf/FR252/FR252.pdf,AM2010DHS_FR252.pdf,2963382
+DHS,Key Findings,SR190,Armenia Demographic and Health Survey 2010 - Key Findings,AM,2010,AM2010DHS,https://www.dhsprogram.com/pubs/pdf/SR190/SR190.pdf,AM2010DHS_SR190.pdf,1250769
+DHS,Final Report,FR184,Armenia Demographic and Health Survey 2005,AM,2005,AM2005DHS,https://www.dhsprogram.com/pubs/pdf/FR184/FR184.pdf,AM2005DHS_FR184.pdf,3239844
+DHS,Key Findings,SR120,Armenia 2005 Demographic and Health Survey - Key Findings,AM,2005,AM2005DHS,https://www.dhsprogram.com/pubs/pdf/SR120/SR120.pdf,AM2005DHS_SR120.pdf,606046
+DHS,Final Report,FR126,Armenia Demographic and Health Survey 2001,AM,2000,AM2000DHS,https://www.dhsprogram.com/pubs/pdf/FR126/FR126.pdf,AM2000DHS_FR126.pdf,6145644
+DHS,Key Findings,SR135,HIV/AIDS and Other Sexually Transmitted Infections in Armenia,AM,2000,AM2000DHS,https://www.dhsprogram.com/pubs/pdf/SR135/SR135.pdf,AM2000DHS_SR135.pdf,1655130
+DHS,Final Report,FR396,Final Report,AO,2023,AO2023DHS,https://www.dhsprogram.com/pubs/pdf/FR396/FR396.pdf,AO2023DHS_FR396.pdf,18534122
+DHS,Summary Report,SR295,Summary Report,AO,2023,AO2023DHS,https://www.dhsprogram.com/pubs/pdf/SR295/SR295.pdf,AO2023DHS_SR295.pdf,11230276
+DHS,Angola 2023-24 DHS - National Fact Sheet,GF65,Angola 2023-24 DHS - National Fact Sheet,AO,2023,AO2023DHS,https://www.dhsprogram.com/pubs/pdf/GF65/GF65.pdf,AO2023DHS_GF65.pdf,2778003
+DHS,Angola DHS 2023-24 - Regional Fact Sheets,OF53,Angola DHS 2023-24 - Sudoeste Fact Sheet,AO,2023,AO2023DHS,https://www.dhsprogram.com/pubs/pdf/OF53/OF53Sudoeste.pdf,AO2023DHS_OF53Sudoeste.pdf,3947041
+DHS,Angola DHS 2015-16 - 6 Regional Fact Sheets,OF36,Angola Leste regional factsheet,AO,2015,AO2015DHS,https://www.dhsprogram.com/pubs/pdf/OF36/OF36.L.pdf,AO2015DHS_OF36.L.pdf,725818
+DHS,HIV Fact Sheet,HF60,Angola DHS 2015-2016 HIV Fact Sheet (English),AO,2015,AO2015DHS,https://www.dhsprogram.com/pubs/pdf/HF60/HF60.pdf,AO2015DHS_HF60.pdf,831229
+DHS,Final Report,FR327,Angola DHS 2015-2016,AO,2015,AO2015DHS,https://www.dhsprogram.com/pubs/pdf/FR327/FR327.pdf,AO2015DHS_FR327.pdf,10922777
+DHS,Key Findings,SR238,Angola DHS 2015-16 - Key Findings (English),AO,2015,AO2015DHS,https://www.dhsprogram.com/pubs/pdf/SR238/SR238.pdf,AO2015DHS_SR238.pdf,4736197
+DHS,Angola DHS 2015-16 Malaria Fact Sheet,MF19,Angola DHS 2015-16 - Malaria Fact Sheet (English),AO,2015,AO2015DHS,https://www.dhsprogram.com/pubs/pdf/MF19/MF19.pdf,AO2015DHS_MF19.pdf,1193452
+DHS,Angola DHS 2015-16 - Teenage Fertility Fact Sheet,OF37,Angola DHS 2015-16 - Teenage Fertility Fact Sheet (English),AO,2015,AO2015DHS,https://www.dhsprogram.com/pubs/pdf/OF37/OF37.pdf,AO2015DHS_OF37.pdf,848755
+DHS,MIS Final Report,MIS10,Angola Inquérito de Indicadores de Malária 2011,AO,2011,AO2011MIS,https://www.dhsprogram.com/pubs/pdf/MIS10/MIS10.pdf,AO2011MIS_MIS10.pdf,5578807
+DHS,Angola MIS 2011 Malaria Fact Sheet,MF5,Angola MIS 2011 Malaria Fact Sheet,AO,2011,AO2011MIS,https://www.dhsprogram.com/pubs/pdf/MF5/GF23.pdf,AO2011MIS_GF23.pdf,1511551
+DHS,MIS Final Report,MIS11,Angola Malaria Indicator Survey 2011,AO,2011,AO2011MIS,https://www.dhsprogram.com/pubs/pdf/MIS11/MIS11.pdf,AO2011MIS_MIS11.pdf,1076688
+DHS,MIS Final Report,MIS2,Angola Malaria Indicator Survey 2006-07,AO,2006,AO2006MIS,https://www.dhsprogram.com/pubs/pdf/MIS2/MIS2.pdf,AO2006MIS_MIS2.pdf,2814269
+DHS,MIS Final Report,MIS3,Angola Inquérito de Indicadores de Malária 2006-07,AO,2006,AO2006MIS,https://www.dhsprogram.com/pubs/pdf/MIS3/MIS3.pdf,AO2006MIS_MIS3.pdf,3311157
+DHS,Angola MIS 2006 Malaria Fact Sheet,MF1,Angola MIS 2006 Malaria Fact Sheet (English),AO,2006,AO2006MIS,https://www.dhsprogram.com/pubs/pdf/MF1/GF9.pdf,AO2006MIS_GF9.pdf,228633
+DHS,Final Report,FR195,Azerbaijan Demographic and Health Survey 2006,AZ,2006,AZ2006DHS,https://www.dhsprogram.com/pubs/pdf/FR195/FR195.pdf,AZ2006DHS_FR195.pdf,3620445
+DHS,Azerbaijan DHS 2006 Fact Sheet,GF10,Azerbaijan DHS 2006 Fact Sheet,AZ,2006,AZ2006DHS,https://www.dhsprogram.com/pubs/pdf/GF10/GF10.pdf,AZ2006DHS_GF10.pdf,377822
+DHS,Final Report,FR386,Final Report,BD,2022,BD2022DHS,https://www.dhsprogram.com/pubs/pdf/FR386/FR386.pdf,BD2022DHS_FR386.pdf,25036160
+DHS,Bangladesh DHS 2022 - Fact Sheets,GF62,Bangladesh DHS 2022 Rajshahi - Fact Sheet,BD,2022,BD2022DHS,https://www.dhsprogram.com/pubs/pdf/GF62/GF62Rajshahi.pdf,BD2022DHS_GF62Rajshahi.pdf,1975176
+DHS,Final Report,SPA28,Bangladesh Health Facility Survey 2017 - Final Report,BD,2017,BD2017SPA,https://www.dhsprogram.com/pubs/pdf/SPA28/SPA28.pdf,BD2017SPA_SPA28.pdf,5923553
+DHS,Bangladesh SPA 2017 - Topical Fact Sheets,OF45,Bangladesh SPA 2017 - Topical Fact Sheets,BD,2017,BD2017SPA,https://www.dhsprogram.com/pubs/pdf/OF45/OF45.pdf,BD2017SPA_OF45.pdf,1635714
+DHS,Final Report,FR344,Bangladesh DHS 2017-18,BD,2017,BD2017DHS,https://www.dhsprogram.com/pubs/pdf/FR344/FR344.pdf,BD2017DHS_FR344.pdf,16626407
+DHS,Final Report,FR311,Bangladesh Demographic and Health Survey 2014,BD,2014,BD2014DHS,https://www.dhsprogram.com/pubs/pdf/FR311/FR311.pdf,BD2014DHS_FR311.pdf,3306012
+DHS,Final Report,SPA23,Bangladesh Health Facility Survey 2014,BD,2014,BD2014SPA,https://www.dhsprogram.com/pubs/pdf/SPA23/SPA23.pdf,BD2014SPA_SPA23.pdf,2477763
+DHS,Final Report,FR265,Bangladesh Demographic and Health Survey 2011,BD,2011,BD2011DHS,https://www.dhsprogram.com/pubs/pdf/FR265/FR265.pdf,BD2011DHS_FR265.pdf,5428561
+DHS,Final Report,FR207,Bangladesh Demographic and Health Survey 2007,BD,2007,BD2007DHS,https://www.dhsprogram.com/pubs/pdf/FR207/FR207[April-10-2009].pdf,BD2007DHS_FR207[April-10-2009].pdf,2555547
+DHS,Key Findings,SR158,Bangladesh Demographic and Health Survey 2007 - Key Findings,BD,2007,BD2007DHS,https://www.dhsprogram.com/pubs/pdf/SR158/SR158.pdf,BD2007DHS_SR158.pdf,2661007
+DHS,Bangladesh DHS 2007 Fact Sheet,GF13,Bangladesh DHS 2007 - Fact Sheet,BD,2007,BD2007DHS,https://www.dhsprogram.com/pubs/pdf/GF13/GF13.pdf,BD2007DHS_GF13.pdf,3002432
+DHS,Final Report,FR165,Bangladesh Demographic and Health Survey 2004,BD,2004,BD2004DHS,https://www.dhsprogram.com/pubs/pdf/FR165/FR-BD04[FR165].pdf,BD2004DHS_FR-BD04[FR165].pdf,6965034
+DHS,Bangladesh Maternal Health Services and Maternal Mortality Survey 2001,FR142,Bangladesh Maternal Health and Maternal Mortality Survey 2001,BD,2001,BD2001OTH,https://www.dhsprogram.com/pubs/pdf/FR142/FR142.pdf,BD2001OTH_FR142.pdf,1645509
+DHS,Final Report,FR119,Bangladesh Demographic and Health Survey 1999-2000,BD,2000,BD2000DHS,https://www.dhsprogram.com/pubs/pdf/FR119/FR119.pdf,BD2000DHS_FR119.pdf,6589049
+DHS,Final Report,SPA2,Bangladesh Service Provision Assessment Survey 1999-2000,BD,1999,BD1999SPA,https://www.dhsprogram.com/pubs/pdf/SPA2/SPA2.pdf,BD1999SPA_SPA2.pdf,3914843
+DHS,Final Report,FR88,Bangladesh Demographic and Health Survey 1996-1997 Final Report,BD,1997,BD1997DHS,https://www.dhsprogram.com/pubs/pdf/FR88/FR88.pdf,BD1997DHS_FR88.pdf,3851846
+DHS,Final Report,FR60,Bangladesh Demographic and Health Survey 1993-1994,BD,1994,BD1994DHS,https://www.dhsprogram.com/pubs/pdf/FR60/FR60.pdf,BD1994DHS_FR60.pdf,4475290
+DHS,Summary Report,SR47,Bangladesh Demographic and Health Survey 1993-94 - Summary Report,BD,1994,BD1994DHS,https://www.dhsprogram.com/pubs/pdf/SR47/SR47.pdf,BD1994DHS_SR47.pdf,3156162
+DHS,Final Report,FR378,Final Report,BF,2021,BF2021DHS,https://www.dhsprogram.com/pubs/pdf/FR378/FR378.pdf,BF2021DHS_FR378.pdf,31749277
+DHS,Summary Report,SR279,SR279,BF,2021,BF2021DHS,https://www.dhsprogram.com/pubs/pdf/SR279/SR279.pdf,BF2021DHS_SR279.pdf,10892324
+DHS,Burkina Faso DHS 2021 - Fact Sheets,GF59,Burkina Faso DHS 2021 - Fact Sheet,BF,2021,BF2021DHS,https://www.dhsprogram.com/pubs/pdf/GF59/GF59mo.pdf,BF2021DHS_GF59mo.pdf,1623144
+DHS,Burkina Faso DHS 2021 - Other Fact Sheets,OF49,Mortalité et paludisme,BF,2021,BF2021DHS,https://www.dhsprogram.com/pubs/pdf/OF49/OF49.pdf,BF2021DHS_OF49.pdf,1474502
+DHS,MIS Final Report,MIS32,"Burkina Faso MIS, 2017-18 - MIS Final Report (French)",BF,2017,BF2017MIS,https://www.dhsprogram.com/pubs/pdf/MIS32/MIS32.pdf,BF2017MIS_MIS32.pdf,3100287
+DHS,Burkina Faso MIS 2017-2018 Malaria Fact Sheet,MF26,Burkina Faso MIS 2017-2018 Malaria Fact Sheet,BF,2017,BF2017MIS,https://www.dhsprogram.com/pubs/pdf/MF26/MF26.pdf,BF2017MIS_MF26.pdf,833260
+DHS,MIS Final Report,MIS19,Burkina Faso MIS 2014,BF,2014,BF2014MIS,https://www.dhsprogram.com/pubs/pdf/MIS19/MIS19.pdf,BF2014MIS_MIS19.pdf,1787365
+DHS,Burkina Faso MIS 2014 Malaria Fact Sheet,MF14,Burkina Faso MIS 2014 Malaria Fact Sheet,BF,2014,BF2014MIS,https://www.dhsprogram.com/pubs/pdf/MF14/MF14.pdf,BF2014MIS_MF14.pdf,891608
+DHS,Final Report,FR256,Burkina Faso Enquête Démographique et de Santé et à Indicateurs Multiples (EDSBF-MICS IV) 2010,BF,2010,BF2010DHS,https://www.dhsprogram.com/pubs/pdf/FR256/FR256.pdf,BF2010DHS_FR256.pdf,3370264
+DHS,HIV Fact Sheet,HF40,Burkina Fasso DHS 2010 - HIV Fact Sheet,BF,2010,BF2010DHS,https://www.dhsprogram.com/pubs/pdf/HF40/HF40.pdf,BF2010DHS_HF40.pdf,1337680
+DHS,Final Report,FR154,Burkina Faso Enquête Démographique et de Santé 2003 Final Report,BF,2003,BF2003DHS,https://www.dhsprogram.com/pubs/pdf/FR154/FR154.pdf,BF2003DHS_FR154.pdf,4401471
+DHS,Summary Report,SR103,Enquête Démographique et de Santé  - Rapport de synthèse,BF,2003,BF2003DHS,https://www.dhsprogram.com/pubs/pdf/SR103/SR103BF03.pdf,BF2003DHS_SR103BF03.pdf,4665509
+DHS,HIV Fact Sheet,HF1,Burkina Faso 2003 HIV Factsheet (French),BF,2003,BF2003DHS,https://www.dhsprogram.com/pubs/pdf/HF1/Burkina_HIV_factsheet[HF1].pdf,BF2003DHS_Burkina_HIV_factsheet[HF1].pdf,939692
+DHS,Final Report,FR110,Burkina Faso DHS 1998-99 Final Report,BF,1999,BF1999DHS,https://www.dhsprogram.com/pubs/pdf/FR110/FR110.pdf,BF1999DHS_FR110.pdf,1969346
+DHS,Summary Report,SR79,Burkina Faso Enquête Démographique et de Santé 1998-99 - Rapport de Synthèse,BF,1999,BF1999DHS,https://www.dhsprogram.com/pubs/pdf/SR79/SR79.pdf,BF1999DHS_SR79.pdf,2449075
+DHS,Final Report,FR53,Burkina Faso Enquête Démographique et de Santé 1993,BF,1993,BF1993DHS,https://www.dhsprogram.com/pubs/pdf/FR53/FR53.pdf,BF1993DHS_FR53.pdf,6047921
+DHS,Summary Report,SR40,Summary Report Burkina Faso 1993,BF,1993,BF1993DHS,https://www.dhsprogram.com/pubs/pdf/SR40/SR40.pdf,BF1993DHS_SR40.pdf,2640357
+DHS,Final Report,FR350,Benin DHS 2017-2018 Final Report,BJ,2017,BJ2017DHS,https://www.dhsprogram.com/pubs/pdf/FR350/FR350.pdf,BJ2017DHS_FR350.pdf,12417158
+DHS,Key Findings,SR259,Benin DHS 2017-2018 Key Findings,BJ,2017,BJ2017DHS,https://www.dhsprogram.com/pubs/pdf/SR259/SR259.pdf,BJ2017DHS_SR259.pdf,2328106
+DHS,Final Report,FR270,Benin DHS 2011-2012 - Final Report,BJ,2012,BJ2012DHS,https://www.dhsprogram.com/pubs/pdf/FR270/FR270.pdf,BJ2012DHS_FR270.pdf,4188936
+DHS,Key Findings,SR206,Benin DHS 2011-2012 - Key Findings,BJ,2012,BJ2012DHS,https://www.dhsprogram.com/pubs/pdf/SR206/SR206.pdf,BJ2012DHS_SR206.pdf,2269168
+DHS,HIV Fact Sheet,HF49,Benin DHS 2011-12 - HIV Fact Sheet,BJ,2012,BJ2012DHS,https://www.dhsprogram.com/pubs/pdf/HF49/HF49.pdf,BJ2012DHS_HF49.pdf,698803
+DHS,Final Report,FR197,Bénin Enquête Démographique et de Santé 2006,BJ,2006,BJ2006DHS,https://www.dhsprogram.com/pubs/pdf/FR197/FR197.pdf,BJ2006DHS_FR197.pdf,4118767
+DHS,Key Findings,SR129,Bénin - Enquête Démographique et de Santé 2006,BJ,2006,BJ2006DHS,https://www.dhsprogram.com/pubs/pdf/SR129/SR129.pdf,BJ2006DHS_SR129.pdf,580372
+DHS,HIV Fact Sheet,HF20,Benin 2006 HIV Factsheet (English),BJ,2006,BJ2006DHS,https://www.dhsprogram.com/pubs/pdf/HF20/Benin2006HIVFSENG.pdf,BJ2006DHS_Benin2006HIVFSENG.pdf,371384
+DHS,Final Report,FR133,Bénin Enquête Démographique et de Santé 2001,BJ,2001,BJ2001DHS,https://www.dhsprogram.com/pubs/pdf/FR133/FR133.pdf,BJ2001DHS_FR133.pdf,3529502
+DHS,Summary Report,SR93,"Rapport de synthèse, Bénin 2001",BJ,2001,BJ2001DHS,https://www.dhsprogram.com/pubs/pdf/SR93/SR93.pdf,BJ2001DHS_SR93.pdf,856168
+DHS,Final Report,FR81,Benin DHS 1996 Final Report,BJ,1996,BJ1996DHS,https://www.dhsprogram.com/pubs/pdf/FR81/FR81.pdf,BJ1996DHS_FR81.pdf,5489293
+DHS,Summary Report,SR56,Bénin Enquête Démographique et de Santé 1996 - Rapport de Synthèse,BJ,1996,BJ1996DHS,https://www.dhsprogram.com/pubs/pdf/SR56/SR56.pdf,BJ1996DHS_SR56.pdf,2361130
+DHS,Final Report,FR228,Bolivia Encuesta Nacional de Demografía y Salud 2008,BO,2008,BO2008DHS,https://www.dhsprogram.com/pubs/pdf/FR228/FR228[08Feb2010].pdf,BO2008DHS_FR228[08Feb2010].pdf,10181861
+DHS,Final Report,FR159,Bolivia Encuesta Nacional de Demograf'ia y Salud 2003,BO,2003,BO2003DHS,https://www.dhsprogram.com/pubs/pdf/FR159/FR159.pdf,BO2003DHS_FR159.pdf,6634572
+DHS,Final Report,FR99,Bolivia Encuesta Nacional de Demografía y Salud 1998,BO,1998,BO1998DHS,https://www.dhsprogram.com/pubs/pdf/FR99/FR99-ADDED_Missing_Pages_AppendixB.pdf,BO1998DHS_FR99-ADDED_Missing_Pages_AppendixB.pdf,7911064
+DHS,Final Report,FR58,Bolivia Encuesta Nacional de Demografía y Salud 1994,BO,1994,BO1994DHS,https://www.dhsprogram.com/pubs/pdf/FR58/FR58.pdf,BO1994DHS_FR58.pdf,5147601
+DHS,Summary Report,SR45,Bolivia Encuesta Nacional de Demografía y Salud 1994 - Informe Resumido,BO,1994,BO1994DHS,https://www.dhsprogram.com/pubs/pdf/SR45/SR45.pdf,BO1994DHS_SR45.pdf,3162633
+DHS,Final Report: Maternal and Child Health in Bolivia,FR2,Maternal and Child Health in Bolivia 1989,BO,1989,BO1989DHS,https://www.dhsprogram.com/pubs/pdf/FR2/FR2.pdf,BO1989DHS_FR2.pdf,2400755
+DHS,Final Report,FR1,Bolivia Encuesta Nacional de Demografía y Salud 1989,BO,1989,BO1989DHS,https://www.dhsprogram.com/pubs/pdf/FR1/FR1.pdf,BO1989DHS_FR1.pdf,2549618
+DHS,Summary Report,SR1,Bolivia Encuesta Nacional de Demografía y Salud 1989 - Informe Resumido,BO,1989,BO1989DHS,https://www.dhsprogram.com/pubs/pdf/SR1/SR1.pdf,BO1989DHS_SR1.pdf,2453133
+DHS,Final Report,FR77,Brazil DHS 1996 Final Report,BR,1996,BR1996DHS,https://www.dhsprogram.com/pubs/pdf/FR77/FR77.pdf,BR1996DHS_FR77.pdf,5105303
+DHS,Final Report,FR5,Pesquisa sobre Saúde Familiar no Nordeste Brasil 1991,BR,1991,BR1991DHS,https://www.dhsprogram.com/pubs/pdf/FR5/FR5.pdf,BR1991DHS_FR5.pdf,3303202
+DHS,Final Report,FR4,Pesquisa Nacional Sobre Saúde Materno - Infantil e Planejamento Familiar Brasil - 1986,BR,1986,BR1986DHS,https://www.dhsprogram.com/pubs/pdf/FR4/FR4.pdf,BR1986DHS_FR4.pdf,2904596
+DHS,Summary Report,SR160,Brasil Pesquisa Nacional sobre Saúde Materno-Infantil e Planejamento Familiar 1986 - Relatório Resumido,BR,1986,BR1986DHS,https://www.dhsprogram.com/pubs/pdf/SR160/SR160.pdf,BR1986DHS_SR160.pdf,2501589
+DHS,Summary Report,SR2,Botswana Demographic and Health Survey 1988 - Summary Report,BT,1988,BT1988DHS,https://www.dhsprogram.com/pubs/pdf/SR2/SR2.pdf,BT1988DHS_SR2.pdf,2446002
+DHS,Final Report,FR3,Botswana Family Health Survey II 1988,BT,1988,BT1988DHS,https://www.dhsprogram.com/pubs/pdf/FR3/FR3.pdf,BT1988DHS_FR3.pdf,2704699
+DHS,Final Report,FR335,Burundi DHS 2016-2017 Final Report,BU,2016,BU2016DHS,https://www.dhsprogram.com/pubs/pdf/FR335/FR335.pdf,BU2016DHS_FR335.pdf,15474050
+DHS,Key Findings,SR247,Benin DHS 2016-2017 - Key Findings,BU,2016,BU2016DHS,https://www.dhsprogram.com/pubs/pdf/SR247/SR247.pdf,BU2016DHS_SR247.pdf,3229665
+DHS,Burundi DHS 2016-17 Fact Sheet,GF41,Burundi DHS 2016-17 Fact Sheet,BU,2016,BU2016DHS,https://www.dhsprogram.com/pubs/pdf/GF41/GF41.pdf,BU2016DHS_GF41.pdf,741543
+DHS,MIS Final Report,MIS14,"Burundi MIS, 2012 - MIS Final Report",BU,2012,BU2012MIS,https://www.dhsprogram.com/pubs/pdf/MIS14/MIS14.pdf,BU2012MIS_MIS14.pdf,1085887
+DHS,Burundi MIS 2012 Malaria Fact Sheet,MF9,Burundi MIS 2012 Malaria Fact Sheet,BU,2012,BU2012MIS,https://www.dhsprogram.com/pubs/pdf/MF9/MF9.pdf,BU2012MIS_MF9.pdf,1041148
+DHS,Final Report,FR253,Enquête Démographique et de Santé Burundi 2010 - Final Report,BU,2010,BU2010DHS,https://www.dhsprogram.com/pubs/pdf/FR253/FR253.pdf,BU2010DHS_FR253.pdf,2935477
+DHS,HIV Fact Sheet,HF39,Burundi DHS 2010 - HIV Fact Sheet,BU,2010,BU2010DHS,https://www.dhsprogram.com/pubs/pdf/HF39/HF39.pdf,BU2010DHS_HF39.pdf,1053268
+DHS,Key Findings,SR193,Burundi DHS 2010 - Key Findings,BU,2010,BU2010DHS,https://www.dhsprogram.com/pubs/pdf/SR193/SR193.pdf,BU2010DHS_SR193.pdf,2822554
+DHS,Final Report,FR6,Enquête Demographique et de Santé au Burundi 1987,BU,1987,BU1987DHS,https://www.dhsprogram.com/pubs/pdf/FR6/FR6.pdf,BU1987DHS_FR6.pdf,3688742
+DHS,Final Report,FR393,Democratic Republic of the Congo DHS 2023-24,CD,2023,CD2023DHS,https://www.dhsprogram.com/pubs/pdf/FR393/FR393.pdf,CD2023DHS_FR393.pdf,27472949
+DHS,Summary Report,SR291,Summary Report,CD,2023,CD2023DHS,https://www.dhsprogram.com/pubs/pdf/SR291/SR291.pdf,CD2023DHS_SR291.pdf,10489272
+DHS,Final Report,SPA30,Democratic Republic of Congo SPA 2017-2018,CD,2017,CD2017SPA,https://www.dhsprogram.com/pubs/pdf/SPA30/SPA30.pdf,CD2017SPA_SPA30.pdf,7873326
+DHS,Key Findings,SR258,Key Findings,CD,2017,CD2017SPA,https://www.dhsprogram.com/pubs/pdf/SR258/SR258.pdf,CD2017SPA_SR258.pdf,2876163
+DHS,Congo Democratic Republic SPA 2017-2018,OF41,Congo Democratic Republic SPA 2017-2018,CD,2017,CD2017SPA,https://www.dhsprogram.com/pubs/pdf/OF41/OF41.pdf,CD2017SPA_OF41.pdf,711798
+DHS,Final Report,FR300,Democratic Republic of the Congo DHS 2013-14 (French),CD,2013,CD2013DHS,https://www.dhsprogram.com/pubs/pdf/FR300/FR300.pdf,CD2013DHS_FR300.pdf,4265658
+DHS,Key Findings,SR218,Democratic Republic of Congo DHS 2013-14 - Key Findings (French),CD,2013,CD2013DHS,https://www.dhsprogram.com/pubs/pdf/SR218/SR218.pdf,CD2013DHS_SR218.pdf,5580207
+DHS,HIV Fact Sheet,HF55,Democratic Republic of Congo DHS 2013-14 - HIV Fact Sheet,CD,2013,CD2013DHS,https://www.dhsprogram.com/pubs/pdf/HF55/HF55.pdf,CD2013DHS_HF55.pdf,971390
+DHS,Final Report,FR208,Republique Démocratique du Congo Enquête Démographique et de Santé (EDS-RDC) 2007,CD,2007,CD2007DHS,https://www.dhsprogram.com/pubs/pdf/FR208/FR208.pdf,CD2007DHS_FR208.pdf,3157949
+DHS,HIV Fact Sheet,HF25,Democratic Republic of the Congo - HIV Fact Sheet (english),CD,2007,CD2007DHS,https://www.dhsprogram.com/pubs/pdf/HF25/HF25.pdf,CD2007DHS_HF25.pdf,1024801
+DHS,Key Findings,SR141,Democratic Republic of the Congo - Key Findings,CD,2007,CD2007DHS,https://www.dhsprogram.com/pubs/pdf/SR141/SR141.pdf,CD2007DHS_SR141.pdf,10706907
+DHS,HIV Fact Sheet,HF35,Central African Republic HIV Fact Sheet,CF,2010,CF2010OTH,https://www.dhsprogram.com/pubs/pdf/HF35/HF35.pdf,CF2010OTH_HF35.pdf,693536
+DHS,Prévalence de l'Infection VIH et Facteurs Associés en République Centrafricaine en 2010,FR263,Prévalence de l'Infection VIH et Facteurs Associés en République Centrafricaine en 2010,CF,2010,CF2010OTH,https://www.dhsprogram.com/pubs/pdf/FR263/FR263.pdf,CF2010OTH_FR263.pdf,2913476
+DHS,Final Report,FR67,République Centrafricaine Enquête Démographique et de Santé 1994-95,CF,1994,CF1994DHS,https://www.dhsprogram.com/pubs/pdf/FR67/FR67.pdf,CF1994DHS_FR67.pdf,6553448
+DHS,Summary Report,SR52,République Centrafricaine Enquête Démographique et de Santé 1994-95 - Rapport de Synthése,CF,1994,CF1994DHS,https://www.dhsprogram.com/pubs/pdf/SR52/SR52.pdf,CF1994DHS_SR52.pdf,3165902
+DHS,Final Report,FR267,Enquête Démographique et de Santé du Congo (EDSC-II) 2011-2012,CG,2011,CG2011DHS,https://www.dhsprogram.com/pubs/pdf/FR267/FR267.pdf,CG2011DHS_FR267.pdf,3455025
+DHS,Key Findings,SR197,Congo DHS 2011-12 - Key Findings,CG,2011,CG2011DHS,https://www.dhsprogram.com/pubs/pdf/SR197/SR197.pdf,CG2011DHS_SR197.pdf,3421511
+DHS,Congo 2011-12 DHS Fact Sheets,OF17,Congo DHS 2011-2012 - Nutrition Fact Sheet,CG,2011,CG2011DHS,https://www.dhsprogram.com/pubs/pdf/OF17/OF17.pdf,CG2011DHS_OF17.pdf,3476891
+DHS,Final Report,AIS7,Congo Enquête de Séroprévalence et sur les Indicateurs du Sida du Congo ESISC-I 2009,CG,2009,CG2009AIS,https://www.dhsprogram.com/pubs/pdf/AIS7/AIS7.pdf,CG2009AIS_AIS7.pdf,4905401
+DHS,Key Findings,SR174,République du Congo - Enquête de Séroprévalence et sur le Indicateurs du Sida au Congo (ESISC-I) 2009 - Rapport de Synthèse,CG,2009,CG2009AIS,https://www.dhsprogram.com/pubs/pdf/SR174/SR174.pdf,CG2009AIS_SR174.pdf,2711042
+DHS,HIV Fact Sheet,HF31,Répblique du Congo 2009 - HIV Fact Sheet,CG,2009,CG2009AIS,https://www.dhsprogram.com/pubs/pdf/HF31/HF31.pdf,CG2009AIS_HF31.pdf,1440398
+DHS,Final Report,FR182,Congo Enquête Démographique et de Santé 2005,CG,2005,CG2005DHS,https://www.dhsprogram.com/pubs/pdf/FR182/FR182.pdf,CG2005DHS_FR182.pdf,2457409
+DHS,Congo 2005 DHS Fact Sheet,GF2,Congo 2005 DHS Fact Sheet,CG,2005,CG2005DHS,https://www.dhsprogram.com/pubs/pdf/GF2/congo_fact_sheet.pdf,CG2005DHS_congo_fact_sheet.pdf,1998377
+DHS,Final Report,FR385,Final Report,CI,2021,CI2021DHS,https://www.dhsprogram.com/pubs/pdf/FR385/FR385.pdf,CI2021DHS_FR385.pdf,28548441
+DHS,Summary Report,SR280,Summary Report,CI,2021,CI2021DHS,https://www.dhsprogram.com/pubs/pdf/SR280/SR280.pdf,CI2021DHS_SR280.pdf,6213863
+DHS,Special Report,FR330,Côte d'Ivoire 2016 (MICS),CI,2016,CI2016OTH,https://www.dhsprogram.com/pubs/pdf/FR330/FR330.pdf,CI2016OTH_FR330.pdf,1442468
+DHS,Final Report,FR272,Côte d'Ivoire DHS 2011-2012,CI,2012,CI2012DHS,https://www.dhsprogram.com/pubs/pdf/FR272/FR272.pdf,CI2012DHS_FR272.pdf,5848581
+DHS,Key Findings,SR201,Côte d'Ivoire DHS 2011-12 - Key Findings,CI,2012,CI2012DHS,https://www.dhsprogram.com/pubs/pdf/SR201/SR201.pdf,CI2012DHS_SR201.pdf,4047336
+DHS,HIV Fact Sheet,HF46,Côte d'Ivoire DHS 2011-12 - HIV Fact Sheet,CI,2012,CI2012DHS,https://www.dhsprogram.com/pubs/pdf/HF46/HF46.pdf,CI2012DHS_HF46.pdf,1379309
+DHS,HIV Fact Sheet,HF14,Cote d'Ivoire HIV Fact Sheet (English),CI,2005,CI2005AIS,https://www.dhsprogram.com/pubs/pdf/HF14/CotedIvoire_HIV_factsheet_eng.pdf,CI2005AIS_CotedIvoire_HIV_factsheet_eng.pdf,475938
+DHS,Final Report,AIS5,Côte d'Ivoire Enquête sur les indicateurs du Sida 2005,CI,2005,CI2005AIS,https://www.dhsprogram.com/pubs/pdf/AIS5/AIS5.pdf,CI2005AIS_AIS5.pdf,2043896
+DHS,Final Report,FR129,Côte d'Ivoire Enquête Démographique et de Santé 1998-1999,CI,1998,CI1998DHS,https://www.dhsprogram.com/pubs/pdf/FR129/FR129.pdf,CI1998DHS_FR129.pdf,4585002
+DHS,Final Report,FR66,Côte d'Ivoire Enquête Démographique et de Santé 1994,CI,1994,CI1994DHS,https://www.dhsprogram.com/pubs/pdf/FR66/FR66.pdf,CI1994DHS_FR66.pdf,5579358
+DHS,Summary Report,SR51,Côte d'Ivoire Enquête Démographique et de Santé 1994 - Rapport de Synthése,CI,1994,CI1994DHS,https://www.dhsprogram.com/pubs/pdf/SR51/SR51.pdf,CI1994DHS_SR51.pdf,2694994
+DHS,MIS Final Report,MIS42,MIS Final Report,CM,2022,CM2022MIS,https://www.dhsprogram.com/pubs/pdf/MIS42/MIS42.pdf,CM2022MIS_MIS42.pdf,7717224
+DHS,MIS Final Report,MIS43,MIS Final Report,CM,2022,CM2022MIS,https://www.dhsprogram.com/pubs/pdf/MIS43/MIS43.pdf,CM2022MIS_MIS43.pdf,9048511
+DHS,Cameroon MIS 2022 - Malaria Fact Sheet,MF40,Cameroon MIS 2022 - Malaria Fact Sheet,CM,2022,CM2022MIS,https://www.dhsprogram.com/pubs/pdf/MF40/MF40.pdf,CM2022MIS_MF40.pdf,1175924
+DHS,Cameroon MIS 2022 - Malaria Fact Sheet,MF41,Cameroon MIS 2022 - Malaria Fact Sheet,CM,2022,CM2022MIS,https://www.dhsprogram.com/pubs/pdf/MF41/MF41.pdf,CM2022MIS_MF41.pdf,1183849
+DHS,Final Report,FR360,Final Report,CM,2018,CM2018DHS,https://www.dhsprogram.com/pubs/pdf/FR360/FR360.pdf,CM2018DHS_FR360.pdf,25824509
+DHS,Cameroon 2018 Demographic and Health Survey - Summary Report,SR266,Cameroon 2018 Demographic and Health Survey - Summary Report,CM,2018,CM2018DHS,https://www.dhsprogram.com/pubs/pdf/SR266/SR266.pdf,CM2018DHS_SR266.pdf,2036701
+DHS,Cameroon 2018 DHS - 5 Fact Sheets,OF44,Cameroon DHS 2018 - Child Health and Nutrition - English,CM,2018,CM2018DHS,"https://www.dhsprogram.com/pubs/pdf/OF44/OF44.CH,E.pdf","CM2018DHS_OF44.CH,E.pdf",604444
+DHS,Final Report,FR260,Cameroon 2011 - Final Report,CM,2011,CM2011DHS,https://www.dhsprogram.com/pubs/pdf/FR260/FR260.pdf,CM2011DHS_FR260.pdf,3968959
+DHS,HIV Fact Sheet,HF42,HIV Fact Sheet (English),CM,2011,CM2011DHS,https://www.dhsprogram.com/pubs/pdf/HF42/HF42.pdf,CM2011DHS_HF42.pdf,2326658
+DHS,Cameroon 2011 DHS Fact Sheets,OF16,Cameroon 2011 DHS - Nutrition Fact Sheet,CM,2011,CM2011DHS,https://www.dhsprogram.com/pubs/pdf/OF16/OF16.pdf,CM2011DHS_OF16.pdf,2254458
+DHS,Final Report,FR163,Cameroun Enquête Démographique et de Santé 2004,CM,2004,CM2004DHS,https://www.dhsprogram.com/pubs/pdf/FR163/FR163-CM04.pdf,CM2004DHS_FR163-CM04.pdf,4520397
+DHS,Executive Summary,SR107,"Executive Summary:  Cameroon, 2005 (English)",CM,2004,CM2004DHS,https://www.dhsprogram.com/pubs/pdf/SR107/SR107.pdf,CM2004DHS_SR107.pdf,49869
+DHS,HIV Fact Sheet,HF2,Cameroon HIV Fact Sheet,CM,2004,CM2004DHS,https://www.dhsprogram.com/pubs/pdf/HF2/Cameroon_HIV_factsheet.pdf,CM2004DHS_Cameroon_HIV_factsheet.pdf,628866
+DHS,Final Report,FR97,Cameroon DHS 1998 Final  Report,CM,1998,CM1998DHS,https://www.dhsprogram.com/pubs/pdf/FR97/FR97.pdf,CM1998DHS_FR97.pdf,4859301
+DHS,Summary Report,SR72,Cameroon Demographic and Health Survey 1998 Summary Report (English/French),CM,1998,CM1998DHS,https://www.dhsprogram.com/pubs/pdf/SR72/SR72.pdf,CM1998DHS_SR72.pdf,5933848
+DHS,Final Report,FR7,Enquête Démographique et de Santé Cameroun 1991,CM,1991,CM1991DHS,https://www.dhsprogram.com/pubs/pdf/FR7/FR7.pdf,CM1991DHS_FR7.pdf,5445200
+DHS,Summary Report,SR4,Summary Report Cameroon 1991,CM,1991,CM1991DHS,https://www.dhsprogram.com/pubs/pdf/SR4/SR4.pdf,CM1991DHS_SR4.pdf,4322020
+DHS,Final Report,FR334,Colombia Encuesta Nacional de Demografía y Salud 2015 - Tomo I,CO,2015,CO2015DHS,https://www.dhsprogram.com/pubs/pdf/FR334/FR334.pdf,CO2015DHS_FR334.pdf,39151058
+DHS,Key Findings,SR239,Colombia DHS 2015 - Key Findings,CO,2015,CO2015DHS,https://www.dhsprogram.com/pubs/pdf/SR239/SR239.pdf,CO2015DHS_SR239.pdf,2850894
+DHS,Final Report,FR246,Encuesta Nacional de Demografía y Salud - ENDS 2010,CO,2010,CO2010DHS,https://www.dhsprogram.com/pubs/pdf/FR246/FR246.pdf,CO2010DHS_FR246.pdf,15805856
+DHS,Final Report,FR172,Salud Sexual y Reproductiva en Colombia - Encuesta Nacional de Demografía 2005,CO,2005,CO2005DHS,https://www.dhsprogram.com/pubs/pdf/FR172/FR172.pdf,CO2005DHS_FR172.pdf,5675714
+DHS,Final Report,FR114,Salud Sexual y Reproductiva en Colombia - Encuesta Nacional de Demografía y Salud 2000,CO,2000,CO2000DHS,https://www.dhsprogram.com/pubs/pdf/FR114/FR114.pdf,CO2000DHS_FR114.pdf,8266251
+DHS,Summary Report,SR82,Salud Sexual y Reproductiva en Colombia - Encuesta Nacional de Demografía y Salud 2000 - Resumen,CO,2000,CO2000DHS,https://www.dhsprogram.com/pubs/pdf/SR82/SR82.pdf,CO2000DHS_SR82.pdf,5022694
+DHS,Final Report,FR65,Colombia Encuesta Nacional de Demografía y Salud 1995,CO,1995,CO1995DHS,https://www.dhsprogram.com/pubs/pdf/FR65/FR65.pdf,CO1995DHS_FR65.pdf,5812322
+DHS,Summary Report,SR62,Colombia Encuesta Nacional de Demografía y Salud 1995 - Informe Resumido,CO,1995,CO1995DHS,https://www.dhsprogram.com/pubs/pdf/SR62/SR62.pdf,CO1995DHS_SR62.pdf,2628155
+DHS,Final Report,FR9,"Colombia Encuesta de Prevalencia, Demografía y Salud 1990",CO,1990,CO1990DHS,https://www.dhsprogram.com/pubs/pdf/FR9/FR9.pdf,CO1990DHS_FR9.pdf,4139280
+DHS,Final Report,FR8,Encuesta de Prevalencia Demografía y Salud 1986,CO,1986,CO1986DHS,https://www.dhsprogram.com/pubs/pdf/FR8/FR8.pdf,CO1986DHS_FR8.pdf,2274358
+DHS,Final Report,FR203,Cabo Verde Inquérito Demográfico e de Saúde Reproductiva (IDSR-II) 2005,CV,2005,CV2005DHS,https://www.dhsprogram.com/pubs/pdf/FR203/FR203.pdf,CV2005DHS_FR203.pdf,2904894
+DHS,HIV Fact Sheet,HF27,HIV Fact Sheet (english),CV,2005,CV2005DHS,https://www.dhsprogram.com/pubs/pdf/HF27/HF27.pdf,CV2005DHS_HF27.pdf,880482
+DHS,Final Report,FR292,Dominican Republic DHS 2013,DR,2013,DR2013DHS,https://www.dhsprogram.com/pubs/pdf/FR292/FR292.pdf,DR2013DHS_FR292.pdf,4290819
+DHS,Dominican Republic DHS 2013 Fact Sheet,GF35,Dominican Republic DHS 2013 - Fact Sheet,DR,2013,DR2013DHS,https://www.dhsprogram.com/pubs/pdf/GF35/GF35.pdf,DR2013DHS_GF35.pdf,326203
+DHS,Final Report - Bateyes,FR303,Final Report - Bateyes 2013 Dominican Republic,DR,2013,DR2013DHS,https://www.dhsprogram.com/pubs/pdf/FR303/FR303.pdf,DR2013DHS_FR303.pdf,1414513
+DHS,Final Report,FR205,República Dominicana Encuesta Demográfica y de Salud 2007,DR,2007,DR2007DHS,https://www.dhsprogram.com/pubs/pdf/FR205/FR205.pdf,DR2007DHS_FR205.pdf,5081021
+DHS,Dominican Republic DHS 2007 Fact Sheet,GF8,Dominican Republic DHS Fact Sheet,DR,2007,DR2007DHS,https://www.dhsprogram.com/pubs/pdf/GF8/DRbigfactsheet.pdf,DR2007DHS_DRbigfactsheet.pdf,947475
+DHS,HIV Fact Sheet,HF22,Dominican Republic 2007 DHS HIV Factsheet (english),DR,2007,DR2007DHS,https://www.dhsprogram.com/pubs/pdf/HF22/DRHIVfactsheetEng.pdf,DR2007DHS_DRHIVfactsheetEng.pdf,791224
+DHS,Final Report - Bateyes,FR212,República Dominicana Encuesta Sociodemográfica y sobre VIH/SIDA en los Bateyes Estatales de la República Dominicana 2007,DR,2007,DR2007DHS,https://www.dhsprogram.com/pubs/pdf/FR212/FR212.pdf,DR2007DHS_FR212.pdf,1875857
+DHS,Final Report,FR146,República Dominicana 2002 - Reporte Final,DR,2002,DR2002DHS,https://www.dhsprogram.com/pubs/pdf/FR146/FR146.pdf,DR2002DHS_FR146.pdf,2655353
+DHS,Final Report (From Experimental Survey),FR190,República Dominicana Encuesta Experimental de Demografía y Salud 1999,DR,1999,DR1999DHS,https://www.dhsprogram.com/pubs/pdf/FR190/FR190.pdf,DR1999DHS_FR190.pdf,54243105
+DHS,Final Report,FR82,República Dominicana Encuesta Demográfica y de Salud 1996,DR,1996,DR1996DHS,https://www.dhsprogram.com/pubs/pdf/FR82/FR82.pdf,DR1996DHS_FR82.pdf,5925955
+DHS,Final Report,FR12,República Dominicana Encuesta Demográfica  y de Salud 1991,DR,1991,DR1991DHS,https://www.dhsprogram.com/pubs/pdf/FR12/FR12.pdf,DR1991DHS_FR12.pdf,5085624
+DHS,Summary Report,SR5,Summary Report - Republica Dominicana 1991,DR,1991,DR1991DHS,https://www.dhsprogram.com/pubs/pdf/SR5/SR5.pdf,DR1991DHS_SR5.pdf,3103783
+DHS,Final Report (Experimental Study),FR11,Dominican Republic Experimental Study - An Evaluation of Fertility and Child Health Information 1986,DR,1986,DR1986OTH,https://www.dhsprogram.com/pubs/pdf/FR11/FR11.pdf,DR1986OTH_FR11.pdf,2118089
+DHS,Final Report,FR10,Encuesta Demografica y de Salud DHS-86 Republica Dominicana,DR,1986,DR1986DHS,https://www.dhsprogram.com/pubs/pdf/FR10/FR10.pdf,DR1986DHS_FR10.pdf,2303901
+DHS,Summary Report,SR32,Ecuador Encuesta Demográfica y de Salud Familiar 1987 - Informe Resumido,EC,1987,EC1987DHS,https://www.dhsprogram.com/pubs/pdf/SR32/SR32.pdf,EC1987DHS_SR32.pdf,2328604
+DHS,Final Report,FR13,Ecuador Encuesta Demográfica y de Salud Familiar 1987,EC,1987,EC1987DHS,https://www.dhsprogram.com/pubs/pdf/FR13/FR13.pdf,EC1987DHS_FR13.pdf,2225858
+DHS,HIS Final Report,FR313,Egypt Health Issues Survey 2015 (English),EG,2015,EG2015OTH,https://www.dhsprogram.com/pubs/pdf/FR313/FR313.pdf,EG2015OTH_FR313.pdf,4743025
+DHS,Final Report,FR302,Egypt Demographic and Health Survey 2014,EG,2014,EG2014DHS,https://www.dhsprogram.com/pubs/pdf/FR302/FR302.pdf,EG2014DHS_FR302.pdf,5752885
+DHS,Final Report,FR306,Egypt Demographic and Health Survey 2014,EG,2014,EG2014DHS,https://www.dhsprogram.com/pubs/pdf/FR306/FR306.pdf,EG2014DHS_FR306.pdf,18770033
+DHS,Key Findings,SR223,"Egypt 2014, DHS - Key Findings (English)",EG,2014,EG2014DHS,https://www.dhsprogram.com/pubs/pdf/SR223/SR223.pdf,EG2014DHS_SR223.pdf,7823003
+DHS,Egypt DHS 2014 - 4 Fact Sheets,OF29,Egypt DHS 2014 - 4 Fact Sheets (English),EG,2014,EG2014DHS,https://www.dhsprogram.com/pubs/pdf/OF29/OF29.pdf,EG2014DHS_OF29.pdf,986973
+DHS,Egypt DHS 2014 - 25 Government Fact Sheets,OF30,Egypt DHS 2014 - 25 Government Fact Sheets (English),EG,2014,EG2014DHS,https://www.dhsprogram.com/pubs/pdf/OF30/OF30.pdf,EG2014DHS_OF30.pdf,4040810
+DHS,Final Report,FR220,Egypt Demographic and Health Survey 2008,EG,2008,EG2008DHS,https://www.dhsprogram.com/pubs/pdf/FR220/FR220.pdf,EG2008DHS_FR220.pdf,3427852
+DHS,Final Report,FR176,Egypt Demographic and Health Survey 2005,EG,2005,EG2005DHS,https://www.dhsprogram.com/pubs/pdf/FR176/FR176.pdf,EG2005DHS_FR176.pdf,2158729
+DHS,SPA Key Findings,SR106,Egypt Service Provision Assessment Survey 2004:  Key Findings,EG,2004,EG2004SPA,https://www.dhsprogram.com/pubs/pdf/SR106/SR106.pdf,EG2004SPA_SR106.pdf,718641
+DHS,Final Report,SPA7,Egypt Service Provision Assessment Survey 2004,EG,2004,EG2004SPA,https://www.dhsprogram.com/pubs/pdf/SPA7/SPA7.pdf,EG2004SPA_SPA7.pdf,2385124
+DHS,Egypt Interim Demographic and Health Survey,FR149,Egypt Interim Demographic and Health Survey 2003,EG,2003,EG2003DHS,https://www.dhsprogram.com/pubs/pdf/FR149/FR149.pdf,EG2003DHS_FR149.pdf,6776697
+DHS,Final Report,SPA5,Egypt Service Provision Assessment Survey 2002,EG,2002,EG2002SPA,https://www.dhsprogram.com/pubs/pdf/SPA5/SPA5.pdf,EG2002SPA_SPA5.pdf,2307800
+DHS,Final Report,FR117,Egypt Demographic and Health Survey 2000,EG,2000,EG2000DHS,https://www.dhsprogram.com/pubs/pdf/FR117/FR117.pdf,EG2000DHS_FR117.pdf,6086710
+DHS,Summary Report,SR84,Egypt 2000 Demographic and Health Survey - Key Findings,EG,2000,EG2000DHS,https://www.dhsprogram.com/pubs/pdf/SR84/SR84.pdf,EG2000DHS_SR84.pdf,2284518
+DHS,Final Report (Interim DHS),FR168,Egypt Demographic and Health Survey 1998,EG,1998,EG1998DHS,https://www.dhsprogram.com/pubs/pdf/FR168/FR168.pdf,EG1998DHS_FR168.pdf,1014258
+DHS,Egypt Indepth Study - Final Report,FR105,Egypt Indepth Study on the Reasons for nonuse of Contraception,EG,1997,EG1997OTH,https://www.dhsprogram.com/pubs/pdf/FR105/FR105.pdf,EG1997OTH_FR105.pdf,3146669
+DHS,Final Report (Interim DHS),FR167,Egypt Demographic and Health Survey 1997,EG,1997,EG1997DHS,https://www.dhsprogram.com/pubs/pdf/FR167/FR167.pdf,EG1997DHS_FR167.pdf,1961024
+DHS,Final Report,FR71,Egypt DHS 1995 Final Report,EG,1995,EG1995DHS,https://www.dhsprogram.com/pubs/pdf/FR71/FR71.pdf,EG1995DHS_FR71.pdf,5788448
+DHS,Summary Report,SR60,Egypt Demographic andHealth Survey 1995 - Summary Report,EG,1995,EG1995DHS,https://www.dhsprogram.com/pubs/pdf/SR60/SR60.pdf,EG1995DHS_SR60.pdf,2821019
+DHS,Final Report,FR48,Egypt Demographic and Health Survey 1992,EG,1992,EG1992DHS,https://www.dhsprogram.com/pubs/pdf/FR48/FR48.pdf,EG1992DHS_FR48.pdf,5145178
+DHS,Summary Report,SR35,Egypt Demographic and Health Survey 1992 Summary Report,EG,1992,EG1992DHS,https://www.dhsprogram.com/pubs/pdf/SR35/SR35.pdf,EG1992DHS_SR35.pdf,2529111
+DHS,Summary Report,SR6,Egypt Demographic and Health Survey 1988 - Summary Report,EG,1988,EG1988DHS,https://www.dhsprogram.com/pubs/pdf/SR6/SR6.pdf,EG1988DHS_SR6.pdf,2454153
+DHS,Final Report,FR14,Egypt Demographic and Health Survey 1988,EG,1988,EG1988DHS,https://www.dhsprogram.com/pubs/pdf/FR14/FR14.pdf,EG1988DHS_FR14.pdf,3803496
+DHS,Key Findings,SR195,Equatorial Guinea DHS 2011 - Key Findings,EK,2011,EK2011DHS,https://www.dhsprogram.com/pubs/pdf/SR195/SR195.pdf,EK2011DHS_SR195.pdf,3884074
+DHS,Final Report,FR271,Equatorial Guinea DHS 2011,EK,2011,EK2011DHS,https://www.dhsprogram.com/pubs/pdf/FR271/FR271.pdf,EK2011DHS_FR271.pdf,3151539
+DHS,HIV Fact Sheet,HF51,Equatorial Guinea DHS 2011 - HIV Fact Sheet,EK,2011,EK2011DHS,https://www.dhsprogram.com/pubs/pdf/HF51/HF51.pdf,EK2011DHS_HF51.pdf,1662952
+DHS,Final Report,FR137,Eritrea Demographic and Health Survey 2002,ER,2002,ER2002DHS,https://www.dhsprogram.com/pubs/pdf/FR137/FR137.pdf,ER2002DHS_FR137.pdf,2217759
+DHS,Summary Report,SR97,Key Findings,ER,2002,ER2002DHS,https://www.dhsprogram.com/pubs/pdf/SR97/Eritrea_KF.pdf,ER2002DHS_Eritrea_KF.pdf,580442
+DHS,Final Report,FR80,Eritrea Demographic and Health Survey 1995,ER,1995,ER1995DHS,https://www.dhsprogram.com/pubs/pdf/FR80/FR80.pdf,ER1995DHS_FR80.pdf,5201455
+DHS,Summary Report,SR57,Eritrea - Demographic and Health Survey 1995 - Summary Report,ER,1995,ER1995DHS,https://www.dhsprogram.com/pubs/pdf/SR57/SR57.pdf,ER1995DHS_SR57.pdf,2408496
+DHS,Final Report,FR15,El Salvador Encuesta Nacional de Salud Familiar FESAL-85,ES,1985,ES1985DHS,https://www.dhsprogram.com/pubs/pdf/FR15/FR15.pdf,ES1985DHS_FR15.pdf,1937873
+DHS,Final Report,FR399,Final Report,ET,2024,ET2024DHS,https://www.dhsprogram.com/pubs/pdf/FR399/FR399.pdf,ET2024DHS_FR399.pdf,15522026
+DHS,Ethiopia 2024-25 DHS - National Fact Sheet,GF68,Ethiopia 2024-25 DHS - National Fact Sheet,ET,2024,ET2024DHS,https://www.dhsprogram.com/pubs/pdf/GF68/GF68.pdf,ET2024DHS_GF68.pdf,1492014
+DHS,Ethiopia DHS 2024-25 - Regional Fact Sheets,OF54,2024-25 Ethiopia DHS - Addis Ababa Factsheet,ET,2024,ET2024DHS,https://www.dhsprogram.com/pubs/pdf/OF54/OF54AddisAbaba.pdf,ET2024DHS_OF54AddisAbaba.pdf,1383779
+DHS,Summary Report,SR296,Summary Report,ET,2024,ET2024DHS,https://www.dhsprogram.com/pubs/pdf/SR296/SR296.pdf,ET2024DHS_SR296.pdf,9780340
+DHS,Final Report,SPA36,Final Report,ET,2021,ET2021SPA,https://www.dhsprogram.com/pubs/pdf/SPA36/SPA36.pdf,ET2021SPA_SPA36.pdf,13838843
+DHS,Summary Report,SR278,Ethiopia 2021-22 SPA - Summary Report,ET,2021,ET2021SPA,https://www.dhsprogram.com/pubs/pdf/SR278/SR278.pdf,ET2021SPA_SR278.pdf,4300358
+DHS,Mini Final Report,FR363,Ethiopia Mini DHS 2019,ET,2019,ET2019DHS,https://www.dhsprogram.com/pubs/pdf/FR363/FR363.pdf,ET2019DHS_FR363.pdf,8029886
+DHS,Key Findings,SR241,Ethiopia DHS 2016 - Key Findings,ET,2016,ET2016DHS,https://www.dhsprogram.com/pubs/pdf/SR241/SR241.pdf,ET2016DHS_SR241.pdf,2474665
+DHS,Final Report,FR328,Ethiopia Demographic and Health Survey 2016 (English),ET,2016,ET2016DHS,https://www.dhsprogram.com/pubs/pdf/FR328/FR328.pdf,ET2016DHS_FR328.pdf,8727399
+DHS,Final Report,FR255,Ethiopia Demographic and Health Survey 2011,ET,2011,ET2011DHS,https://www.dhsprogram.com/pubs/pdf/FR255/FR255.pdf,ET2011DHS_FR255.pdf,2515633
+DHS,Key Findings,SR191,Ethiopia DHS 2011 - Key Findings,ET,2011,ET2011DHS,https://www.dhsprogram.com/pubs/pdf/SR191/SR191.pdf,ET2011DHS_SR191.pdf,3352291
+DHS,Ethiopia DHS 2011 Fact Sheet,GF26,Ethiopia DHS 2011 Fact Sheet,ET,2011,ET2011DHS,https://www.dhsprogram.com/pubs/pdf/GF26/GF26.pdf,ET2011DHS_GF26.pdf,1079694
+DHS,Final Report,FR179,Ethiopia Demographic and Health Survey 2005,ET,2005,ET2005DHS,https://www.dhsprogram.com/pubs/pdf/FR179/FR179[23June2011].pdf,ET2005DHS_FR179[23June2011].pdf,2123061
+DHS,Key Findings,SR119,Ethiopia 2005 Demographic and Health Survey - Key Findings,ET,2005,ET2005DHS,https://www.dhsprogram.com/pubs/pdf/SR119/SR119.pdf,ET2005DHS_SR119.pdf,631449
+DHS,HIV Fact Sheet,HF13,Ethiopia HIV Fact Sheet,ET,2005,ET2005DHS,https://www.dhsprogram.com/pubs/pdf/HF13/Ethiopia_HIV_factsheet.pdf,ET2005DHS_Ethiopia_HIV_factsheet.pdf,448027
+DHS,Final Report,FR118,Ethiopia Demographic and Health Survey 2000,ET,2000,ET2000DHS,https://www.dhsprogram.com/pubs/pdf/FR118/FR118.pdf,ET2000DHS_FR118.pdf,1566465
+DHS,Summary Report,SR85,"Key Findings, Ethiopia 2000",ET,2000,ET2000DHS,https://www.dhsprogram.com/pubs/pdf/SR85/ethiopiakf.pdf,ET2000DHS_ethiopiakf.pdf,639605
+DHS,Final Report,FR371,Final Report,GA,2019,GA2019DHS,https://www.dhsprogram.com/pubs/pdf/FR371/FR371.pdf,GA2019DHS_FR371.pdf,22734003
+DHS,Gabon DHS 2019-21 - Fact Sheet,GF58,Gabon DHS 2019-21 - Fact Sheet,GA,2019,GA2019DHS,https://www.dhsprogram.com/pubs/pdf/GF58/GF58.pdf,GA2019DHS_GF58.pdf,1054493
+DHS,Gabon DHS 2019-21 - Malaria Fact Sheet,MF38,Gabon DHS 2019-21 - Malaria Fact Sheet,GA,2019,GA2019DHS,https://www.dhsprogram.com/pubs/pdf/MF38/MF38.pdf,GA2019DHS_MF38.pdf,957440
+DHS,HIV and HepB - Fact Sheet,HF65,HIV and HepB - Fact Sheet,GA,2019,GA2019DHS,https://www.dhsprogram.com/pubs/pdf/HF65/HF65.pdf,GA2019DHS_HF65.pdf,929021
+DHS,Gabon DHS 2019-21 - Maternal Health Fact Sheet,OF48,Gabon DHS 2019-21 - Other Fact Sheet,GA,2019,GA2019DHS,https://www.dhsprogram.com/pubs/pdf/OF48/OF48.pdf,GA2019DHS_OF48.pdf,805258
+DHS,Final Report,FR276,Gabon Demographic and Health Survey 2012,GA,2012,GA2012DHS,https://www.dhsprogram.com/pubs/pdf/FR276/FR276.pdf,GA2012DHS_FR276.pdf,3391866
+DHS,Key Findings,SR198,"Gabon DHS, 2012 - Key Findings",GA,2012,GA2012DHS,https://www.dhsprogram.com/pubs/pdf/SR198/SR198.pdf,GA2012DHS_SR198.pdf,3595541
+DHS,"Gabon DHS, 2012 - Fact Sheets",OF18,"Gabon DHS, 2012 - Child Health Fact Sheet",GA,2012,GA2012DHS,https://www.dhsprogram.com/pubs/pdf/OF18/OF18.pdf,GA2012DHS_OF18.pdf,1471447
+DHS,HIV Fact Sheet,HF44,"Gabon DHS, 2012 - HIV Fact Sheet",GA,2012,GA2012DHS,https://www.dhsprogram.com/pubs/pdf/HF44/HF44.pdf,GA2012DHS_HF44.pdf,1324684
+DHS,Final Report,FR122,Gabon Enquête Démographique et de Santé 2000,GA,2000,GA2000DHS,https://www.dhsprogram.com/pubs/pdf/FR122/FR122.pdf,GA2000DHS_FR122.pdf,1994928
+DHS,Summary Report,SR87,Gabon Enquête Démographique et de Santé du Gabon 2000 Rapport de synthèse,GA,2000,GA2000DHS,https://www.dhsprogram.com/pubs/pdf/SR87/SR87.pdf,GA2000DHS_SR87.pdf,1389334
+DHS,Ghana DHS 2022 - Fact Sheet,GF60,Ghana DHS 2022 - Fact Sheet,GH,2022,GH2022DHS,https://www.dhsprogram.com/pubs/pdf/GF60/GF60.pdf,GH2022DHS_GF60.pdf,2935736
+DHS,Final Report,FR387,Final Report,GH,2022,GH2022DHS,https://www.dhsprogram.com/pubs/pdf/FR387/FR387.pdf,GH2022DHS_FR387.pdf,12820978
+DHS,Summary Report,SR283,Summary Report,GH,2022,GH2022DHS,https://www.dhsprogram.com/pubs/pdf/SR283/SR283.pdf,GH2022DHS_SR283.pdf,16699621
+DHS,MIS Final Report,MIS35,Ghana MIS 2019,GH,2019,GH2019MIS,https://www.dhsprogram.com/pubs/pdf/MIS35/MIS35.pdf,GH2019MIS_MIS35.pdf,2929886
+DHS,Ghana MIS 2019 - Malaria Fact Sheet,MF29,Ghana MIS 2019,GH,2019,GH2019MIS,https://www.dhsprogram.com/pubs/pdf/MF29/MF29.pdf,GH2019MIS_MF29.pdf,1590762
+DHS,Key Findings,SR251,Ghana Maternal Health Survey 2017 - Key Findings,GH,2017,GH2017OTH,https://www.dhsprogram.com/pubs/pdf/SR251/SR251.pdf,GH2017OTH_SR251.pdf,3312652
+DHS,Maternal Health Survey - Final Report,FR340,Ghana Special 2017 - Maternal Health Survey - Final Report,GH,2017,GH2017OTH,https://www.dhsprogram.com/pubs/pdf/FR340/FR340.pdf,GH2017OTH_FR340.pdf,5682314
+DHS,Ghana MHS 2017 Fact Sheet,GF42,Ghana MHS 2017 Fact Sheet,GH,2017,GH2017OTH,https://www.dhsprogram.com/pubs/pdf/GF42/GF42.pdf,GH2017OTH_GF42.pdf,1285574
+DHS,Ghana MIS 2016 Malaria Fact Sheet,MF20,Ghana MIS 2016 Malaria Fact Sheet,GH,2016,GH2016MIS,https://www.dhsprogram.com/pubs/pdf/MF20/MF20.pdf,GH2016MIS_MF20.pdf,1502175
+DHS,MIS Final Report,MIS26,Ghana MIS 2016 Final Report,GH,2016,GH2016MIS,https://www.dhsprogram.com/pubs/pdf/MIS26/MIS26.pdf,GH2016MIS_MIS26.pdf,7728247
+DHS,Final Report,FR307,Ghana DHS 2014 - Final Report,GH,2014,GH2014DHS,https://www.dhsprogram.com/pubs/pdf/FR307/FR307.pdf,GH2014DHS_FR307.pdf,4190586
+DHS,Key Findings,SR224,Ghana DHS 2014 - Key Findings,GH,2014,GH2014DHS,https://www.dhsprogram.com/pubs/pdf/SR224/SR224.pdf,GH2014DHS_SR224.pdf,2218364
+DHS,Ghana DHS 2014 Fact Sheet,GF36,Ghana DHS 2014 Fact Sheet,GH,2014,GH2014DHS,https://www.dhsprogram.com/pubs/pdf/GF36/GF36.pdf,GH2014DHS_GF36.pdf,1261622
+DHS,Ghana DHS 2014 - Education in Ghana Fact Sheet,OF32,Ghana DHS 2014 - Education in Ghana Fact Sheet,GH,2014,GH2014DHS,https://www.dhsprogram.com/pubs/pdf/OF32/OF32.pdf,GH2014DHS_OF32.pdf,1305317
+DHS,Multiple Indicator Cluster Survey - Final Report,FR262,Ghana Multiple Indicator Cluster Survey 2011,GH,2011,GH2011OTH,https://www.dhsprogram.com/pubs/pdf/FR262/FR262.pdf,GH2011OTH_FR262.pdf,13734803
+DHS,Final Report,FR221,Ghana Demographic and Health Survey 2008,GH,2008,GH2008DHS,https://www.dhsprogram.com/pubs/pdf/FR221/FR221[13Aug2012].pdf,GH2008DHS_FR221[13Aug2012].pdf,3265955
+DHS,Ghana DHS 2008 Fact Sheet,GF14,Ghana DHS 2008 Fact Sheet,GH,2008,GH2008DHS,https://www.dhsprogram.com/pubs/pdf/GF14/GF14.pdf,GH2008DHS_GF14.pdf,1444842
+DHS,Key Findings,SR172,Ghana 2008 Demographic and Health Survey - Key Findings,GH,2008,GH2008DHS,https://www.dhsprogram.com/pubs/pdf/SR172/SR172.pdf,GH2008DHS_SR172.pdf,2464354
+DHS,Maternal Health Survey,FR227,Ghana Maternal Health Survey 2007,GH,2007,GH2007OTH,https://www.dhsprogram.com/pubs/pdf/FR227/FR227.pdf,GH2007OTH_FR227.pdf,9596466
+DHS,Multiple Indicator Cluster Survey - Final Report,FR226,Multiple Indicator Cluster Survey 2006,GH,2006,GH2006OTH,https://www.dhsprogram.com/pubs/pdf/FR226/FR226[MICS].pdf,GH2006OTH_FR226[MICS].pdf,1547477
+DHS,Final Report,FR152,Ghana 2003 Final Report,GH,2003,GH2003DHS,https://www.dhsprogram.com/pubs/pdf/FR152/FR152.pdf,GH2003DHS_FR152.pdf,4294132
+DHS,Summary Report,SR102,Ghana 2003 Demographic and Health Survey - Key Findings,GH,2003,GH2003DHS,https://www.dhsprogram.com/pubs/pdf/SR102/SR102GH03.pdf,GH2003DHS_SR102GH03.pdf,5140859
+DHS,HIV Fact Sheet,HF3,Ghana HIV Fact Sheet,GH,2003,GH2003DHS,https://www.dhsprogram.com/pubs/pdf/HF3/Ghana_HIV_factsheet.pdf,GH2003DHS_Ghana_HIV_factsheet.pdf,414275
+DHS,Ghana 2003 DHS Fact Sheet,GF1,Ghana 2003 DHS Fact Sheet,GH,2003,GH2003DHS,https://www.dhsprogram.com/pubs/pdf/GF1/ghana_fact_sheet.pdf,GH2003DHS_ghana_fact_sheet.pdf,690879
+DHS,Final Report,SPA6,Ghana Service Provision Assessment Survey 2002,GH,2002,GH2002SPA,https://www.dhsprogram.com/pubs/pdf/SPA6/SPA6.pdf,GH2002SPA_SPA6.pdf,3527052
+DHS,Final Report,FR106,Ghana Demographic and Health Survey 1998 Final Report,GH,1998,GH1998DHS,https://www.dhsprogram.com/pubs/pdf/FR106/FR106.pdf,GH1998DHS_FR106.pdf,810879
+DHS,Summary Report,SR76,Ghana - Demographic and Health Survey 1998 - Summary Report,GH,1998,GH1998DHS,https://www.dhsprogram.com/pubs/pdf/SR76/SR76.pdf,GH1998DHS_SR76.pdf,2063321
+DHS,Summary Report,SR46,Ghana Demographic and Health Survey 1993- Summary Report,GH,1993,GH1993DHS,https://www.dhsprogram.com/pubs/pdf/SR46/SR46.pdf,GH1993DHS_SR46.pdf,2085654
+DHS,Final Report,FR59,Ghana Demographic and Health Survey 1993 Final Report,GH,1993,GH1993DHS,https://www.dhsprogram.com/pubs/pdf/FR59/FR59.pdf,GH1993DHS_FR59.pdf,3756039
+DHS,Summary Report,SR7,Ghana Demographic and Health Survey 1988 - Summary Report,GH,1988,GH1988DHS,https://www.dhsprogram.com/pubs/pdf/SR7/SR7.pdf,GH1988DHS_SR7.pdf,2367833
+DHS,Final Report,FR16,Ghana Demographic and Health Survey 1988,GH,1988,GH1988DHS,https://www.dhsprogram.com/pubs/pdf/FR16/FR16.pdf,GH1988DHS_FR16.pdf,2679272
+DHS,Final Report,FR369,The Gambia DHS 2021,GM,2019,GM2019DHS,https://www.dhsprogram.com/pubs/pdf/FR369/FR369.pdf,GM2019DHS_FR369.pdf,17308809
+DHS,Summary Report,SR268,Summary Report,GM,2019,GM2019DHS,https://www.dhsprogram.com/pubs/pdf/SR268/SR268.pdf,GM2019DHS_SR268.pdf,12025963
+DHS,Gambia DHS 2019-20 - Fact Sheet,GF48,Gambia DHS 2019-20 - National Fact Sheet,GM,2019,GM2019DHS,https://www.dhsprogram.com/pubs/pdf/GF48/GF48.pdf,GM2019DHS_GF48.pdf,1461439
+DHS,Gambia DHS 2019-20 - 8 Fact Sheets,OF47,OF47_Banjul,GM,2019,GM2019DHS,https://www.dhsprogram.com/pubs/pdf/OF47/OF47_Banjul.pdf,GM2019DHS_OF47_Banjul.pdf,1659925
+DHS,Final Report,FR289,The Gambia Demographic and Health Survey 2013,GM,2013,GM2013DHS,https://www.dhsprogram.com/pubs/pdf/FR289/FR289.pdf,GM2013DHS_FR289.pdf,3106944
+DHS,Final Report,MIS37,Final Report,GN,2021,GN2021MIS,https://www.dhsprogram.com/pubs/pdf/MIS37/MIS37.pdf,GN2021MIS_MIS37.pdf,7658450
+DHS,Guinea MIS 2021 - Malaria Fact Sheet,MF31,Guinea MIS 2021 Fact Sheet,GN,2021,GN2021MIS,https://www.dhsprogram.com/pubs/pdf/MF31/MF31.pdf,GN2021MIS_MF31.pdf,1331799
+DHS,Final Report,FR353,Guinea DHS 2018 - Final Report,GN,2018,GN2018DHS,https://www.dhsprogram.com/pubs/pdf/FR353/FR353.pdf,GN2018DHS_FR353.pdf,10717996
+DHS,Summary Report,SR262,Guinea DHS 2018 - Summary Report,GN,2018,GN2018DHS,https://www.dhsprogram.com/pubs/pdf/SR262/SR262.pdf,GN2018DHS_SR262.pdf,2771859
+DHS,Supplement to Guinea (MICS),FR332,République de Guinée Enquête de prévailence parasitaire du paludisme et de l'anémie 2016,GN,2016,GN2016OTH,https://www.dhsprogram.com/pubs/pdf/FR332/FR332.pdf,GN2016OTH_FR332.pdf,1178885
+DHS,Final Report,FR280,Guinea DHS 2012 - Final Report,GN,2012,GN2012DHS,https://www.dhsprogram.com/pubs/pdf/FR280/FR280.pdf,GN2012DHS_FR280.pdf,4020516
+DHS,Key Findings,SR207,Guinea DHS 2012 - Key Findings,GN,2012,GN2012DHS,https://www.dhsprogram.com/pubs/pdf/SR207/SR207.pdf,GN2012DHS_SR207.pdf,2699217
+DHS,HIV Fact Sheet,HF52,Guinea DHS 2012 - HIV Fact Sheet,GN,2012,GN2012DHS,https://www.dhsprogram.com/pubs/pdf/HF52/HF52.pdf,GN2012DHS_HF52.pdf,680665
+DHS,Guinea DHS 2012 - 2 Fact Sheets,OF22,Guinea Reproductive Health Fact Sheet 2012 (french),GN,2012,GN2012DHS,https://www.dhsprogram.com/pubs/pdf/OF22/OF22.pdf,GN2012DHS_OF22.pdf,773420
+DHS,Final Report,FR162,Guinée Enquête Démographique et de Santé,GN,2005,GN2005DHS,https://www.dhsprogram.com/pubs/pdf/FR162/FR162-GN05.pdf,GN2005DHS_FR162-GN05.pdf,4349657
+DHS,Key Findings,SR116,Guinea 2005 Demographic and Health Survey - Key Findings,GN,2005,GN2005DHS,https://www.dhsprogram.com/pubs/pdf/SR116/SR116.pdf,GN2005DHS_SR116.pdf,9523290
+DHS,HIV Fact Sheet,HF4,Guinea HIV Fact Sheet (English),GN,2005,GN2005DHS,https://www.dhsprogram.com/pubs/pdf/HF4/Guinea_HIV_factsheet_english.pdf,GN2005DHS_Guinea_HIV_factsheet_english.pdf,243454
+DHS,Guinea 2005 DHS Fact Sheet,GF3,Guinea 2005 DHS Fact Sheet (French),GN,2005,GN2005DHS,https://www.dhsprogram.com/pubs/pdf/GF3/guinea_general_factsheet_french.pdf,GN2005DHS_guinea_general_factsheet_french.pdf,243764
+DHS,Final Report,FR109,Guinée Enquête Démographique et de Santé 1999,GN,1999,GN1999DHS,https://www.dhsprogram.com/pubs/pdf/FR109/FR109.pdf,GN1999DHS_FR109.pdf,3977845
+DHS,Summary Report,SR77,Guinée Enquête Démographique et de Santé 1999 - Rapport de synthèse,GN,1999,GN1999DHS,https://www.dhsprogram.com/pubs/pdf/SR77/SR77.pdf,GN1999DHS_SR77.pdf,1961977
+DHS,Final Report,FR166,Enquête Démographique et de Santé Guinée 1992,GN,1992,GN1992DHS,https://www.dhsprogram.com/pubs/pdf/FR166/FR166.pdf,GN1992DHS_FR166.pdf,16543585
+DHS,Final Report,FR318,Guatemala DHS 2014-2015,GU,2015,GU2015DHS,https://www.dhsprogram.com/pubs/pdf/FR318/FR318.pdf,GU2015DHS_FR318.pdf,22808977
+DHS,Final Report,FR107,Guatemala Interim DHS 1998-99 Final Report,GU,1999,GU1999DHS,https://www.dhsprogram.com/pubs/pdf/FR107/FR107.pdf,GU1999DHS_FR107.pdf,6891378
+DHS,Guatemala Salud Materno Infantil en los Departamentos del Altiplano,SPA34,Guatemala Salud Materno Infantil en los Departamentos del Altiplano,GU,1997,GU1997SPA,https://www.dhsprogram.com/pubs/pdf/SPA34/SPA34.pdf,GU1997SPA_SPA34.pdf,20662451
+DHS,Final Report,FR70,Guatemala Encuesta Nacional de Salud Materno Infantil 1995,GU,1995,GU1995DHS,https://www.dhsprogram.com/pubs/pdf/FR70/FR70.pdf,GU1995DHS_FR70.pdf,4125005
+DHS,Summary Report,SR161,Guatemala Encuesta Nacional de Salud Materno Infantil 1995 - Informe Resumido,GU,1995,GU1995DHS,https://www.dhsprogram.com/pubs/pdf/SR161/SR161.pdf,GU1995DHS_SR161.pdf,3127649
+DHS,Summary Report,SR8,Guatemala - Encuesta Nacional de Salud Materno-Infantil 1987 Inrome Resumido,GU,1987,GU1987DHS,https://www.dhsprogram.com/pubs/pdf/SR8/SR8.pdf,GU1987DHS_SR8.pdf,2793372
+DHS,Final Report,FR17,Guatemala Encuesta Nacional de Salud Materno Infantil 1987,GU,1987,GU1987DHS,https://www.dhsprogram.com/pubs/pdf/FR17/FR17.pdf,GU1987DHS_FR17.pdf,2552298
+DHS,Final Report,FR232,Guyana Demographic and Health Survey 2009,GY,2009,GY2009DHS,https://www.dhsprogram.com/pubs/pdf/FR232/FR232.pdf,GY2009DHS_FR232.pdf,2654360
+DHS,Final Report,AIS4,Guyana HIV/AIDS Indicator Survey 2005,GY,2005,GY2005AIS,https://www.dhsprogram.com/pubs/pdf/AIS4/AIS4.pdf,GY2005AIS_AIS4.pdf,1210977
+DHS,Final Report,SPA10,Guyana HIV/AIDS Service Provision Assessment Survey 2004,GY,2004,GY2004SPA,https://www.dhsprogram.com/pubs/pdf/SPA10/SPA10.pdf,GY2004SPA_SPA10.pdf,1288816
+DHS,Final Report,FR274,Honduras Demographic and Health Survey 2011-2012,HN,2011,HN2011DHS,https://www.dhsprogram.com/pubs/pdf/FR274/FR274.pdf,HN2011DHS_FR274.pdf,3967742
+DHS,Key Findings,SR200,Honduras DHS 2011-12 - Key Findings,HN,2011,HN2011DHS,https://www.dhsprogram.com/pubs/pdf/SR200/SR200.pdf,HN2011DHS_SR200.pdf,3593293
+DHS,Honduras DHS 2011-12 Fact Sheet,GF28,Honduras DHS 2011-12 Fact Sheet,HN,2011,HN2011DHS,https://www.dhsprogram.com/pubs/pdf/GF28/GF28.pdf,HN2011DHS_GF28.pdf,1214143
+DHS,Final Report,FR189,Honduras Encuesta Nacional de Demografía y Salud ENDESA 2005-2006,HN,2005,HN2005DHS,https://www.dhsprogram.com/pubs/pdf/FR189/FR189.pdf,HN2005DHS_FR189.pdf,3633726
+DHS,Final Report,SPA29,Haiti SPA 2017-2018 - Final Report,HT,2017,HT2017SPA,https://www.dhsprogram.com/pubs/pdf/SPA29/SPA29.pdf,HT2017SPA_SPA29.pdf,15400452
+DHS,Summary Report,SR260,Haiti SPA 2017-2017 - Summary Report,HT,2017,HT2017SPA,https://www.dhsprogram.com/pubs/pdf/SR260/SR260.pdf,HT2017SPA_SR260.pdf,2618983
+DHS,Key Findings,SR249,Haiti DHS 2016-2017 - Key Findings,HT,2016,HT2016DHS,https://www.dhsprogram.com/pubs/pdf/SR249/SR249.pdf,HT2016DHS_SR249.pdf,3041053
+DHS,Final Report,FR326,Haiti DHS 2016-2017 Final Report,HT,2016,HT2016DHS,https://www.dhsprogram.com/pubs/pdf/FR326/FR326.pdf,HT2016DHS_FR326.pdf,8456860
+DHS,Haiti DHS 2016-2017 Fact Sheet,GF43,Haiti DHS 2016-2017 Fact Sheet,HT,2016,HT2016DHS,https://www.dhsprogram.com/pubs/pdf/GF43/GF43.pdf,HT2016DHS_GF43.pdf,749898
+DHS,Final Report,SPA19,Haïti SPA 2013 Final Report,HT,2013,HT2013SPA,https://www.dhsprogram.com/pubs/pdf/SPA19/SPA19.pdf,HT2013SPA_SPA19.pdf,3179205
+DHS,Key Findings,SR211,Haïti SPA 2013 - Key Findings,HT,2013,HT2013SPA,https://www.dhsprogram.com/pubs/pdf/SR211/SR211.pdf,HT2013SPA_SR211.pdf,3114684
+DHS,Final Report,FR273,Haiti Demographic and Health Survey 2012,HT,2012,HT2012DHS,https://www.dhsprogram.com/pubs/pdf/FR273/FR273.pdf,HT2012DHS_FR273.pdf,8792376
+DHS,Key Findings,SR199,Haiti Demographic and Health Survey 2012 - Key Findings (French),HT,2012,HT2012DHS,https://www.dhsprogram.com/pubs/pdf/SR199/SR199.pdf,HT2012DHS_SR199.pdf,4248269
+DHS,"Haiti DHS, 2012 - Fact Sheet",OF19,"Haiti DHS, 2012 - Fact Sheet",HT,2012,HT2012DHS,https://www.dhsprogram.com/pubs/pdf/OF19/OF19.pdf,HT2012DHS_OF19.pdf,1397037
+DHS,HIV Fact Sheet,HF45,"Haiti DHS, 2012 - HIV Fact Sheet",HT,2012,HT2012DHS,https://www.dhsprogram.com/pubs/pdf/HF45/HF45.pdf,HT2012DHS_HF45.pdf,1463828
+DHS,HIV Fact Sheet,HF17,Haiti HIV Fact Sheet (English),HT,2006,HT2006DHS,https://www.dhsprogram.com/pubs/pdf/HF17/Haiti_HIV_FactSheet_English.pdf,HT2006DHS_Haiti_HIV_FactSheet_English.pdf,436103
+DHS,Final Report,FR192,"Haïti Enquête Mortalité, Morbidité et Utilisation des Services 2005-05",HT,2006,HT2006DHS,https://www.dhsprogram.com/pubs/pdf/FR192/FR192.pdf,HT2006DHS_FR192.pdf,4466698
+DHS,Key Findings,SR124,"Haiti 2005-2006 Enquête Mortalité, Morbidité et Utilisation des Services",HT,2006,HT2006DHS,https://www.dhsprogram.com/pubs/pdf/SR124/SR124.pdf,HT2006DHS_SR124.pdf,794460
+DHS,Final Report,FR121,"Haïti Enquête Mortalité, Morbidité et Utilisation des Services 2000",HT,2000,HT2000DHS,https://www.dhsprogram.com/pubs/pdf/FR121/FR121.pdf,HT2000DHS_FR121.pdf,6313223
+DHS,Summary Report,SR86,Summary Report:  Haiti 2001,HT,2000,HT2000DHS,https://www.dhsprogram.com/pubs/pdf/SR86/SR86.pdf,HT2000DHS_SR86.pdf,4333533
+DHS,VIH/Sida et Infections Sexuellement Transmissibles en Haïti,SR151,VIH/Sida et Infections Sexuellement transmissibles en Haïti,HT,2000,HT2000DHS,https://www.dhsprogram.com/pubs/pdf/SR151/SR151.pdf,HT2000DHS_SR151.pdf,2464043
+DHS,Final Report,FR64,"Haïti Enquête Mortalité, Morbidité et Utilisation des Services EMMUS-II 1994/95",HT,1994,HT1994DHS,https://www.dhsprogram.com/pubs/pdf/FR64/FR64.pdf,HT1994DHS_FR64.pdf,6163409
+DHS,Summary Report,SR49,"Haiti - Survey on Mortality, Morbidity and Utilization of Services (EMMUS-II) 1994/95 - Summary Report",HT,1994,HT1994DHS,https://www.dhsprogram.com/pubs/pdf/SR49/SR49.pdf,HT1994DHS_SR49.pdf,5663060
+DHS,"National, State and Union Territory, and District Fact Sheets 2019-21 National Family Health Survey NFHS5",OF43,Andaman and Nicobar Islands Fact Sheet,IA,2020,IA2020DHS,https://www.dhsprogram.com/pubs/pdf/OF43/OF43.AN.pdf,IA2020DHS_OF43.AN.pdf,922869
+DHS,State Final Reports,FR374,Andhra Pradesh Final Report,IA,2020,IA2020DHS,https://www.dhsprogram.com/pubs/pdf/FR374/FR374_AndhraPradesh.pdf,IA2020DHS_FR374_AndhraPradesh.pdf,3708842
+DHS,Final Report,FR375,Final Report,IA,2020,IA2020DHS,https://www.dhsprogram.com/pubs/pdf/FR375/FR375.pdf,IA2020DHS_FR375.pdf,10920570
+DHS,Final Report,FR339,India 2015-16 National Family Health Survey,IA,2015,IA2015DHS,https://www.dhsprogram.com/pubs/pdf/FR339/FR339.pdf,IA2015DHS_FR339.pdf,7256916
+DHS,Final Report,FRIND3,India National Family Health Survey (NFHS-3) 2005-06 Volume I and Volume II,IA,2006,IA2006DHS,https://www.dhsprogram.com/pubs/pdf/FRIND3/FRIND3-Vol1AndVol2.pdf,IA2006DHS_FRIND3-Vol1AndVol2.pdf,5934171
+DHS,Summary Report,SR128,India National Family Health Survey 2005-06 Summary Report,IA,2006,IA2006DHS,https://www.dhsprogram.com/pubs/pdf/SR128/SR128_updated_09-22-2015.pdf,IA2006DHS_SR128_updated_09-22-2015.pdf,1367528
+DHS,Final Report,FRIND2,India National Family Health Survey 1998-99,IA,1999,IA1999DHS,https://www.dhsprogram.com/pubs/pdf/FRIND2/FRIND2.pdf,IA1999DHS_FRIND2.pdf,2366182
+DHS,Summary Report,SR81,India - National Family Health Survey (NFHS-2) - Key Findings,IA,1999,IA1999DHS,https://www.dhsprogram.com/pubs/pdf/SR81/SR81.pdf,IA1999DHS_SR81.pdf,4189613
+DHS,Final Report,FRIND1,India National Family Health Survey 1992-93 Final Report,IA,1993,IA1993DHS,https://www.dhsprogram.com/pubs/pdf/FRIND1/FRIND1.pdf,IA1993DHS_FRIND1.pdf,90160733
+DHS,Summary Report,SR162,India National Family Health Survey 1992-93 - Summary Report,IA,1993,IA1993DHS,https://www.dhsprogram.com/pubs/pdf/SR162/SR162.pdf,IA1993DHS_SR162.pdf,5647000
+DHS,Final Report,FR342,Indonesia Demographic and Health Survey 2017,ID,2017,ID2017DHS,https://www.dhsprogram.com/pubs/pdf/FR342/FR342.pdf,ID2017DHS_FR342.pdf,7485059
+DHS,Adolescent Reproductive Health Final Report,FR343,Adolescent Reproductive Health Final Report,ID,2017,ID2017OTH,https://www.dhsprogram.com/pubs/pdf/FR343/FR343.pdf,ID2017OTH_FR343.pdf,7403798
+DHS,Final Report,FR275,Indonesia Demographic and Health Survey 2012,ID,2012,ID2012DHS,https://www.dhsprogram.com/pubs/pdf/FR275/FR275.pdf,ID2012DHS_FR275.pdf,4081956
+DHS,Adolescent Reproductive Health Final Report,FR281,Indonesia Demographic and Health Survey 2012: Adolescent Reproductive Health,ID,2012,ID2012OTH,https://www.dhsprogram.com/pubs/pdf/FR281/FR281.pdf,ID2012OTH_FR281.pdf,2803748
+DHS,Final Report,FR218,Indonesia Demographic and Health Survey 2007,ID,2007,ID2007DHS,https://www.dhsprogram.com/pubs/pdf/FR218/FR218[27August2010].pdf,ID2007DHS_FR218[27August2010].pdf,4435035
+DHS,Indonesia Young Adult Reproductive Health Survey 2007,FR219,Indonesia 2007 Young Adult Reproductive Health Survey,ID,2007,ID2007OTH,https://www.dhsprogram.com/pubs/pdf/FR219/FR219.pdf,ID2007OTH_FR219.pdf,1212436
+DHS,Final Report,FR147,Indonesia Demographic and Health Survey 2002-2003,ID,2003,ID2003DHS,https://www.dhsprogram.com/pubs/pdf/FR147/FR147.pdf,ID2003DHS_FR147.pdf,4795382
+DHS,Key Findings,SR100,Indonesia  2002-2003 Demographic and Health Survey Key Findings,ID,2003,ID2003DHS,https://www.dhsprogram.com/pubs/pdf/SR100/ID0203KF-SR100.pdf,ID2003DHS_ID0203KF-SR100.pdf,834143
+DHS,Indonesia Young Adult Reproductive Health Survey 2002-2003,FR157,Indonesia Young Adult Reproductive Health Survey 2002-2003,ID,2002,ID2002OTH,https://www.dhsprogram.com/pubs/pdf/FR157/FR157.pdf,ID2002OTH_FR157.pdf,1229134
+DHS,Jayapura City - Indonesia YARHS (Young Adult Reproductive Health Survey) 2002-2003,FR169,Jayapura City Young Adult Reproductive Health Survey 2002-2003,ID,2002,ID2002OTH,https://www.dhsprogram.com/pubs/pdf/FR169/FR169.pdf,ID2002OTH_FR169.pdf,1163808
+DHS,Final Report,FR95,Indonesia DHS 1997 Final Report,ID,1997,ID1997DHS,https://www.dhsprogram.com/pubs/pdf/FR95/FR95.pdf,ID1997DHS_FR95.pdf,5402604
+DHS,Summary Report,SR67,Indonesia Demographic and Health Sruvey 1997 Summary Report,ID,1997,ID1997DHS,https://www.dhsprogram.com/pubs/pdf/SR67/SR67.pdf,ID1997DHS_SR67.pdf,3220267
+DHS,Final Report,FR63,Indonesia DHS 1994 Final Report,ID,1994,ID1994DHS,https://www.dhsprogram.com/pubs/pdf/FR63/FR63.pdf,ID1994DHS_FR63.pdf,5608624
+DHS,Summary Report,SR50,Indonesia Demogaphic and Health Survey 1994 - Summary Report,ID,1994,ID1994DHS,https://www.dhsprogram.com/pubs/pdf/SR50/SR50.pdf,ID1994DHS_SR50.pdf,2655792
+DHS,Final Report,FR18,Indonesia Demographic and Health Survey 1991,ID,1991,ID1991DHS,https://www.dhsprogram.com/pubs/pdf/FR18/FR18.pdf,ID1991DHS_FR18.pdf,3790418
+DHS,Summary Report,SR10,Summary Report Indonesia 1991,ID,1991,ID1991DHS,https://www.dhsprogram.com/pubs/pdf/SR10/SR10.pdf,ID1991DHS_SR10.pdf,2406327
+DHS,Summary Report,SR9,National Indonesia Contraceptive Prevalence Survey 1987 - Summary Report,ID,1987,ID1987DHS,https://www.dhsprogram.com/pubs/pdf/SR9/SR9.pdf,ID1987DHS_SR9.pdf,2010425
+DHS,Final Report,FR19,Indonesia National Contraceptive Prevalence Survey 1987,ID,1987,ID1987DHS,https://www.dhsprogram.com/pubs/pdf/FR19/FR19.pdf,ID1987DHS_FR19.pdf,2249472
+DHS,Final Report,FR388,Final Report,JO,2023,JO2023DHS,https://www.dhsprogram.com/pubs/pdf/FR388/FR388.pdf,JO2023DHS_FR388.pdf,18617835
+DHS,Summary Report,SR288,Summary Report,JO,2023,JO2023DHS,https://www.dhsprogram.com/pubs/pdf/SR288/SR288.pdf,JO2023DHS_SR288.pdf,5591891
+DHS,Final Report,FR346,Jordan DHS Final Report 2017-18,JO,2017,JO2017DHS,https://www.dhsprogram.com/pubs/pdf/FR346/FR346.pdf,JO2017DHS_FR346.pdf,9653328
+DHS,Key Findings,SR256,Jordan DHS 2017-18 - Key Findings,JO,2017,JO2017DHS,https://www.dhsprogram.com/pubs/pdf/SR256/SR256.pdf,JO2017DHS_SR256.pdf,1259621
+DHS,Final Report,FR282,Jordan DHS 2012,JO,2012,JO2012DHS,https://www.dhsprogram.com/pubs/pdf/FR282/FR282.pdf,JO2012DHS_FR282.pdf,2279828
+DHS,Key Findings,SR202,Jordan 2012 DHS - Key Findings,JO,2012,JO2012DHS,https://www.dhsprogram.com/pubs/pdf/SR202/SR202.pdf,JO2012DHS_SR202.pdf,1957975
+DHS,Jordan DHS 2012 Fact Sheet,GF29,Jordan DHS 2012 Fact Sheet,JO,2012,JO2012DHS,https://www.dhsprogram.com/pubs/pdf/GF29/GF29.pdf,JO2012DHS_GF29.pdf,825244
+DHS,Jordan Interim Survey,FR238,Jordan Population and Family Health Survey 2009,JO,2009,JO2009DHS,https://www.dhsprogram.com/pubs/pdf/FR238/FR238.pdf,JO2009DHS_FR238.pdf,1705217
+DHS,Jordan Interim Survey 2009 Fact Sheet,GF18,Jordan Interim Survey 2009 - Fact Sheet,JO,2009,JO2009DHS,https://www.dhsprogram.com/pubs/pdf/GF18/GF18.pdf,JO2009DHS_GF18.pdf,1546904
+DHS,Final Report,FR209,Jordan Population and Family Health Survey 2007,JO,2007,JO2007DHS,https://www.dhsprogram.com/pubs/pdf/FR209/FR209.pdf,JO2007DHS_FR209.pdf,1831141
+DHS,Jordan DHS 2007 Fact Sheet,GF12,Jordan DHS 2007 Fact Sheet,JO,2007,JO2007DHS,https://www.dhsprogram.com/pubs/pdf/GF12/GF12.pdf,JO2007DHS_GF12.pdf,3308148
+DHS,Key Findings,SR143,Jordan 2007 Population and Family Health Survey - Key Findings,JO,2007,JO2007DHS,https://www.dhsprogram.com/pubs/pdf/SR143/SR143.pdf,JO2007DHS_SR143.pdf,14902357
+DHS,Final Report,FR138,Jordan Population and Family Health Survey 2002,JO,2002,JO2002DHS,https://www.dhsprogram.com/pubs/pdf/FR138/FR138.pdf,JO2002DHS_FR138.pdf,3787785
+DHS,Key Findings,SR111,Jordan 2002 Population and Family Health Survey Key Findings,JO,2002,JO2002DHS,https://www.dhsprogram.com/pubs/pdf/SR111/SR111.pdf,JO2002DHS_SR111.pdf,1083288
+DHS,Final Report,FR96,Jordan DHS 1997 Final Report,JO,1997,JO1997DHS,https://www.dhsprogram.com/pubs/pdf/FR96/FR96.pdf,JO1997DHS_FR96.pdf,1070961
+DHS,Summary Report,SR71,Jordan Population and Family Health Survey 1997 - Summary Report,JO,1997,JO1997DHS,https://www.dhsprogram.com/pubs/pdf/SR71/SR71.pdf,JO1997DHS_SR71.pdf,2518243
+DHS,Final Report,FR20,Jordan Population and Family Health Survey 1990,JO,1990,JO1990DHS,https://www.dhsprogram.com/pubs/pdf/FR20/FR20.pdf,JO1990DHS_FR20.pdf,3636492
+DHS,Summary Report,SR11,Summary Report Jordan 1990,JO,1990,JO1990DHS,https://www.dhsprogram.com/pubs/pdf/SR11/SR11.pdf,JO1990DHS_SR11.pdf,1706736
+DHS,Final Report,FR380,Kenya Demographic and Health Survey 2022 Volume 1,KE,2022,KE2022DHS,https://www.dhsprogram.com/pubs/pdf/FR380/FR380.pdf,KE2022DHS_FR380.pdf,21717567
+DHS,Kenya DHS 2022 - County Fact Sheets,GF57,2022 Kenya DHS Fact Sheet - Baringo,KE,2022,KE2022DHS,https://www.dhsprogram.com/pubs/pdf/GF57/GF57Baringo.pdf,KE2022DHS_GF57Baringo.pdf,435164
+DHS,Summary Report,SR277,Summary Report,KE,2022,KE2022DHS,https://www.dhsprogram.com/pubs/pdf/SR277/SR277.pdf,KE2022DHS_SR277.pdf,7898094
+DHS,Kenya MIS 2020 Malaria Fact Sheet,MF30,Kenya MIS 2020 Malaria Fact Sheet,KE,2020,KE2020MIS,https://www.dhsprogram.com/pubs/pdf/MF30/MF30.pdf,KE2020MIS_MF30.pdf,1771793
+DHS,Summary Report,SR270,Summary Report,KE,2020,KE2020MIS,https://www.dhsprogram.com/pubs/pdf/SR270/SR270.pdf,KE2020MIS_SR270.pdf,4329095
+DHS,Final Report,MIS36,MIS Final Report,KE,2020,KE2020MIS,https://www.dhsprogram.com/pubs/pdf/MIS36/MIS36.pdf,KE2020MIS_MIS36.pdf,7596659
+DHS,MIS Final Report,MIS22,Kenya Malaria Indicator Survey 2015,KE,2015,KE2015MIS,https://www.dhsprogram.com/pubs/pdf/MIS22/MIS22.pdf,KE2015MIS_MIS22.pdf,3731344
+DHS,Kenya MIS 2015 Malaria Fact Sheet,MF15,Kenya MIS 2015 Malaria Fact Sheet,KE,2015,KE2015MIS,https://www.dhsprogram.com/pubs/pdf/MF15/MF15.pdf,KE2015MIS_MF15.pdf,910093
+DHS,Kenya DHS 2014 KIR - 47 Counties Fact Sheets,OF28,Kenya DHS 2014 KIR - 47 Counties Fact Sheets,KE,2014,KE2014DHS,https://www.dhsprogram.com/pubs/pdf/OF28/OF28.pdf,KE2014DHS_OF28.pdf,19618921
+DHS,Final Report,FR308,Kenya Demographic and Health Survey 2014,KE,2014,KE2014DHS,https://www.dhsprogram.com/pubs/pdf/FR308/FR308.pdf,KE2014DHS_FR308.pdf,5080236
+DHS,Key Findings,SR227,Kenya Demographic and Health Survey 2014 - Key Findings,KE,2014,KE2014DHS,https://www.dhsprogram.com/pubs/pdf/SR227/SR227.pdf,KE2014DHS_SR227.pdf,2128811
+DHS,Final Report,SPA17,Kenya Service Provision Assessment Survey 2010,KE,2010,KE2010SPA,https://www.dhsprogram.com/pubs/pdf/SPA17/SPA17.pdf,KE2010SPA_SPA17.pdf,5859329
+DHS,Key Findings,SR182,Kenya Service Provision Assessment Survey 2010,KE,2010,KE2010SPA,https://www.dhsprogram.com/pubs/pdf/SR182/SR182.pdf,KE2010SPA_SR182.pdf,3009380
+DHS,MIS Final Report,MIS7,2010 Kenya Malaria Indicator Survey,KE,2010,KE2010MIS,https://www.dhsprogram.com/pubs/pdf/MIS7/MIS7.pdf,KE2010MIS_MIS7.pdf,1401337
+DHS,Kenya MIS 2010 Malaria Fact Sheet,MF4,Kenya 2010 MIS - Malaria Fact Sheet,KE,2010,KE2010MIS,https://www.dhsprogram.com/pubs/pdf/MF4/OF14.pdf,KE2010MIS_OF14.pdf,432015
+DHS,Final Report,FR229,Kenya Demographic and Health Survey 2008-09,KE,2008,KE2008DHS,https://www.dhsprogram.com/pubs/pdf/FR229/FR229.pdf,KE2008DHS_FR229.pdf,3622995
+DHS,Key Findings,SR178,Kenya Demographic and Health Survey 2008-09 - Key Findings,KE,2008,KE2008DHS,https://www.dhsprogram.com/pubs/pdf/SR178/SR178.pdf,KE2008DHS_SR178.pdf,2548528
+DHS,Kenya DHS 2008-09 - Fact Sheet,GF17,Kenya DHS 2008-09 - Fact Sheet,KE,2008,KE2008DHS,https://www.dhsprogram.com/pubs/pdf/GF17/GF17.pdf,KE2008DHS_GF17.pdf,2512336
+DHS,Final Report - MCH SPA,SPA8,Kenya Service Provision Assessment Survey 2004,KE,2004,KE2004SPA,https://www.dhsprogram.com/pubs/pdf/SPA8/SPA8.pdf,KE2004SPA_SPA8.pdf,2048558
+DHS,Final Report - HIV SPA,SPA9,Kenya Service Provision Assessment Survey 2004 HIV/AIDS,KE,2004,KE2004SPA,https://www.dhsprogram.com/pubs/pdf/SPA9/SPA9.pdf,KE2004SPA_SPA9.pdf,1154838
+DHS,Key Findings - HIV/AIDS,SR139,Kenya SPA 2004 - Key Findings - HIV/AIDS,KE,2004,KE2004SPA,https://www.dhsprogram.com/pubs/pdf/SR139/SR139.pdf,KE2004SPA_SR139.pdf,2017094
+DHS,Key Findings - Family Planning,SR176,Kenya SPA 2004 - Family Planning - Key Findings,KE,2004,KE2004SPA,https://www.dhsprogram.com/pubs/pdf/SR176/SR176.pdf,KE2004SPA_SR176.pdf,860547
+DHS,Key Findings - Maternal Health,SR177,Kenya SPA 2004 - Maternal Health - Key Findings,KE,2004,KE2004SPA,https://www.dhsprogram.com/pubs/pdf/SR177/SR177.pdf,KE2004SPA_SR177.pdf,335974
+DHS,Final Report,FR151,Kenya Demographic and Health Survey 2003,KE,2003,KE2003DHS,https://www.dhsprogram.com/pubs/pdf/FR151/FR151.pdf,KE2003DHS_FR151.pdf,2777144
+DHS,Summary Report,SR104,Kenya 2003 Demographic and Health Survey - Key Findings,KE,2003,KE2003DHS,https://www.dhsprogram.com/pubs/pdf/SR104/SR104KE03.pdf,KE2003DHS_SR104KE03.pdf,4433219
+DHS,HIV Fact Sheet,HF5,Kenya HIV Fact Sheet,KE,2003,KE2003DHS,https://www.dhsprogram.com/pubs/pdf/HF5/Kenya_HIV_factsheet.pdf,KE2003DHS_Kenya_HIV_factsheet.pdf,1300232
+DHS,Kenya 2003 DHS Fact Sheet,GF4,Kenya 2003 DHS Fact Sheet,KE,2003,KE2003DHS,https://www.dhsprogram.com/pubs/pdf/GF4/kenya2003factsheet.pdf,KE2003DHS_kenya2003factsheet.pdf,2397150
+DHS,Kenya 2003 DHS Maternal Health Fact Sheet,OF3,Kenya 2003 DHS Maternal Health Factsheet,KE,2003,KE2003DHS,https://www.dhsprogram.com/pubs/pdf/OF3/kenya2003_mh_factsheet.pdf,KE2003DHS_kenya2003_mh_factsheet.pdf,494176
+DHS,Kenya 2003 DHS Fertility & Family Planning Fact Sheet,OF4,Kenya 2003 Fertility & Family Planning Factsheet,KE,2003,KE2003DHS,https://www.dhsprogram.com/pubs/pdf/OF4/kenya2003_fp_factsheet.pdf,KE2003DHS_kenya2003_fp_factsheet.pdf,975722
+DHS,Kenya 2003 DHS Gender Fact Sheet,OF5,Kenya 2003 Gender Factsheet,KE,2003,KE2003DHS,https://www.dhsprogram.com/pubs/pdf/OF5/kenya2003_gender_factsheet.pdf,KE2003DHS_kenya2003_gender_factsheet.pdf,1600137
+DHS,Final Report,SPA1,Kenya 1999 Service Provision Assessment,KE,1999,KE1999SPA,https://www.dhsprogram.com/pubs/pdf/SPA1/SPA1.pdf,KE1999SPA_SPA1.pdf,3339366
+DHS,Final Report,FR102,Kenya Demographic and Health Survey 1998,KE,1998,KE1998DHS,https://www.dhsprogram.com/pubs/pdf/FR102/FR102.pdf,KE1998DHS_FR102.pdf,1182658
+DHS,Final Report,FR54,Kenya Demographic and Health Survey 1993,KE,1993,KE1993DHS,https://www.dhsprogram.com/pubs/pdf/FR54/FR54.pdf,KE1993DHS_FR54.pdf,4456348
+DHS,Summary Report,SR41,Kenya Demographic and Health Survey 1993,KE,1993,KE1993DHS,https://www.dhsprogram.com/pubs/pdf/SR41/SR41.pdf,KE1993DHS_SR41.pdf,2042372
+DHS,Summary Report,SR12,Kenya Demographic and Health Survey 1989 - Summary Report,KE,1989,KE1989DHS,https://www.dhsprogram.com/pubs/pdf/SR12/SR12.pdf,KE1989DHS_SR12.pdf,2282104
+DHS,Final Report,FR21,Kenya Demographic and Health Survey 1989,KE,1989,KE1989DHS,https://www.dhsprogram.com/pubs/pdf/FR21/FR21.pdf,KE1989DHS_FR21.pdf,2708166
+DHS,Final Report,FR377,Final Report,KH,2021,KH2021DHS,https://www.dhsprogram.com/pubs/pdf/FR377/FR377.pdf,KH2021DHS_FR377.pdf,25907638
+DHS,Summary Report,SR281,Cambodia DHS 2021-22 - Summary Report,KH,2021,KH2021DHS,https://www.dhsprogram.com/pubs/pdf/SR281/SR281.pdf,KH2021DHS_SR281.pdf,19060725
+DHS,Final Report,FR312,Cambodia DHS 2014 - Final Report,KH,2014,KH2014DHS,https://www.dhsprogram.com/pubs/pdf/FR312/FR312.pdf,KH2014DHS_FR312.pdf,3856676
+DHS,Key Findings,SR226,Cambodia DHS 2014 - Key Findings,KH,2014,KH2014DHS,https://www.dhsprogram.com/pubs/pdf/SR226/SR226.pdf,KH2014DHS_SR226.pdf,3721530
+DHS,Cambodia DHS 2014 Fact Sheet,GF33,Cambodia DHS 2014 Fact Sheet,KH,2014,KH2014DHS,https://www.dhsprogram.com/pubs/pdf/GF33/GF33.pdf,KH2014DHS_GF33.pdf,595166
+DHS,Final Report,FR249,Cambodia DHS 2010 Final Report,KH,2010,KH2010DHS,https://www.dhsprogram.com/pubs/pdf/FR249/FR249.pdf,KH2010DHS_FR249.pdf,3667271
+DHS,Cambodia DHS 2010 Fact Sheet,GF22,Cambodia DHS 2010 Fact Sheet,KH,2010,KH2010DHS,https://www.dhsprogram.com/pubs/pdf/GF22/GF22.pdf,KH2010DHS_GF22.pdf,767648
+DHS,Key Findings,SR185,Cambodia DHS 2010 Key Findings,KH,2010,KH2010DHS,https://www.dhsprogram.com/pubs/pdf/SR185/SR185.pdf,KH2010DHS_SR185.pdf,3102742
+DHS,Final Report,FR185,Cambodia Demographic and Health Survey 2005,KH,2005,KH2005DHS,https://www.dhsprogram.com/pubs/pdf/FR185/FR185[April-27-2011].pdf,KH2005DHS_FR185[April-27-2011].pdf,3396948
+DHS,HIV Fact Sheet,HF15,Cambodia_HIV_Factsheet,KH,2005,KH2005DHS,https://www.dhsprogram.com/pubs/pdf/HF15/Cambodia_HIV_Factsheet.pdf,KH2005DHS_Cambodia_HIV_Factsheet.pdf,213774
+DHS,Cambodia 2005 DHS Fact Sheets,OF10,Cambodia DHS 2005 Fertility and Family Planning - Fact Sheet (english),KH,2005,KH2005DHS,https://www.dhsprogram.com/pubs/pdf/OF10/OF10.f.pdf,KH2005DHS_OF10.f.pdf,224563
+DHS,Final Report,FR124,Cambodia Demographic and Health Survey 2000,KH,2000,KH2000DHS,https://www.dhsprogram.com/pubs/pdf/FR124/FR124.pdf,KH2000DHS_FR124.pdf,4797874
+DHS,Summary Report,SR88,Cambodia 2000 Key Findings Report,KH,2000,KH2000DHS,https://www.dhsprogram.com/pubs/pdf/SR88/KH00KFreport.pdf,KH2000DHS_KH00KFreport.pdf,8617061
+DHS,HIV/AIDS and Other Sexually Transmitted Infections in Cambodia,SR154,HIV/AIDS and Other Sexually Transmitted Infections in Cambodia - Findings from the 2000 Cambodia Demographic and Health Survey,KH,2000,KH2000DHS,https://www.dhsprogram.com/pubs/pdf/SR154/SR154.pdf,KH2000DHS_SR154.pdf,1406823
+DHS,Kingdom of Cambodia National Health Survey 1998,FR251,Kingdom of Cambodia National Health Survey 1998,KH,1998,KH1998OTH,https://www.dhsprogram.com/pubs/pdf/FR251/OD43.pdf,KH1998OTH_OD43.pdf,12152010
+DHS,Final Report,FR111,Kazakhstan Demographic and Health Survey 1999,KK,1999,KK1999DHS,https://www.dhsprogram.com/pubs/pdf/FR111/FR111.pdf,KK1999DHS_FR111.pdf,4037783
+DHS,Final Report,FR144,Kazakhstan  Demographic and Health Survey 1999 - Russian,KK,1999,KK1999DHS,https://www.dhsprogram.com/pubs/pdf/FR144/FR144.pdf,KK1999DHS_FR144.pdf,4528298
+DHS,Final Report,FR72,Kazakhstan DHS Final Report,KK,1995,KK1995DHS,https://www.dhsprogram.com/pubs/pdf/FR72/FR72.pdf,KK1995DHS_FR72.pdf,3557489
+DHS,Final Report,FR73,Kazakhstan Demographic and Health Survey 1995 (Russian),KK,1995,KK1995DHS,https://www.dhsprogram.com/pubs/pdf/FR73/FR73.pdf,KK1995DHS_FR73.pdf,3741516
+DHS,Summary Report,SR54,Kazakstan Demographic and Health Survey 1995 Summary Report,KK,1995,KK1995DHS,https://www.dhsprogram.com/pubs/pdf/SR54/SR54.pdf,KK1995DHS_SR54.pdf,1910276
+DHS,Final Report,FR278,Comoros: DHS 2012 Final Report,KM,2012,KM2012DHS,https://www.dhsprogram.com/pubs/pdf/FR278/FR278.pdf,KM2012DHS_FR278.pdf,3064784
+DHS,Key Findings,SR210,Comoros DHS 2012 - Key Findings,KM,2012,KM2012DHS,https://www.dhsprogram.com/pubs/pdf/SR210/SR210.pdf,KM2012DHS_SR210.pdf,1965993
+DHS,Final Report,FR79,Comoros DHS 1996 Final Report,KM,1996,KM1996DHS,https://www.dhsprogram.com/pubs/pdf/FR79/FR79.pdf,KM1996DHS_FR79.pdf,4279310
+DHS,Summary Report,SR59,Comores Enquête Démographique et de Santé 1996 - Rapport de Synthèse,KM,1996,KM1996DHS,https://www.dhsprogram.com/pubs/pdf/SR59/SR59.pdf,KM1996DHS_SR59.pdf,2701587
+DHS,Final Report,FR283,Kyrgyz Republic DHS 2012 Final Report,KY,2012,KY2012DHS,https://www.dhsprogram.com/pubs/pdf/FR283/FR283.pdf,KY2012DHS_FR283.pdf,3117930
+DHS,Key Findings,SR204,Kyrgyz Republic DHS 2012 - Key Findings,KY,2012,KY2012DHS,https://www.dhsprogram.com/pubs/pdf/SR204/SR204.pdf,KY2012DHS_SR204.pdf,1721307
+DHS,HIV Fact Sheet,HF50,Kyrgyz Republic DHS 2012 - HIV Fact Sheet,KY,2012,KY2012DHS,https://www.dhsprogram.com/pubs/pdf/HF50/HF50.pdf,KY2012DHS_HF50.pdf,454727
+DHS,Kyrgyz Republic DHS 2012 - Fact Sheet,GF31,Kyrgyz Republic DHS 2012 - Fact Sheet,KY,2012,KY2012DHS,https://www.dhsprogram.com/pubs/pdf/GF31/GF31.pdf,KY2012DHS_GF31.pdf,398594
+DHS,Kyrgyz Republic DHS 2012 - 5 Fact Sheets,OF21,Kyrgyz Republic Adult Health Fact Sheet 2012 (english),KY,2012,KY2012DHS,https://www.dhsprogram.com/pubs/pdf/OF21/OF21.pdf,KY2012DHS_OF21.pdf,373265
+DHS,Final Report,FR91,Kyrgyz Republic DHS 1997 Final Report,KY,1997,KY1997DHS,https://www.dhsprogram.com/pubs/pdf/FR91/FR91.pdf,KY1997DHS_FR91.pdf,3324416
+DHS,Summary Report,SR68,Kyrgyz Republic Demographic and Health Survey 1997 Summary Report,KY,1997,KY1997DHS,https://www.dhsprogram.com/pubs/pdf/SR68/SR68.pdf,KY1997DHS_SR68.pdf,2653575
+DHS,Lao Social Indicator Survey II 2017 MICS,FR356,Lao Social Indiator Survey II 2017 MICS/DHS - Final Report,LA,2017,LA2017OTH,https://www.dhsprogram.com/pubs/pdf/FR356/FR356.pdf,LA2017OTH_FR356.pdf,14489282
+DHS,Lao Social Indicator Survey (MICS/DHS) Final Report,FR268,Lao PDR Lao Social Indicator Survey 2011-12,LA,2011,LA2011OTH,https://www.dhsprogram.com/pubs/pdf/FR268/FR268.pdf,LA2011OTH_FR268.pdf,5456167
+DHS,Liberia MIS 2022 - Malaria Fact Sheet,MF42,Liberia MIS 2022 - Malaria Fact Sheet,LB,2022,LB2022MIS,https://www.dhsprogram.com/pubs/pdf/MF42/MF42.pdf,LB2022MIS_MF42.pdf,775855
+DHS,MIS Final Report,MIS44,MIS Final Report,LB,2022,LB2022MIS,https://www.dhsprogram.com/pubs/pdf/MIS44/MIS44.pdf,LB2022MIS_MIS44.pdf,12587098
+DHS,Final Report,FR362,Final Report,LB,2019,LB2019DHS,https://www.dhsprogram.com/pubs/pdf/FR362/FR362.pdf,LB2019DHS_FR362.pdf,19691970
+DHS,Summary Report,SR269,Liberia DHS 2019-20 - Summary Report,LB,2019,LB2019DHS,https://www.dhsprogram.com/pubs/pdf/SR269/SR269.pdf,LB2019DHS_SR269.pdf,8629046
+DHS,Liberia DHS 2019-20 - Fact Sheet,GF49,Liberia DHS 2019-20 - Fact Sheet,LB,2019,LB2019DHS,https://www.dhsprogram.com/pubs/pdf/GF49/GF49.pdf,LB2019DHS_GF49.pdf,1050791
+DHS,MIS Final Report,MIS27,Liberia Malaria Indicator Survey 2016,LB,2016,LB2016MIS,https://www.dhsprogram.com/pubs/pdf/MIS27/MIS27.pdf,LB2016MIS_MIS27.pdf,3603291
+DHS,Liberia MIS 2016 Malaria Fact Sheet,MF21,Liberia MIS 2016 Malaria Fact Sheet,LB,2016,LB2016MIS,https://www.dhsprogram.com/pubs/pdf/MF21/MF21.pdf,LB2016MIS_MF21.pdf,769031
+DHS,Final Report,FR291,Liberia Demographic and Health Survey 2013,LB,2013,LB2013DHS,https://www.dhsprogram.com/pubs/pdf/FR291/FR291.pdf,LB2013DHS_FR291.pdf,7683819
+DHS,Key Findings,SR214,Liberia DHS 2013 - Key Findings,LB,2013,LB2013DHS,https://www.dhsprogram.com/pubs/pdf/SR214/SR214.pdf,LB2013DHS_SR214.pdf,2096920
+DHS,HIV Fact Sheet,HF54,Liberia DHS 2013 - HIV Fact Sheet,LB,2013,LB2013DHS,https://www.dhsprogram.com/pubs/pdf/HF54/HF54.pdf,LB2013DHS_HF54.pdf,601295
+DHS,Liberia MIS 2011 Malaria Fact Sheet,MF7,Liberia MIS 2011 Malaria Fact Sheet,LB,2011,LB2011MIS,https://www.dhsprogram.com/pubs/pdf/MF7/MF7.pdf,LB2011MIS_MF7.pdf,1805399
+DHS,MIS Final Report,MIS12,Liberia Malaria Indicator Survey 2011,LB,2011,LB2011MIS,https://www.dhsprogram.com/pubs/pdf/MIS12/MIS12.pdf,LB2011MIS_MIS12.pdf,1158209
+DHS,MIS Final Report,MIS4,Liberia Malaria Indicator Survey 2009,LB,2009,LB2009MIS,https://www.dhsprogram.com/pubs/pdf/MIS4/MIS4.pdf,LB2009MIS_MIS4.pdf,1087315
+DHS,Liberia MIS 2009 Malaria Fact Sheet,MF3,Liberia MIS 2009 Malaria Fact Sheet,LB,2009,LB2009MIS,https://www.dhsprogram.com/pubs/pdf/MF3/OF13.pdf,LB2009MIS_OF13.pdf,1172415
+DHS,Final Report,FR201,Liberia Demographic and Health Survey 2007,LB,2007,LB2007DHS,https://www.dhsprogram.com/pubs/pdf/FR201/FR201.pdf,LB2007DHS_FR201.pdf,2625828
+DHS,HIV Fact Sheet,HF24,Liberia 2007 HIV fact sheet,LB,2007,LB2007DHS,https://www.dhsprogram.com/pubs/pdf/HF24/HF24.pdf,LB2007DHS_HF24.pdf,370054
+DHS,Key Findings,SR140,Liberia 2007 Demographic and Health Survey - Key Findings,LB,2007,LB2007DHS,https://www.dhsprogram.com/pubs/pdf/SR140/SR140.pdf,LB2007DHS_SR140.pdf,1598705
+DHS,Final Report,FR22,Liberia Demographic and Health Survey 1986,LB,1986,LB1986DHS,https://www.dhsprogram.com/pubs/pdf/FR22/FR22.pdf,LB1986DHS_FR22.pdf,2475025
+DHS,Summary Report,SR13,Liberia Demographic and Health Survey 1986 - Summary Report,LB,1986,LB1986DHS,https://www.dhsprogram.com/pubs/pdf/SR13/SR13.pdf,LB1986DHS_SR13.pdf,1909013
+DHS,Final Report,FR35,Sri Lanka Demographic and Health Survey 1987,LK,1987,LK1987DHS,https://www.dhsprogram.com/pubs/pdf/FR35/FR35.pdf,LK1987DHS_FR35.pdf,2627697
+DHS,Summary Report,SR290,Summary Report,LS,2023,LS2023DHS,https://www.dhsprogram.com/pubs/pdf/SR290/SR290.pdf,LS2023DHS_SR290.pdf,5721256
+DHS,Lesotho DHS 2023-24 - Fact Sheets,GF63,Lesotho DHS 2023-24 - Fact Sheet,LS,2023,LS2023DHS,https://www.dhsprogram.com/pubs/pdf/GF63/GF63.pdf,LS2023DHS_GF63.pdf,1034625
+DHS,Final Report,FR391,Final Report,LS,2023,LS2023DHS,https://www.dhsprogram.com/pubs/pdf/FR391/FR391.pdf,LS2023DHS_FR391.pdf,17523793
+DHS,Final Report,FR309,Lesotho Demographic and Health Survey 2014,LS,2014,LS2014DHS,https://www.dhsprogram.com/pubs/pdf/FR309/FR309.pdf,LS2014DHS_FR309.pdf,7198402
+DHS,Key Findings,SR230,Lesotho Demographic and Health Survey 2014 - Key Findings,LS,2014,LS2014DHS,https://www.dhsprogram.com/pubs/pdf/SR230/SR230.pdf,LS2014DHS_SR230.pdf,5497436
+DHS,HIV Fact Sheet,HF57,Lesotho DHS 2014 - HIV Fact Sheet,LS,2014,LS2014DHS,https://www.dhsprogram.com/pubs/pdf/HF57/HF57.pdf,LS2014DHS_HF57.pdf,585063
+DHS,Final Report,FR241,Lesotho Demographic and Health Survey 2009,LS,2009,LS2009DHS,https://www.dhsprogram.com/pubs/pdf/FR241/FR241.pdf,LS2009DHS_FR241.pdf,2703960
+DHS,HIV Fact Sheet,HF32,Lesotho DHS 2009 - HIV Fact Sheet,LS,2009,LS2009DHS,https://www.dhsprogram.com/pubs/pdf/HF32/HF32.pdf,LS2009DHS_HF32.pdf,1136717
+DHS,Final Report,FR171,Lesotho Demographic and Health Survey 2004,LS,2004,LS2004DHS,https://www.dhsprogram.com/pubs/pdf/FR171/FR171.pdf,LS2004DHS_FR171.pdf,2507639
+DHS,HIV Fact Sheet,HF6,Lesotho HIV Fact Sheet,LS,2004,LS2004DHS,https://www.dhsprogram.com/pubs/pdf/HF6/Lesotho_HIV_factsheet.pdf,LS2004DHS_Lesotho_HIV_factsheet.pdf,254569
+DHS,Final Report,FR155,Maroc Enquête sur la Population et la Santé Familiale (EPSF) 2003-2004,MA,2003,MA2003DHS,https://www.dhsprogram.com/pubs/pdf/FR155/FR155.pdf,MA2003DHS_FR155.pdf,1980311
+DHS,Final Report,FR68,Maroc Enquête de Panel sur la Population et la Santé (EPPS) 1995,MA,1995,MA1995DHS,https://www.dhsprogram.com/pubs/pdf/FR68/FR68.pdf,MA1995DHS_FR68.pdf,3232211
+DHS,Final Report,FR47,Maroc Enquête Nationale sur la Population et la Santé (ENPS-II) 1992,MA,1992,MA1992DHS,https://www.dhsprogram.com/pubs/pdf/FR47/FR47.pdf,MA1992DHS_FR47.pdf,5739933
+DHS,Summary Report,SR34,National Survey on Population and Health Morocco 1992 - Summary Report,MA,1992,MA1992DHS,https://www.dhsprogram.com/pubs/pdf/SR34/SR34.pdf,MA1992DHS_SR34.pdf,4161457
+DHS,Final Report,FR25,"Enquête Nationale sur la Planification Familiale, la Fécondité et la Santé de la Population au Maroc (ENPS) 1987",MA,1987,MA1987DHS,https://www.dhsprogram.com/pubs/pdf/FR25/FR25.pdf,MA1987DHS_FR25.pdf,3214296
+DHS,Summary Report,SR163,"Maroc Enquête Nationale sur la Planification Familiale, la Fécondité et la Santé de la Population au Maroc 1987 - Rapport de Synthese",MA,1987,MA1987DHS,https://www.dhsprogram.com/pubs/pdf/SR163/SR163.pdf,MA1987DHS_SR163.pdf,2805210
+DHS,Final Report (Romanian),FR178,Moldova Demographic and Health Survey 2005,MB,2005,MB2005DHS,https://www.dhsprogram.com/pubs/pdf/FR178/FR178.pdf,MB2005DHS_FR178.pdf,1983721
+DHS,Final Report,FR376,Final Report,MD,2021,MD2021DHS,https://www.dhsprogram.com/pubs/pdf/FR376/FR376.pdf,MD2021DHS_FR376.pdf,37332483
+DHS,Madagascar DHS 2021 - Fact Sheet,GF54,Madagascar DHS 2021 - Fact Sheet,MD,2021,MD2021DHS,https://www.dhsprogram.com/pubs/pdf/GF54/GF54.pdf,MD2021DHS_GF54.pdf,1639071
+DHS,Summary Report,SR272,Summary Report,MD,2021,MD2021DHS,https://www.dhsprogram.com/pubs/pdf/SR272/SR272.pdf,MD2021DHS_SR272.pdf,13579919
+DHS,MIS Final Report,MIS23,Madagascar MIS 2016,MD,2016,MD2016MIS,https://www.dhsprogram.com/pubs/pdf/MIS23/MIS23.pdf,MD2016MIS_MIS23.pdf,3139751
+DHS,Madagascar MIS 2016 Malaria Fact Sheet,MF18,Madagascar MIS 2016 Malaria Fact Sheet,MD,2016,MD2016MIS,https://www.dhsprogram.com/pubs/pdf/MF18/MF18.pdf,MD2016MIS_MF18.pdf,786122
+DHS,MIS Final Report,MIS17,Madagascar MIS 2013 - Final Report,MD,2013,MD2013MIS,https://www.dhsprogram.com/pubs/pdf/MIS17/MIS17.pdf,MD2013MIS_MIS17.pdf,1347056
+DHS,MIS Final Report,MIS9,Enquête sur les Indicateurs du Paludisme à Madagascar (EIPMD) 2011,MD,2011,MD2011MIS,https://www.dhsprogram.com/pubs/pdf/MIS9/MIS9.pdf,MD2011MIS_MIS9.pdf,1132142
+DHS,Final Report,FR236,Madagascar Enquête Démographique et de Santé 2008-2009,MD,2008,MD2008DHS,https://www.dhsprogram.com/pubs/pdf/FR236/FR236.pdf,MD2008DHS_FR236.pdf,4278176
+DHS,Final Report,FR158,Madagascar Enquête Démographique et de Santé 2003-2004,MD,2004,MD2004DHS,https://www.dhsprogram.com/pubs/pdf/FR158/FR158.pdf,MD2004DHS_FR158.pdf,7539166
+DHS,Key Findings,SR105,Madagascar 2003-2004 Enquête Démographique et de Santé Rapport de synthèse,MD,2004,MD2004DHS,https://www.dhsprogram.com/pubs/pdf/SR105/SR105MD03-04Fr.pdf,MD2004DHS_SR105MD03-04Fr.pdf,830907
+DHS,EBSRSE Final Report,FR164,"Madagascar EBSRSE 2003-2004: Madagascar, 2005",MD,2004,MD2004DHS,https://www.dhsprogram.com/pubs/pdf/FR164/FR164.pdf,MD2004DHS_FR164.pdf,2559268
+DHS,Reproductive Health and Child Survival Baseline Survey (RHCSBS),SR109,Reproductive Health andChild Survival Baseline Survey (RHCSBS)  USAID Interventioin Area Key Findings  Madagascar 2003-2004,MD,2004,MD2004DHS,https://www.dhsprogram.com/pubs/pdf/SR109/SR109-EN.pdf,MD2004DHS_SR109-EN.pdf,543232
+DHS,Final Report,FR93,Madagascar DHS 1997 Final Report,MD,1997,MD1997DHS,https://www.dhsprogram.com/pubs/pdf/FR93/FR93.pdf,MD1997DHS_FR93.pdf,4814437
+DHS,Summary Report,SR66,Madagascar Enquête Démographique et de Santé 1997 - Rapport de Synthese,MD,1997,MD1997DHS,https://www.dhsprogram.com/pubs/pdf/SR66/SR66.pdf,MD1997DHS_SR66.pdf,2879629
+DHS,Final Report,FR50,Enquête Nationale Démographique et Sanitaire 1992,MD,1992,MD1992DHS,https://www.dhsprogram.com/pubs/pdf/FR50/FR50.pdf,MD1992DHS_FR50.pdf,4266049
+DHS,Summary Report,SR37,Madagascar Enquête Nationale Démographique et Sanitaire 1992 Rapport de Synthese,MD,1992,MD1992DHS,https://www.dhsprogram.com/pubs/pdf/SR37/SR37.pdf,MD1992DHS_SR37.pdf,2367854
+DHS,Final Report,FR394,Final Report,ML,2023,ML2023DHS,https://www.dhsprogram.com/pubs/pdf/FR394/FR394.pdf,ML2023DHS_FR394.pdf,23102617
+DHS,Summary Report,SR293,Summary Report,ML,2023,ML2023DHS,https://www.dhsprogram.com/pubs/pdf/SR293/SR293.pdf,ML2023DHS_SR293.pdf,5180186
+DHS,Mali DHS 2023-24 - Fact Sheet,GF64,Mali DHS 2023-24 - Fact Sheet,ML,2023,ML2023DHS,https://www.dhsprogram.com/pubs/pdf/GF64/GF64.pdf,ML2023DHS_GF64.pdf,1216715
+DHS,2021 Mali MIS Fact Sheet,MF32,Mali MIS 2021 Fact Sheet,ML,2021,ML2021MIS,https://www.dhsprogram.com/pubs/pdf/MF32/MF32.pdf,ML2021MIS_MF32.pdf,4747514
+DHS,MIS Final Report,MIS40,MIS Final Report,ML,2021,ML2021MIS,https://www.dhsprogram.com/pubs/pdf/MIS40/MIS40.pdf,ML2021MIS_MIS40.pdf,8593809
+DHS,Final Report,FR358,Mali DHS 2018 - Final Report,ML,2018,ML2018DHS,https://www.dhsprogram.com/pubs/pdf/FR358/FR358.pdf,ML2018DHS_FR358.pdf,7945558
+DHS,Key Findings,SR261,Mali DHS 2018 - Key Findings (French),ML,2018,ML2018DHS,https://www.dhsprogram.com/pubs/pdf/SR261/SR261.pdf,ML2018DHS_SR261.pdf,2396234
+DHS,Mali 2018 DHS - 5 Fact Sheets,OF42,Mali DHS 2018 - Domestic Violence,ML,2018,ML2018DHS,https://www.dhsprogram.com/pubs/pdf/OF42/OF42.pdf,ML2018DHS_OF42.pdf,494038
+DHS,MIS Final Report,MIS24,Mali Malaria Indicator Survey 2015,ML,2015,ML2015MIS,https://www.dhsprogram.com/pubs/pdf/MIS24/MIS24.pdf,ML2015MIS_MIS24.pdf,5235270
+DHS,Mali MIS 2015 Malaria Fact Sheet,MF16,Mali MIS 2015 Malaria Fact Sheet,ML,2015,ML2015MIS,https://www.dhsprogram.com/pubs/pdf/MF16/MF16.pdf,ML2015MIS_MF16.pdf,852134
+DHS,Final Report,FR286,Mali DHS 2012-2013 Final Report,ML,2012,ML2012DHS,https://www.dhsprogram.com/pubs/pdf/FR286/FR286.pdf,ML2012DHS_FR286.pdf,4021579
+DHS,Key Findings,SR212,Mali DHS 2012-2013 - Key Findings,ML,2012,ML2012DHS,https://www.dhsprogram.com/pubs/pdf/SR212/SR212.pdf,ML2012DHS_SR212.pdf,2713616
+DHS,Mali DHS 2012-2013 Malaria Fact Sheet,MF11,Mali DHS 2012-2013 Malaria Fact Sheet,ML,2012,ML2012DHS,https://www.dhsprogram.com/pubs/pdf/MF11/MF11.pdf,ML2012DHS_MF11.pdf,798930
+DHS,HIV Fact Sheet,HF53,Mali DHS 2012-2013 HIV Fact Sheet,ML,2012,ML2012DHS,https://www.dhsprogram.com/pubs/pdf/HF53/HF53.pdf,ML2012DHS_HF53.pdf,810696
+DHS,Final Report (EA&P),FR245,Enquête sur la prévalence de l'Anémie et de la Parasitémie palustre chez le enfants (EA&P) au Mali 2010,ML,2010,ML2010OTH,https://www.dhsprogram.com/pubs/pdf/FR245/FR245.pdf,ML2010OTH_FR245.pdf,1080321
+DHS,Final Report,FR199,Mali Enquête Démographique et de Santé (EDSM-IV) 2006,ML,2006,ML2006DHS,https://www.dhsprogram.com/pubs/pdf/FR199/FR199.pdf,ML2006DHS_FR199.pdf,4669805
+DHS,Summary Report,SR132,Summary Report Mali 2006,ML,2006,ML2006DHS,https://www.dhsprogram.com/pubs/pdf/SR132/SR132.pdf,ML2006DHS_SR132.pdf,855575
+DHS,HIV Fact Sheet,HF23,Mali 2006 HIV Fact Sheet (English),ML,2006,ML2006DHS,https://www.dhsprogram.com/pubs/pdf/HF23/MaliHIVFSEng.pdf,ML2006DHS_MaliHIVFSEng.pdf,313355
+DHS,Final Report,FR134,Mali Enquête Démographique et de Santé (EDSM-III) 2001,ML,2001,ML2001DHS,https://www.dhsprogram.com/pubs/pdf/FR134/FR134-ML01.pdf,ML2001DHS_FR134-ML01.pdf,6760307
+DHS,Summary Report,SR94,Rapport de synthèse,ML,2001,ML2001DHS,https://www.dhsprogram.com/pubs/pdf/SR94/MaliRapportdeSynthèse.pdf,ML2001DHS_MaliRapportdeSynthèse.pdf,1440620
+DHS,Summary Report,SR95,Key Findings,ML,2001,ML2001DHS,https://www.dhsprogram.com/pubs/pdf/SR95/Ml01KeyFindings.pdf,ML2001DHS_Ml01KeyFindings.pdf,466358
+DHS,HIV Screening Test in Mali,SR152,HIV Screening Test in Mali - Findings from the 2001 Mali Demographic and Health Survey,ML,2001,ML2001DHS,https://www.dhsprogram.com/pubs/pdf/SR152/SR152.pdf,ML2001DHS_SR152.pdf,1435427
+DHS,Final Report,FR74,Mali Enquête Démographique et de Santé 1995-1996,ML,1996,ML1996DHS,https://www.dhsprogram.com/pubs/pdf/FR74/FR74.pdf,ML1996DHS_FR74.pdf,6736172
+DHS,Summary Report,SR55,Mali Enquête Démographique et de Santé 1995-1996 - Rapport de Synthése,ML,1996,ML1996DHS,https://www.dhsprogram.com/pubs/pdf/SR55/SR55.pdf,ML1996DHS_SR55.pdf,3055136
+DHS,Summary Report,SR14,Enquête Démographique et de Santé au Mali 1987 - Rapport de Synthese,ML,1987,ML1987DHS,https://www.dhsprogram.com/pubs/pdf/SR14/SR14.pdf,ML1987DHS_SR14.pdf,2107894
+DHS,Final Report,FR23,Enquête Démographique et de Santé au Mali 1987,ML,1987,ML1987DHS,https://www.dhsprogram.com/pubs/pdf/FR23/FR23.pdf,ML1987DHS_FR23.pdf,3259470
+DHS,Final Report,FR324,Myanmar Demographic and Health Survey 2015-16,MM,2016,MM2016DHS,https://www.dhsprogram.com/pubs/pdf/FR324/FR324.pdf,MM2016DHS_FR324.pdf,13004785
+DHS,Key Findings,SR235,Myanmar DHS 2015-16,MM,2016,MM2016DHS,https://www.dhsprogram.com/pubs/pdf/SR235/SR235.pdf,MM2016DHS_SR235.pdf,3541647
+DHS,Final Report,FR373,Final Report,MR,2020,MR2020DHS,https://www.dhsprogram.com/pubs/pdf/FR373/FR373.pdf,MR2020DHS_FR373.pdf,22300806
+DHS,Mauritania DHS 2019-21 - Fact Sheet,GF53,Mauritania DHS 2019-21 - Fact Sheet,MR,2020,MR2020DHS,https://www.dhsprogram.com/pubs/pdf/GF53/GF53.pdf,MR2020DHS_GF53.pdf,657534
+DHS,Summary Report,SR274,Summary Report,MR,2020,MR2020DHS,https://www.dhsprogram.com/pubs/pdf/SR274/SR274.pdf,MR2020DHS_SR274.pdf,7247942
+DHS,"Enquete sur la Mortalite Infantile et le Paludisme, Mauritanie, 2003-2004",FR150,Enquête sur la Mortalité Infantile et le Paludisme Mauritanie 2003-2004,MR,2003,MR2003OTH,https://www.dhsprogram.com/pubs/pdf/FR150/FR150.pdf,MR2003OTH_FR150.pdf,1423032
+DHS,Final Report,FR127,Mauritanie Enquête Démographique et de Santé 2000-01,MR,2000,MR2000DHS,https://www.dhsprogram.com/pubs/pdf/FR127/FR127.pdf,MR2000DHS_FR127.pdf,5898044
+DHS,Summary Report,SR90,Mauritanie Enquête Démographique et de Santé 2000-01 - Rapport de synthèse (Français),MR,2000,MR2000DHS,https://www.dhsprogram.com/pubs/pdf/SR90/SR90.pdf,MR2000DHS_SR90.pdf,2742490
+DHS,Summary Report,SR96,Mauritania 2001Demographic and Health Survey - Summary Report (Arabic),MR,2000,MR2000DHS,https://www.dhsprogram.com/pubs/pdf/SR96/SR96.pdf,MR2000DHS_SR96.pdf,2403783
+DHS,Final Report,FR349,Republic of Maldives DHS 2016-17 Final Report,MV,2016,MV2016DHS,https://www.dhsprogram.com/pubs/pdf/FR349/FR349.pdf,MV2016DHS_FR349.pdf,11691259
+DHS,Final Report,FR237,Maldives Demographic and Health Survey 2009,MV,2009,MV2009DHS,https://www.dhsprogram.com/pubs/pdf/FR237/FR237.pdf,MV2009DHS_FR237.pdf,4626824
+DHS,Final Report,FR398,Final Report,MW,2024,MW2024DHS,https://www.dhsprogram.com/pubs/pdf/FR398/FR398.pdf,MW2024DHS_FR398.pdf,20721371
+DHS,Malawi DHS 2024 - Fact Sheet,GF67,Malawi DHS 2024 - Fact Sheet,MW,2024,MW2024DHS,https://www.dhsprogram.com/pubs/pdf/GF67/GF67.pdf,MW2024DHS_GF67.pdf,1524134
+DHS,Malawi Malaria Indicator Survey 2017 - Final Report,MIS28,Malawi Malaria Indicator Survey 2017 - Final Report,MW,2017,MW2017MIS,https://www.dhsprogram.com/pubs/pdf/MIS28/MIS28.pdf,MW2017MIS_MIS28.pdf,6837762
+DHS,Malawi MIS 2017 Fact Sheet,GF40,Malawi MIS 2017 - Fact Sheet,MW,2017,MW2017MIS,https://www.dhsprogram.com/pubs/pdf/GF40/GF40.pdf,MW2017MIS_GF40.pdf,715921
+DHS,Final Report,FR319,Malawi Demographic and Health Survey 2015-16,MW,2015,MW2015DHS,https://www.dhsprogram.com/pubs/pdf/FR319/FR319.pdf,MW2015DHS_FR319.pdf,10225426
+DHS,Key Findings,SR237,Malawi DHS 2015-16 - Key Findings,MW,2015,MW2015DHS,https://www.dhsprogram.com/pubs/pdf/SR237/SR237.pdf,MW2015DHS_SR237.pdf,2196302
+DHS,HIV Fact Sheet,HF59,Malawi DHS 2015-16 - HIV Fact Sheet,MW,2015,MW2015DHS,https://www.dhsprogram.com/pubs/pdf/HF59/HF59.pdf,MW2015DHS_HF59.pdf,662254
+DHS,Malawi 2015-16 DHS - Child Health Fact Sheet,OF33,Malawi 2015-16 DHS - Fact Sheet,MW,2015,MW2015DHS,https://www.dhsprogram.com/pubs/pdf/OF33/OF33.pdf,MW2015DHS_OF33.pdf,671339
+DHS,Malawi 2015-16 DHS - Fact Sheet,OF34,Malawi 2015-16 DHS - Fact Sheet,MW,2015,MW2015DHS,https://www.dhsprogram.com/pubs/pdf/OF34/OF34.pdf,MW2015DHS_OF34.pdf,822595
+DHS,MIS Final Report,MIS18,Malawi Malaria Indicator Survey 2014,MW,2014,MW2014MIS,https://www.dhsprogram.com/pubs/pdf/MIS18/MIS18.pdf,MW2014MIS_MIS18.pdf,1327463
+DHS,Final Report,SPA20,Malawi Service Provision Assessment Survey 2013-14,MW,2013,MW2013SPA,https://www.dhsprogram.com/pubs/pdf/SPA20/SPA20[Oct-7-2015].pdf,MW2013SPA_SPA20[Oct-7-2015].pdf,2611746
+DHS,Key Findings,SR217,Malawi Service Provision Assessment 2013-14 - Key Findings,MW,2013,MW2013SPA,https://www.dhsprogram.com/pubs/pdf/SR217/SR217.pdf,MW2013SPA_SR217.pdf,1595002
+DHS,MIS Final Report,MIS13,Malawi Malaria Indicator Survey 2012,MW,2012,MW2012MIS,https://www.dhsprogram.com/pubs/pdf/MIS13/MIS13.pdf,MW2012MIS_MIS13.pdf,2027431
+DHS,Final Report,FR247,Malawi Demographic and Health Survey 2010,MW,2010,MW2010DHS,https://www.dhsprogram.com/pubs/pdf/FR247/FR247.pdf,MW2010DHS_FR247.pdf,4036405
+DHS,Key Findings,SR184,Malawi Demographic and Health Survey 2010 - Key Findings [PFD-file],MW,2010,MW2010DHS,https://www.dhsprogram.com/pubs/pdf/SR184/SR184.pdf,MW2010DHS_SR184.pdf,2756192
+DHS,HIV Fact Sheet,HF34,Malawi DHS 2010 - HIV Fact Sheet,MW,2010,MW2010DHS,https://www.dhsprogram.com/pubs/pdf/HF34/HF34.pdf,MW2010DHS_HF34.pdf,1022766
+DHS,Malawi DHS 2010 Fact Sheet,GF21,Malawi DHS 2010 Fact Sheet,MW,2010,MW2010DHS,https://www.dhsprogram.com/pubs/pdf/GF21/GF21.pdf,MW2010DHS_GF21.pdf,1493256
+DHS,Final Report,FR175,Malawi Demographic and Health Survey,MW,2004,MW2004DHS,https://www.dhsprogram.com/pubs/pdf/FR175/FR-175-MW04.pdf,MW2004DHS_FR-175-MW04.pdf,4183531
+DHS,Key Findings,SR113,Malawi 2004 Demographic and Health Survey Key Findings,MW,2004,MW2004DHS,https://www.dhsprogram.com/pubs/pdf/SR113/SR113.pdf,MW2004DHS_SR113.pdf,2737638
+DHS,HIV Fact Sheet,HF7,Malawi HIV Fact Sheet,MW,2004,MW2004DHS,https://www.dhsprogram.com/pubs/pdf/HF7/Malawi_HIV_factsheet.pdf,MW2004DHS_Malawi_HIV_factsheet.pdf,417642
+DHS,Final Report,FR123,Malawi Demographic and Health Survey 2000,MW,2000,MW2000DHS,https://www.dhsprogram.com/pubs/pdf/FR123/FR123.pdf,MW2000DHS_FR123.pdf,14182940
+DHS,Key Findings,SR134,HIV/AIDS and Other Sexually Transmitted Infections in Malawi,MW,2000,MW2000DHS,https://www.dhsprogram.com/pubs/pdf/SR134/SR134.pdf,MW2000DHS_SR134.pdf,2037577
+DHS,Malawi 1996 KAP Final Report,FR85,"Malawi Knowledge, Attitudes and Practices in Health Survey 1996",MW,1996,MW1996OTH,https://www.dhsprogram.com/pubs/pdf/FR85/FR85.pdf,MW1996OTH_FR85.pdf,5454674
+DHS,Final Report,FR49,Malawi Demographic and Health Survey 1992,MW,1992,MW1992DHS,https://www.dhsprogram.com/pubs/pdf/FR49/FR49.pdf,MW1992DHS_FR49.pdf,3706830
+DHS,Summary Report,SR36,Malawi Demographic and Health Survey 1992 - Summary Report,MW,1992,MW1992DHS,https://www.dhsprogram.com/pubs/pdf/SR36/SR36.pdf,MW1992DHS_SR36.pdf,1752693
+DHS,Final Report,FR24,México Encuesta Nacional sobre Fecundidad y Salud 1987,MX,1987,MX1987DHS,https://www.dhsprogram.com/pubs/pdf/FR24/FR24.pdf,MX1987DHS_FR24.pdf,3787338
+DHS,Summary Report,SR164,México Encuesta Nacional sobre Fecundidad y Salud 1987 - Informe Resumido,MX,1987,MX1987DHS,https://www.dhsprogram.com/pubs/pdf/SR164/SR164.pdf,MX1987DHS_SR164.pdf,2819573
+DHS,Final Report,FR389,Final Report,MZ,2022,MZ2022DHS,https://www.dhsprogram.com/pubs/pdf/FR389/FR389.pdf,MZ2022DHS_FR389.pdf,31791083
+DHS,Summary Report,SR287,Summary Report,MZ,2022,MZ2022DHS,https://www.dhsprogram.com/pubs/pdf/SR287/SR287.pdf,MZ2022DHS_SR287.pdf,4885781
+DHS,Mozambique DHS 2022-23 - National Fact Sheet,GF61,Mozambique DHS 2022-23 - National Fact Sheet,MZ,2022,MZ2022DHS,https://www.dhsprogram.com/pubs/pdf/GF61/GF61.pdf,MZ2022DHS_GF61.pdf,837263
+DHS,Mozambique DHS 2022-23 - Provincial Fact Sheets,OF51,Mozambique DHS 2022-23 - Cabo Delgado Fact Sheet,MZ,2022,MZ2022DHS,https://www.dhsprogram.com/pubs/pdf/OF51/OF51CaboDelgado.pdf,MZ2022DHS_OF51CaboDelgado.pdf,875502
+DHS,MIS Final Report,MIS33,Mozambique MIS 2018 final report,MZ,2018,MZ2018MIS,https://www.dhsprogram.com/pubs/pdf/MIS33/MIS33.pdf,MZ2018MIS_MIS33.pdf,4675507
+DHS,Mozambique MIS 2018,MF27,Mozambique MIS 2018 fact sheet,MZ,2018,MZ2018MIS,https://www.dhsprogram.com/pubs/pdf/MF27/MF27.pdf,MZ2018MIS_MF27.pdf,2124396
+DHS,Final Report,AIS12,Mozambique AIS 2015,MZ,2015,MZ2015AIS,https://www.dhsprogram.com/pubs/pdf/AIS12/AIS12.pdf,MZ2015AIS_AIS12.pdf,16767873
+DHS,Key Findings,SR246,Mozambique AIS 2017 - Key Findings,MZ,2015,MZ2015AIS,https://www.dhsprogram.com/pubs/pdf/SR246/SR246.pdf,MZ2015AIS_SR246.pdf,3688859
+DHS,HIV Fact Sheet,HF61,Mozambique AIS 2015 - HIV Fact Sheet,MZ,2015,MZ2015AIS,https://www.dhsprogram.com/pubs/pdf/HF61/HF61.pdf,MZ2015AIS_HF61.pdf,724578
+DHS,Final Report,FR266,Mozambique Demographic and Health Survey 2011,MZ,2011,MZ2011DHS,https://www.dhsprogram.com/pubs/pdf/FR266/FR266.pdf,MZ2011DHS_FR266.pdf,3028706
+DHS,Final Report,AIS8,"INSIDA 2009 Inquérito Nacional de Prevalência, Riscos Comportamentais e Informação sobre o HIV e SIDA em Moçambique",MZ,2009,MZ2009AIS,https://www.dhsprogram.com/pubs/pdf/AIS8/AIS8.pdf,MZ2009AIS_AIS8.pdf,2419739
+DHS,Key Findings,SR179,Mozambique AIS 2009 - Key Findings (english),MZ,2009,MZ2009AIS,https://www.dhsprogram.com/pubs/pdf/SR179/SR179.pdf,MZ2009AIS_SR179.pdf,7155056
+DHS,HIV Fact Sheets,HF33,Mozambique HIV Fact Sheet (english),MZ,2009,MZ2009AIS,https://www.dhsprogram.com/pubs/pdf/HF33/HF33.pdf,MZ2009AIS_HF33.pdf,1593373
+DHS,Final Report,FR161,Moçambique Inquérito Demográfico e de Saúde 2003,MZ,2003,MZ2003DHS,https://www.dhsprogram.com/pubs/pdf/FR161/FR161.pdf,MZ2003DHS_FR161.pdf,2384767
+DHS,Final Report,FR92,Mozambique DHS 1997 Final Report,MZ,1997,MZ1997DHS,https://www.dhsprogram.com/pubs/pdf/FR92/FR92.pdf,MZ1997DHS_FR92.pdf,4160211
+DHS,Summary Report,SR65,"Mozambique Demographic and Health Survey 1997 Summary Report (English, Portuguese)",MZ,1997,MZ1997DHS,https://www.dhsprogram.com/pubs/pdf/SR65/SR65.pdf,MZ1997DHS_SR65.pdf,5332712
+DHS,Final Report,FR135,Nicaragua Endesa Encuesta Nicaragüense de Demografia y Salud 2001,NC,2001,NC2001DHS,https://www.dhsprogram.com/pubs/pdf/FR135/FR135.pdf,NC2001DHS_FR135.pdf,3673414
+DHS,Final Report,FR100,Encuesta Nicaragüense de Demografía y Salud 1998,NC,1998,NC1998DHS,https://www.dhsprogram.com/pubs/pdf/FR100/FR100.pdf,NC1998DHS_FR100.pdf,6958727
+DHS,Summary Report,SR74,Nicaragua Encuesta Nicaragüense de Demografía y Salud 1998 Informe Resumido,NC,1998,NC1998DHS,https://www.dhsprogram.com/pubs/pdf/SR74/SR74.pdf,NC1998DHS_SR74.pdf,3747286
+DHS,Summary Report,SR294,Summary Report,NG,2024,NG2024DHS,https://www.dhsprogram.com/pubs/pdf/SR294/SR294.pdf,NG2024DHS_SR294.pdf,8721027
+DHS,Final Report,FR395,Final Report,NG,2024,NG2024DHS,https://www.dhsprogram.com/pubs/pdf/FR395/FR395.pdf,NG2024DHS_FR395.pdf,23270135
+DHS,Final Report,FR400,Final Report,NG,2024,NG2024OTH,https://www.dhsprogram.com/pubs/pdf/FR400/FR400.pdf,NG2024OTH_FR400.pdf,9725758
+DHS,Nigeria 2021 Malaria Indicator Survey Fact Sheet,MF33,Nigeria 2021 Malaria Indicator Survey Fact Sheet,NG,2021,NG2021MIS,https://www.dhsprogram.com/pubs/pdf/MF33/MF33.pdf,NG2021MIS_MF33.pdf,808409
+DHS,MIS Final Report,MIS41,MIS Final Report,NG,2021,NG2021MIS,https://www.dhsprogram.com/pubs/pdf/MIS41/MIS41.pdf,NG2021MIS_MIS41.pdf,18269801
+DHS,Nigeria MIS 2021 - Malaria Indicator Survey Zonal Fact Sheets,MF34,Nigeria MIS 2021 South West - Malaria Fact Sheet,NG,2021,NG2021MIS,https://www.dhsprogram.com/pubs/pdf/MF34/MF34_SouthWest.pdf,NG2021MIS_MF34_SouthWest.pdf,1055405
+DHS,Nigeria MIS 2021 - Malaria Indicator Survey Zonal Trends Malaria Factsheets,MF35,Nigeria MIS 2021 North Central - Zonal Trends Malaria Fact Sheet,NG,2021,NG2021MIS,https://www.dhsprogram.com/pubs/pdf/MF35/MF35_NorthCentral.pdf,NG2021MIS_MF35_NorthCentral.pdf,882640
+DHS,Final Report,FR359,Nigeria Demographic and Health Survey 2018,NG,2018,NG2018DHS,https://www.dhsprogram.com/pubs/pdf/FR359/FR359.pdf,NG2018DHS_FR359.pdf,10834628
+DHS,Summary Report,SR264,Nigeria Demographic and Health Survey 2018 - Summary Report,NG,2018,NG2018DHS,https://www.dhsprogram.com/pubs/pdf/SR264/SR264.pdf,NG2018DHS_SR264.pdf,3168310
+DHS,Nigeria DHS 2018 Fact Sheet,GF46,Nigeria DHS 2018 - Fact Sheet,NG,2018,NG2018DHS,https://www.dhsprogram.com/pubs/pdf/GF46/GF46.pdf,NG2018DHS_GF46.pdf,3285432
+DHS,MIS Final Report,MIS20,Nigeria Malaria Indicator Survey 2015 - Final Report,NG,2015,NG2015MIS,https://www.dhsprogram.com/pubs/pdf/MIS20/MIS20.pdf,NG2015MIS_MIS20.pdf,2200982
+DHS,Nigeria MIS 2015 Malaria Fact Sheet,MF17,Nigeria MIS 2015 Malaria Fact Sheet,NG,2015,NG2015MIS,https://www.dhsprogram.com/pubs/pdf/MF17/MF17.pdf,NG2015MIS_MF17.pdf,497524
+DHS,Final Report,FR293,Nigeria Demographic and Health Survey 2013,NG,2013,NG2013DHS,https://www.dhsprogram.com/pubs/pdf/FR293/FR293.pdf,NG2013DHS_FR293.pdf,4311567
+DHS,Key Findings,SR213,Nigeria Demographic and Health Survey 2013 - Key Findings,NG,2013,NG2013DHS,https://www.dhsprogram.com/pubs/pdf/SR213/SR213.pdf,NG2013DHS_SR213.pdf,2022251
+DHS,Nigeria DHS 2013 Fact Sheet,GF34,Nigeria DHS 2013 Fact Sheet,NG,2013,NG2013DHS,https://www.dhsprogram.com/pubs/pdf/GF34/GF34.pdf,NG2013DHS_GF34.pdf,612814
+DHS,"Nigeria DHS 2013 - 11 Zonal Fact Sheets (Hausa, Yoruba, Igbo)",OF23,Nigeria DHS 2013 - South West Zonal Fact Sheet (English),NG,2013,NG2013DHS,https://www.dhsprogram.com/pubs/pdf/OF23/OF23.pdf,NG2013DHS_OF23.pdf,752513
+DHS,MIS Final Report,MIS8,Nigeria Malaria Indicator Survey 2010,NG,2010,NG2010MIS,https://www.dhsprogram.com/pubs/pdf/MIS8/MIS8.pdf,NG2010MIS_MIS8.pdf,3350384
+DHS,Nigeria MIS 2010 Malaria Fact Sheet,MF6,Nigeria MIS 2010 Malaria Fact Sheet [MF6],NG,2010,NG2010MIS,https://www.dhsprogram.com/pubs/pdf/MF6/MF6.pdf,NG2010MIS_MF6.pdf,3709343
+DHS,Final Report,FR222,Nigeria Demographic and Health Survey,NG,2008,NG2008DHS,https://www.dhsprogram.com/pubs/pdf/FR222/FR222.pdf,NG2008DHS_FR222.pdf,4396271
+DHS,Key Findings,SR173,Nigeria 2008 Demographic and Health Survey - Key Findings,NG,2008,NG2008DHS,https://www.dhsprogram.com/pubs/pdf/SR173/SR173.pdf,NG2008DHS_SR173.pdf,2797225
+DHS,Nigeria DHS 2008 Fact Sheet,GF15,Nigeria DHS 2008 - General Fact Sheet,NG,2008,NG2008DHS,https://www.dhsprogram.com/pubs/pdf/GF15/GF15.pdf,NG2008DHS_GF15.pdf,3507313
+DHS,"Nigeria 11 Zonal Fact Sheets (Hausa, Igbo, Yoruba)",OF12,Nigeria South West Zonal Fact Sheet 2008 (English),NG,2008,NG2008DHS,https://www.dhsprogram.com/pubs/pdf/OF12/OF12.SW.1.english.pdf,NG2008DHS_OF12.SW.1.english.pdf,2268459
+DHS,Final Report,FR148,Nigeria 2003 Final Report,NG,2003,NG2003DHS,https://www.dhsprogram.com/pubs/pdf/FR148/FR148.pdf,NG2003DHS_FR148.pdf,2448743
+DHS,Key Findings,SR101,Nigeria DHS 2003 - Key Findings,NG,2003,NG2003DHS,https://www.dhsprogram.com/pubs/pdf/SR101/SR101NG03.pdf,NG2003DHS_SR101NG03.pdf,4957070
+DHS,Nigeria 2003 DHS Fact Sheet,GF5,Nigeria 2003 General Fact Sheet,NG,2003,NG2003DHS,https://www.dhsprogram.com/pubs/pdf/GF5/nigeria2003generalfactsheet.pdf,NG2003DHS_nigeria2003generalfactsheet.pdf,1060563
+DHS,Nigeria 2003 DHS Gender Fact Sheet,OF6,Nigeria 2003 Gender Fact Sheet,NG,2003,NG2003DHS,https://www.dhsprogram.com/pubs/pdf/OF6/nigeria_gender_factsheet.pdf,NG2003DHS_nigeria_gender_factsheet.pdf,336121
+DHS,Final Report,FR115,Nigeria Demographic and Health Survey 1999,NG,1999,NG1999DHS,https://www.dhsprogram.com/pubs/pdf/FR115/FR115.pdf,NG1999DHS_FR115.pdf,5455108
+DHS,Final Report,FR27,Nigeria Demographic and Health Survey 1999,NG,1990,NG1990DHS,https://www.dhsprogram.com/pubs/pdf/FR27/FR27.pdf,NG1990DHS_FR27.pdf,3967204
+DHS,Summary Report,SR17,Summary Report Nigeria 1990,NG,1990,NG1990DHS,https://www.dhsprogram.com/pubs/pdf/SR17/SR17.pdf,NG1990DHS_SR17.pdf,2549868
+DHS,MIS Final Report,MIS39,MIS Final Report,NI,2021,NI2021MIS,https://www.dhsprogram.com/pubs/pdf/MIS39/MIS39.pdf,NI2021MIS_MIS39.pdf,7302612
+DHS,Niger MIS 2021 - Malaria Fact Sheet,MF36,Niger MIS 2021 - Malaria Fact Sheet,NI,2021,NI2021MIS,https://www.dhsprogram.com/pubs/pdf/MF36/MF36.pdf,NI2021MIS_MF36.pdf,666543
+DHS,Final Report,FR277,Niger DHS 2012 - Final Report,NI,2012,NI2012DHS,https://www.dhsprogram.com/pubs/pdf/FR277/FR277.pdf,NI2012DHS_FR277.pdf,5455700
+DHS,Key Findings,SR205,Niger DHS 2012 - Key Findings,NI,2012,NI2012DHS,https://www.dhsprogram.com/pubs/pdf/SR205/SR205.pdf,NI2012DHS_SR205.pdf,4008558
+DHS,HIV Fact Sheet,HF47,Niger DHS 2012 - HIV Fact Sheet,NI,2012,NI2012DHS,https://www.dhsprogram.com/pubs/pdf/HF47/HF47.pdf,NI2012DHS_HF47.pdf,1138906
+DHS,Final Report,FR193,Niger Enquête Démographique et de Santé et à Indicateurs Multiples 2006,NI,2006,NI2006DHS,https://www.dhsprogram.com/pubs/pdf/FR193/FR193-NI06.pdf,NI2006DHS_FR193-NI06.pdf,3153083
+DHS,HIV Fact Sheet,HF16,Niger_HIV_FactSheet,NI,2006,NI2006DHS,https://www.dhsprogram.com/pubs/pdf/HF16/Niger_HIV_FactSheet.pdf,NI2006DHS_Niger_HIV_FactSheet.pdf,369379
+DHS,Key Findings,SR123,Niger 2006 Enquête Démographique et de Santé et à Indicateurs Multiples,NI,2006,NI2006DHS,https://www.dhsprogram.com/pubs/pdf/SR123/SR123.pdf,NI2006DHS_SR123.pdf,1058489
+DHS,Final Report,FR98,Niger DHS 1998 Final Report,NI,1998,NI1998DHS,https://www.dhsprogram.com/pubs/pdf/FR98/FR98.pdf,NI1998DHS_FR98.pdf,5923921
+DHS,Summary Report,SR73,Niger Enquête Démographique et de Santé 1998 - Rapport de Synthèse,NI,1998,NI1998DHS,https://www.dhsprogram.com/pubs/pdf/SR73/SR73.pdf,NI1998DHS_SR73.pdf,2620576
+DHS,Final Report,FR46,Niger Enquête Démographique et de Santé 1992,NI,1992,NI1992DHS,https://www.dhsprogram.com/pubs/pdf/FR46/FR46.pdf,NI1992DHS_FR46.pdf,5496701
+DHS,Summary Report,SR33,Enquête Démographique et de Santé Niger 1992 - Rapport de Synthese,NI,1992,NI1992DHS,https://www.dhsprogram.com/pubs/pdf/SR33/SR33.pdf,NI1992DHS_SR33.pdf,2527357
+DHS,Final Report,FR298,Namibia Demographic and Health Survey 2013,NM,2013,NM2013DHS,https://www.dhsprogram.com/pubs/pdf/FR298/FR298.pdf,NM2013DHS_FR298.pdf,3265911
+DHS,Final Report,SPA16,Namibia Health Facility Census (HFC) 2009,NM,2009,NM2009SPA,https://www.dhsprogram.com/pubs/pdf/SPA16/SPA16.pdf,NM2009SPA_SPA16.pdf,4565398
+DHS,Key Findings on HIV/AIDS,SR180,"Namibia Health Facility Census 2009 - Key Findings on HIV/AIDS, TB, and STIs",NM,2009,NM2009SPA,https://www.dhsprogram.com/pubs/pdf/SR180/SR180.pdf,NM2009SPA_SR180.pdf,2354465
+DHS,Key Findings on FP and MCH,SR181,"Namibia Health Facility Census 2009 - Key Findings on Family Planning, Maternal and Child Health, and Malaria",NM,2009,NM2009SPA,https://www.dhsprogram.com/pubs/pdf/SR181/SR181.pdf,NM2009SPA_SR181.pdf,3141710
+DHS,Final Report,FR204,Namibia Demographic and Health Survey 2006-07,NM,2006,NM2006DHS,https://www.dhsprogram.com/pubs/pdf/FR204/FR204c.pdf,NM2006DHS_FR204c.pdf,3482575
+DHS,Namibia DHS 2006-07 Fact Sheet,GF11,Namibia DHS 2006-07 Fact Sheet,NM,2006,NM2006DHS,https://www.dhsprogram.com/pubs/pdf/GF11/GF11.pdf,NM2006DHS_GF11.pdf,3655699
+DHS,Key Findings,SR144,Namibia 2006-07 DHS - Key Findings,NM,2006,NM2006DHS,https://www.dhsprogram.com/pubs/pdf/SR144/SR144.pdf,NM2006DHS_SR144.pdf,12705660
+DHS,Final Report,FR141,Namibia Demographic and Health Survey 2000,NM,2000,NM2000DHS,https://www.dhsprogram.com/pubs/pdf/FR141/FR141.pdf,NM2000DHS_FR141.pdf,2704145
+DHS,Final Report,FR44,Namibia Demographic and Health Survey 1992,NM,1992,NM1992DHS,https://www.dhsprogram.com/pubs/pdf/FR44/FR44.pdf,NM1992DHS_FR44.pdf,3778098
+DHS,Summary Report,SR30,Namibia Demographic and Health Survey 1992,NM,1992,NM1992DHS,https://www.dhsprogram.com/pubs/pdf/SR30/SR30.pdf,NM1992DHS_SR30.pdf,2586951
+DHS,Summary Report,SR275,Nepal DHS 2022 - Summary Report,NP,2022,NP2022DHS,https://www.dhsprogram.com/pubs/pdf/SR275/SR275.pdf,NP2022DHS_SR275.pdf,6889598
+DHS,Final Report,FR379,Final Report,NP,2022,NP2022DHS,https://www.dhsprogram.com/pubs/pdf/FR379/FR379.pdf,NP2022DHS_FR379.pdf,23241767
+DHS,Nepal DHS 2022 - Fact Sheet,GF56,Nepal DHS 2022 - Fact Sheet,NP,2022,NP2022DHS,https://www.dhsprogram.com/pubs/pdf/GF56/GF56.pdf,NP2022DHS_GF56.pdf,6513513
+DHS,Karnali Province Key Findings from the 2021 Nepal HFS & 2022 Nepal DHS,SR284,Karnali Province Key Findings from the 2021 Nepal HFS & 2022 Nepal DHS,NP,2022,NP2022DHS,https://www.dhsprogram.com/pubs/pdf/SR284/SR284.pdf,NP2022DHS_SR284.pdf,12110353
+DHS,Madesh Province Key Findings from the 2021 Nepal HFS & 2022 Nepal DHS,SR285,Madesh Province Key Findings from the 2021 Nepal HFS & 2022 Nepal DHS,NP,2022,NP2022DHS,https://www.dhsprogram.com/pubs/pdf/SR285/SR285.pdf,NP2022DHS_SR285.pdf,14440260
+DHS,Lumbini Province Key Findings from the 2021 Nepal HFS & 2022 Nepal DHS,SR286,Lumbini Province Key Findings from the 2021 Nepal HFS & 2022 Nepal DHS,NP,2022,NP2022DHS,https://www.dhsprogram.com/pubs/pdf/SR286/SR286.pdf,NP2022DHS_SR286.pdf,14471671
+DHS,2021 Nepal Health Facility Survey: Key Findings,SR273,Nepal Health Facility Survey: Key Findings,NP,2021,NP2021SPA,https://www.dhsprogram.com/pubs/pdf/SR273/SR273.pdf,NP2021SPA_SR273.pdf,2516953
+DHS,Final Report,SPA35,Final Report,NP,2021,NP2021SPA,https://www.dhsprogram.com/pubs/pdf/SPA35/SPA35.pdf,NP2021SPA_SPA35.pdf,15292947
+DHS,Nepal DHS 2016 Fact Sheet,GF38,Nepal DHS 2016 Fact Sheet,NP,2016,NP2016DHS,https://www.dhsprogram.com/pubs/pdf/GF38/GF38.pdf,NP2016DHS_GF38.pdf,990931
+DHS,Final Report,FR336,Nepal DHS 2016 - Final Report,NP,2016,NP2016DHS,https://www.dhsprogram.com/pubs/pdf/FR336/FR336.pdf,NP2016DHS_FR336.pdf,10520045
+DHS,Key Findings (Nepali),SR243,Nepal DHS 2016 - Key Findings (English),NP,2016,NP2016DHS,https://www.dhsprogram.com/pubs/pdf/SR243/SR243.pdf,NP2016DHS_SR243.pdf,2199171
+DHS,Province 5 - Key Findings from the 2015 Nepal Health Facility Survey & 2016 Nepal Demographic and Health Survey,SR254,Province 5 - Key Findings from the 2015 Nepal Health Facility Survey & 2016 Nepal Demographic and Health Survey,NP,2016,NP2016DHS,https://www.dhsprogram.com/pubs/pdf/SR254/SR254.pdf,NP2016DHS_SR254.pdf,4134219
+DHS,Karnali Province - Key Findings from the 2015 Nepal Health Facility Survey & 2016 Nepal Demographic and Health Survey,SR255,Key Findings from the 2015Karnali Province - Nepal Health Facility Survey & 2016 Nepal Demographic and Health Survey,NP,2016,NP2016DHS,https://www.dhsprogram.com/pubs/pdf/SR255/SR255.pdf,NP2016DHS_SR255.pdf,3907990
+DHS,Final Report,SPA24,Nepal Health Facility Survey 2015 - Final Report,NP,2015,NP2015SPA,https://www.dhsprogram.com/pubs/pdf/SPA24/SPA24.pdf,NP2015SPA_SPA24.pdf,8490414
+DHS,Key Findings (Nepali),SR232,Nepal Health Facility Survey 2015 - Key Findings (English),NP,2015,NP2015SPA,https://www.dhsprogram.com/pubs/pdf/SR232/SR232.pdf,NP2015SPA_SR232.pdf,2747349
+DHS,Final Report,FR257,Nepal Demographic and Health Survey 2011,NP,2011,NP2011DHS,https://www.dhsprogram.com/pubs/pdf/FR257/FR257[13April2012].pdf,NP2011DHS_FR257[13April2012].pdf,3087958
+DHS,Key Findings,SR189,Nepal 2011 Demographic and Health Survey - Key Findings,NP,2011,NP2011DHS,https://www.dhsprogram.com/pubs/pdf/SR189/SR189.pdf,NP2011DHS_SR189.pdf,3569896
+DHS,Nepal DHS 2011 Fact Sheet,GF25,Nepal DHS 2011 Fact Sheet,NP,2011,NP2011DHS,https://www.dhsprogram.com/pubs/pdf/GF25/GF25.pdf,NP2011DHS_GF25.pdf,1071322
+DHS,Final Report,FR191,Nepal Demographic and Health Surveys 2006,NP,2006,NP2006DHS,https://www.dhsprogram.com/pubs/pdf/FR191/FR191.pdf,NP2006DHS_FR191.pdf,2537960
+DHS,Nepal 2006 DHS Fact Sheet,GF7,Nepal_Fact_Sheet,NP,2006,NP2006DHS,https://www.dhsprogram.com/pubs/pdf/GF7/Nepal_Fact_Sheet.pdf,NP2006DHS_Nepal_Fact_Sheet.pdf,253824
+DHS,Key Findings,SR125,Nepal DHS 2006 - Key Findings,NP,2006,NP2006DHS,https://www.dhsprogram.com/pubs/pdf/SR125/SR125.pdf,NP2006DHS_SR125.pdf,726723
+DHS,Final Report,FR132,Nepal Demographic and Health Survey 2001,NP,2001,NP2001DHS,https://www.dhsprogram.com/pubs/pdf/FR132/FR132.pdf,NP2001DHS_FR132.pdf,5404352
+DHS,Summary Report,SR92,"Key Findings, Nepal 2001",NP,2001,NP2001DHS,https://www.dhsprogram.com/pubs/pdf/SR92/SR92.pdf,NP2001DHS_SR92.pdf,1131170
+DHS,Final Report,FR78,Nepal Family Health Survey 1996,NP,1996,NP1996DHS,https://www.dhsprogram.com/pubs/pdf/FR78/FR78.pdf,NP1996DHS_FR78.pdf,4134457
+DHS,Summary Report,SR58,Nepal Family Health Survey 1996,NP,1996,NP1996DHS,https://www.dhsprogram.com/pubs/pdf/SR58/SR58.pdf,NP1996DHS_SR58.pdf,2706366
+DHS,In Depth Study - Final Report,FR26,Factors Related to Non-Use of Contraception Among Couples with an Unmet Need Family Planning in Nepal,NP,1987,NP1987OTH,https://www.dhsprogram.com/pubs/pdf/FR26/FR26.pdf,NP1987OTH_FR26.pdf,837661
+DHS,Final Report,FR28,"Ondo State, Nigeria Demographic and Health Survey 1986",OS,1986,OS1986DHS,https://www.dhsprogram.com/pubs/pdf/FR28/FR28.pdf,OS1986DHS_FR28.pdf,2132395
+DHS,Final Report Continuous,FR310,Peru DHS Continuous 2014,PE,2014,PE2014DHS,https://www.dhsprogram.com/pubs/pdf/FR310/FR310.pdf,PE2014DHS_FR310.pdf,11939336
+DHS,Final Report Continuous (2013),FR299,Perú Demographic and Health Survey 2013 (continuous),PE,2013,PE2013DHS,https://www.dhsprogram.com/pubs/pdf/FR299/FR299.pdf,PE2013DHS_FR299.pdf,38434482
+DHS,Key Findings,SR222,Perú DHS 2013-14 - Key Findings,PE,2013,PE2013DHS,https://www.dhsprogram.com/pubs/pdf/SR222/SR222.pdf,PE2013DHS_SR222.pdf,2318805
+DHS,Final Report Continuous (2012),FR284,Perú Encuesta Demográfica y de Salud Familiar 2012,PE,2012,PE2012DHS,https://www.dhsprogram.com/pubs/pdf/FR284/FR284.pdf,PE2012DHS_FR284.pdf,2983070
+DHS,Final Report Continuous (2011),FR269,Perú Encuesta Demográfica y de Salud Familiar 2011,PE,2011,PE2011DHS,https://www.dhsprogram.com/pubs/pdf/FR269/FR269.pdf,PE2011DHS_FR269.pdf,13426368
+DHS,Final Report Continuous (2010),FR250,Perú Encuesta Demográfica y de Salud Familiar 2010,PE,2010,PE2010DHS,https://www.dhsprogram.com/pubs/pdf/FR250/FR250.pdf,PE2010DHS_FR250.pdf,157048421
+DHS,Final Report Continuous (2009),FR242,"Perú Encuesta Demográfica y de Salud Familiar-ENDES Continua, 2009",PE,2009,PE2009DHS,https://www.dhsprogram.com/pubs/pdf/FR242/FR242.pdf,PE2009DHS_FR242.pdf,4694270
+DHS,Final Report Continuous (2007-2008),FR234,Perú Encuesta Demográfica de Salud Familiar 2007-2008,PE,2007,PE2007DHS,https://www.dhsprogram.com/pubs/pdf/FR234/FR234.pdf,PE2007DHS_FR234.pdf,3300811
+DHS,Final Report Continuous (2004),FR174,Perú Encuesta Demográfica y de Salud Familiar - ENDES Continua 2004,PE,2004,PE2004DHS,https://www.dhsprogram.com/pubs/pdf/FR174/FR174.pdf,PE2004DHS_FR174.pdf,1780880
+DHS,Summary Report Continuous,SR112,Perú Encuesta Demográfica y del Salud Familiar - ENDES Continua 2004 - Resumen Ejecutivo,PE,2004,PE2004DHS,https://www.dhsprogram.com/pubs/pdf/SR112/SR112.pdf,PE2004DHS_SR112.pdf,674638
+DHS,Final Report Continuous (2004-2005),FR187,Addendum - Infant and Young Child Feeding (IYCF) Practices,PE,2004,PE2004DHS,https://www.dhsprogram.com/pubs/pdf/FR187/Peru_IYCF_KM_NEW-dst.pdf,PE2004DHS_Peru_IYCF_KM_NEW-dst.pdf,66119
+DHS,Summary Report Continuous (2004-2005),SR121,Perú Encuesta Demográfica y del Salud Familiar - ENDES Continua 2004-2005 - Informe Principal,PE,2004,PE2004DHS,https://www.dhsprogram.com/pubs/pdf/SR121/SR121.pdf,PE2004DHS_SR121.pdf,586717
+DHS,Final Report Continuous (2004-2006),FR198,Perú Encuesta Demográfica y de Salud Familiar - ENDES Continua 2004-2006 - Informe Principal,PE,2004,PE2004DHS,https://www.dhsprogram.com/pubs/pdf/FR198/FR198.pdf,PE2004DHS_FR198.pdf,2220322
+DHS,Summary Report Continuous (2004-2006),SR127,Perú Encuesta Demográfica y del Salud Familiar - ENDES Continua 2004-2006 - Resumen Ejecutivo,PE,2004,PE2004DHS,https://www.dhsprogram.com/pubs/pdf/SR127/SR127.pdf,PE2004DHS_SR127.pdf,445913
+DHS,Final Report,FR120,Perú Encuesta Demográfica y de Salud Familiar 2000,PE,2000,PE2000DHS,https://www.dhsprogram.com/pubs/pdf/FR120/FR120.pdf,PE2000DHS_FR120.pdf,3621838
+DHS,Key Findings on HIV/AIDS,SR133,Key Findings on HIV/AIDS Perú 2000,PE,2000,PE2000DHS,https://www.dhsprogram.com/pubs/pdf/SR133/SR133.pdf,PE2000DHS_SR133.pdf,1366510
+DHS,Final Report,FR87,Perú DHS 1996 Final Report,PE,1996,PE1996DHS,https://www.dhsprogram.com/pubs/pdf/FR87/FR87.pdf,PE1996DHS_FR87.pdf,7354070
+DHS,Key Findings,SR61,Perú Encuesta Demográfica y de Salud Familiar 1996,PE,1996,PE1996DHS,https://www.dhsprogram.com/pubs/pdf/SR61/SR61.pdf,PE1996DHS_SR61.pdf,1159758
+DHS,Final Report,FR33,Perú Encuesta Demográfica y de Salud Familiar 1991/1992,PE,1992,PE1992DHS,https://www.dhsprogram.com/pubs/pdf/FR33/FR33.pdf,PE1992DHS_FR33.pdf,4943147
+DHS,Summary Report,SR21,Perú Encuesta Demográfica y de Salud Familiar 1991/92,PE,1992,PE1992DHS,https://www.dhsprogram.com/pubs/pdf/SR21/SR21.pdf,PE1992DHS_SR21.pdf,3156839
+DHS,Summary Report,SR20,Peru - Encuesta Demográfica y de Salud Familiar 1986 - Summary Report,PE,1986,PE1986DHS,https://www.dhsprogram.com/pubs/pdf/SR20/SR20.pdf,PE1986DHS_SR20.pdf,3008656
+DHS,Final Report,FR31,Encuesta Demografica y de Salud Familiar (ENDES 1986),PE,1986,PE1986DHS,https://www.dhsprogram.com/pubs/pdf/FR31/FR31.pdf,PE1986DHS_FR31.pdf,3821806
+DHS,Final Report (Experimental Study),FR32,Peru Experimental Study - An Evaluation of Fertility and Child Health Information 1986,PE,1986,PE1986OTH,https://www.dhsprogram.com/pubs/pdf/FR32/FR32.pdf,PE1986OTH_FR32.pdf,2985509
+DHS,Final Report,FR364,Papua New Guinea DHS 2016-18,PG,2017,PG2017DHS,https://www.dhsprogram.com/pubs/pdf/FR364/FR364.pdf,PG2017DHS_FR364.pdf,5823843
+DHS,Papua New Guinea DHS 2016-18 Fact Sheet,GF47,Papua New Guinea DHS 2016-18,PG,2017,PG2017DHS,https://www.dhsprogram.com/pubs/pdf/GF47/GF47.pdf,PG2017DHS_GF47.pdf,415760
+DHS,Final Report,FR381,Final Report,PH,2022,PH2022DHS,https://www.dhsprogram.com/pubs/pdf/FR381/FR381.pdf,PH2022DHS_FR381.pdf,18202090
+DHS,Philippines DHS 2022 - Fact Sheet,GF55,Philippines DHS 2022 - Fact Sheet,PH,2022,PH2022DHS,https://www.dhsprogram.com/pubs/pdf/GF55/GF55.pdf,PH2022DHS_GF55.pdf,775986
+DHS,Summary Report,SR276,Philippines 2022 Demographic and Health Survey – Summary Report [SR276],PH,2022,PH2022DHS,https://www.dhsprogram.com/pubs/pdf/SR276/SR276.pdf,PH2022DHS_SR276.pdf,7884183
+DHS,Final Report,FR347,Philippines NDHS 2017 - Final Report,PH,2017,PH2017DHS,https://www.dhsprogram.com/pubs/pdf/FR347/FR347.pdf,PH2017DHS_FR347.pdf,6572767
+DHS,Key Findings,SR253,Philippines NDHS Health Survey 2017 - Key Findings,PH,2017,PH2017DHS,https://www.dhsprogram.com/pubs/pdf/SR253/SR253.pdf,PH2017DHS_SR253.pdf,3059727
+DHS,Final Report,FR294,Philippines National Demographic and Health Survey 2013,PH,2013,PH2013DHS,https://www.dhsprogram.com/pubs/pdf/FR294/FR294.pdf,PH2013DHS_FR294.pdf,4142925
+DHS,Key Findings,SR216,Philippines DHS 2013 - Key Findings,PH,2013,PH2013DHS,https://www.dhsprogram.com/pubs/pdf/SR216/SR216.pdf,PH2013DHS_SR216.pdf,1653555
+DHS,Final Report,FR224,Philippines National Demographic and Health Survey 2008,PH,2008,PH2008DHS,https://www.dhsprogram.com/pubs/pdf/FR224/FR224.pdf,PH2008DHS_FR224.pdf,3091437
+DHS,Key Findings,SR175,Philippines National Demographic and Health Survey 2008 - Key Findings,PH,2008,PH2008DHS,https://www.dhsprogram.com/pubs/pdf/SR175/SR175.pdf,PH2008DHS_SR175.pdf,2125903
+DHS,Final Report,FR156,Philippines National Demographic and Health Survey 2003 Final Report,PH,2003,PH2003DHS,https://www.dhsprogram.com/pubs/pdf/FR156/FR156.pdf,PH2003DHS_FR156.pdf,2956082
+DHS,Key Findings,SR108,Philippines 2003 National Demographic and Health Survey Key Findings,PH,2003,PH2003DHS,https://www.dhsprogram.com/pubs/pdf/SR108/SR108.pdf,PH2003DHS_SR108.pdf,866301
+DHS,Philippines 2003 DHS (Fertility and Health in the ARMM),OF7,Philippines 2003 DHS (Fertility and Health in the ARMM),PH,2003,PH2003DHS,https://www.dhsprogram.com/pubs/pdf/OF7/philippines_ARMM_factsheet.pdf,PH2003DHS_philippines_ARMM_factsheet.pdf,2965578
+DHS,Final Report,FR103,Philippines DHS 1998 Final Report,PH,1998,PH1998DHS,https://www.dhsprogram.com/pubs/pdf/FR103/FR103.pdf,PH1998DHS_FR103.pdf,4442502
+DHS,Summary Report,SR70,Philippines - National Demographic and Health Survey 1998 - Summary Report,PH,1998,PH1998DHS,https://www.dhsprogram.com/pubs/pdf/SR70/SR70.pdf,PH1998DHS_SR70.pdf,1970689
+DHS,Final Report,FR56,Philippines National Demographic Survey 1993,PH,1993,PH1993DHS,https://www.dhsprogram.com/pubs/pdf/FR56/FR56.pdf,PH1993DHS_FR56.pdf,5455968
+DHS,Philippines National Safe Motherhood Survey,FR01,Philippines National Safe Motherhood Survey 1993,PH,1993,PH1993OTH,https://www.dhsprogram.com/pubs/pdf/FR01/FR01_Philippines_1993.pdf,PH1993OTH_FR01_Philippines_1993.pdf,2980692
+DHS,Philippines National Safe Motherhood Survey - Key Indicators Report,SR166,Philippines National Safe Motherhood Survey 1993 - Summary Report,PH,1993,PH1993OTH,https://www.dhsprogram.com/pubs/pdf/SR166/SR166.pdf,PH1993OTH_SR166.pdf,2298666
+DHS,Final Report,FR366,Pakistan Maternal Mortality Survey 2019,PK,2019,PK2019OTH,https://www.dhsprogram.com/pubs/pdf/FR366/FR366.pdf,PK2019OTH_FR366.pdf,12436502
+DHS,Summary Report,SR267,Pakistan Maternal Mortality Survey 2019,PK,2019,PK2019OTH,https://www.dhsprogram.com/pubs/pdf/SR267/SR267.pdf,PK2019OTH_SR267.pdf,7857605
+DHS,Final Report,FR354,Pakistan Demographic and Health Survey 2017-18 - Final Report,PK,2017,PK2017DHS,https://www.dhsprogram.com/pubs/pdf/FR354/FR354.pdf,PK2017DHS_FR354.pdf,7238043
+DHS,Key Findings,SR257,Pakistan DHS 2017-18 - Key Findings,PK,2017,PK2017DHS,https://www.dhsprogram.com/pubs/pdf/SR257/SR257.pdf,PK2017DHS_SR257.pdf,2669509
+DHS,Pakistan: DHS 2017-18 Fact Sheet,GF45,Pakistan: DHS 2017-18 Fact Sheet,PK,2017,PK2017DHS,https://www.dhsprogram.com/pubs/pdf/GF45/GF45.pdf,PK2017DHS_GF45.pdf,1011400
+DHS,Final Report,FR290,Pakistan Demographic and Health Survey 2012-13,PK,2012,PK2012DHS,https://www.dhsprogram.com/pubs/pdf/FR290/FR290.pdf,PK2012DHS_FR290.pdf,2902243
+DHS,Key Findings,SR208,Pakistan Demographic and Health Survey 2012-13 - Key Findings,PK,2012,PK2012DHS,https://www.dhsprogram.com/pubs/pdf/SR208/SR208.pdf,PK2012DHS_SR208.pdf,2168649
+DHS,Pakistan DHS 2012-13 Fact Sheet,GF32,Pakistan DHS 2012-13 Fact Sheet,PK,2012,PK2012DHS,https://www.dhsprogram.com/pubs/pdf/GF32/GF32.pdf,PK2012DHS_GF32.pdf,812676
+DHS,Final Report,FR200,Pakistan Demographic and Health Survey 2006-07,PK,2006,PK2006DHS,https://www.dhsprogram.com/pubs/pdf/FR200/FR200.pdf,PK2006DHS_FR200.pdf,3981414
+DHS,Key Findings,SR142,Pakistan DHR 2006-07 - Key Findings,PK,2006,PK2006DHS,https://www.dhsprogram.com/pubs/pdf/SR142/SR142.pdf,PK2006DHS_SR142.pdf,900693
+DHS,Final Report,FR29,Pakistan Demographic and Health Survey 1990-1991,PK,1991,PK1991DHS,https://www.dhsprogram.com/pubs/pdf/FR29/FR29.pdf,PK1991DHS_FR29.pdf,5100144
+DHS,Key Findings,SR137,Pakistan Demographic and Health Survey 1990-91,PK,1991,PK1991DHS,https://www.dhsprogram.com/pubs/pdf/SR137/SR137.pdf,PK1991DHS_SR137.pdf,2617510
+DHS,Final Report,FR30,Paraguay Encuesta Nacional de Demografía y Salud 1990,PY,1990,PY1990DHS,https://www.dhsprogram.com/pubs/pdf/FR30/FR30.pdf,PY1990DHS_FR30.pdf,2689641
+DHS,Paraguay Encuesta Nacional de Demografía y Salud 1990 - Resumen,SR165,Paraguay Encuesta Nacional de Demografía y Salud 1990 - Resumen,PY,1990,PY1990DHS,https://www.dhsprogram.com/pubs/pdf/SR165/SR165.pdf,PY1990DHS_SR165.pdf,2211634
+DHS,Final Report,FR401,Final Report,RW,2025,RW2025DHS,https://www.dhsprogram.com/pubs/pdf/FR401/FR401.pdf,RW2025DHS_FR401.pdf,13958269
+DHS,Rwanda MIS 2023 - Malaria Fact Sheet,MF44,Rwanda MIS 2023 - Malaria Fact Sheet,RW,2023,RW2023MIS,https://www.dhsprogram.com/pubs/pdf/MF44/MF44.pdf,RW2023MIS_MF44.pdf,741021
+DHS,MIS Final Report,MIS46,MIS Final Report,RW,2023,RW2023MIS,https://www.dhsprogram.com/pubs/pdf/MIS46/MIS46.pdf,RW2023MIS_MIS46.pdf,8011905
+DHS,Final Report,FR370,Final Report,RW,2019,RW2019DHS,https://www.dhsprogram.com/pubs/pdf/FR370/FR370.pdf,RW2019DHS_FR370.pdf,14694544
+DHS,Summary Report,SR271,Rwanda DHS 2019-20 - Summary Report,RW,2019,RW2019DHS,https://www.dhsprogram.com/pubs/pdf/SR271/SR271.pdf,RW2019DHS_SR271.pdf,9388311
+DHS,Rwanda DHS 2019-20 - Fact Sheet,GF51,Rwanda DHS 2019-20 - Fact Sheet,RW,2019,RW2019DHS,https://www.dhsprogram.com/pubs/pdf/GF51/GF51.pdf,RW2019DHS_GF51.pdf,778066
+DHS,MIS Final Report,MIS30,Rwanda Malaria Indicator Survey - Final Report 2017,RW,2017,RW2017MIS,https://www.dhsprogram.com/pubs/pdf/MIS30/MIS30.pdf,RW2017MIS_MIS30.pdf,3572063
+DHS,Rwanda MIS 2017 Malaria Fact Sheet,MF23,Rwanda MIS 2017 Malaria Fact Sheet,RW,2017,RW2017MIS,https://www.dhsprogram.com/pubs/pdf/MF23/MF23.pdf,RW2017MIS_MF23.pdf,1024447
+DHS,Final Report,FR316,Rwanda Demographic and Health Survey 2014-15,RW,2015,RW2015DHS,https://www.dhsprogram.com/pubs/pdf/FR316/FR316.pdf,RW2015DHS_FR316.pdf,4248307
+DHS,Key Findings,SR229,Rwanda DHS 2014-15 - Key Findings,RW,2015,RW2015DHS,https://www.dhsprogram.com/pubs/pdf/SR229/SR229.pdf,RW2015DHS_SR229.pdf,2494532
+DHS,Rwanda DHS 2014-15 Fact Sheet,GF37,Rwanda DHS 2014-15 Fact Sheet,RW,2015,RW2015DHS,https://www.dhsprogram.com/pubs/pdf/GF37/GF37.pdf,RW2015DHS_GF37.pdf,755454
+DHS,Rwanda MIS 2013 Fact Sheet,MF10,Rwanda MIS 2013 Fact Sheet,RW,2013,RW2013MIS,https://www.dhsprogram.com/pubs/pdf/MF10/MF10.pdf,RW2013MIS_MF10.pdf,922903
+DHS,MIS Final Report,MIS16,Rwanda MIS 2013 Final Report,RW,2013,RW2013MIS,https://www.dhsprogram.com/pubs/pdf/MIS16/MIS16.pdf,RW2013MIS_MIS16.pdf,1324388
+DHS,Estimating the Size of Populations through a Household Survey (ESPHS) Rwanda 2011,FR261,Estimating the Size of Populations through a Household Survey (ESPHS) Rwanda 2011,RW,2011,RW2011OTH,https://www.dhsprogram.com/pubs/pdf/FR261/FR261.pdf,RW2011OTH_FR261.pdf,6126290
+DHS,Final Report,FR259,Rwanda DHS 2010 Final Report,RW,2010,RW2010DHS,https://www.dhsprogram.com/pubs/pdf/FR259/FR259.pdf,RW2010DHS_FR259.pdf,4140622
+DHS,Key Findings,SR187,Rwanda 2010 Demographic and Health Survey - Key Findings,RW,2010,RW2010DHS,https://www.dhsprogram.com/pubs/pdf/SR187/SR187.pdf,RW2010DHS_SR187.pdf,2808099
+DHS,Rwanda DHS 2010 Fact Sheet,GF24,Rwand Demographic and Health Survey 2010 - Fact Sheet,RW,2010,RW2010DHS,https://www.dhsprogram.com/pubs/pdf/GF24/GF24.pdf,RW2010DHS_GF24.pdf,3509368
+DHS,HIV Fact Sheet,HF36,Rwanda DHS 2010 - HIV Fact Sheet,RW,2010,RW2010DHS,https://www.dhsprogram.com/pubs/pdf/HF36/HF36.pdf,RW2010DHS_HF36.pdf,2471810
+DHS,Rwanda Enquête Intermédiaire sur les indicateurs Démographiques et de Santé,FR214,Rwanda Enquête Intermédiaire sur les indicateurs Démographiques et de Santé 2007-2008,RW,2008,RW2008DHS,https://www.dhsprogram.com/pubs/pdf/FR214/FR214.pdf,RW2008DHS_FR214.pdf,1722450
+DHS,Rwanda Interim Demographic and Health Survey,FR215,Rwanda Interim Demographic and Health Survey 2007-08,RW,2008,RW2008DHS,https://www.dhsprogram.com/pubs/pdf/FR215/FR215.pdf,RW2008DHS_FR215.pdf,1920506
+DHS,Final Report,SPA14,Rwanda Enquête sur la Prestation des Services de Soins de Santé 2007,RW,2007,RW2007SPA,https://www.dhsprogram.com/pubs/pdf/SPA14/SPA14.pdf,RW2007SPA_SPA14.pdf,4083952
+DHS,Final Report,SPA15,Rwanda Service Provision Assessment Survey 2007,RW,2007,RW2007SPA,https://www.dhsprogram.com/pubs/pdf/SPA15/SPA15.pdf,RW2007SPA_SPA15.pdf,3997753
+DHS,Final Report,FR183,Rwanda Demographic and Health Survey 2005,RW,2005,RW2005DHS,https://www.dhsprogram.com/pubs/pdf/FR183/FR183.pdf,RW2005DHS_FR183.pdf,6484970
+DHS,Final Report,FR180,Rwanda Enquête Démographique et de Santé 2005,RW,2005,RW2005DHS,https://www.dhsprogram.com/pubs/pdf/FR180/FR180.pdf,RW2005DHS_FR180.pdf,5672980
+DHS,Key Findings,SR118,Rwanda 2005 Demographic and Health Survey - Key Findings,RW,2005,RW2005DHS,https://www.dhsprogram.com/pubs/pdf/SR118/SR118.pdf,RW2005DHS_SR118.pdf,3311138
+DHS,HIV Fact Sheet,HF12,Rwanda HIV Fact Sheet (English),RW,2005,RW2005DHS,https://www.dhsprogram.com/pubs/pdf/HF12/Rwanda_HIV_factsheet_english.pdf,RW2005DHS_Rwanda_HIV_factsheet_english.pdf,451042
+DHS,Final Report,SPA3,Rwanda Service Provision Assessment Survey 2001,RW,2001,RW2001SPA,https://www.dhsprogram.com/pubs/pdf/SPA3/SPA3.pdf,RW2001SPA_SPA3.pdf,2233427
+DHS,Final Report,SPA4,Rwanda Enquête sur la prestation des services de soins des santé 2001,RW,2001,RW2001SPA,https://www.dhsprogram.com/pubs/pdf/SPA4/SPA4.pdf,RW2001SPA_SPA4.pdf,4078118
+DHS,Final Report,FR125,Rwanda Enquête Démographique et de Santé 2000,RW,2000,RW2000DHS,https://www.dhsprogram.com/pubs/pdf/FR125/FR125.pdf,RW2000DHS_FR125.pdf,4401022
+DHS,Summary Report,SR89,"Rapport de synthèse, Rwanda 2000",RW,2000,RW2000DHS,https://www.dhsprogram.com/pubs/pdf/SR89/FrenchKF.pdf,RW2000DHS_FrenchKF.pdf,634821
+DHS,VIH/Sida et Infections Sexuellement Transmissibles au Rwanda - Résultats de l'Enquête Démographique et de Santé Rwanda 2000,SR155,VIH/Sida et Infections Sexuellement Transmissibles au Rwanda - Résultats de l'Enquête Démographique et de Santé Rwanda 2000,RW,2000,RW2000DHS,https://www.dhsprogram.com/pubs/pdf/SR155/SR155.pdf,RW2000DHS_SR155.pdf,1996945
+DHS,Final Report,FR51,Rwanda Enquête Démographique et de Santé 1992,RW,1992,RW1992DHS,https://www.dhsprogram.com/pubs/pdf/FR51/FR51.pdf,RW1992DHS_FR51.pdf,4071660
+DHS,Summary Report,SR38,Rwanda 1992 - Summary Report,RW,1992,RW1992DHS,https://www.dhsprogram.com/pubs/pdf/SR38/SR38.pdf,RW1992DHS_SR38.pdf,2557418
+DHS,Final Report,FR36,Sudan Demographic and Health Survey 1989-90,SD,1990,SD1990DHS,https://www.dhsprogram.com/pubs/pdf/FR36/FR36.pdf,SD1990DHS_FR36.pdf,2816498
+DHS,Final Report,FR365,Sierra Leone DHS 2019,SL,2019,SL2019DHS,https://www.dhsprogram.com/pubs/pdf/FR365/FR365.pdf,SL2019DHS_FR365.pdf,17892826
+DHS,MIS Final Report,MIS25,Sierra Leone Malaria Indicator Survey 2016,SL,2016,SL2016MIS,https://www.dhsprogram.com/pubs/pdf/MIS25/MIS25.pdf,SL2016MIS_MIS25.pdf,13313066
+DHS,MIS Final Report,MIS15,Sierra Leone Malari Indicator Survey (MIS) 2013,SL,2013,SL2013MIS,https://www.dhsprogram.com/pubs/pdf/MIS15/MIS15.pdf,SL2013MIS_MIS15.pdf,1802424
+DHS,Final Report,FR297,Sierra Leone Demographic and Health Survey 2013,SL,2013,SL2013DHS,https://www.dhsprogram.com/pubs/pdf/FR297/FR297.pdf,SL2013DHS_FR297.pdf,3853602
+DHS,Key Findings,SR215,Sierra Leone DHS 2013 - Key Findings,SL,2013,SL2013DHS,https://www.dhsprogram.com/pubs/pdf/SR215/SR215.pdf,SL2013DHS_SR215.pdf,3213323
+DHS,Final Report,FR225,Sierra Leone Demographic and Health Survey 2008,SL,2008,SL2008DHS,https://www.dhsprogram.com/pubs/pdf/FR225/FR225.pdf,SL2008DHS_FR225.pdf,3900761
+DHS,HIV Fact Sheet,HF30,Sierra Leone 2008 Demographic and Health Survey (SLDHS) HIV Prevalence,SL,2008,SL2008DHS,https://www.dhsprogram.com/pubs/pdf/HF30/HF30.pdf,SL2008DHS_HF30.pdf,971190
+DHS,Key Findings,SR171,Sierra Leone 2008 Demographic and Health Survey - Key Findings,SL,2008,SL2008DHS,https://www.dhsprogram.com/pubs/pdf/SR171/SR171.pdf,SL2008DHS_SR171.pdf,3303797
+DHS,Final Report,FR390,Final Report,SN,2023,SN2023DHS,https://www.dhsprogram.com/pubs/pdf/FR390/FR390.pdf,SN2023DHS_FR390.pdf,11602740
+DHS,Final Report,MIS38,Final Report,SN,2020,SN2020MIS,https://www.dhsprogram.com/pubs/pdf/MIS38/MIS38.pdf,SN2020MIS_MIS38.pdf,5745050
+DHS,Senegal MIS 2020-21 - Fact Sheet,GF52,Senegal MIS 2020-21 - Fact Sheet,SN,2020,SN2020MIS,https://www.dhsprogram.com/pubs/pdf/GF52/GF52.pdf,SN2020MIS_GF52.pdf,1294780
+DHS,Final Report,FR368,Sénégal DHS Final Reports 2019,SN,2019,SN2019DHS,https://www.dhsprogram.com/pubs/pdf/FR368/FR368.pdf,SN2019DHS_FR368.pdf,3875034
+DHS,Final Report,SPA33,SPA Final Report 2019,SN,2019,SN2019SPA,https://www.dhsprogram.com/pubs/pdf/SPA33/SPA33.pdf,SN2019SPA_SPA33.pdf,3703581
+DHS,Final Report,FR367,Senegal DHS continuous 2018,SN,2018,SN2018DHS,https://www.dhsprogram.com/pubs/pdf/FR367/FR367.pdf,SN2018DHS_FR367.pdf,16572942
+DHS,Final Report,SPA32,Senegal SPA 2018,SN,2018,SN2018SPA,https://www.dhsprogram.com/pubs/pdf/SPA32/SPA32.pdf,SN2018SPA_SPA32.pdf,10231344
+DHS,Key Findings,SR252,Senegal CS 2017 - Key Findings,SN,2017,SN2017DHS,https://www.dhsprogram.com/pubs/pdf/SR252/SR252.pdf,SN2017DHS_SR252.pdf,2892934
+DHS,Senegal DHS 2017 Malaria Fact Sheet,MF24,Senegal DHS 2017 Malaria Fact Sheet,SN,2017,SN2017DHS,https://www.dhsprogram.com/pubs/pdf/MF24/MF24.pdf,SN2017DHS_MF24.pdf,1449470
+DHS,HIV Fact Sheet,HF62,Senegal DHS 2017 - HIV Fact Sheet,SN,2017,SN2017DHS,https://www.dhsprogram.com/pubs/pdf/HF62/HF62.pdf,SN2017DHS_HF62.pdf,1053077
+DHS,Senegal 2017 DHS Maternal Health Fact Sheet,OF40,Senegal 2017 DHS Maternal Health Fact Sheet,SN,2017,SN2017DHS,https://www.dhsprogram.com/pubs/pdf/OF40/OF40.pdf,SN2017DHS_OF40.pdf,1104660
+DHS,Final Report,FR345,Senegal DHS 2017 Continuous,SN,2017,SN2017DHS,https://www.dhsprogram.com/pubs/pdf/FR345/FR345.pdf,SN2017DHS_FR345.pdf,10297904
+DHS,Continuous Final Report,SPA27,Senegal SPA 2017 - Final Report,SN,2017,SN2017SPA,https://www.dhsprogram.com/pubs/pdf/SPA27/SPA27.pdf,SN2017SPA_SPA27.pdf,5713269
+DHS,Continuous DHS and SPA 2016 - Key Findings,SR242,Continuous DHS and SPA 2016 - Key Findings,SN,2016,SN2016DHS,https://www.dhsprogram.com/pubs/pdf/SR242/SR242.pdf,SN2016DHS_SR242.pdf,3601616
+DHS,Final Report Continuous,FR331,Sénégal: Enquête Démographique et de Santé Continue (EDS-Continue) 2016 (French),SN,2016,SN2016DHS,https://www.dhsprogram.com/pubs/pdf/FR331/FR331.pdf,SN2016DHS_FR331.pdf,3410227
+DHS,Final Report Continuous,SPA26,Sénégal: Enquête Continue sur la Prestation des Services de Soins de Santé (ECPSS) 2016 (French),SN,2016,SN2016SPA,https://www.dhsprogram.com/pubs/pdf/SPA26/SPA26.pdf,SN2016SPA_SPA26.pdf,2610419
+DHS,Final Report Continuous,SPA25,Senegal SPA 2015 continuous,SN,2015,SN2015SPA,https://www.dhsprogram.com/pubs/pdf/SPA25/SPA25.pdf,SN2015SPA_SPA25.pdf,3895520
+DHS,Final Report Continuous,FR320,Senegal DHS 2015 Continuous,SN,2015,SN2015DHS,https://www.dhsprogram.com/pubs/pdf/FR320/FR320.pdf,SN2015DHS_FR320.pdf,3709062
+DHS,Final Report Continuous,SPA21,Sénégal enquête continue sur la prestation des services de soins de santé (ECPSS) 2014,SN,2014,SN2014SPA,https://www.dhsprogram.com/pubs/pdf/SPA21/Senegal_SPA_2014_SPA21.pdf,SN2014SPA_Senegal_SPA_2014_SPA21.pdf,2453148
+DHS,Final Report Continuous 2014,FR305,"Senegal: DHS, 2014 - Final Report (Continuous)",SN,2014,SN2014DHS,https://www.dhsprogram.com/pubs/pdf/FR305/FR305.pdf,SN2014DHS_FR305.pdf,2633712
+DHS,Final Report Continuous 2012-14,FR315,Sénégal: Enquête Démographique et de Santé Continue (EDS-Continue) 2012-2014,SN,2014,SN2014DHS,https://www.dhsprogram.com/pubs/pdf/FR315/FR315.pdf,SN2014DHS_FR315.pdf,1708110
+DHS,Key Findings,SR225,Senegal DHS 2014 - Key Findings,SN,2014,SN2014DHS,https://www.dhsprogram.com/pubs/pdf/SR225/SR225.pdf,SN2014DHS_SR225.pdf,3093835
+DHS,Final Report Continuous 2012-13,FR288,Sénégal Enquête Démographique et de Santé (EDS-Continue) 2012-2013 (French),SN,2012,SN2012DHS,https://www.dhsprogram.com/pubs/pdf/FR288/FR288.pdf,SN2012DHS_FR288.pdf,2509940
+DHS,Final Report Continuous,SPA18,Sénégal Enquête sur la prestation des services de soins de santé (ECPSS) 2012-2013,SN,2012,SN2012SPA,https://www.dhsprogram.com/pubs/pdf/SPA18/SPA18.pdf,SN2012SPA_SPA18.pdf,2031288
+DHS,Continuous DHS and SPA 2012-13 - Key Findings,SR209,Sénégal Continuous Survey Year One: 2012-2013 - Key Findings (english),SN,2012,SN2012DHS,https://www.dhsprogram.com/pubs/pdf/SR209/SR209.pdf,SN2012DHS_SR209.pdf,3089653
+DHS,Final Report,FR258,Enquête Démographique et de Santé à Indicateurs Multiples Sénégal (EDS-MICS) 2010-11 (Francais),SN,2010,SN2010DHS,https://www.dhsprogram.com/pubs/pdf/FR258/FR258.pdf,SN2010DHS_FR258.pdf,14025664
+DHS,Key Findings,SR192,Senegal Demographic and Health Survey and Multiple Indicator Cluster Survey - Key Findings,SN,2010,SN2010DHS,https://www.dhsprogram.com/pubs/pdf/SR192/SR192.pdf,SN2010DHS_SR192.pdf,5590696
+DHS,Senegal: DHS 2010-2011 Fact Sheet,GF27,Senegal DHS 2010-2011 Fact Sheet,SN,2010,SN2010DHS,https://www.dhsprogram.com/pubs/pdf/GF27/GF27.pdf,SN2010DHS_GF27.pdf,1511613
+DHS,HIV Fact Sheet,HF38,Senegal DHS HIV Fact Sheet,SN,2010,SN2010DHS,https://www.dhsprogram.com/pubs/pdf/HF38/HF38.pdf,SN2010DHS_HF38.pdf,1501443
+DHS,MIS Final Report,MIS5,Sénégal Enquête Nationale sur le Paludisme 2008-2009 (ENPS-II),SN,2008,SN2008MIS,https://www.dhsprogram.com/pubs/pdf/MIS5/MIS5[revised30Sep2009].pdf,SN2008MIS_MIS5[revised30Sep2009].pdf,4605902
+DHS,MIS Final Report,MIS1,Sénégal Enquête National sur le Paludisme 2006 (ENPS),SN,2006,SN2006MIS,https://www.dhsprogram.com/pubs/pdf/MIS1/MIS1.pdf,SN2006MIS_MIS1.pdf,3684093
+DHS,Final Report,FR177,Sénégal Enquête Démographique et de Santé,SN,2005,SN2005DHS,https://www.dhsprogram.com/pubs/pdf/FR177/FR177.pdf,SN2005DHS_FR177.pdf,2949288
+DHS,Key Findings,SR117,Sénégal Enquête Démographique et de Santé 2005 - Rapport de synthèse,SN,2005,SN2005DHS,https://www.dhsprogram.com/pubs/pdf/SR117/SR117.pdf,SN2005DHS_SR117.pdf,3595815
+DHS,HIV Fact Sheet,HF9,Senegal HIV Fact Sheet (English),SN,2005,SN2005DHS,https://www.dhsprogram.com/pubs/pdf/HF9/Senegal_HIV_factsheet_english.pdf,SN2005DHS_Senegal_HIV_factsheet_english.pdf,446058
+DHS,Final Report,FR113,Enquête Sénégalaise sur les Indicateurs de Santé (ESIS) 1999,SN,1999,SN1999DHS,https://www.dhsprogram.com/pubs/pdf/FR113/FR113.pdf,SN1999DHS_FR113.pdf,5148047
+DHS,Final Report,FR89,Senegal DHS 1997 Final Report,SN,1997,SN1997DHS,https://www.dhsprogram.com/pubs/pdf/FR89/FR89.pdf,SN1997DHS_FR89.pdf,3887653
+DHS,Final Report,FR55,Enquête Démographique et de Santé au Sénégal (EDS-II) 1992/93,SN,1993,SN1993DHS,https://www.dhsprogram.com/pubs/pdf/FR55/FR55.pdf,SN1993DHS_FR55.pdf,4791128
+DHS,Summary Report,SR42,Senegal Demographic Health Survey 1992/93 - Summary Report,SN,1993,SN1993DHS,https://www.dhsprogram.com/pubs/pdf/SR42/SR42.pdf,SN1993DHS_SR42.pdf,2959764
+DHS,Summary Report,SR22,Senegal DHS 1986 - Summary Report,SN,1986,SN1986DHS,https://www.dhsprogram.com/pubs/pdf/SR22/SR22.pdf,SN1986DHS_SR22.pdf,2426623
+DHS,Final Report,FR34,Enquête Démographique et de Santé au Sénégal 1986,SN,1986,SN1986DHS,https://www.dhsprogram.com/pubs/pdf/FR34/FR34.pdf,SN1986DHS_FR34.pdf,5980079
+DHS,Resultados dos Biomarcadores do Inquérito de Indicadores Múltiplos (MICS) São Tomé E Príncipe 2014,FR314,São Tomé e Príncipe 2014,ST,2014,ST2014OTH,https://www.dhsprogram.com/pubs/pdf/FR314/FR314.pdf,ST2014OTH_FR314.pdf,1188897
+DHS,Final Report,FR233,São Tomé and Príncipe Inquérito Demográfico e Sanitário 2008-2009,ST,2008,ST2008DHS,https://www.dhsprogram.com/pubs/pdf/FR233/FR233.pdf,ST2008DHS_FR233.pdf,2709880
+DHS,Final Report,FR202,Eswatini Demographic and Health Survey 2006-07,SZ,2006,SZ2006DHS,https://www.dhsprogram.com/pubs/pdf/FR202/FR202.pdf,SZ2006DHS_FR202.pdf,4878580
+DHS,HIV Fact Sheet (siSwati),HF21,Eswatini HIV Fact Sheet 2006-07 (English),SZ,2006,SZ2006DHS,https://www.dhsprogram.com/pubs/pdf/HF21/Swaziland_HIV_Fact_Sheet_2006-07_English.pdf,SZ2006DHS_Swaziland_HIV_Fact_Sheet_2006-07_English.pdf,383835
+DHS,Key Findings (siSwati),SR138,Eswatini 2006-07 Demographic and Health Survey - Key Findings,SZ,2006,SZ2006DHS,https://www.dhsprogram.com/pubs/pdf/SR138/SR138.pdf,SZ2006DHS_SR138.pdf,1245826
+DHS,Final Report,FR317,Chad 2014-2015 DHS,TD,2014,TD2014DHS,https://www.dhsprogram.com/pubs/pdf/FR317/FR317.pdf,TD2014DHS_FR317.pdf,4797867
+DHS,Key Findings,SR231,Chad DHS 2014-2015 - Key Findings,TD,2014,TD2014DHS,https://www.dhsprogram.com/pubs/pdf/SR231/SR231.pdf,TD2014DHS_SR231.pdf,2075515
+DHS,Final Report,FR170,Tchad Enquête Démographique et de Santé 2004,TD,2004,TD2004DHS,https://www.dhsprogram.com/pubs/pdf/FR170/FR170-TD04.pdf,TD2004DHS_FR170-TD04.pdf,3739036
+DHS,Summary Report,SR110,Tchad Enquête Démographique et de Santé 2004 - Rapport de synthèse,TD,2004,TD2004DHS,https://www.dhsprogram.com/pubs/pdf/SR110/SR110.pdf,TD2004DHS_SR110.pdf,757484
+DHS,Final Report,FR90,Tchad DHS 1996-97 Final Report,TD,1997,TD1997DHS,https://www.dhsprogram.com/pubs/pdf/FR90/FR90.pdf,TD1997DHS_FR90.pdf,6885819
+DHS,Summary Report,SR64,Tchad Enquête Démographique et de Santé 1996-1997 - Rapport de Synthèse,TD,1997,TD1997DHS,https://www.dhsprogram.com/pubs/pdf/SR64/SR64.pdf,TD1997DHS_SR64.pdf,2804057
+DHS,MIS Final Report,MIS29,Togo MIS 2017,TG,2017,TG2017MIS,https://www.dhsprogram.com/pubs/pdf/MIS29/MIS29.pdf,TG2017MIS_MIS29.pdf,10227105
+DHS,Togo MIS 2017 Malaria Fact Sheet,MF22,Togo MIS 2017 Malaria Fact Sheet,TG,2017,TG2017MIS,https://www.dhsprogram.com/pubs/pdf/MF22/MF22.pdf,TG2017MIS_MF22.pdf,459527
+DHS,Final Report,FR301,Togo DHS 2013-2014 - Final Report,TG,2013,TG2013DHS,https://www.dhsprogram.com/pubs/pdf/FR301/FR301.pdf,TG2013DHS_FR301.pdf,3978704
+DHS,Key Findings,SR221,Togo DHS 2013-2014 - Key Findings,TG,2013,TG2013DHS,https://www.dhsprogram.com/pubs/pdf/SR221/SR221.pdf,TG2013DHS_SR221.pdf,2529413
+DHS,Togo HIV Fact Sheet,HF56,Togo DHS 2013-14 - HIV Fact Sheet,TG,2013,TG2013DHS,https://www.dhsprogram.com/pubs/pdf/HF56/HF56.pdf,TG2013DHS_HF56.pdf,518447
+DHS,Togo DHS 2013-2014 - Malaria Fact Sheet,MF12,Togo DHS 2013-2014 - Malaria Fact Sheet,TG,2013,TG2013DHS,https://www.dhsprogram.com/pubs/pdf/MF12/MF12.pdf,TG2013DHS_MF12.pdf,555392
+DHS,Togo DHS 2013-2014 -  3 Fact Sheets,OF26,Togo DHS 2013-2014 Fact Sheet - Women's Empowerment,TG,2013,TG2013DHS,https://www.dhsprogram.com/pubs/pdf/OF26/OF26.pdf,TG2013DHS_OF26.pdf,502976
+DHS,Final Report,FR101,Togo Enquête Démographique et de Santé 1998,TG,1998,TG1998DHS,https://www.dhsprogram.com/pubs/pdf/FR101/FR101.pdf,TG1998DHS_FR101.pdf,17703301
+DHS,Summary Report,SR75,Toto Enquête Démographique et de Santé 1998 - Rapport de Synthèse,TG,1998,TG1998DHS,https://www.dhsprogram.com/pubs/pdf/SR75/SR75.pdf,TG1998DHS_SR75.pdf,2392966
+DHS,Final Report,FR38,Enquête Démographique et de Santé au Togo 1988,TG,1988,TG1988DHS,https://www.dhsprogram.com/pubs/pdf/FR38/FR38.pdf,TG1988DHS_FR38.pdf,2751844
+DHS,Summary Report,SR168,Togo Enquête Démographique et de Santé au Togo 1988 - Rapport de Synthese,TG,1988,TG1988DHS,https://www.dhsprogram.com/pubs/pdf/SR168/SR168.pdf,TG1988DHS_SR168.pdf,2931426
+DHS,Final Report,FR37,Thailand Demographic and Health Survey 1987,TH,1987,TH1987DHS,https://www.dhsprogram.com/pubs/pdf/FR37/FR37.pdf,TH1987DHS_FR37.pdf,3618626
+DHS,Final Report,FR392,Tajikistan DHS 2023 (English),TJ,2023,TJ2023DHS,https://www.dhsprogram.com/pubs/pdf/FR392/FR392.pdf,TJ2023DHS_FR392.pdf,16306552
+DHS,Summary Report,SR292,Summary Report (English),TJ,2023,TJ2023DHS,https://www.dhsprogram.com/pubs/pdf/SR292/SR292.pdf,TJ2023DHS_SR292.pdf,23837286
+DHS,Final Report,FR341,Tajikistan DHS 2017 (English),TJ,2017,TJ2017DHS,https://www.dhsprogram.com/pubs/pdf/FR341/FR341.pdf,TJ2017DHS_FR341.pdf,7589742
+DHS,Key Findings,SR250,Tajikistan DHS 2017 - Key Findings (English),TJ,2017,TJ2017DHS,https://www.dhsprogram.com/pubs/pdf/SR250/SR250.pdf,TJ2017DHS_SR250.pdf,2472936
+DHS,Tajikistan DHS 2017 Fact Sheet,GF44,Tajikistan DHS 2017 - Fact Sheet (English),TJ,2017,TJ2017DHS,https://www.dhsprogram.com/pubs/pdf/GF44/GF44.pdf,TJ2017DHS_GF44.pdf,421944
+DHS,Final Report,FR279,Tajikistan Demographic and Health Survey 2012,TJ,2012,TJ2012DHS,https://www.dhsprogram.com/pubs/pdf/FR279/FR279.pdf,TJ2012DHS_FR279.pdf,2555973
+DHS,Key Findings (Russian),SR203,Tajikistan DHS 2012 - Key Findings (English),TJ,2012,TJ2012DHS,https://www.dhsprogram.com/pubs/pdf/SR203/SR203.pdf,TJ2012DHS_SR203.pdf,2144776
+DHS,Tajikistan DHS 2012 Fact Sheet (Russian),GF30,Tajikistan DHS 2012 Fact Sheet (English),TJ,2012,TJ2012DHS,https://www.dhsprogram.com/pubs/pdf/GF30/GF30.pdf,TJ2012DHS_GF30.pdf,974372
+DHS,HIV Fact Sheet (Russian),HF48,Tajikistan 2012 HIV Fact Sheet (English),TJ,2012,TJ2012DHS,https://www.dhsprogram.com/pubs/pdf/HF48/HF48.pdf,TJ2012DHS_HF48.pdf,843713
+DHS,Tajikistan 2012 DHS -  5 Fact Sheets (Russian),OF20,"Tajikistan DHS, 2012 - Women's Status and Domestic Violence (English)",TJ,2012,TJ2012DHS,https://www.dhsprogram.com/pubs/pdf/OF20/OF20.pdf,TJ2012DHS_OF20.pdf,949251
+DHS,Final Report,FR329,Timor-Leste Demographic and Health Survey 2016,TL,2016,TL2016DHS,https://www.dhsprogram.com/pubs/pdf/FR329/FR329.pdf,TL2016DHS_FR329.pdf,14542884
+DHS,Key Findings,SR244,"Timor-Leste DHS, 2016 - Key Findings",TL,2016,TL2016DHS,https://www.dhsprogram.com/pubs/pdf/SR244/SR244.pdf,TL2016DHS_SR244.pdf,8193069
+DHS,Final Report,FR235,Timor-Leste Demographic and Health Survey 2009-10,TL,2009,TL2009DHS,https://www.dhsprogram.com/pubs/pdf/FR235/FR235.pdf,TL2009DHS_FR235.pdf,3651270
+DHS,Timor-Leste DHS 2009-10 Fact Sheet,GF19,Timor-Leste DHS 2009-10 Fact Sheet,TL,2009,TL2009DHS,https://www.dhsprogram.com/pubs/pdf/GF19/GF19.pdf,TL2009DHS_GF19.pdf,10173990
+DHS,Final Report,FR130,Turkmenistan Demographic and Health Survey 2000,TM,2000,TM2000DHS,https://www.dhsprogram.com/pubs/pdf/FR130/FR130.pdf,TM2000DHS_FR130.pdf,3982122
+DHS,Final Report,FR145,Turkmenistan Demographic and Health Survey 2000 - Russian,TM,2000,TM2000DHS,https://www.dhsprogram.com/pubs/pdf/FR145/FR145.pdf,TM2000DHS_FR145.pdf,4346080
+DHS,Final Report,FR40,Enquête Démographique et de Santé en Tunisie 1988,TN,1988,TN1988DHS,https://www.dhsprogram.com/pubs/pdf/FR40/FR40.pdf,TN1988DHS_FR40.pdf,3725638
+DHS,Summary Report,SR169,Enquête Démographique et de Santé en Tunisie 1988 - Resume,TN,1988,TN1988DHS,https://www.dhsprogram.com/pubs/pdf/SR169/SR169.pdf,TN1988DHS_SR169.pdf,2865247
+DHS,Final Report,FR372,Final Report,TR,2018,TR2018DHS,https://www.dhsprogram.com/pubs/pdf/FR372/FR372.pdf,TR2018DHS_FR372.pdf,10230970
+DHS,Final Report,FR352,Turkey Demographic and Health Survey 2013,TR,2013,TR2013DHS,https://www.dhsprogram.com/pubs/pdf/FR352/FR352.pdf,TR2013DHS_FR352.pdf,11450119
+DHS,Final Report,FR351,Turkey Demographic and Health Survey 2008,TR,2008,TR2008DHS,https://www.dhsprogram.com/pubs/pdf/FR351/FR351.pdf,TR2008DHS_FR351.pdf,9545251
+DHS,Final Report,FR160,Turkey Demographic and Health Survey 2003,TR,2003,TR2003DHS,https://www.dhsprogram.com/pubs/pdf/FR160/FR160.pdf,TR2003DHS_FR160.pdf,1978627
+DHS,Final Report,FR108,Turkey DHS 1998 Final Report,TR,1998,TR1998DHS,https://www.dhsprogram.com/pubs/pdf/FR108/FR108.pdf,TR1998DHS_FR108.pdf,5533020
+DHS,Summary Report,SR78,Turkey Demographic and Health Survey 1998 Summary Report (English-Turkish),TR,1998,TR1998DHS,https://www.dhsprogram.com/pubs/pdf/SR78/SR78.pdf,TR1998DHS_SR78.pdf,4724001
+DHS,Final Report,FR57,Turkey Demographic and Health Survey 1993,TR,1993,TR1993DHS,https://www.dhsprogram.com/pubs/pdf/FR57/FR57.pdf,TR1993DHS_FR57.pdf,3743009
+DHS,Summary Report,SR44,Turkey Demographic and Health Survey 1993 - Summary Report,TR,1993,TR1993DHS,https://www.dhsprogram.com/pubs/pdf/SR44/SR44.pdf,TR1993DHS_SR44.pdf,4309658
+DHS,Final Report,FR39,Trinidad and Tobago Demographic and Health Survey 1987,TT,1987,TT1987DHS,https://www.dhsprogram.com/pubs/pdf/FR39/FR39.pdf,TT1987DHS_FR39.pdf,2382145
+DHS,Summary Report,SR25,Trinidad and Tobago Demographic and Health Survey 1987 - Summary Report,TT,1987,TT1987DHS,https://www.dhsprogram.com/pubs/pdf/SR25/SR25.pdf,TT1987DHS_SR25.pdf,2609951
+DHS,Final Report,FR382,Final Report,TZ,2022,TZ2022DHS,https://www.dhsprogram.com/pubs/pdf/FR382/FR382.pdf,TZ2022DHS_FR382.pdf,32726930
+DHS,Summary Report,SR282,Summary Report,TZ,2022,TZ2022DHS,https://www.dhsprogram.com/pubs/pdf/SR282/SR282.pdf,TZ2022DHS_SR282.pdf,8306280
+DHS,Tanzania DHS 2022 - Malaria Fact Sheet,MF43,Tanzania DHS 2022 - Malaria Fact Sheet,TZ,2022,TZ2022DHS,https://www.dhsprogram.com/pubs/pdf/MF43/MF43.pdf,TZ2022DHS_MF43.pdf,1358209
+DHS,Tanzania DHS 2022 - Other Fact Sheets,OF50,Tanzania DHS 2022 - Child Health Fact Sheet,TZ,2022,TZ2022DHS,https://www.dhsprogram.com/pubs/pdf/OF50/OF50.pdf,TZ2022DHS_OF50.pdf,1235589
+DHS,MIS Final Report,MIS31,Tanzania Malaria Indicator Survey 2017,TZ,2017,TZ2017MIS,https://www.dhsprogram.com/pubs/pdf/MIS31/MIS31.pdf,TZ2017MIS_MIS31.pdf,4890876
+DHS,Tanzania MIS 2017 Malaria Fact Sheet (Kiswahili),MF25,Tanzania MIS 2017 Malaria Fact Sheet (English),TZ,2017,TZ2017MIS,https://www.dhsprogram.com/pubs/pdf/MF25/MF25.pdf,TZ2017MIS_MF25.pdf,803097
+DHS,Final Report,FR321,Tanzania Demographic and Health Survey and Malaria Indicator Survey 2015-16,TZ,2015,TZ2015DHS,https://www.dhsprogram.com/pubs/pdf/FR321/FR321.pdf,TZ2015DHS_FR321.pdf,10019079
+DHS,Key Findings,SR233,Tanzania DHS/MIS 2015-16 - Key Findings,TZ,2015,TZ2015DHS,https://www.dhsprogram.com/pubs/pdf/SR233/SR233.pdf,TZ2015DHS_SR233.pdf,3747039
+DHS,Final Report,SPA22,Tanzania Service Provision Assesment Survey 2014-15,TZ,2014,TZ2014SPA,https://www.dhsprogram.com/pubs/pdf/SPA22/SPA22.pdf,TZ2014SPA_SPA22.pdf,4584129
+DHS,Key Findings,SR228,Tanzania Service Provision Assessment Survey (TSPA) 2014-2015 - Key Findings,TZ,2014,TZ2014SPA,https://www.dhsprogram.com/pubs/pdf/SR228/SR228.pdf,TZ2014SPA_SR228.pdf,1776209
+DHS,Final Report AIS/MIS,AIS11,Tanzania AIS 2011-12,TZ,2012,TZ2012AIS,https://www.dhsprogram.com/pubs/pdf/AIS11/AIS11.pdf,TZ2012AIS_AIS11.pdf,2640419
+DHS,Key Findings (Kiswahili),SR196,Tanzania 2011-12 HIV/AIDS and Malaria Indicator Survey - Key Findings (English),TZ,2012,TZ2012AIS,https://www.dhsprogram.com/pubs/pdf/SR196/SR196.pdf,TZ2012AIS_SR196.pdf,5102961
+DHS,Tanzania AIS 2011-12 Malaria Fact Sheet (Kiswahili),MF8,Tanzania MIS 2011-12 Malaria Fact Sheet (English),TZ,2012,TZ2012AIS,https://www.dhsprogram.com/pubs/pdf/MF8/MF8.pdf,TZ2012AIS_MF8.pdf,1222911
+DHS,HIV Fact Sheet (Kiswahili),HF43,Tanzania AIS 2011-12 - HIV Fact Sheet (English),TZ,2012,TZ2012AIS,https://www.dhsprogram.com/pubs/pdf/HF43/HF43.pdf,TZ2012AIS_HF43.pdf,1309427
+DHS,Final Report,FR243,Tanzania Demographic and Health Survey 2010,TZ,2010,TZ2010DHS,https://www.dhsprogram.com/pubs/pdf/FR243/FR243[24June2011].pdf,TZ2010DHS_FR243[24June2011].pdf,6839561
+DHS,Tanzania DHS 2010 Fact Sheet,GF20,Tanzania DHS 2010 Fact Sheet,TZ,2010,TZ2010DHS,https://www.dhsprogram.com/pubs/pdf/GF20/GF20.pdf,TZ2010DHS_GF20.pdf,2383987
+DHS,Key Findings,SR183,Tanzania 2010 Demographic and Health Survey - Key Findings,TZ,2010,TZ2010DHS,https://www.dhsprogram.com/pubs/pdf/SR183/SR183.pdf,TZ2010DHS_SR183.pdf,4166048
+DHS,HIV Fact Sheet,HF28,Tanzania HIV Fact Sheet,TZ,2007,TZ2007AIS,https://www.dhsprogram.com/pubs/pdf/HF28/HF28.pdf,TZ2007AIS_HF28.pdf,533344
+DHS,Final Report AIS/MIS,AIS6,Tanzania HIV/AIDS and Malaria Indiactor Survey 2007-08,TZ,2007,TZ2007AIS,https://www.dhsprogram.com/pubs/pdf/AIS6/AIS6_05_14_09.pdf,TZ2007AIS_AIS6_05_14_09.pdf,1836775
+DHS,Key Findings,SR150,Tanzania 2007-08 HIV/AIDS and Malaria Indicator Survey - Key Findings,TZ,2007,TZ2007AIS,https://www.dhsprogram.com/pubs/pdf/SR150/SR150.pdf,TZ2007AIS_SR150.pdf,7401350
+DHS,Tanzania MIS 2007 Malaria Fact Sheet,MF2,Tanzania HMIS 2007-08 - Malaria Fact Sheet,TZ,2007,TZ2007AIS,https://www.dhsprogram.com/pubs/pdf/MF2/OF11.pdf,TZ2007AIS_OF11.pdf,2160614
+DHS,Final Report,SPA12,Tanzania Service Provision Assessment Survey 2006 (TSPA),TZ,2006,TZ2006SPA,https://www.dhsprogram.com/pubs/pdf/SPA12/SPA12.pdf,TZ2006SPA_SPA12.pdf,5501468
+DHS,Key Findings on MCH,SR130,Tanzania SPA 2006 - Key Findings on MCH,TZ,2006,TZ2006SPA,https://www.dhsprogram.com/pubs/pdf/SR130/SR130.pdf,TZ2006SPA_SR130.pdf,1654904
+DHS,Key Findings on HIV/AIDS,SR131,Tanzania SPA 2006 - Key Findings on HIV/AIDS,TZ,2006,TZ2006SPA,https://www.dhsprogram.com/pubs/pdf/SR131/SR131.pdf,TZ2006SPA_SR131.pdf,993193
+DHS,Final Report,FR173,Tanzania Demographic and Health Survey 2004-05 Final Report,TZ,2004,TZ2004DHS,https://www.dhsprogram.com/pubs/pdf/FR173/FR173-TZ04-05.pdf,TZ2004DHS_FR173-TZ04-05.pdf,4458130
+DHS,Key Findings,SR114,Tanzania 2004-05 Demographic and Health Survey Key Findings,TZ,2004,TZ2004DHS,https://www.dhsprogram.com/pubs/pdf/SR114/SR114.pdf,TZ2004DHS_SR114.pdf,1318016
+DHS,Tanzania 2004 DHS Fact Sheet,GF6,Tanzania Fact Sheet,TZ,2004,TZ2004DHS,https://www.dhsprogram.com/pubs/pdf/GF6/tanzania_fact_sheet.pdf,TZ2004DHS_tanzania_fact_sheet.pdf,358301
+DHS,Tanzania 2004 DHS Flyers,OF8,Tanzania 2004 DHS Flyers,TZ,2004,TZ2004DHS,https://www.dhsprogram.com/pubs/pdf/OF8/tanzania_flyers_english.pdf,TZ2004DHS_tanzania_flyers_english.pdf,7624609
+DHS,Final Report,AIS1,Tanzania HIV/AIDS Indicator Survey 2003-04,TZ,2003,TZ2003AIS,https://www.dhsprogram.com/pubs/pdf/AIS1/AIS1.pdf,TZ2003AIS_AIS1.pdf,2164359
+DHS,HIV Fact Sheet,HF10,Tanzania HIV Fact Sheet,TZ,2003,TZ2003AIS,https://www.dhsprogram.com/pubs/pdf/HF10/Tanzania_HIV_factsheet.pdf,TZ2003AIS_Tanzania_HIV_factsheet.pdf,659362
+DHS,Final Report,FR112,Tanzania DHS 1999 Final Report,TZ,1999,TZ1999DHS,https://www.dhsprogram.com/pubs/pdf/FR112/FR112.pdf,TZ1999DHS_FR112.pdf,2081757
+DHS,Key Findings Report (Kiswahili),SR80,Tanzania Reproductive and Child Health Survey 1999 (TRCHS) - Key Findings Report,TZ,1999,TZ1999DHS,https://www.dhsprogram.com/pubs/pdf/SR80/SR80.pdf,TZ1999DHS_SR80.pdf,4250315
+DHS,Final Report,FR83,Tanzania Demographic and Health Survey 1996,TZ,1996,TZ1996DHS,https://www.dhsprogram.com/pubs/pdf/FR83/FR83.pdf,TZ1996DHS_FR83.pdf,5615982
+DHS,Summary Report,SR167,Tanzania Demographic and Health Survey 1996 - Summary Report,TZ,1996,TZ1996DHS,https://www.dhsprogram.com/pubs/pdf/SR167/SR167.pdf,TZ1996DHS_SR167.pdf,2329758
+DHS,Tanzania 1995 In Depth Study - Final Report,FR76,"Sumve Survey on Adult and Childhood Mortality Tanzania, 1995",TZ,1995,TZ1995OTH,https://www.dhsprogram.com/pubs/pdf/FR76/FR76.pdf,TZ1995OTH_FR76.pdf,2032831
+DHS,Tanzania 1994 KAP Final Report,FR61,"Tanzania Knowledge, Attitudes and Practices Survey 1994",TZ,1994,TZ1994OTH,https://www.dhsprogram.com/pubs/pdf/FR61/FR61_Tanzania_1994.pdf,TZ1994OTH_FR61_Tanzania_1994.pdf,5606756
+DHS,Final Report,FR45,Tanzania Demographic and Health Survey 1991-92,TZ,1992,TZ1992DHS,https://www.dhsprogram.com/pubs/pdf/FR45/FR45.pdf,TZ1992DHS_FR45.pdf,4777664
+DHS,Summary Report,SR31,Tanzania Demographic and Health Survey 1991/92,TZ,1992,TZ1992DHS,https://www.dhsprogram.com/pubs/pdf/SR31/SR31.pdf,TZ1992DHS_SR31.pdf,2613022
+DHS,Final Report,FR210,Ukraine Demographic and Health Survey 2007,UA,2007,UA2007DHS,https://www.dhsprogram.com/pubs/pdf/FR210/FR210.pdf,UA2007DHS_FR210.pdf,5423532
+DHS,Key Findings - (Ukrainian),SR147,Ukraine 2007 Demographic and Health Survey - Key Findings (English),UA,2007,UA2007DHS,https://www.dhsprogram.com/pubs/pdf/SR147/SR147.pdf,UA2007DHS_SR147.pdf,3960502
+DHS,HIV Fact Sheet (Ukrainian),HF26,Ukraine HIV Fact Sheet 2007 (English),UA,2007,UA2007DHS,https://www.dhsprogram.com/pubs/pdf/HF26/HF26.pdf,UA2007DHS_HF26.pdf,412112
+DHS,Ukraine 2007 DHS Fact Sheets (Ukrainian),OF9,Ukraine Adult Health Fact Sheet 2007 (english),UA,2007,UA2007DHS,https://www.dhsprogram.com/pubs/pdf/OF9/Ukraine.Adult.Health.pdf,UA2007DHS_Ukraine.Adult.Health.pdf,520991
+DHS,MIS Final Report,MIS45,MIS Final Report,UG,2024,UG2024MIS,https://www.dhsprogram.com/pubs/pdf/MIS45/MIS45.pdf,UG2024MIS_MIS45.pdf,8813868
+DHS,MIS Final Report,MIS34,Uganda Malaria Indicator Survey 2018-19,UG,2018,UG2018MIS,https://www.dhsprogram.com/pubs/pdf/MIS34/MIS34.pdf,UG2018MIS_MIS34.pdf,3739335
+DHS,Uganda MIS 2018-19 - Malaria Fact Sheet,MF28,Uganda MIS 2018-19 - Malaria Fact Sheet,UG,2018,UG2018MIS,https://www.dhsprogram.com/pubs/pdf/MF28/MF28.pdf,UG2018MIS_MF28.pdf,1460921
+DHS,Final Report,FR333,Uganda Demographic and Health Survey 2016,UG,2016,UG2016DHS,https://www.dhsprogram.com/pubs/pdf/FR333/FR333.pdf,UG2016DHS_FR333.pdf,9736677
+DHS,Key Findings,SR245,Uganda DHS 2016 - Key Findings,UG,2016,UG2016DHS,https://www.dhsprogram.com/pubs/pdf/SR245/SR245.pdf,UG2016DHS_SR245.pdf,3221659
+DHS,Uganda DHS 2016 Fact Sheet,GF39,Uganda DHS 2016 Fact Sheet,UG,2016,UG2016DHS,https://www.dhsprogram.com/pubs/pdf/GF39/GF39.pdf,UG2016DHS_GF39.pdf,1413683
+DHS,MIS Final Report,MIS21,Uganda Malaria Indicator Survey 2014-15,UG,2014,UG2014MIS,https://www.dhsprogram.com/pubs/pdf/MIS21/MIS21.pdf,UG2014MIS_MIS21.pdf,2589569
+DHS,Uganda MIS 2014-15 Malaria Fact Sheet,MF13,Uganda MIS 2014-15 Malaria Fact Sheet,UG,2014,UG2014MIS,https://www.dhsprogram.com/pubs/pdf/MF13/MF13.pdf,UG2014MIS_MF13.pdf,719113
+DHS,Final Report,AIS10,Uganda AIS 2011- Final Report,UG,2011,UG2011AIS,https://www.dhsprogram.com/pubs/pdf/AIS10/AIS10.pdf,UG2011AIS_AIS10.pdf,2909229
+DHS,HIV Fact Sheet,HF41,2011 Uganda AIS  - HIV Fact Sheet,UG,2011,UG2011AIS,https://www.dhsprogram.com/pubs/pdf/HF41/HF41.pdf,UG2011AIS_HF41.pdf,1378916
+DHS,Key Findings,SR194,Uganda AIS 2011 - Key Findings,UG,2011,UG2011AIS,https://www.dhsprogram.com/pubs/pdf/SR194/SR194.pdf,UG2011AIS_SR194.pdf,3864497
+DHS,Final Report,FR264,Uganda Demographic and Health Survey 2011,UG,2011,UG2011DHS,https://www.dhsprogram.com/pubs/pdf/FR264/FR264.pdf,UG2011DHS_FR264.pdf,3147159
+DHS,MIS Final Report,MIS6,Uganda Malaria Indicator Survey (MIS) 2009,UG,2009,UG2009MIS,https://www.dhsprogram.com/pubs/pdf/MIS6/MIS6.pdf,UG2009MIS_MIS6.pdf,3250521
+DHS,Final Report,SPA13,Uganda Service Provision Assessment Survey 2007,UG,2007,UG2007SPA,https://www.dhsprogram.com/pubs/pdf/SPA13/SPA13.pdf,UG2007SPA_SPA13.pdf,4306803
+DHS,Key Findings on MCH and Malaria,SR145,"Uganda HIV/MCH SPA, 2007 - Key Findings on MCH and Malaria",UG,2007,UG2007SPA,https://www.dhsprogram.com/pubs/pdf/SR145/SR145.pdf,UG2007SPA_SR145.pdf,1551918
+DHS,Key Findings on HIV/AIDS and STIs,SR146,"Uganda HIV/MCH SPA, 2007 - Key Findings on HIV/AIDS and STIs",UG,2007,UG2007SPA,https://www.dhsprogram.com/pubs/pdf/SR146/SR146.pdf,UG2007SPA_SR146.pdf,1418740
+DHS,Final Report,FR194,Uganda Demographic and Health Survey 2006,UG,2006,UG2006DHS,https://www.dhsprogram.com/pubs/pdf/FR194/FR194.pdf,UG2006DHS_FR194.pdf,4819314
+DHS,Key Findings,SR126,Uganda 2006 Demograhic and Health Survey - Key Findings,UG,2006,UG2006DHS,https://www.dhsprogram.com/pubs/pdf/SR126/SR126.pdf,UG2006DHS_SR126.pdf,1230171
+DHS,Final Report,AIS2,Uganda HIV/AIDS Sero-Behavioural Survey 2004-05,UG,2004,UG2004AIS,https://www.dhsprogram.com/pubs/pdf/AIS2/AIS2.pdf,UG2004AIS_AIS2.pdf,3837229
+DHS,HIV Fact Sheet,HF11,Uganda HIV Fact Sheet,UG,2004,UG2004AIS,https://www.dhsprogram.com/pubs/pdf/HF11/Uganda_HIV_factsheet.PDF,UG2004AIS_Uganda_HIV_factsheet.PDF,600629
+DHS,Final Report,FR128,Uganda Demographic and Health Survey 2000-2001,UG,2000,UG2000DHS,https://www.dhsprogram.com/pubs/pdf/FR128/FR128.pdf,UG2000DHS_FR128.pdf,5619638
+DHS,Summary Report,SR91,Uganda Key Findings,UG,2000,UG2000DHS,https://www.dhsprogram.com/pubs/pdf/SR91/UgandaKF.pdf,UG2000DHS_UgandaKF.pdf,627535
+DHS,HIV/AIDS and Other Sexually Transmitted Infections in Uganda,SR153,HIV/AIDS and Other Sexually Transmitted Infections in Uganda - Finding from the 2000 Uganda Demographic and Health Survey,UG,2000,UG2000DHS,https://www.dhsprogram.com/pubs/pdf/SR153/SR153.pdf,UG2000DHS_SR153.pdf,1585516
+DHS,Final Report,FR69,Uganda Demographic and Health Survey 1995,UG,1995,UG1995DHS,https://www.dhsprogram.com/pubs/pdf/FR69/FR69.pdf,UG1995DHS_FR69.pdf,4869291
+DHS,Uganda 1995/96 Final Report (Indepth) - Negotiating Reproductive Outcomes in Uganda,FR75,Negotiating Reproductive Outcomes in Uganda,UG,1995,UG1995OTH,https://www.dhsprogram.com/pubs/pdf/FR75/FR75.pdf,UG1995OTH_FR75.pdf,3335630
+DHS,Summary Report,SR148,Uganda DHS 1995 - Summary Report,UG,1995,UG1995DHS,https://www.dhsprogram.com/pubs/pdf/SR148/SR148.pdf,UG1995DHS_SR148.pdf,2520111
+DHS,Summary Report,SR27,Uganda - Demographic and Health Survey 1988/1989 - Summary Report,UG,1988,UG1988DHS,https://www.dhsprogram.com/pubs/pdf/SR27/SR27.pdf,UG1988DHS_SR27.pdf,2660301
+DHS,Final Report,FR41,Uganda Demographic and Health Survey 1988/1989,UG,1988,UG1988DHS,https://www.dhsprogram.com/pubs/pdf/FR41/FR41.pdf,UG1988DHS_FR41.pdf,2078799
+DHS,"Uzbekistan Health Examination Survey, 2002",FR143,Uzbekistan Health Examination Survey 2002,UZ,2002,UZ2002OTH,https://www.dhsprogram.com/pubs/pdf/FR143/FR143.pdf,UZ2002OTH_FR143.pdf,2290479
+DHS,Uzbekistan Health Examination Survey 2002,FR153,Uzbekistan Health Examination Survey 2002 (Russian),UZ,2002,UZ2002OTH,https://www.dhsprogram.com/pubs/pdf/FR153/FR153.pdf,UZ2002OTH_FR153.pdf,4182655
+DHS,Final Report,FR84,Uzbekistan DHS 1996 Final Report,UZ,1996,UZ1996DHS,https://www.dhsprogram.com/pubs/pdf/FR84/FR84.pdf,UZ1996DHS_FR84.pdf,4086192
+DHS,Summary Report,SR98,Uzbekistan 1996 Summary Report,UZ,1996,UZ1996DHS,https://www.dhsprogram.com/pubs/pdf/SR98/UZ96SummaryReport.pdf,UZ1996DHS_UZ96SummaryReport.pdf,2674892
+DHS,Summary Report,SR136,Uzbekistan Demographic and Health Survey 1996,UZ,1996,UZ1996DHS,https://www.dhsprogram.com/pubs/pdf/SR136/SR136.pdf,UZ1996DHS_SR136.pdf,1874772
+DHS,Final Report,AIS3,Vietnam Population and AIDS Indicator Survey 2005,VN,2005,VN2005AIS,https://www.dhsprogram.com/pubs/pdf/AIS3/AIS3.pdf,VN2005AIS_AIS3.pdf,6639234
+DHS,Final Report,FR139,Vietnam Demographic and Health Survey 2002,VN,2002,VN2002DHS,https://www.dhsprogram.com/pubs/pdf/FR139/FR139.pdf,VN2002DHS_FR139.pdf,3095472
+DHS,Final Report,FR104,Vietnam DHS 1997 Final Report,VN,1997,VN1997DHS,https://www.dhsprogram.com/pubs/pdf/FR104/FR104.pdf,VN1997DHS_FR104.pdf,4555529
+DHS,Final Report,FR240,Samoa Demographic and Health Survey 2009,WS,2009,WS2009DHS,https://www.dhsprogram.com/pubs/pdf/FR240/FR240.pdf,WS2009DHS_FR240.pdf,2328587
+DHS,Final Report,FR296,Yemen National Health and Demographic Survey 2013,YE,2013,YE2013DHS,https://www.dhsprogram.com/pubs/pdf/FR296/FR296.pdf,YE2013DHS_FR296.pdf,4854784
+DHS,Key Findings,SR220,Yemen 2013 National Health and Demographic Survey Key Findings (English,YE,2013,YE2013DHS,https://www.dhsprogram.com/pubs/pdf/SR220/SR220English.pdf,YE2013DHS_SR220English.pdf,8475789
+DHS,Final Report,FR94,Yemen Demographic and Maternal and Child Health Survey 1997,YE,1997,YE1997DHS,https://www.dhsprogram.com/pubs/pdf/FR94/FR94.pdf,YE1997DHS_FR94.pdf,3602321
+DHS,Summary Report,SR69,Summary Report Yemen 1997,YE,1997,YE1997DHS,https://www.dhsprogram.com/pubs/pdf/SR69/SR69.pdf,YE1997DHS_SR69.pdf,3132175
+DHS,Final Report,FR52,Demographic and Maternal and Child Health Survey 1991/1992,YE,1991,YE1991DHS,https://www.dhsprogram.com/pubs/pdf/FR52/FR52.pdf,YE1991DHS_FR52.pdf,4236789
+DHS,Summary Report,SR39,Summary Report Yemen 1991/92,YE,1991,YE1991DHS,https://www.dhsprogram.com/pubs/pdf/SR39/SR39.pdf,YE1991DHS_SR39.pdf,2836909
+DHS,Final Report,FR337,South Africa DHS 2016,ZA,2016,ZA2016DHS,https://www.dhsprogram.com/pubs/pdf/FR337/FR337.pdf,ZA2016DHS_FR337.pdf,12898325
+DHS,Key Findings,SR248,South Africa DHS 2016 - Key Findings,ZA,2016,ZA2016DHS,https://www.dhsprogram.com/pubs/pdf/SR248/SR248.pdf,ZA2016DHS_SR248.pdf,2901864
+DHS,Final Report,FR206,South Africa Demographic and Health Sruvery 2003,ZA,2003,ZA2003DHS,https://www.dhsprogram.com/pubs/pdf/FR206/FR206.pdf,ZA2003DHS_FR206.pdf,2984272
+DHS,Final Report,FR131,South Africa Demographic and Health Survey 1998,ZA,1998,ZA1998DHS,https://www.dhsprogram.com/pubs/pdf/FR131/FR131.pdf,ZA1998DHS_FR131.pdf,2216405
+DHS,Final Report,FR397,Final Report,ZM,2024,ZM2024DHS,https://www.dhsprogram.com/pubs/pdf/FR397/FR397.pdf,ZM2024DHS_FR397.pdf,14789570
+DHS,Zambia DHS 2024 - Fact Sheet,GF66,Zambia DHS 2024 - Fact Sheet,ZM,2024,ZM2024DHS,https://www.dhsprogram.com/pubs/pdf/GF66/GF66.pdf,ZM2024DHS_GF66.pdf,896063
+DHS,Final Report,FR361,Zambia Demographic and Health Survey 2018,ZM,2018,ZM2018DHS,https://www.dhsprogram.com/pubs/pdf/FR361/FR361.pdf,ZM2018DHS_FR361.pdf,6309592
+DHS,Summary Report,SR265,Zambia DHS 2018 - Summary Report,ZM,2018,ZM2018DHS,https://www.dhsprogram.com/pubs/pdf/SR265/SR265.pdf,ZM2018DHS_SR265.pdf,2683281
+DHS,HIV Fact Sheet,HF63,Zambia DHS 2018 - HIV Fact Sheet,ZM,2018,ZM2018DHS,https://www.dhsprogram.com/pubs/pdf/HF63/HF63.pdf,ZM2018DHS_HF63.pdf,558408
+DHS,Final Report,FR304,Zambia Demographic and Health Survey 2013-14,ZM,2013,ZM2013DHS,https://www.dhsprogram.com/pubs/pdf/FR304/FR304.pdf,ZM2013DHS_FR304.pdf,3933966
+DHS,Key Findings,SR219,Zambia DHS 2013-14 - Key Findings,ZM,2013,ZM2013DHS,https://www.dhsprogram.com/pubs/pdf/SR219/SR219.pdf,ZM2013DHS_SR219.pdf,2843539
+DHS,Final Report,FR211,Zambia Demographic and Health Survey 2007,ZM,2007,ZM2007DHS,https://www.dhsprogram.com/pubs/pdf/FR211/FR211[revised-05-12-2009].pdf,ZM2007DHS_FR211[revised-05-12-2009].pdf,3223072
+DHS,HIV Fact Sheet,HF29,Zambia DHS 2007 - HIV Fact Sheet,ZM,2007,ZM2007DHS,https://www.dhsprogram.com/pubs/pdf/HF29/HF29.pdf,ZM2007DHS_HF29.pdf,2746743
+DHS,Key Findings,SR157,Zambia Demographic and Health Survey 2007 - Key Findings,ZM,2007,ZM2007DHS,https://www.dhsprogram.com/pubs/pdf/SR157/SR157.pdf,ZM2007DHS_SR157.pdf,3991369
+DHS,Final Report,SPA11,Zambia HIV/AIDS Service Provision Assessment Survey 2005,ZM,2005,ZM2005SPA,https://www.dhsprogram.com/pubs/pdf/SPA11/SPA11.pdf,ZM2005SPA_SPA11.pdf,2813483
+DHS,Key Findings,SR122,Zambia HIV Service Provision Assessment Survey 2005 Key Findings,ZM,2005,ZM2005SPA,https://www.dhsprogram.com/pubs/pdf/SR122/SR122.pdf,ZM2005SPA_SR122.pdf,1176509
+DHS,Final Report,FR136,Zambia Demographic and Health Survey 2001-2002,ZM,2002,ZM2002DHS,https://www.dhsprogram.com/pubs/pdf/FR136/FR136.pdf,ZM2002DHS_FR136.pdf,3788096
+DHS,Final Report,FR86,Zambia DHS 1996 Final Report,ZM,1996,ZM1996DHS,https://www.dhsprogram.com/pubs/pdf/FR86/FR86.pdf,ZM1996DHS_FR86.pdf,4718283
+DHS,Summary Report,SR170,Zambia Demographic and Health Survey 1996 - Summary Report,ZM,1996,ZM1996DHS,https://www.dhsprogram.com/pubs/pdf/SR170/SR170.pdf,ZM1996DHS_SR170.pdf,2434329
+DHS,Final Report,FR42,Zambia Demographic and Health Survey 1992,ZM,1992,ZM1992DHS,https://www.dhsprogram.com/pubs/pdf/FR42/FR42.pdf,ZM1992DHS_FR42.pdf,3681699
+DHS,Summary Report,SR28,Zambia Demographic and Health Survey 1992 - Summary Report,ZM,1992,ZM1992DHS,https://www.dhsprogram.com/pubs/pdf/SR28/SR28.pdf,ZM1992DHS_SR28.pdf,1799183
+DHS,Zimbabwe Demographic and Health Survey 2023-24 - KIR Fact Sheet,OF52,Zimbabwe Demographic and Health Survey 2023-24 - KIR Fact Sheet,ZW,2023,ZW2023DHS,https://www.dhsprogram.com/pubs/pdf/OF52/OF52.pdf,ZW2023DHS_OF52.pdf,1670572
+DHS,Final Report,FR322,Zimbabwe DHS 2015 - Final Report,ZW,2015,ZW2015DHS,https://www.dhsprogram.com/pubs/pdf/FR322/FR322.pdf,ZW2015DHS_FR322.pdf,10937835
+DHS,Key Findings,SR234,Zimbabwe Demographic and Health Survey 2015 - Key Findings,ZW,2015,ZW2015DHS,https://www.dhsprogram.com/pubs/pdf/SR234/SR234.pdf,ZW2015DHS_SR234.pdf,3098703
+DHS,HIV Fact Sheet,HF58,Zimbabwe DHS 2015 - HIV Fact Sheet,ZW,2015,ZW2015DHS,https://www.dhsprogram.com/pubs/pdf/HF58/HF58.pdf,ZW2015DHS_HF58.pdf,957615
+DHS,Final Report,FR254,Zimbabwe Demographic and Health Survey 2010-11,ZW,2010,ZW2010DHS,https://www.dhsprogram.com/pubs/pdf/FR254/FR254.pdf,ZW2010DHS_FR254.pdf,3184475
+DHS,Key Findings,SR188,Zimbabwe 2010-11 Demographic and Health Survey - Key Findings,ZW,2010,ZW2010DHS,https://www.dhsprogram.com/pubs/pdf/SR188/SR188.pdf,ZW2010DHS_SR188.pdf,3244400
+DHS,HIV Fact Sheet,HF37,2010-11 Zimbabwe DHS - HIV Fact Sheet,ZW,2010,ZW2010DHS,https://www.dhsprogram.com/pubs/pdf/HF37/HF37.pdf,ZW2010DHS_HF37.pdf,1355866
+DHS,Final Report,FR186,Zimbabwe Demographic and Health Survey 2005-06,ZW,2005,ZW2005DHS,https://www.dhsprogram.com/pubs/pdf/FR186/FR186.pdf,ZW2005DHS_FR186.pdf,2742571
+DHS,HIV Fact Sheet,HF19,"HIV Fact Sheet, 2005-06",ZW,2005,ZW2005DHS,https://www.dhsprogram.com/pubs/pdf/HF19/HF19.pdf,ZW2005DHS_HF19.pdf,299295
+DHS,Final Report,FR116,Zimbabwe Demographic and Health Survey 1999,ZW,1999,ZW1999DHS,https://www.dhsprogram.com/pubs/pdf/FR116/FR116.pdf,ZW1999DHS_FR116.pdf,1721934
+DHS,Summary Report,SR83,Zimbabwe Demographic and Health Survey (ZDHS) Key Findings Report 1999,ZW,1999,ZW1999DHS,https://www.dhsprogram.com/pubs/pdf/SR83/SR83.pdf,ZW1999DHS_SR83.pdf,2634376
+DHS,Final Report,FR62,Zimbabwe Demographic and Health Survey 1994,ZW,1994,ZW1994DHS,https://www.dhsprogram.com/pubs/pdf/FR62/FR62.pdf,ZW1994DHS_FR62.pdf,5244211
+DHS,Summary Report,SR48,Zimbabwe Demographic and Health Survey (ZDHS) Key findings Report 1999,ZW,1994,ZW1994DHS,https://www.dhsprogram.com/pubs/pdf/SR48/SR48.pdf,ZW1994DHS_SR48.pdf,3092280
+DHS,Summary Report,SR29,Zimbabwe Demographic and Health Survey 1988 Summary Report,ZW,1988,ZW1988DHS,https://www.dhsprogram.com/pubs/pdf/SR29/SR29.pdf,ZW1988DHS_SR29.pdf,2426830
+DHS,Final Report,FR43,Zimbabwe Demographic and Health Survey 1988,ZW,1988,ZW1988DHS,https://www.dhsprogram.com/pubs/pdf/FR43/FR43.pdf,ZW1988DHS_FR43.pdf,6395874
