@@ -146,7 +146,8 @@ results are in `skills/public-health-manuscript-review-iteration-1.html`.
 
 ## High-impact writing skill
 
-`skills/high-impact-public-health-writing/` is a second skill, built from the
+`skills/high-impact-public-health-writing/` is a second skill (now also merged into
+`public-health-manuscript` under `references/top100/`), built from the
 top-100 analysis. It covers why papers are cited, data analysis style, figure
 style with R recipes, and each section of a paper. It includes
 `scripts/citability_check.py`, which scores a draft against top-100 and

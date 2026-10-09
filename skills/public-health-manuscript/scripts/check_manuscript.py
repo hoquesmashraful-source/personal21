@@ -10,7 +10,7 @@ reports problems that reviewers at high-impact journals commonly flag:
              in Results, numbers repeated in the Conclusion, causal verbs
   Methods    survey weights, clustering, response rate, missing data,
              software, ethics, reporting guideline (STROBE)
-  Length     section word counts against highly cited DHS/MICS papers
+  Length     section word counts against highly cited papers (--benchmark)
 
 The checks are heuristics. Read each flag in context before changing text.
 
@@ -18,6 +18,7 @@ Usage:
   python3 check_manuscript.py draft.docx
   python3 check_manuscript.py draft.md --section discussion
   python3 check_manuscript.py draft.md --design cross-sectional --max-sentence 30
+  python3 check_manuscript.py draft.md --benchmark top100
 """
 
 import argparse
@@ -26,15 +27,23 @@ import sys
 import zipfile
 import xml.etree.ElementTree as ET
 
-# Word counts (median, IQR) from 579 highly cited DHS/MICS research articles.
-BENCHMARKS = {
-    "abstract": (313, 271, 359),
-    "introduction": (622, 493, 809),
-    "methods": (989, 752, 1296),
-    "results": (1140, 737, 1794),
-    "discussion": (1155, 897, 1488),
-    "conclusion": (134, 100, 197),
+# Section word counts (median, IQR).
+# "dhs": 579 highly cited (more than 50 citations) DHS and MICS research articles.
+# "top100": open access subset of the 100 most cited public health articles,
+#   2000 to 2024 (many are Global Burden of Disease papers with long Methods).
+# Journal word limits always take priority.
+BENCHMARK_SETS = {
+    "dhs": ("highly cited DHS/MICS papers", {
+        "abstract": (313, 271, 359), "introduction": (622, 493, 809),
+        "methods": (989, 752, 1296), "results": (1140, 737, 1794),
+        "discussion": (1155, 897, 1488), "conclusion": (134, 100, 197)}),
+    "top100": ("the 100 most cited public health papers", {
+        "abstract": (322, 240, 472), "introduction": (492, 395, 782),
+        "methods": (2112, 1175, 3573), "results": (2816, 1533, 5250),
+        "discussion": (2357, 1358, 3998), "conclusion": (150, 63, 268)}),
 }
+BENCHMARKS = BENCHMARK_SETS["dhs"][1]
+BENCH_LABEL = BENCHMARK_SETS["dhs"][0]
 
 HEADINGS = [
     ("abstract", r"(summary|abstract)"),
@@ -254,7 +263,7 @@ def check(sections, max_sentence, design):
             add("* Limitations mention direction of bias.")
         add("")
 
-    add("## Length against highly cited DHS/MICS papers (median and IQR)")
+    add(f"## Length against {BENCH_LABEL} (median and IQR)")
     for k, (med, lo, hi) in BENCHMARKS.items():
         if k in sections:
             n = words(sections[k])
@@ -272,7 +281,11 @@ def main():
     ap.add_argument("--design", default="cross-sectional",
                     help="study design, used for the causal-language check (default cross-sectional)")
     ap.add_argument("--max-sentence", type=int, default=30)
+    ap.add_argument("--benchmark", choices=sorted(BENCHMARK_SETS), default="dhs",
+                    help="length benchmarks: dhs (default) or top100")
     args = ap.parse_args()
+    global BENCHMARKS, BENCH_LABEL
+    BENCH_LABEL, BENCHMARKS = BENCHMARK_SETS[args.benchmark]
 
     text = read_text(args.path)
     sections = {args.section.lower(): text} if args.section else split_sections(text)
