@@ -3,3 +3,6 @@ __pycache__/
 *.part
 literature/corpus/
 skills/public-health-manuscript-workspace/
+literature/top_cited/corpus/
+literature/top_cited/corpus_controls/
+literature/top_cited/figures/
