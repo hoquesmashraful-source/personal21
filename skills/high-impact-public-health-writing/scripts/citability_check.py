@@ -2,8 +2,8 @@
 """Score a draft on the features that separate the most cited public health papers.
 
 Compares a manuscript's title, abstract and body with two reference groups:
-the 100 most cited public health articles (2000 to 2024) and 300 matched
-controls drawn from the same journals and years. The rates come from that
+the 100 most cited public health articles (2000 to 2024) and 163 matched
+controls with an abstract, drawn from the same journals and years. The rates come from that
 comparison. They describe association, not cause: a feature common in highly
 cited papers is worth considering, not a guarantee of citations.
 
@@ -26,26 +26,26 @@ from check_manuscript import read_text, split_sections, words  # noqa: E402
 
 # feature: (top-100 rate, control rate) in percent, from literature/top_cited/analysis.md
 RATES = {
-    "title_colon": (65, 44),
-    "title_scope": (43, 15),
-    "title_scale": (19, 3),
-    "title_time": (30, 5),
-    "title_question": (1, 5),
-    "abs_structured": (71, 32),
-    "abs_uncertainty": (44, 20),
-    "abs_countries": (23, 6),
-    "abs_large_n": (45, 11),
-    "abs_reusable": (38, 11),
-    "body_uncertainty": (70, 16),
-    "body_sharing": (42, 20),
-    "body_limitations": (79, 44),
-    "figs_gt_tables": (84, 57),
+    "title_colon": (65, 48),
+    "title_scope": (43, 12),
+    "title_scale": (19, 5),
+    "title_time": (30, 7),
+    "title_question": (1, 3),
+    "abs_structured": (77, 60),
+    "abs_uncertainty": (48, 37),
+    "abs_countries": (25, 10),
+    "abs_large_n": (49, 20),
+    "abs_reusable": (41, 21),
+    "body_uncertainty": (70, 20),
+    "body_sharing": (42, 28),
+    "body_limitations": (79, 62),
+    "figs_gt_tables": (84, 58),
 }
 SCALE = r"\b\d[\d,.]*\s+(?:[\w-]+\s+){0,4}(countries|studies|million|participants|people|surveys|cohorts|adults|children|women|men)\b"
 MANY_COUNTRIES = r"\b([1-9]\d|\d{3,})\s+(?:[\w-]+\s+){0,4}(countries|nations|territories)\b"
 NUMBER = r"\b\d+(?:\.\d+)?\b"
-MEDIANS = {"title_words": (13.5, 10), "abs_words": (322, 257), "abs_numbers": (9.5, 6.3),
-           "figures": (5, 2), "tables": (2, 1), "references": (60, 34)}
+MEDIANS = {"title_words": (13.5, 13), "abs_words": (322, 257), "abs_numbers": (9.5, 6.3),
+           "figures": (5, 3), "tables": (2, 2), "references": (60, 39)}
 
 
 def find_title(text):
@@ -87,7 +87,7 @@ def main():
         rows.append((label, value, ref, advice))
 
     t = title
-    add("Title words", str(words(t)), "title_words", "Top titles are longer because they state scope, scale and period.")
+    add("Title words", str(words(t)), "title_words", "Length matters less than content: state scope, scale and period.")
     add("Title has a colon (topic: design or scale)", yes(":" in t), "title_colon", "Use 'Topic in population: design or scale'.")
     add("Title names global, regional or multi-country scope", yes(re.search(r"global|world|countries|international|nations|regional|national", t, re.I)), "title_scope", "Name the population and setting the estimate covers.")
     add("Title states scale (number of countries, studies, people)", yes(re.search(SCALE, t, re.I)), "title_scale", "If the scale is a strength, put the number in the title.")
@@ -117,7 +117,7 @@ def main():
     refs = secs.get("references", "")
     nref = len([l for l in refs.splitlines() if re.match(r"\s*(\[?\d+[\].]|\d+\s)", l)])
     if nref:
-        add("References", str(nref), "references", "Top papers cite broadly (median 60).")
+        add("References", str(nref), "references", "Top papers cite broadly (median 60 versus 39).")
 
     print(f"# Citability check: {args.path}\n")
     print(f"Title: {title or '(not found)'}\n")

@@ -1,0 +1,100 @@
+1	33069326	GBD 2019: 369 diseases, 204 countries	GE	NUM
+2	32091533	COVID-19 in China: 72 314 cases	OB	NUM
+3	35065702	Global burden of bacterial AMR, 2019	GE	NUM
+4	30496104	GBD 2017: incidence, prevalence, YLDs	GE	NUM
+5	23245604	GBD 2010: mortality, 235 causes	GE	NUM
+6	14726171	BMI cut-offs for Asian populations (WHO)	ST	STD
+7	31995857	Early transmission dynamics in Wuhan	OB	NUM
+8	15033648	Modified Poisson regression for binary data	MT	MTH
+9	24880830	GBD 2013: overweight and obesity	GE	NUM
+10	15364185	INTERHEART: MI risk factors, 52 countries	LF	NUM
+11	32738937	Lancet Commission on dementia, 2020	SY	NUM
+12	26050253	MR-Egger regression	MT	MTH
+13	32112714	Psychological impact of quarantine: rapid review	SY	NUM
+14	12493255	Blood pressure and vascular mortality, 1 million adults	LF	NUM
+15	23245609	GBD 2010: 67 risk factors	GE	NUM
+16	17132052	Projections of global mortality, 2002 to 2030	GE	NUM
+17	33069327	GBD 2019: 87 risk factors	GE	NUM
+18	23245608	GBD 2010: DALYs, 291 causes	GE	NUM
+19	16595758	US overweight and obesity, 1999 to 2004	GE	NUM
+20	18046031	CT as a source of radiation exposure	SY	NUM
+21	31954465	Global sepsis incidence and mortality (GBD)	GE	NUM
+22	18026621	WHO growth reference, 5 to 19 years	ST	STD
+23	23245607	GBD 2010: YLDs, 1160 sequelae	GE	NUM
+24	30496103	GBD 2017: 282 causes of death	GE	NUM
+25	24570244	US childhood and adult obesity, 2011 to 2012	GE	NUM
+26	12813115	Major depressive disorder in the NCS-R	GE	NUM
+27	28919117	GBD 2016: incidence, prevalence, YLDs	GE	NUM
+28	28604169	Overweight and obesity in 195 countries (GBD)	GE	NUM
+29	18177778	Epidemiology and causes of preterm birth	SY	NUM
+30	12711737	Obesity and cancer mortality, 900 000 adults	LF	NUM
+31	25530442	GBD 2013: 240 causes of death	GE	NUM
+32	29029897	NCD-RisC: child and adult BMI, 1975 to 2016	GE	NUM
+33	32061315	Global burden of CKD (GBD 2017)	GE	NUM
+34	22818936	Physical inactivity and NCD burden worldwide	GE	NUM
+35	15652604	Global burden of hypertension	GE	NUM
+36	21330339	Updated Charlson comorbidity index, 6 countries	ST	STD
+37	22579043	Epidemiology of multimorbidity (Scotland)	GE	NUM
+38	31986261	Familial cluster of 2019 novel coronavirus	OB	NUM
+39	11343485	Prevalence of atrial fibrillation (ATRIA)	GE	NUM
+40	29050646	Worldwide incidence and prevalence of IBD	GE	NUM
+41	23746772	Maternal and child undernutrition and overweight, 2013	GE	NUM
+42	11790215	Metabolic syndrome prevalence, US adults	GE	NUM
+43	26063472	GBD 2013: 301 diseases, YLDs	GE	NUM
+44	26869575	Breastfeeding in the 21st century	SY	NUM
+45	30660336	EAT-Lancet Commission on healthy diets	SY	FRM
+46	38642570	GBD 2021: DALYs and HALE, 371 causes	GE	NUM
+47	34998485	Global dementia prevalence forecast to 2050	GE	NUM
+48	12689998	'Mendelian randomization' (concept paper)	FW	MTH
+49	21658213	Validation of the Swedish inpatient register	DR	MTH
+50	12365955	US adult obesity, 1999 to 2000	GE	NUM
+51	20071471	US adult obesity, 1999 to 2008	GE	NUM
+52	12700374	Epidemiology of sepsis in the US, 1979 to 2000	GE	NUM
+53	25104651	Global prevalence of macular degeneration	GE	NUM
+54	25791983	MRC guidance on process evaluation	FW	FRM
+55	23243115	Cohort profile: CHARLS	DR	MTH
+56	19339721	Rehospitalizations in Medicare	GE	NUM
+57	29395269	CONCORD-3: cancer survival, 71 countries	GE	CMP
+58	11948273	Hospital volume and surgical mortality	LF	CMP
+59	23993280	Burden of mental and substance use disorders (GBD 2010)	GE	NUM
+60	25103301	Global causes of maternal death (WHO)	GE	NUM
+61	20010215	Performance measures for prediction models	MT	MTH
+62	15840860	Excess deaths by BMI category (US)	LF	CMP
+63	30954305	Dietary risks in 195 countries (GBD)	GE	NUM
+64	22253363	US adult obesity and BMI, 1999 to 2010	GE	NUM
+65	28402827	Structural racism and health inequities	FW	FRM
+66	37356446	Global burden of diabetes to 2050 (GBD 2021)	GE	NUM
+67	18994664	Closing the gap: social determinants (CSDH)	SY	FRM
+68	10955408	Marginal structural models	MT	MTH
+69	20668659	Social relationships and mortality: meta-analysis	SY	NUM
+70	12503980	US obesity and diabetes, 2001 (BRFSS)	GE	NUM
+71	16731270	Global burden of disease and risk factors, 2001	GE	NUM
+72	17986697	Prevalence of CKD in the US	GE	NUM
+73	27115820	NCD-RisC: adult BMI in 200 countries	GE	NUM
+74	28919116	GBD 2016: 264 causes of death	GE	NUM
+75	34634250	Depression and anxiety due to COVID-19, 204 countries	GE	NUM
+76	16980116	Burden of valvular heart disease	GE	NUM
+77	30002074	Reading MR studies: guide and checklist	MT	MTH
+78	30496105	GBD 2017: 84 risks	GE	NUM
+79	15010446	Actual causes of death in the US, 2000	GE	NUM
+80	12460094	Metabolic syndrome and mortality (Finnish men)	LF	CMP
+81	16360788	Global prevalence of dementia (Delphi)	GE	NUM
+82	18207566	Maternal and child undernutrition, 2008	GE	NUM
+83	11879110	Fine particulate air pollution and mortality	LF	CMP
+84	19299006	BMI and cause-specific mortality, 900 000 adults	LF	CMP
+85	29253477	Multiple ACEs and health: meta-analysis	SY	CMP
+86	22276600	Health literacy: integrated definition and model	FW	FRM
+87	18474969	The Triple Aim	FW	FRM
+88	22818937	Global physical activity levels	GE	NUM
+89	12397006	MESA: objectives and design	DR	MTH
+90	23589584	Prevalence of sleep-disordered breathing (US)	GE	NUM
+91	22682464	Preterm birth rates, 184 countries	GE	NUM
+92	28408086	Ambient air pollution burden (GBD 2015)	GE	NUM
+93	29573870	What low back pain is (Lancet Series)	SY	NUM
+94	21414999	Weak instrument bias in MR	MT	MTH
+95	12387650	Nurse staffing and patient mortality	LF	CMP
+96	17182981	Relaxing the 10 events per variable rule	MT	MTH
+97	12826634	Mediterranean diet and survival (Greece)	LF	CMP
+98	28641372	UK Biobank versus general population	DR	MTH
+99	39096926	Lancet Commission on dementia, 2024	SY	NUM
+100	23727169	CKD: global dimension and perspectives	SY	NUM

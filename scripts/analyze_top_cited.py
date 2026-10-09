@@ -145,7 +145,10 @@ def section_words(doc):
 
 def main():
     top, tmeta = load("top100")
-    ctl, cmeta = load("controls")
+    ctl_all, cmeta = load("controls")
+    # Controls without an abstract are mostly news, obituaries and commentary,
+    # not comparable articles, so they are left out of the comparison.
+    ctl = [r for r in ctl_all if abstract_text(cmeta.get(r["pmid"], {}))]
     L = []
     w = L.append
     cites = [int(r["citations"]) for r in top]
@@ -154,7 +157,9 @@ def main():
     w("")
     w(f"Top 100: the most cited public health articles published 2000 to 2024 "
       f"(NIH iCite citation counts, October 2026; definition in scripts/build_top_cited.py). "
-      f"Controls: {len(ctl)} articles drawn at random from the same journal and year.")
+      f"Controls: {len(ctl)} articles with an abstract, drawn at random from the same journal "
+      f"and year ({len(ctl_all) - len(ctl)} items without an abstract, mostly news and commentary, "
+      f"were dropped).")
     w("")
     w(f"* Citations, top 100: median {med(cites):.0f} (range {min(cites)} to {max(cites)}). "
       f"Controls: median {med(ccites):.0f}.")
@@ -195,12 +200,17 @@ def main():
             out["Title states time span or trend"].append(bool(re.search(r"trend|since|from (19|20)\d\d|(19|20)\d\d.{0,4}(to|-|–).{0,4}(19|20)\d\d", t, re.I)))
             out["Title is a question"].append("?" in t)
             out["Abstract words"].append(words(ab) if ab else None)
-            out["Structured abstract"].append(structured(m))
+            if ab:
+                out["Structured abstract (papers with an abstract)"].append(structured(m))
             out["Abstract numbers per 100 words"].append(100 * len(re.findall(r"\b\d+(?:\.\d+)?\b", ab)) / max(words(ab), 1) if ab else None)
-            out["Abstract reports a CI or uncertainty interval"].append(bool(re.search(r"95\s?%|\bCI\b|\bUI\b|uncertainty interval", ab)))
-            out["Abstract names many countries (10 or more)"].append(bool(re.search(MANY_COUNTRIES, ab)))
-            out["Abstract mentions a large sample (100,000 or more)"].append(bool(re.search(r"\b\d{3},\d{3}|\b\d+(\.\d+)? million\b", ab)))
-            out["Abstract offers something reusable (tool, framework, estimates, data)"].append(bool(re.search(r"we (propose|present|developed|describe|provide)|framework|tool|estimates (for|of)|freely available|publicly available|open access|data (are|is) available|online", ab, re.I)))
+            if ab:
+                out["Abstract reports a CI or uncertainty interval"].append(bool(re.search(r"95\s?%|\bCI\b|\bUI\b|uncertainty interval", ab)))
+            if ab:
+                out["Abstract names many countries (10 or more)"].append(bool(re.search(MANY_COUNTRIES, ab)))
+            if ab:
+                out["Abstract mentions a large sample (100,000 or more)"].append(bool(re.search(r"\b\d{3},\d{3}|\b\d+(\.\d+)? million\b", ab)))
+            if ab:
+                out["Abstract offers something reusable (tool, framework, estimates, data)"].append(bool(re.search(r"we (propose|present|developed|describe|provide)|framework|tool|estimates (for|of)|freely available|publicly available|open access|data (are|is) available|online", ab, re.I)))
             grants = (m.get("grantsList") or {}).get("grant", [])
             out["Funded (any grant listed)"].append(bool(grants))
             out["Funders listed"].append(len(grants))
@@ -220,7 +230,9 @@ def main():
             w(f"| {k} (median) | {med(ft[k]):.1f} | {med(fc[k]):.1f} |")
     w("")
 
-    tdocs, cdocs = fulltext("corpus"), fulltext("corpus_controls")
+    keep = {r["pmid"] for r in ctl}
+    tdocs = fulltext("corpus")
+    cdocs = {k: v for k, v in fulltext("corpus_controls").items() if k in keep}
     w("## Full-text structure (open access subset)")
     w("")
     w(f"Full texts parsed: {len(tdocs)} top articles and {len(cdocs)} controls.")
