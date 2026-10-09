@@ -54,6 +54,43 @@ python3 scripts/build_mics_manifest.py                  # reports only
 python3 scripts/build_mics_manifest.py --all-materials  # also questionnaires and manuals
 ```
 
+## Research papers that used DHS or MICS data
+
+`literature/pubmed_dhs_mics_papers.csv` lists 14,085 PubMed papers (1984 to
+October 2026) that name DHS or MICS in their title or abstract.
+
+| Tag | Papers | PubMed search (title and abstract) |
+| --- | --- | --- |
+| DHS | 13,132 | "Demographic and Health Survey\*", "Demographic Health Survey\*", "DHS Program\*", "National Family Health Survey\*" or "NFHS" (India's DHS) |
+| MICS | 693 | "Multiple Indicator Cluster Survey\*", or "MICS" with "UNICEF" |
+| DHS+MICS | 260 | Both |
+
+Each row gives the PMID, title, first three authors, journal, year, DOI,
+PMCID, a PubMed link, and countries named in the title. 9,225 papers have an
+open access copy in PubMed Central. To download those PDFs (several GB):
+
+```bash
+python3 scripts/download.py literature/pubmed_dhs_mics_papers.csv --dry-run
+python3 scripts/download.py literature/pubmed_dhs_mics_papers.csv
+python3 scripts/download.py literature/pubmed_dhs_mics_papers.csv --country Bangladesh
+```
+
+PDFs come from the PMC Open Access dataset on AWS. Papers that are not open
+access have no download link; use the DOI or PubMed link to reach them through
+your library. To refresh the list, run
+`python3 scripts/build_literature_manifest.py`.
+
+Limits of this list:
+
+* A paper is included because it names the survey in its title or abstract.
+  Most such papers analyse the data, but a few only mention it. Papers that
+  name the survey only in their methods section are missed.
+* Country-specific survey names other than NFHS (for example "BDHS" alone) are
+  only caught when the full programme name also appears.
+* The `countries_in_title` column is a simple name match. It can miss
+  countries or tag the wrong one (for example "Congo").
+* Journals not indexed in PubMed are not covered.
+
 ## Known limits
 
 * **MICS coverage is partial.** The MICS website (mics.unicef.org) blocks
@@ -66,8 +103,6 @@ python3 scripts/build_mics_manifest.py --all-materials  # also questionnaires an
   repository. They should work from a normal internet connection. Older links
   on childinfo.org no longer exist; the downloader then tries a copy in the
   Internet Archive.
-* **Not covered:** journal articles by outside researchers that use DHS or MICS
-  data. These are spread across many publishers and are often behind paywalls.
-  Search PubMed or the DHS Program's own publication search for those.
+* Journal articles that use DHS or MICS data are listed separately (see above).
 * Survey datasets need a separate registration with the DHS Program and are
   not part of this repository.

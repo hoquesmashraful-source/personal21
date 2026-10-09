@@ -8,6 +8,7 @@ Usage:
   python3 scripts/download.py                       # every manifest in manifests/
   python3 scripts/download.py manifests/dhs_survey_reports.csv
   python3 scripts/download.py --series "Final Report" --country BD
+  python3 scripts/download.py literature/pubmed_dhs_mics_papers.csv   # open access papers
   python3 scripts/download.py --dry-run             # count files and size only
 """
 
@@ -24,6 +25,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import fetch, read_manifest  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PMC_OA = "https://pmc-oa-opendata.s3.amazonaws.com"
 
 
 def safe(name):
@@ -41,13 +43,25 @@ def get_pdf(url, referer=None):
     return data
 
 
+def pmc_pdf_url(pmcid):
+    """Find the latest PDF version of a PMC Open Access article on AWS."""
+    listing = fetch(f"{PMC_OA}/?list-type=2&prefix={pmcid}.").decode("utf-8", "replace")
+    keys = re.findall(rf"<Key>({pmcid}\.(\d+)/{pmcid}\.\d+\.pdf)</Key>", listing)
+    if not keys:
+        raise ValueError("no PDF in the PMC Open Access dataset")
+    return f"{PMC_OA}/{max(keys, key=lambda k: int(k[1]))[0]}"
+
+
 def download(row, path):
-    referer = "https://mics.unicef.org/" if row["source"] == "MICS" else None
-    try:
-        data = get_pdf(row["url"], referer)
-    except (urllib.error.URLError, ValueError, OSError):
-        # Older MICS links (childinfo.org) are dead; try the Internet Archive copy.
-        data = get_pdf(f"https://web.archive.org/web/2020id_/{row['url']}")
+    if row["url"].startswith("pmc:"):
+        data = get_pdf(pmc_pdf_url(row["url"][4:]))
+    else:
+        referer = "https://mics.unicef.org/" if row["source"] == "MICS" else None
+        try:
+            data = get_pdf(row["url"], referer)
+        except (urllib.error.URLError, ValueError, OSError):
+            # Older MICS links (childinfo.org) are dead; try the Internet Archive copy.
+            data = get_pdf(f"https://web.archive.org/web/2020id_/{row['url']}")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     tmp = path + ".part"
     with open(tmp, "wb") as f:
@@ -67,16 +81,19 @@ def main():
     args = ap.parse_args()
 
     paths = args.manifests or sorted(glob.glob(os.path.join(ROOT, "manifests", "*.csv")))
-    rows = [r for p in paths for r in read_manifest(p)]
+    # Rows without a URL (e.g. papers that are not open access) cannot be fetched.
+    rows = [r for p in paths for r in read_manifest(p) if r.get("url")]
     if args.series:
         rows = [r for r in rows if r["series"] in args.series]
     if args.country:
         wanted = {c.lower() for c in args.country}
-        rows = [r for r in rows if r["country"].lower() in wanted]
+        rows = [r for r in rows
+                if r.get("country", "").lower() in wanted
+                or wanted & {c.strip().lower() for c in r.get("countries_in_title", "").split(";")}]
 
     todo = [(r, target_path(args.out, r)) for r in rows]
     todo = [(r, p) for r, p in todo if not os.path.exists(p)]
-    known = sum(int(r["size_bytes"]) for r, _ in todo if r["size_bytes"].isdigit())
+    known = sum(int(r["size_bytes"]) for r, _ in todo if r.get("size_bytes", "").isdigit())
     print(f"{len(rows)} files selected, {len(todo)} still to download"
           f" (at least {known / 1e9:.2f} GB where size is known)", file=sys.stderr)
     if args.dry_run or not todo:
