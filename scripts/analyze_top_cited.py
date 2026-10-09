@@ -112,7 +112,8 @@ def language(texts):
         "'We' or 'our' per 1,000 words": 1000 * len(re.findall(r"\b(we|our)\b", joined, re.I)) / nw,
         "Passive constructions per 1,000 words": 1000 * len(re.findall(r"\b(was|were|is|are|been|be)\s+\w+ed\b", joined, re.I)) / nw,
         "Hedges per 1,000 words": 1000 * len(re.findall(r"\b(may|might|could|suggest\w*|likely|possibl\w+|appear\w*)\b", joined, re.I)) / nw,
-        "Causal verbs per 1,000 words": 1000 * len(re.findall(r"\b(caus\w+|lead to|led to|result\w* in|effect of|impact of)\b", joined, re.I)) / nw,
+        # "causes of death" is a noun phrase, not a causal claim, so it is not counted.
+        "Causal verbs per 1,000 words": 1000 * len(re.findall(r"\b(caused|causing|causes? (?!of\b)|leads? to|led to|results? in|resulted in|impacts? (on|of))", joined, re.I)) / nw,
         "Numbers per 1,000 words": 1000 * len(re.findall(r"\b\d+(?:\.\d+)?\b", joined)) / nw,
         "Stock transitions per 1,000 words": 1000 * len(re.findall(r"\b(Furthermore|Moreover|Additionally|In addition)\b", joined)) / nw,
     }

@@ -4,10 +4,12 @@ Definition (published 2000 to 2024, citation counts from NIH iCite):
   Pool A  every article in 22 core public health and epidemiology journals
           (pre-ranked with Europe PMC, top 800 kept for iCite).
   Pool B  articles in six general medical journals (Lancet, BMJ, JAMA, NEJM,
-          PLOS Medicine, Nature Medicine) with a public health MeSH heading as
-          a major topic (Global Health, Global Burden of Disease, Public Health,
-          Health Status Disparities, Population Surveillance, Socioeconomic
-          Factors, Cause of Death) or indexed under Health Surveys.
+          PLOS Medicine, Nature Medicine) indexed with an epidemiology
+          subheading or a public health MeSH heading, excluding clinical
+          trials, consensus statements and practice guidelines.
+Screening: the top 250 candidates are written to candidates.csv. Articles
+whose main focus is individual clinical care (treatment, ICU management,
+clinical definitions) are listed with a reason in exclusions.csv and skipped.
 Editorials, comments, letters, news and errata are excluded.
 
 Controls: for each top article, three articles drawn at random (fixed seed)
@@ -56,9 +58,10 @@ CORE_ISSNS = {
     "1368-9800": "Public Health Nutr", "1741-3842": "J Public Health (Oxf)",
 }
 GENERAL_TA = ["Lancet", "BMJ", "JAMA", "N Engl J Med", "PLoS Med", "Nat Med"]
-MESH = ('("Global Health"[majr] OR "Global Burden of Disease"[majr] OR "Public Health"[majr:noexp] OR '
-        '"Health Status Disparities"[majr] OR "Population Surveillance"[majr] OR "Socioeconomic Factors"[majr] OR '
-        '"Cause of Death"[majr] OR "Health Surveys"[mh])')
+MESH = ('(epidemiology[sh] OR "Global Health"[mh] OR "Global Burden of Disease"[mh] OR '
+        '"Public Health"[mh:noexp] OR "Health Status Disparities"[mh] OR "Socioeconomic Factors"[mh] OR '
+        '"Population Surveillance"[mh]) NOT (clinical trial[pt] OR randomized controlled trial[pt] OR '
+        'consensus development conference[pt] OR practice guideline[pt] OR guideline[pt])')
 EXCLUDE_PT = "NOT (editorial[pt] OR comment[pt] OR letter[pt] OR news[pt] OR published erratum[pt])"
 
 
@@ -187,20 +190,34 @@ def main():
     pool_of = {p: "A" for p in a}
     pool_of.update({p: "B" for p in b if p not in pool_of})
 
+    cand_path = os.path.join(OUT, "candidates.csv")
     ic = icite(pool_of)
-    ranked = sorted(ic.values(), key=lambda d: -(d.get("citation_count") or 0))
-    meta = core_meta([str(d["pmid"]) for d in ranked[:200]])
+    ranked = sorted(ic.values(), key=lambda d: -(d.get("citation_count") or 0))[:250]
+    meta = core_meta([str(d["pmid"]) for d in ranked])
+    cands = [row(str(d["pmid"]), d, meta.get(str(d["pmid"]), {}), pool_of[str(d["pmid"])], rank=i + 1)
+             for i, d in enumerate(ranked) if str(d["pmid"]) in meta and is_article(meta[str(d["pmid"])])]
+    write_csv(cand_path, cands)
+    excl_path = os.path.join(OUT, "exclusions.csv")
+    excluded = {}
+    if os.path.exists(excl_path):
+        with open(excl_path, newline="", encoding="utf-8") as f:
+            excluded = {r["pmid"]: r["reason"] for r in csv.DictReader(f)}
+    else:
+        print("No exclusions.csv yet: screen candidates.csv, then rerun.", file=sys.stderr)
     top = []
-    for d in ranked:
-        p = str(d["pmid"])
-        if p in meta and is_article(meta[p]):
-            top.append(row(p, d, meta[p], pool_of[p], rank=len(top) + 1))
+    for c in cands:
+        if c["pmid"] in excluded:
+            continue
+        top.append(dict(c, rank=len(top) + 1))
         if len(top) == 100:
             break
     write_csv(os.path.join(OUT, "top100.csv"), top)
     with open(os.path.join(OUT, "top100_meta.json"), "w", encoding="utf-8") as f:
         json.dump({r["pmid"]: meta[r["pmid"]] for r in top}, f, ensure_ascii=False)
-    print(f"Top 100: citations {top[-1]['citations']} to {top[0]['citations']}", file=sys.stderr)
+    print(f"Top 100: citations {top[-1]['citations']} to {top[0]['citations']} "
+          f"({len(excluded)} clinical-care candidates excluded)", file=sys.stderr)
+    if not excluded:
+        return
 
     rng = random.Random(2026)
     top_ids = {r["pmid"] for r in top}

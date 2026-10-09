@@ -6,3 +6,4 @@ skills/public-health-manuscript-workspace/
 literature/top_cited/corpus/
 literature/top_cited/corpus_controls/
 literature/top_cited/figures/
+literature/top_cited/*_meta.json
