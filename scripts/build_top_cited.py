@@ -4,10 +4,10 @@ Definition (published 2000 to 2024, citation counts from NIH iCite):
   Pool A  every article in 22 core public health and epidemiology journals
           (pre-ranked with Europe PMC, top 800 kept for iCite).
   Pool B  articles in six general medical journals (Lancet, BMJ, JAMA, NEJM,
-          PLOS Medicine, Nature Medicine) indexed with a public health MeSH
-          heading (Global Health, Global Burden of Disease, Public Health,
+          PLOS Medicine, Nature Medicine) with a public health MeSH heading as
+          a major topic (Global Health, Global Burden of Disease, Public Health,
           Health Status Disparities, Population Surveillance, Socioeconomic
-          Factors).
+          Factors, Cause of Death) or indexed under Health Surveys.
 Editorials, comments, letters, news and errata are excluded.
 
 Controls: for each top article, three articles drawn at random (fixed seed)
@@ -56,8 +56,9 @@ CORE_ISSNS = {
     "1368-9800": "Public Health Nutr", "1741-3842": "J Public Health (Oxf)",
 }
 GENERAL_TA = ["Lancet", "BMJ", "JAMA", "N Engl J Med", "PLoS Med", "Nat Med"]
-MESH = ('("Global Health"[mh] OR "Global Burden of Disease"[mh] OR "Public Health"[mh] OR '
-        '"Health Status Disparities"[mh] OR "Population Surveillance"[mh] OR "Socioeconomic Factors"[mh])')
+MESH = ('("Global Health"[majr] OR "Global Burden of Disease"[majr] OR "Public Health"[majr:noexp] OR '
+        '"Health Status Disparities"[majr] OR "Population Surveillance"[majr] OR "Socioeconomic Factors"[majr] OR '
+        '"Cause of Death"[majr] OR "Health Surveys"[mh])')
 EXCLUDE_PT = "NOT (editorial[pt] OR comment[pt] OR letter[pt] OR news[pt] OR published erratum[pt])"
 
 
@@ -112,7 +113,7 @@ def core_meta(pmids):
     meta = {}
     pmids = list(pmids)
     for i in range(0, len(pmids), 50):
-        q = " OR ".join(f"EXT_ID:{p}" for p in pmids[i:i + 50]) + " AND SRC:MED"
+        q = "(" + " OR ".join(f"EXT_ID:{p}" for p in pmids[i:i + 50]) + ") AND SRC:MED"
         res = epmc(q, page_size=100, result_type="core")
         for r in res["resultList"]["result"]:
             meta[r["pmid"]] = r
