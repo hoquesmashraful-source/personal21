@@ -7,10 +7,11 @@ description: Write, revise and review public health and epidemiology manuscripts
 
 This skill helps write and improve observational public health papers,
 especially secondary analyses of household surveys such as DHS and MICS. Its
-guidance comes from two sources: a section-by-section analysis of 579 highly
-cited DHS and MICS research articles (more than 50 citations; 97 of them in
-top general or global health journals), and the reporting standards those
-top journals enforce (STROBE, clear effect measures, cautious inference).
+guidance comes from two sources. The first is a section-by-section analysis
+of 579 highly cited DHS and MICS research articles (more than 50 citations
+each; 97 in top general or global health journals). The second is the
+reporting standards those journals enforce: STROBE, clear effect measures
+and cautious inference.
 
 The corpus shows what highly cited papers usually do. Top journals ask for
 more. Where the two differ, aim for the top-journal standard and say why.
@@ -111,19 +112,27 @@ Papers carry a median of 3 tables and 2 figures and about 41 references.
 
 ## What separates top-journal papers
 
-In the corpus, papers in top journals more often:
+Compared with the rest of the corpus, papers in top journals:
 
-* used trend analyses across survey rounds (43% versus 22% overall),
-  multilevel models (40% versus 25%) and sensitivity analyses (24% versus 8%);
-* cited STROBE or another guideline (27% versus 12%) and stated data
-  availability (48% versus 34%);
-* relied less on "p<0.05" significance statements (18% versus 34%) and more
-  on effect sizes with confidence intervals;
-* framed the question around a global target or a policy decision, and
-  answered it with a clear population-level number;
-* wrote a disciplined Discussion: one opening paragraph of key findings,
-  comparison with the best evidence, explanation, honest limitations with
-  their likely direction of bias, then implications.
+* **Methods:** more often used trend analyses across survey rounds (43%
+  versus 22% overall), multilevel models (40% versus 25%), sensitivity
+  analyses (24% versus 8%) and prevalence ratios. They cited STROBE or
+  another guideline (27% versus 12%) and stated data availability (48%
+  versus 34%). They chose confounders a priori, not by p-value screening.
+* **Inference:** relied less on "p<0.05" statements (18% versus 34%) and
+  carried inference with effect sizes and 95% CIs, in the abstract as well
+  as the Results.
+* **Framing** (close reading of 40 exemplars): titles stated scale and
+  described data generically ("91 national household surveys"). Shorter
+  introductions reached a specific gap by paragraph 2 or 3, said why these
+  data could fill it, and ended with a first-person aim.
+* **Presentation:** more figures than tables, every paper with at least one
+  figure, confidence intervals in table cells instead of significance stars,
+  and long tables moved to the appendix.
+* **Discussion:** the main finding came within two sentences, followed by
+  comparison with the strongest evidence and explanations tested with the
+  paper's own data where possible. Limitations stated the likely direction
+  of bias (about 12 of 20 exemplars, against 5 of 20 others).
 
 Use these as the default for drafts aimed at the Lancet, BMJ, JAMA, PLOS
 Medicine, NEJM or Nature Medicine.

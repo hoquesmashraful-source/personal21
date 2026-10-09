@@ -51,10 +51,10 @@ DHS recode files (standard names):
 MICS uses separate datasets for households (hh), household members (hl),
 women (wm), men (mn), children under 5 (ch) and children aged 5 to 17 (fs).
 
-Describe every restriction in order, with numbers removed at each step (for
-example: all women 15 to 49, then women with a live birth in the 5 years
-before the survey, then the most recent birth, then complete data on key
-variables). Top journals expect this as a flow chart or a sentence chain.
+Describe every restriction in order, with the number removed at each step.
+For example: all women 15 to 49; then women with a live birth in the 5 years
+before the survey; then the most recent birth; then complete data on key
+variables. Top journals expect this as a flow chart or a sentence chain.
 
 ## 3. Weights, clusters and strata
 

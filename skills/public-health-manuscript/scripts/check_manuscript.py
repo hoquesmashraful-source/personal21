@@ -106,12 +106,45 @@ def split_sections(text):
     return {k: "\n".join(v).strip() for k, v in sections.items() if "\n".join(v).strip()}
 
 
+LIST_ITEM = re.compile(r"^\s*([-*+]|\d+[.)])\s+")
+
+
+def units(text):
+    """Split text into prose units: paragraphs and single list items.
+    Headings, table rows, code blocks and YAML front matter are skipped."""
+    out, buf, fence = [], [], False
+    lines = text.splitlines()
+    if lines and lines[0].strip() == "---":
+        end = next((i for i, l in enumerate(lines[1:], 1) if l.strip() == "---"), 0)
+        lines = lines[end + 1:]
+    for line in lines:
+        s = line.strip()
+        if s.startswith("```"):
+            fence = not fence
+            continue
+        if fence or s.startswith("|") or s.startswith("#") or not s:
+            if buf:
+                out.append(" ".join(buf))
+                buf = []
+            continue
+        if LIST_ITEM.match(line) and buf:
+            out.append(" ".join(buf))
+            buf = []
+        buf.append(LIST_ITEM.sub("", s, count=1) if LIST_ITEM.match(line) else s)
+    if buf:
+        out.append(" ".join(buf))
+    return out
+
+
 def sentences(text):
-    text = re.sub(r"\s+", " ", text)
-    # Do not split on decimals, "et al.", "e.g.", "i.e.", "vs." or "Fig."
-    protected = re.sub(r"\b(et al|e\.g|i\.e|vs|Fig|approx|no)\.", lambda m: m.group(0).replace(".", "§"), text)
-    parts = re.split(r"(?<=[.!?])\s+(?=[A-Z(\[])", protected)
-    return [p.replace("§", ".").strip() for p in parts if p.strip()]
+    result = []
+    for unit in units(text):
+        unit = re.sub(r"\s+", " ", unit)
+        # Do not split on decimals, "et al.", "e.g.", "i.e.", "vs." or "Fig."
+        protected = re.sub(r"\b(et al|e\.g|i\.e|vs|Fig|approx|no)\.", lambda m: m.group(0).replace(".", "§"), unit)
+        parts = re.split(r"(?<=[.!?])\s+(?=[A-Z(\[])", protected)
+        result.extend(p.replace("§", ".").strip() for p in parts if p.strip())
+    return result
 
 
 def words(text):

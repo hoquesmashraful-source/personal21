@@ -5,22 +5,64 @@
       "id": 1,
       "prompt": "here's my stata output from the Bangladesh DHS 2017-18 (women with a live birth in the 3 years before the survey). outcome is 4+ ANC visits. can you write the Results section and the regression table (Table 2) for my paper? Aiming for BMJ Global Health. File: evals/files/bdhs_anc4_stata_output.txt",
       "expected_output": "A Results section (sample, prevalence, bivariate pattern, adjusted associations) and a Table 2 with weighted percentages, adjusted ORs with 95% CIs, reference categories and footnotes, using only numbers in the output and placeholders for anything missing.",
-      "files": ["evals/files/bdhs_anc4_stata_output.txt"],
-      "expectations": []
+      "files": [
+        "evals/files/bdhs_anc4_stata_output.txt"
+      ],
+      "expectations": [
+        "No em dashes, en dashes or double hyphens in the response",
+        "No prose sentence of 30 or more words",
+        "Every odds ratio written in the Results text has a 95% CI",
+        "Uses p<0.001 and never reports p=0.000",
+        "States that percentages are weighted and sample sizes unweighted",
+        "Table 2 shows reference categories for each variable",
+        "Table 2 odds ratios and CIs match the Stata output exactly",
+        "Table 2 has a footnote listing the adjustment set (including division) and abbreviations",
+        "Describes associations as odds, with no 'times more likely' and no causal verbs",
+        "Does not invent numbers absent from the output; uses placeholders or notes for missing items (e.g. exclusions, division estimates)"
+      ]
     },
     {
       "id": 2,
       "prompt": "I need the Methods section for my paper on intimate partner violence and child stunting in Nepal, target Lancet Global Health. Data: Nepal DHS 2022, KR file merged with the domestic violence module; children 0-59 months of women selected for the DV module, n=2,104 after exclusions. Outcome stunting (HAZ < -2 SD, WHO 2006). Exposure: any physical, sexual or emotional IPV in the past 12 months. Covariates: child age, sex, birth order, maternal education, maternal height, wealth quintile, residence, province. Mixed-effects logistic regression, children nested in clusters, Stata 17. Please write data source, study design and sample, variables, statistical analysis and ethics subsections.",
       "expected_output": "A complete Methods section with subheadings, correct DHS design and DV-module weighting, multilevel model reporting (ICC, MOR or PCV), confounder rationale, missing data, sensitivity analysis, STROBE, ethics and data availability, with placeholders for facts not given (response rates, exclusion counts).",
       "files": [],
-      "expectations": []
+      "expectations": [
+        "No em dashes, en dashes or double hyphens in the response",
+        "No prose sentence of 30 or more words",
+        "Keeps n=2,104 exactly",
+        "Describes the two-stage stratified cluster sampling design",
+        "Uses the domestic violence module weight (d005 or equivalent) and accounts for clustering",
+        "Reports multilevel variance measures (ICC and MOR or PCV)",
+        "States a rationale for confounder selection (a priori, framework or DAG) rather than p-value screening",
+        "States how missing data were handled",
+        "Describes at least one sensitivity analysis",
+        "Mentions WHO flags for implausible height-for-age z-scores",
+        "Cites STROBE",
+        "Ethics statement names original approvals (ICF IRB and/or Nepal ethics body) and consent",
+        "Does not invent response rates or exclusion counts (uses placeholders)",
+        "Includes a data availability statement"
+      ]
     },
     {
       "id": 3,
       "prompt": "Can you revise my discussion and conclusion? It's a MICS6 analysis of the early childhood development index (ECDI) across 8 sub-Saharan African countries, submitting to PLOS Medicine. Draft is in evals/files/mics_ecdi_discussion_draft.md",
       "expected_output": "A revised Discussion and Conclusion that keeps every number and citation, removes causal and overstated claims, opens with key findings, adds specific limitations with direction of bias, keeps the conclusion free of repeated numbers, and follows the house style.",
-      "files": ["evals/files/mics_ecdi_discussion_draft.md"],
-      "expectations": []
+      "files": [
+        "evals/files/mics_ecdi_discussion_draft.md"
+      ],
+      "expectations": [
+        "No em dashes, en dashes or double hyphens in the revised text",
+        "No prose sentence of 30 or more words in the revised text",
+        "No 'Furthermore', 'Moreover' or 'Additionally'",
+        "All 15 original numbers are preserved",
+        "All original citations [12] to [16] are preserved",
+        "No new numbered citations are invented",
+        "Causal claims removed (no 'causes', 'proves', 'impact', 'harms')",
+        "Unverified 'first study' claim removed or qualified",
+        "At least one limitation states the likely direction of bias",
+        "Conclusion contains no numerical results",
+        "Conclusion recommendations are matched to a cross-sectional design (no 'must' or 'immediately' mandates)"
+      ]
     }
   ]
 }
