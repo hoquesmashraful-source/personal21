@@ -1,0 +1,26 @@
+{
+  "skill_name": "high-impact-public-health-writing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Can you rewrite my title and abstract so it reads like the highly cited papers in Lancet Global Health? I want it to get noticed and cited. Draft: evals/files/draft_title_abstract.md",
+      "expected_output": "A new title stating topic, population, scale and period, and a structured Lancet-style abstract (Background, Methods, Findings, Interpretation, Funding) that keeps every number exactly, leads Findings with the headline estimate and CI, replaces the generic gap and overclaiming conclusion, and adds placeholders for missing facts (funding, survey years where needed).",
+      "files": ["evals/files/draft_title_abstract.md"],
+      "expectations": []
+    },
+    {
+      "id": 2,
+      "prompt": "I have these results on stunting trends by wealth across 30 African countries (evals/files/stunting_results_summary.md). Which figures should I make for Lancet Global Health, what should each one show, and can you give me captions and R code to start from?",
+      "expected_output": "A figure plan in which the first figure carries the headline finding, using trend lines with uncertainty, a ranked country chart or map, and an inequality chart (equiplot or SII), with stand-alone captions and adaptable ggplot2 code, using only the user's numbers.",
+      "files": ["evals/files/stunting_results_summary.md"],
+      "expectations": []
+    },
+    {
+      "id": 3,
+      "prompt": "I'm planning a paper on hypertension care cascades using WHO STEPS surveys from 12 South and Southeast Asian countries. Honestly, what makes public health papers get cited a lot, and how should I design and write mine so it has the best chance? Be specific.",
+      "expected_output": "Evidence-based advice tied to the top-100 analysis: contribution types that earn citations (reusable estimates, methods, frameworks), concrete design and writing choices (quotable uncertainty-bounded numbers, scale in title, shareable estimates and code, figures), honest caveats about what cannot be copied and correlation versus cause, without inventing statistics.",
+      "files": [],
+      "expectations": []
+    }
+  ]
+}

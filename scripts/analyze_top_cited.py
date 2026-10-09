@@ -40,6 +40,12 @@ CONTRIBUTION = [
 ]
 
 
+# A number followed, within four words, by a unit of scale ("54 low-income and
+# middle-income countries", "1.2 million adults", "120 national surveys").
+SCALE = r"\b\d[\d,.]*\s+(?:[\w-]+\s+){0,4}(countries|studies|million|participants|people|surveys|cohorts|adults|children|women|men)\b"
+MANY_COUNTRIES = r"\b([1-9]\d|\d{3,})\s+(?:[\w-]+\s+){0,4}(countries|nations|territories)\b"
+
+
 def load(name):
     with open(os.path.join(D, f"{name}.csv"), newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
@@ -185,14 +191,14 @@ def main():
             out["Title words"].append(words(t))
             out["Title has a colon"].append(":" in t)
             out["Title names global, world or many countries"].append(bool(re.search(r"global|world|countries|international|nations", t, re.I)))
-            out["Title states scale (number of countries, studies or people)"].append(bool(re.search(r"\b\d[\d,.]* (countries|studies|population-based|million|participants|people|surveys|cohorts)", t, re.I)))
+            out["Title states scale (number of countries, studies or people)"].append(bool(re.search(SCALE, t, re.I)))
             out["Title states time span or trend"].append(bool(re.search(r"trend|since|from (19|20)\d\d|(19|20)\d\d.{0,4}(to|-|–).{0,4}(19|20)\d\d", t, re.I)))
             out["Title is a question"].append("?" in t)
             out["Abstract words"].append(words(ab) if ab else None)
             out["Structured abstract"].append(structured(m))
             out["Abstract numbers per 100 words"].append(100 * len(re.findall(r"\b\d+(?:\.\d+)?\b", ab)) / max(words(ab), 1) if ab else None)
             out["Abstract reports a CI or uncertainty interval"].append(bool(re.search(r"95\s?%|\bCI\b|\bUI\b|uncertainty interval", ab)))
-            out["Abstract names many countries (10 or more)"].append(bool(re.search(r"\b([1-9]\d|\d{3,})\s+(countries|nations|territories)", ab)))
+            out["Abstract names many countries (10 or more)"].append(bool(re.search(MANY_COUNTRIES, ab)))
             out["Abstract mentions a large sample (100,000 or more)"].append(bool(re.search(r"\b\d{3},\d{3}|\b\d+(\.\d+)? million\b", ab)))
             out["Abstract offers something reusable (tool, framework, estimates, data)"].append(bool(re.search(r"we (propose|present|developed|describe|provide)|framework|tool|estimates (for|of)|freely available|publicly available|open access|data (are|is) available|online", ab, re.I)))
             grants = (m.get("grantsList") or {}).get("grant", [])

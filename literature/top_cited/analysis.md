@@ -32,14 +32,14 @@ Classification is rule-based on title and publication type (first matching rule 
 | Title words (median) | 13.5 | 10.0 |
 | Title has a colon | 65% | 44% |
 | Title names global, world or many countries | 43% | 15% |
-| Title states scale (number of countries, studies or people) | 16% | 1% |
+| Title states scale (number of countries, studies or people) | 19% | 3% |
 | Title states time span or trend | 30% | 5% |
 | Title is a question | 1% | 5% |
 | Abstract words (median) | 322.5 | 257.0 |
 | Structured abstract | 71% | 32% |
 | Abstract numbers per 100 words (median) | 9.5 | 6.3 |
 | Abstract reports a CI or uncertainty interval | 44% | 20% |
-| Abstract names many countries (10 or more) | 23% | 3% |
+| Abstract names many countries (10 or more) | 23% | 6% |
 | Abstract mentions a large sample (100,000 or more) | 45% | 11% |
 | Abstract offers something reusable (tool, framework, estimates, data) | 38% | 11% |
 | Funded (any grant listed) | 69% | 35% |
